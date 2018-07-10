@@ -1,0 +1,8 @@
+{
+  "name": "@roxie/core",
+  "version": "1.0.0",
+  "description": "Roxie - the core framework",
+  "author": "roxie",
+  "license": "MIT",
+  "repository": "https://github.com/adtonline/roxie"
+}
