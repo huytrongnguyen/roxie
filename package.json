@@ -1,6 +1,6 @@
 {
   "name": "roxie",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "JavaScript library that build on top of React",
   "main": "dist/index.js",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
@@ -30,12 +30,12 @@
     ],
     "ignore": "node_modules"
   },
-  "peerDependencies": {
+  "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "axios": "^0.18.0",
     "express": "^4.16.3",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "rxjs": "^6.2.2"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",

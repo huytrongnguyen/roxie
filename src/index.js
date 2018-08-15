@@ -1,7 +1,9 @@
-['Component', 'Controller', 'Service'].forEach(method => exports[method] = Class => {
-  return new Class(...(Class.parameters || []));
-});
+export { Injectable } from './core/injectable';
+export { Ajax } from './core/ajax';
 
 export { RoxieServer } from './server';
 export { Route, Get, Post, Put, Delete } from './server/route';
-export { default as Ajax } from './core/ajax';
+
+export { RoxieApplication } from './app';
+export { Component } from './app/components';
+export { HashRouter, HashLink, HashRoute } from './app/components/router';
