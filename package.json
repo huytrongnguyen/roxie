@@ -8,7 +8,8 @@
   "repository": "https://github.com/huytrongnguyen/roxie",
   "bugs": "https://github.com/huytrongnguyen/extension-react/issues",
   "scripts": {
-    "start": "babel-node example/src/server.js --presets env --plugins transform-decorators-legacy --content ./example/dist --port 3000",
+    "start": "babel-node server.js --presets env --plugins transform-decorators-legacy",
+    "start:dev": "nodemon --watch server.js --watch src -e jsx,js,json --exec yarn start",
     "build": "rm -rf dist/* && babel src -D -d dist",
     "prepublish": "yarn build"
   },
@@ -46,6 +47,7 @@
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
+    "nodemon": "1.18.3",
     "yarn": "1.9.4"
   }
 }
