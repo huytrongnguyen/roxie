@@ -1,6 +1,15 @@
 # Roxie
 
-Roxie is a library that build on top of React, helping you build data-intensive, cross-platform web apps for desktops, tablets, and smartphones.
+[![npm version](http://img.shields.io/npm/v/roxie.svg?style=flat-square)](http://npmjs.org/package/roxie)
+[![Travis build status](https://travis-ci.org/huytrongnguyen/roxie.svg)](https://travis-ci.org/huytrongnguyen/roxie)
+[![npm download](https://img.shields.io/npm/dm/roxie.svg?style=flat-square)](https://npmjs.org/package/roxie)
+[![npm license](https://img.shields.io/npm/l/roxie.svg)](https://npmjs.org/package/roxie)
+
+`Roxie` is a library that build on top of React, helping you build data-intensive, cross-platform web apps for desktops, tablets, and smartphones.
+
+## License
+
+`Roxie` is released under the MIT license.
 
 ## Quick Start
 
@@ -8,6 +17,7 @@ Use `npm` or `yarn` to install following dependencies:
 
   * `babel-polyfill`
   * `express`
+  * `rxjs`
   * `react`
   * `react-dom`
   * `roxie`
@@ -32,7 +42,7 @@ export default class Application extends PureComponent {
 
 ### Components
 
-A component in Extension React is the combination of a React Component and a component class that controls a portion of the screen. Here is an example of a component that display a simple string:
+A component in Roxie is the combination of a React Component and a component class that controls a portion of the screen. Here is an example of a component that display a simple string:
 
 ```js
 import React, { PureComponent } from 'react';
@@ -62,7 +72,7 @@ Actually, with the above example, it can be implemented like this:
 import { Component } from 'roxie';
 
 @Component({
-  view: ({ $view }) => <h1>{$view.title}</h1>
+  view: ({ $viewModel }) => <h1>{$viewModel.title}</h1>
 })
 export default class Dashboard {
   constructor() {

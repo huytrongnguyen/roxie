@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { fromEvent } from 'rxjs';
-import Ext from '~/roxie/core/ext';
+import { Dom, Roxie } from '~/core';
+import { Link } from './form';
 
 const ROUTES = {},
       getRoute = () => window.location.hash.substring(1) || '/',
@@ -16,16 +17,16 @@ export const HashRoute = (route = '/') => {
   }
 }
 
-export const HashLink = ({ to, className = '', activeClassName = 'active', text, children, ...others }) => {
-  return <a href={`#${to}`} className={Ext.className('nav-link', className, { [activeClassName]: to === getRoute() })} {...others}>
-    {text || children}
-  </a>
+export const HashLink = ({ to, className = '', activeClassName = 'active', ...others }) => {
+  return <Link  to={`#${to}`}
+                className={Dom.className('nav-link', className, { [activeClassName]: to === getRoute() })}
+                {...others} />
 }
 
 export class HashRouter extends PureComponent {
   constructor(props) {
     super(props);
-    Ext.initialState(this, matchPath());
+    Roxie.initialState(this, matchPath());
   }
 
   componentDidMount() {
