@@ -23,3 +23,5 @@ export const Component = config => ViewModel => {
     }
   }
 }
+export * from './form';
+export * from './router';

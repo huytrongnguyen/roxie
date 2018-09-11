@@ -1,13 +1,18 @@
+## [0.0.4]
+> Sep 11, 2018
+* Use `@RoxieServer` to start the web server application
+* Use `@Page`, `@Controller` to setup page or API
+* Use `@Singleton` to create a singleton instance
+
 ## [0.0.3]
 > Aug 15, 2018
-  * Use `@RoxieApplication` to start the single page application
-  * User `@HashRouter`, `@HashLink`, `@HashRoute` to setup the routes
+* Use `@RoxieApplication` to start the single page application
+* User `@HashRouter`, `@HashLink`, `@HashRoute` to setup the routes
 
 ## [0.0.2]
 > Aug 11, 2018
-  * Use `@RoxieServer` to start the web server
+* Use `@RoxieServer` to start the web server
 
 ## [0.0.1]
 > Jul 20, 2018
-
-  * Define **Core Concept**
+* Define **Core Concept**

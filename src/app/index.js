@@ -1,9 +1,10 @@
-import React from 'react';
 import { render } from 'react-dom';
-import Ext from '~/roxie/core/ext';
+import { Dom } from '~/core';
 
-export const RoxieApplication = Viewport => {
-  const root = Ext.createElement('<div id="react-root"></div>');
+export const RoxieApplication = config => mainView => {
+  const root = Dom.createElement('<div id="app-root"></div>');
   document.body.appendChild(root);
-  render(<Viewport />, root);
+  render(mainView, root);
 }
+
+export * from './components';

@@ -10,14 +10,12 @@ Use `npm` or `yarn` to install following dependencies:
   * `express`
   * `react`
   * `react-dom`
-  * `rxjs`
   * `roxie`
 
 To launch your app, add the following to your `app.js` file
 
 ```js
 // ./app.js
-import 'babel-polyfill';
 import React, { PureComponent } from 'react';
 import { RoxieApplication } from 'roxie';
 import { HashRouter } from 'roxie';
@@ -75,26 +73,35 @@ export default class Dashboard {
 
 ### Server Side
 
-To start your server, add the following to your `server.js` file
+To start your server, add the following to your server file
 
 ```js
-import 'babel-polyfill';
 import { RoxieServer } from 'roxie';
+import layout from './pages/_layout';
+import { Home } from './pages/home';
+import { ValuesController } from './controllers/values';
 
-@RoxieServer
-export default class Application {
-  configureServices(services) {
-    services.useStaticFiles('./dist');
-  }
-}
+@RoxieServer({
+  port: 4000,
+  staticFiles: 'dist/server/wwwroot',
+  layout,
+  pages: [
+    Home,
+  ],
+  controllers: [
+    ValuesController,
+  ],
+})
+export default class AppServer {}
 ```
 
-You also need to setup a script in `package.json`
+You also need to setup some scripts in `package.json`
 
 ```json
 {
   "scripts": {
-    "start": "babel-node server.js --presets env --plugins transform-decorators-legacy"
+    "build": "rm -rf dist/* && babel src -D -d dist", /* transpile and copy to dist folder */
+    "start": "node dist/server/index.js" /* start server from dist folder */
   }
 }
 ```
