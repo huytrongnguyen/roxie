@@ -1,3 +1,7 @@
+## [0.0.9]
+> Sep 12, 2018
+* Fix issue: XMLHttpRequest is not defined
+
 ## [0.0.5]
 > Sep 11, 2018
 * Use `@RoxieServer` to start the web server application

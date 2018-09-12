@@ -15,11 +15,13 @@
 
 Use `npm` or `yarn` to install following dependencies:
 
-  * `babel-polyfill`
+  * `@babel/polyfill`
+  * `axios`
   * `express`
-  * `rxjs`
+  * `moment`
   * `react`
   * `react-dom`
+  * `rxjs`
   * `roxie`
 
 To launch your app, add the following to your `app.js` file
