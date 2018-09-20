@@ -15,7 +15,7 @@ export const server = config => {
     console.log(`GET ${page.$route}`);
     server.get(page.$route, async(req, res) => {
       page.onGet && (await page.onGet({ ...req.params, ...req.query, requestBody: req.body }));
-      const view = layout.replace('@RenderBody', renderToString(React.createElement(page.$component, page)));
+      const view = render(page.$component, page);
       res.send(view);
     });
   });
@@ -46,8 +46,12 @@ export const server = config => {
   }
 
   server.listen(port, err => {
-    err && console.log(`App failed to start caused by ${err.message}`);
-    !err && console.log(`Now listening on: http://localhost:${port}\nApplication started. Press Ctrl+C to shut down.`);
+    if (err) {
+      console.log(`App failed to start caused by ${err.message}`);
+      return;
+    }
+    console.log(`Now listening on: http://localhost:${port}`);
+    console.log(`Application started. Press Ctrl+C to shut down.`);
   });
 }
 

@@ -80,23 +80,111 @@ export default class Dashboard {
 To start your server, add the following to your server file
 
 ```js
+// server/index.js
+
 import { server } from 'roxie';
-import layout from './pages/_layout.html';
+import layout from './pages/_layout';
 import { Home } from './pages/home';
 import { ValuesController } from './controllers/values';
 
 server({
-  port: 4000,
-  staticFiles: 'dist/server/wwwroot',
-  layout,
-  pages: [
+  port: 4000, // default 3000 if missing
+  staticFiles: 'dist/server/wwwroot', // unused static contents if missing
+  layout, // default layout if missing
+  pages: [ // can be removed or empty
     Home,
   ],
-  controllers: [
+  controllers: [ // can be removed or empty
     ValuesController,
   ],
 });
 ```
+
+```js
+// server/pages/_layout.jsx
+
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+
+export default (component, model) => {
+  return `
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Roxie</title>
+      </head>
+      <body>
+        ${renderToString(React.createElement(component, model))}
+      </body>
+    </html>
+  `;
+}
+```
+
+```js
+// server/pages/home.js
+
+import React from 'react';
+import { Page, PageModel } from 'roxie';
+import { ProductService } from '../services/product.service';
+
+@Page({
+  route: '/',
+  component: ({ products = [] }) => <h1>Total products: {products.length}</h1>,
+})
+export class Index extends PageModel {
+  static get parameters() {
+    return [ProductService];
+  }
+
+  constructor(productService) {
+    super();
+    this.productService = productService;
+  }
+
+  async onGet() {
+    this.products = await this.productService.findAll();
+  }
+}
+```
+
+```js
+// server/controllers/values.js
+
+import { Route, Get, Post, Put, Delete } from 'roxie';
+
+@Route('values')
+export class ValuesController {
+  @Get()
+  getAll() {
+    return ['value1', 'value2'];
+  }
+
+  @Get(':id')
+  get(id) {
+    return 'value';
+  }
+
+  @Post()
+  post(value) {
+    return value;
+  }
+
+  @Put(':id')
+  put(id, value) {
+    return { id, value };
+  }
+
+  @Delete(':id')
+  delete(id) {
+    return id;
+  }
+}
+```
+
 
 You also need to setup some scripts in `package.json`
 
