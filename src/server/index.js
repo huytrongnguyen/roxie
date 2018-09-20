@@ -1,13 +1,11 @@
 import '@babel/polyfill';
 import express from 'express';
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import _layout from './_layout.html';
+import _layout from './_layout';
 
 export const server = config => {
   const server = express(),
         port = process.env.PORT || config.port || 3000,
-        layout = config.layout || _layout,
+        render = config.layout || _layout,
         pages = config.pages || [],
         controllers = config.controllers || [];
 
