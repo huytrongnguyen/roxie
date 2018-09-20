@@ -1,11 +1,13 @@
 import '@babel/polyfill';
 import express from 'express';
-import layout from './_layout';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import _layout from './_layout.html';
 
-export const RoxieServer = config => _ => {
+export const server = config => {
   const server = express(),
         port = process.env.PORT || config.port || 3000,
-        render = config.layout || layout,
+        layout = config.layout || _layout,
         pages = config.pages || [],
         controllers = config.controllers || [];
 
@@ -13,7 +15,7 @@ export const RoxieServer = config => _ => {
     console.log(`GET ${page.$route}`);
     server.get(page.$route, async(req, res) => {
       page.onGet && (await page.onGet({ ...req.params, ...req.query, requestBody: req.body }));
-      const view = render(page.$component, page);
+      const view = layout.replace('@RenderBody', renderToString(React.createElement(page.$component, page)));
       res.send(view);
     });
   });

@@ -15,29 +15,21 @@
 
 Use `npm` or `yarn` to install following dependencies:
 
-  * `@babel/polyfill`
-  * `axios`
-  * `express`
-  * `moment`
   * `react`
   * `react-dom`
-  * `rxjs`
   * `roxie`
 
 To launch your app, add the following to your `app.js` file
 
 ```js
 // ./app.js
-import React, { PureComponent } from 'react';
-import { RoxieApplication } from 'roxie';
+import React from 'react';
+import { application } from 'roxie';
 import { HashRouter } from 'roxie';
 
-@RoxieApplication
-export default class Application extends PureComponent {
-  render() {
-    return <HashRouter />
-  }
-}
+application({
+  mainView: <HashRouter />
+});
 ```
 
 ## Core Concepts
@@ -88,12 +80,12 @@ export default class Dashboard {
 To start your server, add the following to your server file
 
 ```js
-import { RoxieServer } from 'roxie';
-import layout from './pages/_layout';
+import { server } from 'roxie';
+import layout from './pages/_layout.html';
 import { Home } from './pages/home';
 import { ValuesController } from './controllers/values';
 
-@RoxieServer({
+server({
   port: 4000,
   staticFiles: 'dist/server/wwwroot',
   layout,
@@ -103,8 +95,7 @@ import { ValuesController } from './controllers/values';
   controllers: [
     ValuesController,
   ],
-})
-export default class AppServer {}
+});
 ```
 
 You also need to setup some scripts in `package.json`
