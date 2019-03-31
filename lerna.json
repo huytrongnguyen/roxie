@@ -6,9 +6,9 @@
   "npmClientArgs": [
     "--no-lockfile"
   ],
-  "commands": {
+  "command": {
     "publish": {
-      "ignore": [ "*.md", "test/**" ]
+      "ignoreChanges": [ "*.md", "test/**" ]
     }
   },
   "registry": "https://registry.npmjs.org"
