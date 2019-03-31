@@ -1,6 +1,6 @@
 {
   "name": "@roxie/server",
-  "version": "0.9.0",
+  "version": "0.9.3",
   "description": "Roxie server functions",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -14,7 +14,7 @@
     "url": "https://github.com/huytrongnguyen/roxie/issues"
   },
   "dependencies": {
-    "@roxie/core": "0.9.0",
+    "@roxie/core": "^0.9.3",
     "express": "4.16.4"
   },
   "publishConfig": {

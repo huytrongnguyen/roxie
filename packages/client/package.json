@@ -1,6 +1,6 @@
 {
   "name": "@roxie/client",
-  "version": "0.9.0",
+  "version": "0.9.3",
   "description": "Roxie client functions",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -14,7 +14,7 @@
     "url": "https://github.com/huytrongnguyen/roxie/issues"
   },
   "dependencies": {
-    "@roxie/core": "0.9.0"
+    "@roxie/core": "^0.9.3"
   },
   "publishConfig": {
     "access": "public"
