@@ -1,6 +1,6 @@
 {
   "name": "@roxie/component",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Roxie component functions",
   "main": "dist/index.js",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
@@ -8,6 +8,6 @@
   "repository": "https://github.com/huytrongnguyen/roxie/tree/master/packages/components",
   "bugs": "https://github.com/huytrongnguyen/roxie/issues",
   "dependencies": {
-    "@roxie/core": "0.1.0"
+    "@roxie/core": "^0.2.0"
   }
 }
