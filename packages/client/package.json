@@ -1,16 +1,32 @@
 {
   "name": "@roxie/client",
-  "version": "0.4.0",
+  "version": "0.9.0",
   "description": "Roxie client functions",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
-  "repository": "https://github.com/huytrongnguyen/roxie/tree/master/packages/client",
-  "bugs": "https://github.com/huytrongnguyen/roxie/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huytrongnguyen/roxie/tree/master/packages/client"
+  },
+  "bugs": {
+    "url": "https://github.com/huytrongnguyen/roxie/issues"
+  },
   "dependencies": {
-    "@roxie/core": "^0.4.0"
+    "@roxie/core": "0.9.0"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "homepage": "https://github.com/huytrongnguyen/roxie",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc"
   }
 }

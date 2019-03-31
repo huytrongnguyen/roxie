@@ -4,8 +4,7 @@
     "module": "commonjs",
     "lib": [ "dom", "esnext" ],
     "jsx": "react",
-    "outDir": "dist",
-    "rootDir": "packages",
+    "declaration": true,
     "removeComments": true,
     "moduleResolution": "node",
     "baseUrl": ".",
@@ -16,9 +15,6 @@
     "emitDecoratorMetadata": true,
     "skipLibCheck": true
   },
-  "include": [
-    "packages/**/*"
-  ],
   "exclude": [
     "node_modules"
   ]
