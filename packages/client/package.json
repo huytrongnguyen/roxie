@@ -8,6 +8,6 @@
   "repository": "https://github.com/huytrongnguyen/roxie/tree/master/packages/client",
   "bugs": "https://github.com/huytrongnguyen/roxie/issues",
   "dependencies": {
-    "@roxie/core": "0.3.0"
+    "@roxie/core": "^0.3.0"
   }
 }
