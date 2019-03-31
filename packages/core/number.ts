@@ -1,0 +1,2 @@
+export const random = () => Math.random();
+export const randomInt = (to = 0, from = 0) => Math.floor(Math.random() * (to - from) + from); // returns a random number between min (included) and max (excluded)

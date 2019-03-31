@@ -1,0 +1,14 @@
+{
+  "name": "@roxie/server",
+  "version": "0.1.0",
+  "description": "Roxie server functions",
+  "main": "dist/index.js",
+  "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
+  "license": "MIT",
+  "repository": "https://github.com/huytrongnguyen/roxie/tree/master/packages/server",
+  "bugs": "https://github.com/huytrongnguyen/roxie/issues",
+  "dependencies": {
+    "@roxie/core": "0.1.0",
+    "express": "4.16.4"
+  }
+}
