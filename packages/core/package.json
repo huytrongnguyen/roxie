@@ -1,6 +1,6 @@
 {
   "name": "@roxie/core",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Roxie core functions",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -17,8 +17,6 @@
     "axios": "0.18.0",
     "lodash": "4.17.11",
     "moment": "2.24.0",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
     "rxjs": "6.4.0"
   },
   "publishConfig": {
