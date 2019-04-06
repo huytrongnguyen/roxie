@@ -57,7 +57,7 @@ export async function launchServer(config: AppConfig = {}) {
 
   server.listen(portNumber, (err: any) => {
     if (err) {
-      logError('Unable to start Express.', err);
+      logError('Unable to start Express.');
     } else {
       logInfo(`Content root path: ${rootPath}`);
       logInfo(`Now listening on: http://localhost:${portNumber}`);
