@@ -8,6 +8,10 @@ interface AppConfig {
   components?: any[];
 }
 
+/**
+ * Loads Ext.app.Application class and starts it up with given configuration after the page is ready.
+ * @param config Application config object
+ */
 export function launchApplication(config: AppConfig = {}) {
   const { viewport = Fragment } = config,
         root = document.createElement('div');

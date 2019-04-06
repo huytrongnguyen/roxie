@@ -5,7 +5,6 @@
     "lib": [ "dom", "esnext" ],
     "jsx": "react",
     "declaration": true,
-    "removeComments": true,
     "moduleResolution": "node",
     "baseUrl": ".",
     "esModuleInterop": true,
