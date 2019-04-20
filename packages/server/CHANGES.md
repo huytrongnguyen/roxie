@@ -1,5 +1,10 @@
 # Roxie Server
 
+## [1.0.3]
+> Apr 20, 2019
+
+* Add `readDirectoryContents` function
+
 ## [0.9.4]
 > Apr 6, 2019
 

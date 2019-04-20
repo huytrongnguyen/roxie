@@ -1,5 +1,13 @@
 # Roxie Client
 
+## [1.0.3]
+> Apr 20, 2019
+
+### Features
+
+* Implement `route` decorator
+* Implement `component` decorator
+
 ## [0.9.4]
 > Apr 6, 2019
 

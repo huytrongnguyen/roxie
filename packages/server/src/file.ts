@@ -16,6 +16,17 @@ export function readDirectory(path: string) {
   }
 }
 
+export function readDirectoryContents(path: string) {
+  return readDirectory(path).map(name => {
+    const stats = fs.statSync(`${path}/${name}`);
+    return {
+      name: name.split('.')[0],
+      kind: stats.isDirectory() ? 'Folder' : name.split('.')[1],
+      ...stats,
+    }
+  });
+}
+
 export function readJsonFile(path: string, defaultValue?: any) {
   try {
     return JSON.parse(fs.readFileSync(path, { encoding: 'utf8' }));
