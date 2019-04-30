@@ -2,6 +2,8 @@ import express, { Application, Request, Response } from 'express';
 
 import { logInfo, logError } from '@roxie/core';
 
+import { exists } from './file';
+
 interface AppConfig {
   port?: number;
   rootPath?: string;
@@ -19,7 +21,7 @@ export async function launchServer(config: AppConfig = {}) {
           applicationStarted,
           controllers = [],
         } = config,
-        appSettings = require(`${rootPath}/appsettings.json`) || {},
+        appSettings = exists(`${rootPath}/appsettings.json`) ? require(`${rootPath}/appsettings.json`) : {},
         portNumber: number = process.env.PORT || appSettings.port || config.port || 5000,
         server: Application = express();
 
