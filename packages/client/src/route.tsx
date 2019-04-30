@@ -82,28 +82,6 @@ export const route = (routePath: string = '/') => (component: any) => {
   return component;
 }
 
-type ComponentConfig = {
-  view: ComponentType<any>;
-}
-
-export const component = (config: ComponentConfig) => (PageModel: any): any => {
-  const model = new PageModel();
-
-  return class extends PureComponent {
-    async componentDidMount() {
-      Object.assign(model, this.props)
-      if (model.onInit) {
-        await model.onInit();
-        this.forceUpdate();
-      }
-    }
-
-    render() {
-      return createElement(config.view, { ...this.props, ...model });
-    }
-  }
-}
-
 export type Route = {
   path: string;
   params: { [key:string]:string }
@@ -113,6 +91,6 @@ export function RouteLink(props: any) {
   const { to = '', className = '', activeClassName = 'active', text = '', children, ...others } = props,
         currentRoute = window.location.hash.substring(1) || '/',
         isActive = to === currentRoute,
-        cls = classNames('nav-link', className, { [activeClassName]: isActive });
+        cls = classNames(className, { [activeClassName]: isActive });
   return <a href={to ? `#${to}` : 'javascript:void(0)'} className={cls} {...others}>{text || children}</a>
 }
