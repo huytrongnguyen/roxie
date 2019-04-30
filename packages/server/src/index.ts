@@ -23,28 +23,33 @@ export async function launchServer(config: AppConfig = {}) {
         } = config,
         appSettings = exists(`${rootPath}/appsettings.json`) ? require(`${rootPath}/appsettings.json`) : {},
         portNumber: number = process.env.PORT || appSettings.port || config.port || 5000,
-        server: Application = express();
+        app: Application = express();
 
-  server.use(express.urlencoded({ extended: true }))
+  app.use(express.urlencoded({ extended: true }))
         .use(express.json())
         .use('/', express.static(`${rootPath}/wwwroot`));
 
   staticPath && Object.entries<string>(staticPath).forEach(entry => {
-    server.use(`/${entry[0]}`, express.static(entry[1]));
+    app.use(`/${entry[0]}`, express.static(entry[1]));
   });
 
   controllers.forEach((ctrl: any) => {
     const { routePath = '', routes = [] } = ctrl;
 
     routes.forEach((route: any) => {
-      const { httpMethod = 'get', routeName = '', action = () => {} } = route,
+      const { httpMethod = 'get', routeName = '', options = {}, action = () => {} } = route,
             path = `/${routePath}${routePath ? '/' : ''}${routeName}`;
 
       console.log(httpMethod.toUpperCase().padEnd(8, ' '), `${path}`);
-      (<any>server)[httpMethod](path, async(req: Request, res: Response) => {
+      (<any>app)[httpMethod](path, async(req: Request, res: Response) => {
         try {
           const { params, query, body } = req,
                 result = await action.bind(ctrl)({ ...params, ...query, body });
+
+          if (options.redirectTo) {
+            res.redirect(options.redirectTo);
+            return;
+          }
 
           res.send(result);
         } catch (err) {
@@ -55,9 +60,9 @@ export async function launchServer(config: AppConfig = {}) {
     });
   });
 
-  configure && await configure();
+  configure && await configure(app);
 
-  server.listen(portNumber, (err: any) => {
+  app.listen(portNumber, (err: any) => {
     if (err) {
       logError('Unable to start Express.');
     } else {
@@ -75,30 +80,30 @@ export const route = (routePath: string = '') => (Controller: any) => {
   return controller;
 }
 
-function request(httpMethod: string, routeName: string = '', controller: any, actionName: string, action: any) {
+function request(httpMethod: string, routeName = '', options = {}, controller: any, actionName: string, action: any) {
   if (!routeName && 'index' !== actionName) routeName = actionName;
   !controller.routes && (controller.routes = []);
-  controller.routes.push({ httpMethod, routeName, action });
+  controller.routes.push({ httpMethod, routeName, options, action });
 }
 
-export const httpGet = (routeName = '') => (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
-  request('get', routeName, target, propertyKey, descriptor.value);
+export const httpGet = (routeName = '', options = {}) => (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
+  request('get', routeName, options, target, propertyKey, descriptor.value);
 }
 
-export const httpPost = (routeName = '') => (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
-  request('post', routeName, target, propertyKey, descriptor.value);
+export const httpPost = (routeName = '', options = {}) => (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
+  request('post', routeName, options, target, propertyKey, descriptor.value);
 }
 
-export const httpPut = (routeName = '') => (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
-  request('put', routeName, target, propertyKey, descriptor.value);
+export const httpPut = (routeName = '', options = {}) => (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
+  request('put', routeName, options, target, propertyKey, descriptor.value);
 }
 
-export const httpPatch = (routeName = '') => (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
-  request('patch', routeName, target, propertyKey, descriptor.value);
+export const httpPatch = (routeName = '', options = {}) => (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
+  request('patch', routeName, options, target, propertyKey, descriptor.value);
 }
 
-export const httpDelete = (routeName = '') => (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
-  request('delete', routeName, target, propertyKey, descriptor.value);
+export const httpDelete = (routeName = '', options = {}) => (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
+  request('delete', routeName, options, target, propertyKey, descriptor.value);
 }
 
 export * from './file';
