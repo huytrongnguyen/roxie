@@ -1,6 +1,11 @@
 # Roxie Client
 
-## [1.0.3]
+## [1.0.5]
+> Apr 30, 2019
+
+* [#6] Should not auto add class `nav-link` to `RouteLink` component
+
+## [1.0.4]
 > Apr 20, 2019
 
 ### Features

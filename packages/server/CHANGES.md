@@ -1,6 +1,12 @@
 # Roxie Server
 
-## [1.0.3]
+## [1.0.5]
+> Apr 30, 2019
+
+* [#5] Server cannot be started if missing `appsettings.json`
+* [#7] Supports to redirect to other route
+
+## [1.0.4]
 > Apr 20, 2019
 
 * Add `readDirectoryContents` function
