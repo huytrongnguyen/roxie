@@ -1,4 +1,4 @@
-import React, { createElement, ComponentType, PureComponent } from 'react';
+import * as React from 'react';
 import { forEach } from 'lodash';
 import { fromEvent } from 'rxjs';
 
@@ -6,7 +6,7 @@ import { classNames } from '@roxie/components';
 
 type Router = {
   path: string[];
-  component: ComponentType<any>;
+  component: React.ComponentType<any>;
 }
 
 const ROUTES: { [key:string]:Router } = {},
@@ -53,7 +53,7 @@ function matchPath() {
   return { route: { path: currentRoute }, component: null };
 };
 
-export class RouterOutlet extends PureComponent {
+export class RouterOutlet extends React.PureComponent {
   state = matchPath();
   hashChange$ = fromEvent(window, 'hashchange').subscribe(() => this.setState(matchPath()));
 
@@ -73,7 +73,7 @@ export class RouterOutlet extends PureComponent {
       return null;
     }
 
-    return createElement(component, { route, key: route.path });
+    return React.createElement(component, { route, key: route.path });
   }
 }
 

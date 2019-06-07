@@ -1,4 +1,4 @@
-import express, { Application, Request, Response } from 'express';
+import * as express from 'express';
 
 import { logInfo, logError } from '@roxie/core';
 
@@ -23,7 +23,7 @@ export async function launchServer(config: AppConfig = {}) {
         } = config,
         appSettings = exists(`${rootPath}/appsettings.json`) ? require(`${rootPath}/appsettings.json`) : {},
         portNumber: number = process.env.PORT || appSettings.port || config.port || 5000,
-        app: Application = express();
+        app: express.Application = express();
 
   app.use(express.urlencoded({ extended: true }))
         .use(express.json())
@@ -41,7 +41,7 @@ export async function launchServer(config: AppConfig = {}) {
             path = `/${routePath}${routePath ? '/' : ''}${routeName}`;
 
       console.log(httpMethod.toUpperCase().padEnd(8, ' '), `${path}`);
-      (<any>app)[httpMethod](path, async(req: Request, res: Response) => {
+      (<any>app)[httpMethod](path, async(req: express.Request, res: express.Response) => {
         try {
           const { params, query, body } = req,
                 result = await action.bind(ctrl)({ ...params, ...query, body });

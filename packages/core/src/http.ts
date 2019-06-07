@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios, { AxiosRequestConfig, Method } from 'axios';
 
 import { logInfo, logError } from './logger';
 
@@ -10,7 +10,7 @@ export function toQueryString(params: any = {}) {
   return pairs.join('&');
 }
 
-async function request(method: string, url: string, config?: AxiosRequestConfig, defaultValue?: any) {
+async function request(method: Method, url: string, config?: AxiosRequestConfig, defaultValue?: any) {
   logInfo(`Requesting to: ${url}`);
   try {
     return (await axios({ method, url, ...config })).data;

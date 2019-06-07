@@ -1,4 +1,4 @@
-import fs from 'fs';
+import * as fs from 'fs';
 
 import { logError } from '@roxie/core';
 
@@ -9,7 +9,7 @@ export const exists = (path: string) => fs.existsSync(path);
 export function readDirectory(path: string) {
   try {
     return fs.readdirSync(path, { encoding: 'utf8' })
-        .filter(name => !hiddenSystemFiles.includes(name));
+        .filter((name: string) => !hiddenSystemFiles.includes(name));
   } catch (err) {
     logError(err);
     return [];
@@ -17,7 +17,7 @@ export function readDirectory(path: string) {
 }
 
 export function readDirectoryContents(path: string) {
-  return readDirectory(path).map(name => {
+  return readDirectory(path).map((name: string) => {
     const stats = fs.statSync(`${path}/${name}`);
     return {
       name: name.split('.')[0],

@@ -1,7 +1,7 @@
 {
-  "name": "@roxie/core",
-  "version": "1.0.1",
-  "description": "Roxie core functions",
+  "name": "@roxie/data",
+  "version": "0.0.1",
+  "description": "Roxie data functions",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
@@ -14,12 +14,7 @@
     "url": "https://github.com/huytrongnguyen/roxie/issues"
   },
   "dependencies": {
-    "axios": "0.19.0",
-    "moment": "2.24.0"
-  },
-  "devDependencies": {
-    "@types/axios": "0.14.0",
-    "@types/moment": "2.13.0"
+    "@roxie/core": "^1.0.0"
   },
   "publishConfig": {
     "access": "public"

@@ -1,4 +1,4 @@
-import moment from 'moment';
+import * as moment from 'moment';
 
 export const DEFAULT_PATTERN = 'YYYY-MM-DD[T]HH:mm:ss';
 
