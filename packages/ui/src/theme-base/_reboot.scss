@@ -1,0 +1,77 @@
+@import 'variables';
+
+button:focus, button:active, .form-control:focus, .form-control:active {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+@each $side in (top, right, bottom, left) {
+  .border-#{$side}-0 {
+    border-#{$side}: 0 !important;
+  }
+}
+
+.breadcrumb {
+  min-height: 3rem;
+  max-height: 3rem;
+  padding: .5rem 1rem;
+  margin-bottom: 0;
+  .breadcrumb-item {
+    margin-top: .25rem;
+    padding-left: 2rem;
+    position: relative;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      margin-top: -13px;
+      margin-left: 1px;
+      left: 100%;
+      border-top: 24px solid transparent;
+      border-bottom: 24px solid transparent;
+      border-left: 24px solid $border-color;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      margin-top: -13px;
+      left: 100%;
+      border-top: 24px solid transparent;
+      border-bottom: 24px solid transparent;
+      border-left: 24px solid $white;
+    }
+  }
+}
+
+.accordion .card .collapse.show { border-top: 1px solid $border-color; }
+
+.toast {
+  color: $gray;
+  .close {
+    color: $gray;
+  }
+  .toast-header {
+    color: $gray;
+    font-weight: bold;
+  }
+  &.toast-success {
+    background-color: $green !important;
+    .toast-header {
+      background-color: $green !important;
+    }
+  }
+  &.toast-warning {
+    background-color: $yellow !important;
+    .toast-header {
+      background-color: $yellow !important;
+    }
+  }
+  &.toast-error {
+    background-color: $red !important;
+    .toast-header {
+      background-color: $red !important;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+// Bootstrap variable overrides
+$grid-gutter-width: 2rem;
+$font-size-base: .875rem;
+
+@import '../node_modules/bootstrap/scss/bootstrap',
+        '../node_modules/font-awesome/scss/font-awesome',
+        'theme-base/reboot',
+        'theme-base/utilities';

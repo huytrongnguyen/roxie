@@ -1,37 +1,24 @@
 {
   "name": "@roxie/core",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Roxie core functions",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/huytrongnguyen/roxie/tree/master/packages/utils"
-  },
-  "bugs": {
-    "url": "https://github.com/huytrongnguyen/roxie/issues"
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc"
   },
   "dependencies": {
-    "axios": "0.19.0",
-    "moment": "2.24.0"
-  },
-  "devDependencies": {
-    "@types/axios": "0.14.0",
-    "@types/moment": "2.13.0"
+    "jquery": "3.4.1"
   },
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/huytrongnguyen/roxie",
   "directories": {
     "lib": "lib"
   },
   "files": [
     "lib"
-  ],
-  "scripts": {
-    "build": "tsc"
-  }
+  ]
 }

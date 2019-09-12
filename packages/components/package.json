@@ -1,34 +1,27 @@
 {
   "name": "@roxie/components",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Roxie component functions",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/huytrongnguyen/roxie/tree/master/packages/components"
-  },
-  "bugs": {
-    "url": "https://github.com/huytrongnguyen/roxie/issues"
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc"
   },
   "dependencies": {
-    "@roxie/core": "^1.0.2",
-    "react": "16.8.6",
-    "react-dom": "16.8.6"
+    "@roxie/core": "^1.0.0",
+    "@roxie/ui": "^1.0.0",
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/huytrongnguyen/roxie",
   "directories": {
     "lib": "lib"
   },
   "files": [
     "lib"
-  ],
-  "scripts": {
-    "build": "tsc"
-  }
+  ]
 }

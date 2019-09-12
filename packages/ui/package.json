@@ -1,0 +1,27 @@
+{
+  "name": "@roxie/ui",
+  "version": "1.0.0",
+  "description": "Roxie UI functions",
+  "author": "huytrongnguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc && sass --no-source-map src:lib"
+  },
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "font-awesome": "4.7.0",
+    "jquery": "3.4.1",
+    "popper.js": "1.15.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ]
+}

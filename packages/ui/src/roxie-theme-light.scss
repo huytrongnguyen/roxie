@@ -1,0 +1,7 @@
+.roxie-theme-light {
+  @import 'theme-light/variables';
+  @import 'roxie-theme-bootstrap';
+
+  .text-muted { color: $gray-100 !important; }
+  .text-secondary { color: $gray-300 !important; }
+}
