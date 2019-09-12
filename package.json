@@ -1,6 +1,6 @@
 {
   "name": "roxie",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "JavaScript library that build on top of React",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
