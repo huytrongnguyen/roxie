@@ -1,6 +1,6 @@
 {
   "name": "roxie",
-  "version": "2.0.2",
+  "version": "1.1.0",
   "description": "JavaScript library that build on top of React",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
@@ -12,12 +12,19 @@
     "@types/node": "12.7.5",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
+    "express": "4.17.1",
     "jest": "24.9.0",
     "lerna": "3.16.4",
+    "parcel": "1.12.3",
     "sass": "1.22.12",
     "ts-jest": "24.0.2",
     "typescript": "3.6.3",
     "yarn": "1.17.3"
+  },
+  "alias": {
+    "@roxie/core": "./packages/core/lib",
+    "@roxie/components": "./packages/components/lib",
+    "@roxie/ui": "./packages/ui/lib"
   },
   "jest": {
     "verbose": true,
@@ -41,6 +48,8 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "publish": "lerna publish",
+    "build-docs": "parcel build docs/src/index.html --no-source-maps --no-content-hash --out-dir docs/dist",
+    "start-docs": "node server.js",
     "test": "jest"
   }
 }

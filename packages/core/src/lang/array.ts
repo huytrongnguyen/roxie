@@ -3,6 +3,7 @@ interface Array<T> {
   where(predicate: (value: T, index?: number, array?: T[]) => boolean): T[],
   map<U>(selector: (value: T, index?: number, array?: T[]) => U): U[],
   select<U>(selector: (value: T, index?: number, array?: T[]) => U): U[],
+  groupBy(key: string): { [key:string]: T[] },
 }
 
 Array.prototype.filter = function<T>(this: T[], predicate: (value: T, index?: number, array?: T[]) => boolean) {
@@ -29,5 +30,15 @@ Array.prototype.map = function<T, U>(this: T[], selector: (value: T, index?: num
 
 Array.prototype.select = function<T, U>(this: T[], selector: (value: T, index?: number, array?: T[]) => U) {
   return this.map(selector);
+}
+
+Array.prototype.groupBy = function<T>(this: T[], key: string) {
+  return this.reduce((result, item) => {
+    if (item.hasOwnProperty(key)) {
+      !result[item[key]] && (result[item[key]] = []);
+      result[item[key]].push(item);
+    }
+    return result;
+  }, {});
 }
 

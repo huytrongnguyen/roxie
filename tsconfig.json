@@ -4,6 +4,7 @@
     "module": "commonjs",
     "lib": [ "dom", "esnext" ],
     "jsx": "react",
+    "removeComments": true,
     "declaration": true,
     "moduleResolution": "node",
     "baseUrl": ".",

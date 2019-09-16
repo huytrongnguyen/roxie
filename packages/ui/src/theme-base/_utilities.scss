@@ -1,1 +1,8 @@
 .cursor-pointer { cursor: pointer; }
+.auto-scroll-y { overflow-y: auto; }
+
+@each $side in (top, right, bottom, left) {
+  .border-#{$side}-0 {
+    border-#{$side}: 0 !important;
+  }
+}

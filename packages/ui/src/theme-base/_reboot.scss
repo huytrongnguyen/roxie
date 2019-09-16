@@ -5,12 +5,6 @@ button:focus, button:active, .form-control:focus, .form-control:active {
   box-shadow: none !important;
 }
 
-@each $side in (top, right, bottom, left) {
-  .border-#{$side}-0 {
-    border-#{$side}: 0 !important;
-  }
-}
-
 .breadcrumb {
   min-height: 3rem;
   max-height: 3rem;

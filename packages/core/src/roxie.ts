@@ -4,9 +4,11 @@ import './lang/number';
 import './lang/string';
 import './lang/array';
 
+import { LocalCache } from './cache';
+import { Subject } from './observable';
+
 export const Roxie = {
   query: (selector: string) => $(selector),
-  guid: (prefix: string = '', suffix: string = '') => `${prefix}${(Math.random() * (1<<30)).toString(16).replace('.', '')}${suffix}`,
   isEmpty: (value: any) => value == null || value === '' || (Roxie.isArray(value) && value.length === 0) || Roxie.Object.isEmpty(value),
   isNotEmpty: (value: any) => !Roxie.isEmpty(value),
   isString: (value: any) => typeof value === 'string',
@@ -32,6 +34,15 @@ export const Roxie = {
         })
         .join(' ');
   },
+  clone: (value: any) => Roxie.JSON.encode(value).decode(),
+  guid: (prefix: string = '', suffix: string = '') => `${prefix}${(Math.random() * (1<<30)).toString(16).replace('.', '')}${suffix}`,
+  interval(period: number) {
+    const subject = new Subject<number>();
+    let counter = 0;
+    const timer = setInterval(() => subject.next(counter++), period);
+    subject.complete = () => clearInterval(timer);
+    return subject;
+  },
   Number: {
     format: (value: number = 0, decimal: number = 0) => (value || 0).toLocaleString('en', { maximumFractionDigits: decimal }),
     parse: (value: string) => parseInt(value, 10),
@@ -47,5 +58,10 @@ export const Roxie = {
 
       return true;
     },
-  }
+  },
+  JSON: {
+    encode: (value: any, space?: string | number) => JSON.stringify(value, null, space),
+    decode: (value: string) => JSON.parse(value),
+  },
+  Cache: new LocalCache(),
 }
