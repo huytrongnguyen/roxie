@@ -3,7 +3,7 @@ const Bundler = require('parcel');
 
 const portNumber = 4200,
       app = express(),
-      bundler = new Bundler('docs/src/index.html', { sourceMaps: false, contentHash: false, outDir: 'docs/dist' });
+      bundler = new Bundler('docs/src/index.html', { sourceMaps: false, contentHash: false, autoInstall: false, outDir: 'docs/dist' });
 
 app .use(bundler.middleware())
     .listen(portNumber, err => {

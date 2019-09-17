@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { ReactElement } from 'react';
 
 import './lang/number';
 import './lang/string';
@@ -6,6 +7,8 @@ import './lang/array';
 
 import { LocalCache } from './cache';
 import { Subject } from './observable';
+import { render } from 'react-dom';
+
 
 export const Roxie = {
   query: (selector: string) => $(selector),
@@ -17,7 +20,9 @@ export const Roxie = {
   isObject: (value: any) => toString.call(value) === '[object Object]',
   isArray: (value: any) => toString.call(value) === '[object Array]',
   isDate: (value: any) => toString.call(value) === '[object Date]',
-  classNames: (...expressions: any[]) => {
+  clone: (value: any) => Roxie.JSON.encode(value).decode(),
+  guid: (prefix: string = '', suffix: string = '') => `${prefix}${(Math.random() * (1<<30)).toString(16).replace('.', '')}${suffix}`,
+  classNames(...expressions: any[]) {
     return expressions
         .filter(exp => Roxie.isNotEmpty(exp))
         .map(exp => {
@@ -34,8 +39,6 @@ export const Roxie = {
         })
         .join(' ');
   },
-  clone: (value: any) => Roxie.JSON.encode(value).decode(),
-  guid: (prefix: string = '', suffix: string = '') => `${prefix}${(Math.random() * (1<<30)).toString(16).replace('.', '')}${suffix}`,
   interval(period: number) {
     const subject = new Subject<number>();
     let counter = 0;
@@ -49,7 +52,7 @@ export const Roxie = {
     percentage: (ratio: number = 0, decimal: number = 2) => `${Roxie.Number.format((ratio || 0) * 100, decimal)}%`,
   },
   Object: {
-    isEmpty: (o: any) => {
+    isEmpty(o: any) {
       for (let key in o) {
         if (o.hasOwnProperty(key)) {
           return false;

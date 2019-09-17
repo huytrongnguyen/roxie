@@ -8,6 +8,11 @@
     "declaration": true,
     "moduleResolution": "node",
     "baseUrl": ".",
+    "paths": {
+      "@roxie/core": ["packages/core/lib"],
+      "@roxie/components": ["packages/components/lib"],
+      "@roxie/ui": ["packages/ui/lib"]
+    },
     "inlineSourceMap": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,

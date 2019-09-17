@@ -1,5 +1,7 @@
 @import 'variables';
 
+body, input, textarea, select, button { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
 button:focus, button:active, .form-control:focus, .form-control:active {
   outline: 0 !important;
   box-shadow: none !important;
@@ -8,8 +10,7 @@ button:focus, button:active, .form-control:focus, .form-control:active {
 .breadcrumb {
   min-height: 3rem;
   max-height: 3rem;
-  padding: .5rem 1rem;
-  margin-bottom: 0;
+  border-bottom: 1px solid $border-color;
   .breadcrumb-item {
     margin-top: .25rem;
     padding-left: 2rem;
@@ -23,20 +24,29 @@ button:focus, button:active, .form-control:focus, .form-control:active {
       margin-top: -13px;
       margin-left: 1px;
       left: 100%;
-      border-top: 24px solid transparent;
-      border-bottom: 24px solid transparent;
-      border-left: 24px solid $border-color;
+      border-top: 1.5rem solid transparent;
+      border-bottom: 1.5rem solid transparent;
+      border-left: 1.5rem solid $border-color;
     }
     &:after {
       content: '';
       position: absolute;
       margin-top: -13px;
       left: 100%;
-      border-top: 24px solid transparent;
-      border-bottom: 24px solid transparent;
-      border-left: 24px solid $white;
+      border-top: 1.5rem solid transparent;
+      border-bottom: 1.5rem solid transparent;
+      border-left: 1.5rem solid $breadcrumb-bg;
     }
   }
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.navbar {
+  height: 3rem;
+  border-bottom: 1px solid $border-color;
 }
 
 .accordion .card .collapse.show { border-top: 1px solid $border-color; }

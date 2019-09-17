@@ -1,6 +1,24 @@
 // Bootstrap variable overrides
+
+// Grid columns
+
 $grid-gutter-width: 2rem;
+
+// Typography
+
 $font-size-base: .875rem;
+
+// Breadcrumbs
+
+$breadcrumb-padding-y: .5rem;
+$breadcrumb-padding-x: 1rem;
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-border-radius: 0;
+
+// Cards
+
+$card-spacer-y: .5rem;
+$card-spacer-x: 1rem;
 
 @import '../node_modules/bootstrap/scss/bootstrap',
         '../node_modules/font-awesome/css/font-awesome.css',

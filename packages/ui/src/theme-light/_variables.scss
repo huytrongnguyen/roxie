@@ -1,8 +1,8 @@
 @import '../theme-base/variables';
 
 // Bootstrap variable overrides
-$body-bg: $gray-100;
-$body-color: $gray-dark;
+
+// Color system
 
 $theme-colors: (
   "primary": $blue,
@@ -15,5 +15,20 @@ $theme-colors: (
   "dark": $gray-900,
 );
 
-$card-border-color: $gray-300;
+// Body
+
+$body-bg: $gray-100;
+$body-color: $gray-dark;
+
+// Components
+
+$border-color: $gray-300;
+
+// Breadcrumbs
+
+$breadcrumb-bg: $white;
+
+// Cards
+
+$card-border-color: $border-color;
 $card-cap-bg: $gray;

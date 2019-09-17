@@ -2,6 +2,10 @@
   @import 'theme-light/variables';
   @import 'roxie-theme-bootstrap';
 
+  .navbar {
+    background-color: $white;
+  }
+
   .text-muted { color: $gray-100 !important; }
   .text-secondary { color: $gray-300 !important; }
 }
