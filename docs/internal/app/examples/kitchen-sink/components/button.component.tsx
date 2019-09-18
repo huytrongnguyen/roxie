@@ -23,6 +23,7 @@ export function ButtonExample() {
             <button type="button" className="btn btn-light mr-1">Light</button>
             <button type="button" className="btn btn-dark mr-1">Dark</button>
             <button type="button" className="btn btn-link mr-1">Link</button>
+            <button type="button" className="btn btn-default mr-1">Default</button>
           </div>
           <div className="card-footer">
             <Highlight language="html">{`
@@ -35,6 +36,7 @@ export function ButtonExample() {
 <button type="button" class="btn btn-light">Light</button>
 <button type="button" class="btn btn-dark">Dark</button>
 <button type="button" class="btn btn-link mr-1">Link</button>
+<button type="button" class="btn btn-default mr-1">Default</button>
             `}</Highlight>
           </div>
         </div>
@@ -64,32 +66,32 @@ export function ButtonExample() {
         </div>
         <div className="card">
           <div className="card-body">
-            <button type="button" className="btn btn-lg btn-outline-secondary mr-1">Large</button>
-            <button type="button" className="btn btn-outline-secondary mr-1">Medium</button>
-            <button type="button" className="btn btn-sm btn-outline-secondary mr-1">Small</button>
-            <button type="button" className="btn btn-outline-secondary mr-1"><i className="fa fa-home" /></button>
-            <button type="button" className="btn btn-outline-secondary mr-1"><i className="fa fa-home mr-1" />Icon and text</button>
+            <button type="button" className="btn btn-default btn-lg mr-1">Large</button>
+            <button type="button" className="btn btn-default mr-1">Medium</button>
+            <button type="button" className="btn btn-default btn-sm mr-1">Small</button>
+            <button type="button" className="btn btn-default mr-1"><i className="fa fa-home" /></button>
+            <button type="button" className="btn btn-default mr-1"><i className="fa fa-home mr-1" />Icon and text</button>
             <button type="button" className="btn btn-outline-secondary mr-1" data-toggle="button">Toggle</button>
-            <button type="button" className="btn btn-outline-secondary mr-1" disabled>Disabled</button>
-            <button type="button" className="btn btn-block btn-outline-secondary mt-1 mr-1">Block</button>
+            <button type="button" className="btn btn-default mr-1" disabled>Disabled</button>
+            <button type="button" className="btn btn-default btn-block mt-1 mr-1">Block</button>
           </div>
           <div className="card-footer">
             <Highlight language="html">{`
-<button type="button" class="btn btn-lg btn-outline-secondary">Large</button>
-<button type="button" class="btn btn-outline-secondary">Medium</button>
-<button type="button" class="btn btn-sm btn-outline-secondary">Small</button>
-<button type="button" class="btn btn-outline-secondary"><i class="fa fa-home"></i></button>
-<button type="button" class="btn btn-outline-secondary"><i class="fa fa-home mr-1"></i>Icon and text</button>
+<button type="button" class="btn btn-default btn-lg">Large</button>
+<button type="button" class="btn btn-default">Medium</button>
+<button type="button" class="btn btn-default btn-sm">Small</button>
+<button type="button" class="btn btn-default"><i class="fa fa-home"></i></button>
+<button type="button" class="btn btn-default"><i class="fa fa-home mr-1"></i>Icon and text</button>
 <button type="button" class="btn btn-outline-secondary" data-toggle="button">Toggle</button>
-<button type="button" class="btn btn-outline-secondary" disabled>Disabled</button>
-<button type="button" class="btn btn-block btn-outline-secondary">Block</button>
+<button type="button" class="btn btn-default" disabled>Disabled</button>
+<button type="button" class="btn btn-default btn-block">Block</button>
             `}</Highlight>
           </div>
         </div>
         <div className="card">
           <div className="card-body d-flex flex-row">
             <div className="btn-group mr-1">
-              <button type="button" className="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">Dropdown Button</button>
+              <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown">Dropdown Button</button>
               <div className="dropdown-menu">
                 <span className="dropdown-item">Menu Item 1</span>
                 <span className="dropdown-item active">Menu Item 2</span>
@@ -97,8 +99,8 @@ export function ButtonExample() {
               </div>
             </div>
             <div className="btn-group mr-1">
-              <button type="button" className="btn btn-outline-secondary">Split Button</button>
-              <button type="button" className="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" />
+              <button type="button" className="btn btn-default">Split Button</button>
+              <button type="button" className="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" />
               <div className="dropdown-menu dropdown-menu-right">
                 <span className="dropdown-item">Menu Item 1</span>
                 <span className="dropdown-item active">Menu Item 2</span>
@@ -109,7 +111,7 @@ export function ButtonExample() {
           <div className="card-footer">
             <Highlight language="html">{`
 <div class="btn-group">
-  <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">Dropdown Button</button>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Dropdown Button</button>
   <div class="dropdown-menu">
     <span class="dropdown-item">Menu Item 1</span>
     <span class="dropdown-item active">Menu Item 2</span>
@@ -118,8 +120,8 @@ export function ButtonExample() {
 </div>
 
 <div class="btn-group">
-  <button type="button" class="btn btn-outline-secondary">Split Button</button>
-  <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"></button>
+  <button type="button" class="btn btn-default">Split Button</button>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"></button>
   <div class="dropdown-menu dropdown-menu-right">
     <span class="dropdown-item">Menu Item 1</span>
     <span class="dropdown-item active">Menu Item 2</span>
