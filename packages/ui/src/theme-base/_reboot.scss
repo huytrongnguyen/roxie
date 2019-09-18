@@ -2,11 +2,6 @@
 
 body, input, textarea, select, button { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-button:focus, button:active, .form-control:focus, .form-control:active {
-  outline: 0 !important;
-  box-shadow: none !important;
-}
-
 .breadcrumb {
   min-height: 3rem;
   max-height: 3rem;
@@ -40,16 +35,20 @@ button:focus, button:active, .form-control:focus, .form-control:active {
   }
 }
 
-.card {
-  margin-bottom: 1rem;
+button:focus, button:active, .form-control:focus, .form-control:active {
+  outline: 0 !important;
+  box-shadow: none !important;
 }
+
+.card { margin-bottom: 1rem; }
+.accordion .card .collapse.show { border-top: 1px solid $border-color; }
+
+.dropdown-item { cursor: pointer; }
 
 .navbar {
   height: 3rem;
   border-bottom: 1px solid $border-color;
 }
-
-.accordion .card .collapse.show { border-top: 1px solid $border-color; }
 
 .toast {
   color: $gray;

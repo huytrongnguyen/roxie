@@ -1,3 +1,5 @@
+// Bootstrap variable overrides
+
 // Color system
 
 $white:    rgb(255,255,255);
@@ -22,3 +24,23 @@ $gray-600: rgb(99,99,102);
 $gray-700: rgb(72,72,74);
 $gray-800: rgb(58,58,60);
 $gray-900: rgb(44,44,46);
+
+// Grid columns
+
+$grid-gutter-width: 2rem;
+
+// Typography
+
+$font-size-base: .875rem;
+
+// Breadcrumbs
+
+$breadcrumb-padding-y: .5rem;
+$breadcrumb-padding-x: 1rem;
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-border-radius: 0;
+
+// Cards
+
+$card-spacer-y: .5rem;
+$card-spacer-x: 1rem;

@@ -1,11 +1,19 @@
 .roxie-theme-light {
   @import 'theme-light/variables';
-  @import 'roxie-theme-bootstrap';
+  @import 'roxie-theme-base';
 
   .navbar {
     background-color: $white;
   }
 
-  .text-muted { color: $gray-100 !important; }
-  .text-secondary { color: $gray-300 !important; }
+  .btn-outline-secondary {
+    border-color: $gray-300;
+    color: $body-color;
+    &:disabled, &.disabled {
+      color: $body-color;
+    }
+  }
+
+  .text-muted { color: $gray-100; }
+  .text-secondary { color: $gray-300; }
 }

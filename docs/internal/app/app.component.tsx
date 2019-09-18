@@ -3,8 +3,9 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import pkg from '../../../package.json';
 
-import { Home } from './guides/home.component';
-import { KitchenSink } from './examples/kitchen-sink.component';
+import { Home } from './guides';
+import {  ComponentExample, ButtonExample,
+          KitchenSink,  } from './examples/kitchen-sink';
 
 export function App() {
   return <Router>
@@ -14,6 +15,8 @@ export function App() {
     <main>
       <Switch>
         <Route exact path="/examples/kitchen-sink" component={KitchenSink} />
+        <Route exact path="/examples/kitchen-sink/components" component={ComponentExample} />
+        <Route exact path="/examples/kitchen-sink/components/buttons" component={ButtonExample} />
         <Route component={Home} />
       </Switch>
     </main>

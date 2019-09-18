@@ -6,12 +6,12 @@ $body-color: $gray;
 
 $theme-colors: (
   "primary": $blue,
-  "secondary": $white,
+  "secondary": $gray,
   "success": $green,
   "danger": $red,
   "warning": $yellow,
   "info": $teal,
-  "light": $gray,
+  "light": $gray-100,
   "dark": $gray-900,
 );
 

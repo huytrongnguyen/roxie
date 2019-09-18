@@ -1,3 +1,9 @@
-main {
-  margin-top: 3rem;
+@import '../../node_modules/highlight.js/scss/vs.scss';
+
+main { margin-top: 3rem; }
+pre { margin-bottom: 0 !important; }
+
+.hljs {
+  background: transparent;
+  padding: 0;
 }
