@@ -4,8 +4,11 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import pkg from '../../../package.json';
 
 import { Home } from './guides';
-import {  ComponentExample, ButtonExample,
-          KitchenSink,  } from './examples/kitchen-sink';
+import {
+  ComponentExample, ButtonExample, PanelExample, WindowExample,
+  FormFieldExample, FormFieldTypeExample,
+  KitchenSink,
+} from './examples/kitchen-sink';
 
 export function App() {
   return <Router>
@@ -17,6 +20,10 @@ export function App() {
         <Route exact path="/examples/kitchen-sink" component={KitchenSink} />
         <Route exact path="/examples/kitchen-sink/components" component={ComponentExample} />
         <Route exact path="/examples/kitchen-sink/components/buttons" component={ButtonExample} />
+        <Route exact path="/examples/kitchen-sink/components/form-fields" component={FormFieldExample} />
+        <Route exact path="/examples/kitchen-sink/components/form-fields/field-types" component={FormFieldTypeExample} />
+        <Route exact path="/examples/kitchen-sink/components/panels" component={PanelExample} />
+        <Route exact path="/examples/kitchen-sink/components/windows" component={WindowExample} />
         <Route component={Home} />
       </Switch>
     </main>

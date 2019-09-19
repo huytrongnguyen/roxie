@@ -42,13 +42,32 @@ button:focus, button:active, .form-control:focus, .form-control:active {
 
 .card { margin-bottom: 1rem; }
 .accordion .card .collapse.show { border-top: 1px solid $border-color; }
+@each $color, $value in $theme-colors {
+  .card.bg-#{$color} {
+    color: color-yiq($value);
+    border: 1px solid darken($value, 10%);
+    .card-header {
+      border-bottom: 1px solid darken($value, 10%);
+    }
+    .card-footer {
+      border-top: 1px solid darken($value, 10%);
+    }
+  }
+}
 
 .dropdown-item { cursor: pointer; }
+
+.form-control-file, .form-check, .custom-control {
+  height: $input-height;
+  padding-top: $input-padding-y;
+  padding-bottom: $input-padding-y;
+}
 
 .navbar {
   height: 3rem;
   border-bottom: 1px solid $border-color;
 }
+.nav-link { cursor: pointer; }
 
 .toast {
   color: $gray;

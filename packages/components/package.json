@@ -10,8 +10,8 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@roxie/core": "^1.1.0",
-    "@roxie/ui": "^1.0.0",
+    "@roxie/core": "^1.2.0",
+    "@roxie/ui": "^1.2.0",
     "react": "16.9.0",
     "react-dom": "16.9.0"
   },

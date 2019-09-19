@@ -13,7 +13,12 @@
   }
 
   .btn-outline-secondary {
-    border-color: $gray-300;
+    color: $body-color;
+    &:disabled, &.disabled {
+      color: $body-color;
+    }
+  }
+  .btn-outline-light {
     color: $body-color;
     &:disabled, &.disabled {
       color: $body-color;

@@ -13,17 +13,31 @@ export function ButtonExample() {
     <div className="pt-3">
       <div className="container">
         <div className="card">
+          <div className="card-header">Basic Buttons</div>
           <div className="card-body">
-            <button type="button" className="btn btn-primary mr-1">Primary</button>
-            <button type="button" className="btn btn-secondary mr-1">Secondary</button>
-            <button type="button" className="btn btn-success mr-1">Success</button>
-            <button type="button" className="btn btn-danger mr-1">Danger</button>
-            <button type="button" className="btn btn-warning mr-1">Warning</button>
-            <button type="button" className="btn btn-info mr-1">Info</button>
-            <button type="button" className="btn btn-light mr-1">Light</button>
-            <button type="button" className="btn btn-dark mr-1">Dark</button>
-            <button type="button" className="btn btn-link mr-1">Link</button>
-            <button type="button" className="btn btn-default mr-1">Default</button>
+            <div>
+              <button type="button" className="btn btn-primary mr-1">Primary</button>
+              <button type="button" className="btn btn-secondary mr-1">Secondary</button>
+              <button type="button" className="btn btn-success mr-1">Success</button>
+              <button type="button" className="btn btn-danger mr-1">Danger</button>
+              <button type="button" className="btn btn-warning mr-1">Warning</button>
+              <button type="button" className="btn btn-info mr-1">Info</button>
+              <button type="button" className="btn btn-light mr-1">Light</button>
+              <button type="button" className="btn btn-dark mr-1">Dark</button>
+            </div>
+            <div className="mt-1">
+              <button type="button" className="btn btn-outline-primary mr-1">Primary</button>
+              <button type="button" className="btn btn-outline-secondary mr-1">Secondary</button>
+              <button type="button" className="btn btn-outline-success mr-1">Success</button>
+              <button type="button" className="btn btn-outline-danger mr-1">Danger</button>
+              <button type="button" className="btn btn-outline-warning mr-1">Warning</button>
+              <button type="button" className="btn btn-outline-info mr-1">Info</button>
+              <button type="button" className="btn btn-outline-light mr-1">Light</button>
+              <button type="button" className="btn btn-outline-dark mr-1">Dark</button>
+            </div>
+            <div className="mt-1">
+              <button type="button" className="btn btn-default mr-1">Default</button>
+            </div>
           </div>
           <div className="card-footer">
             <Highlight language="html">{`
@@ -35,24 +49,7 @@ export function ButtonExample() {
 <button type="button" class="btn btn-info">Info</button>
 <button type="button" class="btn btn-light">Light</button>
 <button type="button" class="btn btn-dark">Dark</button>
-<button type="button" class="btn btn-link mr-1">Link</button>
-<button type="button" class="btn btn-default mr-1">Default</button>
-            `}</Highlight>
-          </div>
-        </div>
-        <div className="card">
-          <div className="card-body">
-            <button type="button" className="btn btn-outline-primary mr-1">Primary</button>
-            <button type="button" className="btn btn-outline-secondary mr-1">Secondary</button>
-            <button type="button" className="btn btn-outline-success mr-1">Success</button>
-            <button type="button" className="btn btn-outline-danger mr-1">Danger</button>
-            <button type="button" className="btn btn-outline-warning mr-1">Warning</button>
-            <button type="button" className="btn btn-outline-info mr-1">Info</button>
-            <button type="button" className="btn btn-outline-light mr-1">Light</button>
-            <button type="button" className="btn btn-outline-dark mr-1">Dark</button>
-          </div>
-          <div className="card-footer">
-            <Highlight language="html">{`
+
 <button type="button" class="btn btn-outline-primary">Primary</button>
 <button type="button" class="btn btn-outline-secondary">Secondary</button>
 <button type="button" class="btn btn-outline-success">Success</button>
@@ -61,16 +58,20 @@ export function ButtonExample() {
 <button type="button" class="btn btn-outline-info">Info</button>
 <button type="button" class="btn btn-outline-light">Light</button>
 <button type="button" class="btn btn-outline-dark">Dark</button>
+
+<button type="button" class="btn btn-default">Default</button>
             `}</Highlight>
           </div>
         </div>
         <div className="card">
+          <div className="card-header">Custom Buttons</div>
           <div className="card-body">
             <button type="button" className="btn btn-default btn-lg mr-1">Large</button>
             <button type="button" className="btn btn-default mr-1">Medium</button>
             <button type="button" className="btn btn-default btn-sm mr-1">Small</button>
             <button type="button" className="btn btn-default mr-1"><i className="fa fa-home" /></button>
             <button type="button" className="btn btn-default mr-1"><i className="fa fa-home mr-1" />Icon and text</button>
+            <button type="button" className="btn btn-link mr-1">Link</button>
             <button type="button" className="btn btn-outline-secondary mr-1" data-toggle="button">Toggle</button>
             <button type="button" className="btn btn-default mr-1" disabled>Disabled</button>
             <button type="button" className="btn btn-default btn-block mt-1 mr-1">Block</button>
@@ -82,6 +83,7 @@ export function ButtonExample() {
 <button type="button" class="btn btn-default btn-sm">Small</button>
 <button type="button" class="btn btn-default"><i class="fa fa-home"></i></button>
 <button type="button" class="btn btn-default"><i class="fa fa-home mr-1"></i>Icon and text</button>
+<button type="button" class="btn btn-link">Link</button>
 <button type="button" class="btn btn-outline-secondary" data-toggle="button">Toggle</button>
 <button type="button" class="btn btn-default" disabled>Disabled</button>
 <button type="button" class="btn btn-default btn-block">Block</button>
@@ -89,6 +91,7 @@ export function ButtonExample() {
           </div>
         </div>
         <div className="card">
+          <div className="card-header">Menu Buttons</div>
           <div className="card-body d-flex flex-row">
             <div className="btn-group mr-1">
               <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown">Dropdown Button</button>
@@ -132,6 +135,7 @@ export function ButtonExample() {
           </div>
         </div>
         <div className="card">
+          <div className="card-header">Group Buttons</div>
           <div className="card-body">
             <div className="btn-group">
               <button type="button" className="btn btn-outline-secondary">Left</button>

@@ -6,12 +6,12 @@
 
 $theme-colors: (
   "primary": $blue,
-  "secondary": $gray-100,
+  "secondary": $gray-300,
   "success": $green,
   "danger": $red,
   "warning": $yellow,
   "info": $teal,
-  "light": $gray,
+  "light": $gray-100,
   "dark": $gray-900,
 );
 
@@ -31,4 +31,7 @@ $breadcrumb-bg: $white;
 // Cards
 
 $card-border-color: $border-color;
-$card-cap-bg: $gray;
+
+// Navs
+
+$nav-tabs-link-active-bg: $white;
