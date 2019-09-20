@@ -52,7 +52,7 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "publish": "lerna publish",
-    "build-docs": "parcel build docs/internal/index.html --no-source-maps --no-content-hash --no-autoinstall --out-dir docs --public-url ./roxie/",
+    "build-docs": "parcel build docs/internal/index.html --no-source-maps --no-content-hash --no-autoinstall --out-dir docs --public-url /roxie",
     "start-docs": "node server.js",
     "test": "jest"
   },
