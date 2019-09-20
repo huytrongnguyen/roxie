@@ -41,16 +41,30 @@ button:focus, button:active, .form-control:focus, .form-control:active {
 }
 
 .card { margin-bottom: 1rem; }
-.accordion .card .collapse.show { border-top: 1px solid $border-color; }
+.accordion .card { margin-bottom: 0; }
 @each $color, $value in $theme-colors {
-  .card.bg-#{$color} {
-    color: color-yiq($value);
-    border: 1px solid darken($value, 10%);
-    .card-header {
-      border-bottom: 1px solid darken($value, 10%);
+  .card {
+    &.bg-#{$color}, &.bg-outline-#{$color} {
+      border: $card-border-width solid darken($value, 10%);
+      .card-header {
+        border-bottom: $card-border-width solid darken($value, 10%);
+      }
+      .card-footer {
+        border-top: $card-border-width solid darken($value, 10%);
+      }
     }
-    .card-footer {
-      border-top: 1px solid darken($value, 10%);
+    &.bg-#{$color} {
+      color: color-yiq($value);
+    }
+    &.bg-outline-#{$color} {
+      .card-header {
+        color: color-yiq($value);
+        background-color: $value;
+      }
+      .card-footer {
+        color: color-yiq($value);
+        background-color: $value;
+      }
     }
   }
 }

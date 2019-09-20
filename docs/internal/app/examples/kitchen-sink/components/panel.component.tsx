@@ -52,6 +52,38 @@ export function PanelExample() {
                 <div className="card-header">Dark</div>
                 <div className="card-body">the quick brown fox jumps over the lazy dog</div>
               </div>
+              <div className="card bg-outline-primary mr-1">
+                <div className="card-header">Outline Primary</div>
+                <div className="card-body">the quick brown fox jumps over the lazy dog</div>
+              </div>
+              <div className="card bg-outline-secondary mr-1">
+                <div className="card-header">Outline Secondary</div>
+                <div className="card-body">the quick brown fox jumps over the lazy dog</div>
+              </div>
+              <div className="card bg-outline-success mr-1">
+                <div className="card-header">Outline Success</div>
+                <div className="card-body">the quick brown fox jumps over the lazy dog</div>
+              </div>
+              <div className="card bg-outline-danger mr-1">
+                <div className="card-header">Outline Danger</div>
+                <div className="card-body">the quick brown fox jumps over the lazy dog</div>
+              </div>
+              <div className="card bg-outline-warning mr-1">
+                <div className="card-header">Outline Warning</div>
+                <div className="card-body">the quick brown fox jumps over the lazy dog</div>
+              </div>
+              <div className="card bg-outline-info mr-1">
+                <div className="card-header">Outline Info</div>
+                <div className="card-body">the quick brown fox jumps over the lazy dog</div>
+              </div>
+              <div className="card bg-outline-light mr-1">
+                <div className="card-header">Outline Light</div>
+                <div className="card-body">the quick brown fox jumps over the lazy dog</div>
+              </div>
+              <div className="card bg-outline-dark mr-1">
+                <div className="card-header">Outline Dark</div>
+                <div className="card-body">the quick brown fox jumps over the lazy dog</div>
+              </div>
             </div>
           </div>
           <div className="card-footer">
@@ -89,6 +121,38 @@ export function PanelExample() {
   <div class="card-body">the quick brown fox jumps over the lazy dog</div>
 </div>
 <div class="card bg-dark">
+  <div class="card-header">Dark</div>
+  <div class="card-body">the quick brown fox jumps over the lazy dog</div>
+</div>
+<div class="card bg-outline-primary">
+  <div class="card-header">Primary</div>
+  <div class="card-body">the quick brown fox jumps over the lazy dog</div>
+</div>
+<div class="card bg-outline-secondary">
+  <div class="card-header">Secondary</div>
+  <div class="card-body">the quick brown fox jumps over the lazy dog</div>
+</div>
+<div class="card bg-outline-success">
+  <div class="card-header">Success</div>
+  <div class="card-body">the quick brown fox jumps over the lazy dog</div>
+</div>
+<div class="card bg-outline-danger">
+  <div class="card-header">Danger</div>
+  <div class="card-body">the quick brown fox jumps over the lazy dog</div>
+</div>
+<div class="card bg-outline-warning">
+  <div class="card-header">Warning</div>
+  <div class="card-body">the quick brown fox jumps over the lazy dog</div>
+</div>
+<div class="card bg-outline-info">
+  <div class="card-header">Info</div>
+  <div class="card-body">the quick brown fox jumps over the lazy dog</div>
+</div>
+<div class="card bg-outline-light">
+  <div class="card-header">Light</div>
+  <div class="card-body">the quick brown fox jumps over the lazy dog</div>
+</div>
+<div class="card bg-outline-dark">
   <div class="card-header">Dark</div>
   <div class="card-body">the quick brown fox jumps over the lazy dog</div>
 </div>

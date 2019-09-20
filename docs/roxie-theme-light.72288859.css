@@ -10837,88 +10837,171 @@ a.roxie-theme-light .badge-dark:focus, a.roxie-theme-light .badge-dark.focus {
 .roxie-theme-light .card {
   margin-bottom: 1rem;
 }
+.roxie-theme-light .accordion .card {
+  margin-bottom: 0;
+}
 .roxie-theme-light .accordion .card .collapse.show {
   border-top: 1px solid #c7c7cc;
 }
-.roxie-theme-light .card.bg-primary {
-  color: white;
+.roxie-theme-light .card.bg-primary, .roxie-theme-light .card.bg-outline-primary {
   border: 1px solid #0062cc;
 }
-.roxie-theme-light .card.bg-primary .card-header {
+.roxie-theme-light .card.bg-primary .card-header, .roxie-theme-light .card.bg-outline-primary .card-header {
   border-bottom: 1px solid #0062cc;
 }
-.roxie-theme-light .card.bg-primary .card-footer {
+.roxie-theme-light .card.bg-primary .card-footer, .roxie-theme-light .card.bg-outline-primary .card-footer {
   border-top: 1px solid #0062cc;
+}
+.roxie-theme-light .card.bg-primary {
+  color: white;
+}
+.roxie-theme-light .card.bg-outline-primary .card-header {
+  color: white;
+  background-color: #007aff;
+}
+.roxie-theme-light .card.bg-outline-primary .card-footer {
+  color: white;
+  background-color: #007aff;
+}
+.roxie-theme-light .card.bg-secondary, .roxie-theme-light .card.bg-outline-secondary {
+  border: 1px solid #acacb4;
+}
+.roxie-theme-light .card.bg-secondary .card-header, .roxie-theme-light .card.bg-outline-secondary .card-header {
+  border-bottom: 1px solid #acacb4;
+}
+.roxie-theme-light .card.bg-secondary .card-footer, .roxie-theme-light .card.bg-outline-secondary .card-footer {
+  border-top: 1px solid #acacb4;
 }
 .roxie-theme-light .card.bg-secondary {
   color: #2c2c2e;
-  border: 1px solid #acacb4;
 }
-.roxie-theme-light .card.bg-secondary .card-header {
-  border-bottom: 1px solid #acacb4;
+.roxie-theme-light .card.bg-outline-secondary .card-header {
+  color: #2c2c2e;
+  background-color: #c7c7cc;
 }
-.roxie-theme-light .card.bg-secondary .card-footer {
-  border-top: 1px solid #acacb4;
+.roxie-theme-light .card.bg-outline-secondary .card-footer {
+  color: #2c2c2e;
+  background-color: #c7c7cc;
+}
+.roxie-theme-light .card.bg-success, .roxie-theme-light .card.bg-outline-success {
+  border: 1px solid #299f47;
+}
+.roxie-theme-light .card.bg-success .card-header, .roxie-theme-light .card.bg-outline-success .card-header {
+  border-bottom: 1px solid #299f47;
+}
+.roxie-theme-light .card.bg-success .card-footer, .roxie-theme-light .card.bg-outline-success .card-footer {
+  border-top: 1px solid #299f47;
 }
 .roxie-theme-light .card.bg-success {
   color: white;
-  border: 1px solid #299f47;
 }
-.roxie-theme-light .card.bg-success .card-header {
-  border-bottom: 1px solid #299f47;
+.roxie-theme-light .card.bg-outline-success .card-header {
+  color: white;
+  background-color: #34c759;
 }
-.roxie-theme-light .card.bg-success .card-footer {
-  border-top: 1px solid #299f47;
+.roxie-theme-light .card.bg-outline-success .card-footer {
+  color: white;
+  background-color: #34c759;
+}
+.roxie-theme-light .card.bg-info, .roxie-theme-light .card.bg-outline-info {
+  border: 1px solid #29b8f9;
+}
+.roxie-theme-light .card.bg-info .card-header, .roxie-theme-light .card.bg-outline-info .card-header {
+  border-bottom: 1px solid #29b8f9;
+}
+.roxie-theme-light .card.bg-info .card-footer, .roxie-theme-light .card.bg-outline-info .card-footer {
+  border-top: 1px solid #29b8f9;
 }
 .roxie-theme-light .card.bg-info {
   color: #2c2c2e;
-  border: 1px solid #29b8f9;
 }
-.roxie-theme-light .card.bg-info .card-header {
-  border-bottom: 1px solid #29b8f9;
+.roxie-theme-light .card.bg-outline-info .card-header {
+  color: #2c2c2e;
+  background-color: #5ac8fa;
 }
-.roxie-theme-light .card.bg-info .card-footer {
-  border-top: 1px solid #29b8f9;
+.roxie-theme-light .card.bg-outline-info .card-footer {
+  color: #2c2c2e;
+  background-color: #5ac8fa;
+}
+.roxie-theme-light .card.bg-warning, .roxie-theme-light .card.bg-outline-warning {
+  border: 1px solid #cca300;
+}
+.roxie-theme-light .card.bg-warning .card-header, .roxie-theme-light .card.bg-outline-warning .card-header {
+  border-bottom: 1px solid #cca300;
+}
+.roxie-theme-light .card.bg-warning .card-footer, .roxie-theme-light .card.bg-outline-warning .card-footer {
+  border-top: 1px solid #cca300;
 }
 .roxie-theme-light .card.bg-warning {
   color: #2c2c2e;
-  border: 1px solid #cca300;
 }
-.roxie-theme-light .card.bg-warning .card-header {
-  border-bottom: 1px solid #cca300;
+.roxie-theme-light .card.bg-outline-warning .card-header {
+  color: #2c2c2e;
+  background-color: #ffcc00;
 }
-.roxie-theme-light .card.bg-warning .card-footer {
-  border-top: 1px solid #cca300;
+.roxie-theme-light .card.bg-outline-warning .card-footer {
+  color: #2c2c2e;
+  background-color: #ffcc00;
+}
+.roxie-theme-light .card.bg-danger, .roxie-theme-light .card.bg-outline-danger {
+  border: 1px solid #fc0d00;
+}
+.roxie-theme-light .card.bg-danger .card-header, .roxie-theme-light .card.bg-outline-danger .card-header {
+  border-bottom: 1px solid #fc0d00;
+}
+.roxie-theme-light .card.bg-danger .card-footer, .roxie-theme-light .card.bg-outline-danger .card-footer {
+  border-top: 1px solid #fc0d00;
 }
 .roxie-theme-light .card.bg-danger {
   color: white;
-  border: 1px solid #fc0d00;
 }
-.roxie-theme-light .card.bg-danger .card-header {
-  border-bottom: 1px solid #fc0d00;
+.roxie-theme-light .card.bg-outline-danger .card-header {
+  color: white;
+  background-color: #ff3b30;
 }
-.roxie-theme-light .card.bg-danger .card-footer {
-  border-top: 1px solid #fc0d00;
+.roxie-theme-light .card.bg-outline-danger .card-footer {
+  color: white;
+  background-color: #ff3b30;
+}
+.roxie-theme-light .card.bg-light, .roxie-theme-light .card.bg-outline-light {
+  border: 1px solid #c9c9d3;
+}
+.roxie-theme-light .card.bg-light .card-header, .roxie-theme-light .card.bg-outline-light .card-header {
+  border-bottom: 1px solid #c9c9d3;
+}
+.roxie-theme-light .card.bg-light .card-footer, .roxie-theme-light .card.bg-outline-light .card-footer {
+  border-top: 1px solid #c9c9d3;
 }
 .roxie-theme-light .card.bg-light {
   color: #2c2c2e;
-  border: 1px solid #c9c9d3;
 }
-.roxie-theme-light .card.bg-light .card-header {
-  border-bottom: 1px solid #c9c9d3;
+.roxie-theme-light .card.bg-outline-light .card-header {
+  color: #2c2c2e;
+  background-color: #e5e5ea;
 }
-.roxie-theme-light .card.bg-light .card-footer {
-  border-top: 1px solid #c9c9d3;
+.roxie-theme-light .card.bg-outline-light .card-footer {
+  color: #2c2c2e;
+  background-color: #e5e5ea;
+}
+.roxie-theme-light .card.bg-dark, .roxie-theme-light .card.bg-outline-dark {
+  border: 1px solid #131314;
+}
+.roxie-theme-light .card.bg-dark .card-header, .roxie-theme-light .card.bg-outline-dark .card-header {
+  border-bottom: 1px solid #131314;
+}
+.roxie-theme-light .card.bg-dark .card-footer, .roxie-theme-light .card.bg-outline-dark .card-footer {
+  border-top: 1px solid #131314;
 }
 .roxie-theme-light .card.bg-dark {
   color: white;
-  border: 1px solid #131314;
 }
-.roxie-theme-light .card.bg-dark .card-header {
-  border-bottom: 1px solid #131314;
+.roxie-theme-light .card.bg-outline-dark .card-header {
+  color: white;
+  background-color: #2c2c2e;
 }
-.roxie-theme-light .card.bg-dark .card-footer {
-  border-top: 1px solid #131314;
+.roxie-theme-light .card.bg-outline-dark .card-footer {
+  color: white;
+  background-color: #2c2c2e;
 }
 .roxie-theme-light .dropdown-item {
   cursor: pointer;

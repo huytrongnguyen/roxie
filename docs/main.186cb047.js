@@ -52620,7 +52620,7 @@ function ComponentExample() {
     className: "col-2"
   }, react_1.default.createElement(react_router_dom_1.Link, {
     to: "/examples/kitchen-sink/components/layouts",
-    className: "btn btn-default btn-block disabled"
+    className: "btn btn-default btn-block"
   }, "Layouts")), react_1.default.createElement("div", {
     className: "col-2"
   }, react_1.default.createElement(react_router_dom_1.Link, {
@@ -77500,6 +77500,197 @@ function FormFieldTypeExample() {
 }
 
 exports.FormFieldTypeExample = FormFieldTypeExample;
+},{"react":"../../node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","react-highlight.js":"../../node_modules/react-highlight.js/dist/main.js"}],"app/examples/kitchen-sink/components/layout.component.tsx":[function(require,module,exports) {
+"use strict";
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var react_1 = __importStar(require("react"));
+
+var react_router_dom_1 = require("react-router-dom");
+
+var react_highlight_js_1 = __importDefault(require("react-highlight.js"));
+
+function LayoutExample() {
+  return react_1.default.createElement(react_1.Fragment, null, react_1.default.createElement("ol", {
+    className: "breadcrumb"
+  }, react_1.default.createElement("li", {
+    className: "breadcrumb-item"
+  }, "Kitchen Sink"), react_1.default.createElement("li", {
+    className: "breadcrumb-item"
+  }, react_1.default.createElement(react_router_dom_1.Link, {
+    to: "/examples/kitchen-sink"
+  }, "All")), react_1.default.createElement("li", {
+    className: "breadcrumb-item"
+  }, react_1.default.createElement(react_router_dom_1.Link, {
+    to: "/examples/kitchen-sink/components"
+  }, "Components")), react_1.default.createElement("li", {
+    className: "breadcrumb-item"
+  }, "Layouts")), react_1.default.createElement("div", {
+    className: "pt-3"
+  }, react_1.default.createElement("div", {
+    className: "container"
+  }, react_1.default.createElement("div", {
+    className: "card"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Accordion Layout"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, react_1.default.createElement("div", {
+    id: "accordionExample",
+    className: "accordion"
+  }, react_1.default.createElement("div", {
+    className: "card"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, react_1.default.createElement("button", {
+    type: "button",
+    className: "btn btn-link collapsed",
+    "data-toggle": "collapse",
+    "data-target": "#collapse1"
+  }, "Accordion Item 1")), react_1.default.createElement("div", {
+    id: "collapse1",
+    className: "collapse show",
+    "data-parent": "#accordionExample"
+  }, react_1.default.createElement("div", {
+    className: "card-body"
+  }, "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."))), react_1.default.createElement("div", {
+    className: "card"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, react_1.default.createElement("button", {
+    type: "button",
+    className: "btn btn-link collapsed",
+    "data-toggle": "collapse",
+    "data-target": "#collapse2"
+  }, "Accordion Item 2")), react_1.default.createElement("div", {
+    id: "collapse2",
+    className: "collapse",
+    "data-parent": "#accordionExample"
+  }, react_1.default.createElement("div", {
+    className: "card-body"
+  }, "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."))), react_1.default.createElement("div", {
+    className: "card"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, react_1.default.createElement("button", {
+    type: "button",
+    className: "btn btn-link collapsed",
+    "data-toggle": "collapse",
+    "data-target": "#collapse3"
+  }, "Accordion Item 3")), react_1.default.createElement("div", {
+    id: "collapse3",
+    className: "collapse",
+    "data-parent": "#accordionExample"
+  }, react_1.default.createElement("div", {
+    className: "card-body"
+  }, "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."))))), react_1.default.createElement("div", {
+    className: "card-footer"
+  }, react_1.default.createElement(react_highlight_js_1.default, {
+    language: "html"
+  }, "\n<div id=\"accordionExample\" class=\"accordion\">\n  <div class=\"card\">\n    <div class=\"card-header\">\n      <button type=\"button\" class=\"btn btn-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapse1\">\n        Accordion Item 1\n      </button>\n    </div>\n    <div id=\"collapse1\" class=\"collapse show\" data-parent=\"#accordionExample\">\n      <div class=\"card-body\">\n        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.\n        3 wolf moon officia aute, non cupidatat skateboard dolor brunch.\n        Food truck quinoa nesciunt laborum eiusmod.\n        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.\n        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.\n        Ad vegan excepteur butcher vice lomo.\n        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\n      </div>\n    </div>\n  </div>\n  <div class=\"card\">\n    <div class=\"card-header\">\n      <button type=\"button\" class=\"btn btn-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapse2\">\n        Accordion Item 2\n      </button>\n    </div>\n    <div id=\"collapse2\" class=\"collapse\" data-parent=\"#accordionExample\">\n      <div class=\"card-body\">\n        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.\n        3 wolf moon officia aute, non cupidatat skateboard dolor brunch.\n        Food truck quinoa nesciunt laborum eiusmod.\n        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.\n        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.\n        Ad vegan excepteur butcher vice lomo.\n        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\n      </div>\n    </div>\n  </div>\n  <div class=\"card\">\n    <div class=\"card-header\">\n      <button type=\"button\" class=\"btn btn-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapse3\">\n        Accordion Item 3\n      </button>\n    </div>\n    <div id=\"collapse3\" class=\"collapse\" data-parent=\"#accordionExample\">\n      <div class=\"card-body\">\n        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.\n        3 wolf moon officia aute, non cupidatat skateboard dolor brunch.\n        Food truck quinoa nesciunt laborum eiusmod.\n        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.\n        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.\n        Ad vegan excepteur butcher vice lomo.\n        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\n      </div>\n    </div>\n  </div>\n</div>\n            "))), react_1.default.createElement("div", {
+    className: "card"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "HBox Layout"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, react_1.default.createElement("div", {
+    className: "d-flex flex-row"
+  }, react_1.default.createElement("div", {
+    className: "card mr-1",
+    style: {
+      flexGrow: 1
+    }
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Panel 1"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "flex: 1")), react_1.default.createElement("div", {
+    className: "card mr-1",
+    style: {
+      width: 100
+    }
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Panel 2"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "width: 100")), react_1.default.createElement("div", {
+    className: "card",
+    style: {
+      flexGrow: 2
+    }
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Panel 3"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "flex: 2")))), react_1.default.createElement("div", {
+    className: "card-footer"
+  }, react_1.default.createElement(react_highlight_js_1.default, {
+    language: "html"
+  }, "\n<div class=\"d-flex flex-row\">\n  <div class=\"card mr-1\" style=\"flex-grow: 1\">\n    <div class=\"card-header\">Panel 1</div>\n    <div class=\"card-body\">flex: 1</div>\n  </div>\n  <div class=\"card mr-1\" style=\"width: 100px\">\n    <div class=\"card-header\">Panel 2</div>\n    <div class=\"card-body\">width: 100</div>\n  </div>\n  <div class=\"card\" style=\"flex-grow: 2\">\n    <div class=\"card-header\">Panel 3</div>\n    <div class=\"card-body\">flex: 2</div>\n  </div>\n</div>\n            "))), react_1.default.createElement("div", {
+    className: "card"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "VBox Layout"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, react_1.default.createElement("div", {
+    className: "d-flex flex-column",
+    style: {
+      height: 500
+    }
+  }, react_1.default.createElement("div", {
+    className: "card",
+    style: {
+      flexGrow: 1
+    }
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Panel 1"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "flex: 1")), react_1.default.createElement("div", {
+    className: "card",
+    style: {
+      height: 100
+    }
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Panel 2"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "height: 100")), react_1.default.createElement("div", {
+    className: "card",
+    style: {
+      flexGrow: 2
+    }
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Panel 3"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "flex: 2")))), react_1.default.createElement("div", {
+    className: "card-footer"
+  }, react_1.default.createElement(react_highlight_js_1.default, {
+    language: "html"
+  }, "\n<div class=\"d-flex flex-column\" style=\"height: 500px\">\n  <div class=\"card\" style=\"flex-grow: 1\">\n    <div class=\"card-header\">Panel 1</div>\n    <div class=\"card-body\">flex: 1</div>\n  </div>\n  <div class=\"card\" style=\"height: 100px\">\n    <div class=\"card-header\">Panel 2</div>\n    <div class=\"card-body\">height: 100</div>\n  </div>\n  <div class=\"card\" style=\"flex-grow: 2\">\n    <div class=\"card-header\">Panel 3</div>\n    <div class=\"card-body\">flex: 2</div>\n  </div>\n</div>\n            "))))));
+}
+
+exports.LayoutExample = LayoutExample;
 },{"react":"../../node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","react-highlight.js":"../../node_modules/react-highlight.js/dist/main.js"}],"app/examples/kitchen-sink/components/panel.component.tsx":[function(require,module,exports) {
 "use strict";
 
@@ -77610,11 +77801,59 @@ function PanelExample() {
     className: "card-header"
   }, "Dark"), react_1.default.createElement("div", {
     className: "card-body"
+  }, "the quick brown fox jumps over the lazy dog")), react_1.default.createElement("div", {
+    className: "card bg-outline-primary mr-1"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Outline Primary"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "the quick brown fox jumps over the lazy dog")), react_1.default.createElement("div", {
+    className: "card bg-outline-secondary mr-1"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Outline Secondary"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "the quick brown fox jumps over the lazy dog")), react_1.default.createElement("div", {
+    className: "card bg-outline-success mr-1"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Outline Success"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "the quick brown fox jumps over the lazy dog")), react_1.default.createElement("div", {
+    className: "card bg-outline-danger mr-1"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Outline Danger"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "the quick brown fox jumps over the lazy dog")), react_1.default.createElement("div", {
+    className: "card bg-outline-warning mr-1"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Outline Warning"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "the quick brown fox jumps over the lazy dog")), react_1.default.createElement("div", {
+    className: "card bg-outline-info mr-1"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Outline Info"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "the quick brown fox jumps over the lazy dog")), react_1.default.createElement("div", {
+    className: "card bg-outline-light mr-1"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Outline Light"), react_1.default.createElement("div", {
+    className: "card-body"
+  }, "the quick brown fox jumps over the lazy dog")), react_1.default.createElement("div", {
+    className: "card bg-outline-dark mr-1"
+  }, react_1.default.createElement("div", {
+    className: "card-header"
+  }, "Outline Dark"), react_1.default.createElement("div", {
+    className: "card-body"
   }, "the quick brown fox jumps over the lazy dog")))), react_1.default.createElement("div", {
     className: "card-footer"
   }, react_1.default.createElement(react_highlight_js_1.default, {
     language: "html"
-  }, "\n<div class=\"card\">\n  <div class=\"card-header\">Default</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-primary\">\n  <div class=\"card-header\">Primary</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-secondary\">\n  <div class=\"card-header\">Secondary</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-success\">\n  <div class=\"card-header\">Success</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-danger\">\n  <div class=\"card-header\">Danger</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-warning\">\n  <div class=\"card-header\">Warning</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-info\">\n  <div class=\"card-header\">Info</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-light\">\n  <div class=\"card-header\">Light</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-dark\">\n  <div class=\"card-header\">Dark</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n            "))), react_1.default.createElement("div", {
+  }, "\n<div class=\"card\">\n  <div class=\"card-header\">Default</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-primary\">\n  <div class=\"card-header\">Primary</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-secondary\">\n  <div class=\"card-header\">Secondary</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-success\">\n  <div class=\"card-header\">Success</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-danger\">\n  <div class=\"card-header\">Danger</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-warning\">\n  <div class=\"card-header\">Warning</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-info\">\n  <div class=\"card-header\">Info</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-light\">\n  <div class=\"card-header\">Light</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-dark\">\n  <div class=\"card-header\">Dark</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-outline-primary\">\n  <div class=\"card-header\">Primary</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-outline-secondary\">\n  <div class=\"card-header\">Secondary</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-outline-success\">\n  <div class=\"card-header\">Success</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-outline-danger\">\n  <div class=\"card-header\">Danger</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-outline-warning\">\n  <div class=\"card-header\">Warning</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-outline-info\">\n  <div class=\"card-header\">Info</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-outline-light\">\n  <div class=\"card-header\">Light</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n<div class=\"card bg-outline-dark\">\n  <div class=\"card-header\">Dark</div>\n  <div class=\"card-body\">the quick brown fox jumps over the lazy dog</div>\n</div>\n            "))), react_1.default.createElement("div", {
     className: "card"
   }, react_1.default.createElement("div", {
     className: "card-header"
@@ -77704,9 +77943,14 @@ function WindowExample() {
     className: "card-body"
   }, react_1.default.createElement("div", {
     className: "modal d-block position-relative",
-    tabIndex: -1
+    tabIndex: -1,
+    style: {
+      zIndex: 1
+    }
   }, react_1.default.createElement("div", {
-    className: "modal-dialog"
+    className: "modal-dialog modal-dialog-centered"
+  }, react_1.default.createElement("div", {
+    className: "modal-content"
   }, react_1.default.createElement("div", {
     className: "modal-header"
   }, react_1.default.createElement("h5", {
@@ -77717,20 +77961,11 @@ function WindowExample() {
     "data-dismiss": "modal"
   }, "\xD7")), react_1.default.createElement("div", {
     className: "modal-body"
-  }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed risus neque, mollis id auctor eget, aliquet vel augue. Sed egestas fermentum tempus. Praesent hendrerit eros et enim laoreet suscipit. Nam diam ante, ullamcorper id congue non, accumsan non augue. Aliquam non libero augue, vitae molestie orci. Nulla ac enim nec velit rhoncus venenatis. Aenean orci quam, eleifend ut aliquam iaculis, pellentesque ut arcu. Suspendisse lobortis commodo magna, vitae sodales orci luctus vestibulum. Cras eget ipsum sapien, vel dapibus metus. Etiam sed augue sit amet massa commodo commodo. Nam pellentesque dapibus ipsum. Proin eget malesuada magna. Curabitur elit diam, pellentesque id fermentum eget, congue ultricies nibh. Nunc tincidunt sem at diam porta tincidunt. Suspendisse fringilla felis in lectus blandit vulputate. Suspendisse mollis ipsum nec ante congue ut porttitor nunc bibendum. Maecenas mollis sem non justo iaculis vitae consequat augue pulvinar. Sed aliquet malesuada lobortis. Maecenas malesuada eros sed erat ultricies eleifend. Nulla facilisi. Pellentesque pharetra molestie mollis. Aenean venenatis tempus urna, quis convallis quam cursus eget."), react_1.default.createElement("div", {
-    className: "modal-footer"
-  }, react_1.default.createElement("button", {
-    type: "button",
-    className: "btn btn-outline-secondary",
-    "data-dismiss": "modal"
-  }, "Cancel"), react_1.default.createElement("button", {
-    type: "button",
-    className: "btn btn-primary"
-  }, "OK"))))), react_1.default.createElement("div", {
+  }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed risus neque, mollis id auctor eget, aliquet vel augue. Sed egestas fermentum tempus. Praesent hendrerit eros et enim laoreet suscipit. Nam diam ante, ullamcorper id congue non, accumsan non augue. Aliquam non libero augue, vitae molestie orci. Nulla ac enim nec velit rhoncus venenatis. Aenean orci quam, eleifend ut aliquam iaculis, pellentesque ut arcu. Suspendisse lobortis commodo magna, vitae sodales orci luctus vestibulum. Cras eget ipsum sapien, vel dapibus metus. Etiam sed augue sit amet massa commodo commodo. Nam pellentesque dapibus ipsum. Proin eget malesuada magna. Curabitur elit diam, pellentesque id fermentum eget, congue ultricies nibh. Nunc tincidunt sem at diam porta tincidunt. Suspendisse fringilla felis in lectus blandit vulputate. Suspendisse mollis ipsum nec ante congue ut porttitor nunc bibendum. Maecenas mollis sem non justo iaculis vitae consequat augue pulvinar. Sed aliquet malesuada lobortis. Maecenas malesuada eros sed erat ultricies eleifend. Nulla facilisi. Pellentesque pharetra molestie mollis. Aenean venenatis tempus urna, quis convallis quam cursus eget."))))), react_1.default.createElement("div", {
     className: "card-footer"
   }, react_1.default.createElement(react_highlight_js_1.default, {
     language: "html"
-  }, "\n\n            "))))));
+  }, "\n<div class=\"modal\" tabIndex=\"1\">\n  <div class=\"modal-dialog modal-dialog-centered\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Window</h5>\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n      </div>\n      <div class=\"modal-body\">\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n        Sed risus neque, mollis id auctor eget, aliquet vel augue.\n        Sed egestas fermentum tempus.\n        Praesent hendrerit eros et enim laoreet suscipit.\n        Nam diam ante, ullamcorper id congue non, accumsan non augue.\n        Aliquam non libero augue, vitae molestie orci.\n        Nulla ac enim nec velit rhoncus venenatis.\n        Aenean orci quam, eleifend ut aliquam iaculis, pellentesque ut arcu.\n        Suspendisse lobortis commodo magna, vitae sodales orci luctus vestibulum.\n        Cras eget ipsum sapien, vel dapibus metus.\n        Etiam sed augue sit amet massa commodo commodo.\n        Nam pellentesque dapibus ipsum.\n        Proin eget malesuada magna.\n        Curabitur elit diam, pellentesque id fermentum eget, congue ultricies nibh.\n        Nunc tincidunt sem at diam porta tincidunt.\n        Suspendisse fringilla felis in lectus blandit vulputate.\n        Suspendisse mollis ipsum nec ante congue ut porttitor nunc bibendum.\n        Maecenas mollis sem non justo iaculis vitae consequat augue pulvinar.\n        Sed aliquet malesuada lobortis.\n        Maecenas malesuada eros sed erat ultricies eleifend.\n        Nulla facilisi.\n        Pellentesque pharetra molestie mollis.\n        Aenean venenatis tempus urna, quis convallis quam cursus eget.\n      </div>\n    </div>\n  </div>\n</div>\n            "))))));
 }
 
 exports.WindowExample = WindowExample;
@@ -77757,10 +77992,12 @@ __export(require("./components/form-field.component"));
 
 __export(require("./components/form-field-type.component"));
 
+__export(require("./components/layout.component"));
+
 __export(require("./components/panel.component"));
 
 __export(require("./components/window.component"));
-},{"./all.component":"app/examples/kitchen-sink/all.component.tsx","./components/all.component":"app/examples/kitchen-sink/components/all.component.tsx","./components/button.component":"app/examples/kitchen-sink/components/button.component.tsx","./components/form-field.component":"app/examples/kitchen-sink/components/form-field.component.tsx","./components/form-field-type.component":"app/examples/kitchen-sink/components/form-field-type.component.tsx","./components/panel.component":"app/examples/kitchen-sink/components/panel.component.tsx","./components/window.component":"app/examples/kitchen-sink/components/window.component.tsx"}],"app/app.component.tsx":[function(require,module,exports) {
+},{"./all.component":"app/examples/kitchen-sink/all.component.tsx","./components/all.component":"app/examples/kitchen-sink/components/all.component.tsx","./components/button.component":"app/examples/kitchen-sink/components/button.component.tsx","./components/form-field.component":"app/examples/kitchen-sink/components/form-field.component.tsx","./components/form-field-type.component":"app/examples/kitchen-sink/components/form-field-type.component.tsx","./components/layout.component":"app/examples/kitchen-sink/components/layout.component.tsx","./components/panel.component":"app/examples/kitchen-sink/components/panel.component.tsx","./components/window.component":"app/examples/kitchen-sink/components/window.component.tsx"}],"app/app.component.tsx":[function(require,module,exports) {
 "use strict";
 
 var __importDefault = this && this.__importDefault || function (mod) {
@@ -77809,6 +78046,10 @@ function App() {
     exact: true,
     path: "/examples/kitchen-sink/components/form-fields/field-types",
     component: kitchen_sink_1.FormFieldTypeExample
+  }), react_1.default.createElement(react_router_dom_1.Route, {
+    exact: true,
+    path: "/examples/kitchen-sink/components/layouts",
+    component: kitchen_sink_1.LayoutExample
   }), react_1.default.createElement(react_router_dom_1.Route, {
     exact: true,
     path: "/examples/kitchen-sink/components/panels",

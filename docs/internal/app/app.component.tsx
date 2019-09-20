@@ -5,9 +5,10 @@ import pkg from '../../../package.json';
 
 import { Home } from './guides';
 import {
-  ComponentExample, ButtonExample, PanelExample, WindowExample,
+  ComponentExample, ButtonExample, PanelExample, WindowExample, LayoutExample,
   FormFieldExample, FormFieldTypeExample,
   KitchenSink,
+
 } from './examples/kitchen-sink';
 
 export function App() {
@@ -22,6 +23,7 @@ export function App() {
         <Route exact path="/examples/kitchen-sink/components/buttons" component={ButtonExample} />
         <Route exact path="/examples/kitchen-sink/components/form-fields" component={FormFieldExample} />
         <Route exact path="/examples/kitchen-sink/components/form-fields/field-types" component={FormFieldTypeExample} />
+        <Route exact path="/examples/kitchen-sink/components/layouts" component={LayoutExample} />
         <Route exact path="/examples/kitchen-sink/components/panels" component={PanelExample} />
         <Route exact path="/examples/kitchen-sink/components/windows" component={WindowExample} />
         <Route component={Home} />
