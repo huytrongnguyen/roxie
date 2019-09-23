@@ -1,5 +1,9 @@
 @import '../theme-base/variables';
 
+// Custom variables
+
+$default-bg: $white;
+
 // Bootstrap variable overrides
 
 // Color system
@@ -24,14 +28,48 @@ $body-color: $gray-dark;
 
 $border-color: $gray-300;
 
+// Forms
+
+$input-color: $body-color;
+$input-bg: $default-bg;
+$input-border-color: $border-color;
+
 // Breadcrumbs
 
-$breadcrumb-bg: $white;
+$breadcrumb-bg: $default-bg;
 
 // Cards
 
 $card-border-color: $border-color;
+$card-cap-bg: rgba($black, .05);
+$card-bg: $default-bg;
+
+// Modals
+
+$modal-content-color: $body-color;
+$modal-content-bg: $default-bg;
+$modal-content-border-color: $border-color;
 
 // Navs
 
-$nav-tabs-link-active-bg: $white;
+$nav-tabs-border-color: $border-color;
+$nav-tabs-link-hover-border-color: $border-color $border-color $nav-tabs-border-color;
+$nav-tabs-link-active-color: $body-color;
+$nav-tabs-link-active-bg: $default-bg;
+$nav-tabs-link-active-border-color: $border-color $border-color $nav-tabs-link-active-bg;
+
+// Dropdowns
+
+$dropdown-bg: $default-bg;
+$dropdown-border-color: $border-color;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-color: $body-color;
+$dropdown-link-hover-bg: $gray;
+
+// Close
+
+$close-color: $body-color;
+
+// Code
+
+$pre-color: $body-color;

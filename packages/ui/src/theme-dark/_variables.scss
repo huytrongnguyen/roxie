@@ -1,19 +1,75 @@
 @import '../theme-base/variables';
 
+// Custom variables
+
+$default-bg: $gray-900;
+
 // Bootstrap variable overrides
-$body-bg: $gray-dark;
-$body-color: $gray;
+
+// Color system
 
 $theme-colors: (
   "primary": $blue,
-  "secondary": $gray,
+  "secondary": $gray-300,
   "success": $green,
   "danger": $red,
   "warning": $yellow,
   "info": $teal,
   "light": $gray-100,
-  "dark": $gray-900,
+  "dark": $gray-dark,
 );
 
-$card-border-color: $gray-300;
-$card-cap-bg: $gray;
+// Body
+
+$body-bg: $gray-dark;
+$body-color: $gray-300;
+
+// Components
+
+$border-color: $gray-600;
+
+// Forms
+
+$input-color: $body-color;
+$input-bg: $default-bg;
+$input-border-color: $border-color;
+
+// Breadcrumbs
+
+$breadcrumb-bg: $default-bg;
+
+// Cards
+
+$card-border-color: $border-color;
+$card-cap-bg: rgba($black, .05);
+$card-bg: $default-bg;
+
+// Modals
+
+$modal-content-color: $body-color;
+$modal-content-bg: $default-bg;
+$modal-content-border-color: $border-color;
+
+// Navs
+
+$nav-tabs-border-color: $border-color;
+$nav-tabs-link-hover-border-color: $border-color $border-color $nav-tabs-border-color;
+$nav-tabs-link-active-color: $body-color;
+$nav-tabs-link-active-bg: $default-bg;
+$nav-tabs-link-active-border-color: $border-color $border-color $nav-tabs-link-active-bg;
+
+// Dropdowns
+
+$dropdown-bg: $default-bg;
+$dropdown-border-color: $border-color;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-color: $body-color;
+$dropdown-link-hover-bg: $gray-800;
+
+// Close
+
+$close-color: $body-color;
+
+// Code
+
+$pre-color: $body-color;

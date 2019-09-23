@@ -4,6 +4,7 @@ interface Array<T> {
   map<U>(selector: (value: T, index?: number, array?: T[]) => U): U[],
   select<U>(selector: (value: T, index?: number, array?: T[]) => U): U[],
   groupBy(key: string): { [key:string]: T[] },
+  find(predicate: (value: T, index?: number, array?: T[]) => boolean): T,
 }
 
 Array.prototype.filter = function<T>(this: T[], predicate: (value: T, index?: number, array?: T[]) => boolean) {
@@ -42,3 +43,13 @@ Array.prototype.groupBy = function<T>(this: T[], key: string) {
   }, {});
 }
 
+Array.prototype.find = function<T>(this: T[], predicate: (value: T, index?: number, array?: T[]) => boolean) {
+  let result: T;
+  for (let i = 0; i < this.length; ++i) {
+    if (predicate(this[i], i, this)) {
+      result = this[i];
+      break;
+    }
+  }
+  return result;
+}

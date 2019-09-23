@@ -6,3 +6,8 @@
     border-#{$side}: 0 !important;
   }
 }
+
+.btn-default {
+  border-color: $border-color;
+  color: $body-color;
+}

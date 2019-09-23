@@ -3,13 +3,11 @@
   @import 'roxie-theme-base';
 
   .navbar {
-    background-color: $white;
+    background-color: $default-bg;
   }
 
   .btn-default {
-    border-color: $gray-300;
-    color: $body-color;
-    background-color: $white;
+    background-color: $default-bg;
   }
 
   .btn-outline-secondary {
@@ -24,7 +22,4 @@
       color: $body-color;
     }
   }
-
-  .text-muted { color: $gray-100; }
-  .text-secondary { color: $gray-300; }
 }

@@ -1,9 +1,15 @@
-@import '../../node_modules/highlight.js/scss/vs.scss';
+.roxie-theme-light {
+  @import '../../node_modules/highlight.js/scss/atom-one-light.scss';
+}
+
+.roxie-theme-dark {
+  @import '../../node_modules/highlight.js/scss/atom-one-dark.scss';
+}
 
 main { margin-top: 3rem; }
 pre { margin-bottom: 0 !important; }
 
 .hljs {
-  background: transparent;
+  background: transparent !important;
   padding: 0;
 }

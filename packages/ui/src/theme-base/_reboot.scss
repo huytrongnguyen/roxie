@@ -1,6 +1,15 @@
-@import 'variables';
+*:focus, *:active, *:read-only {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none !important;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
 
-body, input, textarea, select, button { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body, input, textarea, select, button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 .breadcrumb {
   min-height: 3rem;
@@ -33,11 +42,6 @@ body, input, textarea, select, button { -webkit-font-smoothing: antialiased; -mo
       border-left: 1.5rem solid $breadcrumb-bg;
     }
   }
-}
-
-button:focus, button:active, .form-control:focus, .form-control:active {
-  outline: 0 !important;
-  box-shadow: none !important;
 }
 
 .card { margin-bottom: 1rem; }
@@ -109,5 +113,26 @@ button:focus, button:active, .form-control:focus, .form-control:active {
     .toast-header {
       background-color: $red !important;
     }
+  }
+}
+
+.navbar {
+  background-color: $default-bg;
+}
+
+.btn-default {
+  background-color: $default-bg;
+}
+
+.btn-outline-secondary {
+  color: $body-color;
+  &:disabled, &.disabled {
+    color: $body-color;
+  }
+}
+.btn-outline-dark {
+  color: $body-color;
+  &:disabled, &.disabled {
+    color: $body-color;
   }
 }
