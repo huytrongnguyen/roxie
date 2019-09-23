@@ -1,8 +1,9 @@
 @import '../theme-base/variables';
+@import '../theme-base/color/dark';
 
 // Custom variables
 
-$default-bg: $gray-900;
+$default-bg: $gray-800;
 
 // Bootstrap variable overrides
 
@@ -22,7 +23,7 @@ $theme-colors: (
 // Body
 
 $body-bg: $gray-dark;
-$body-color: $gray-300;
+$body-color: $gray;
 
 // Components
 
