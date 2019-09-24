@@ -42,7 +42,7 @@ $breadcrumb-bg: $default-bg;
 // Cards
 
 $card-border-color: $border-color;
-$card-cap-bg: rgba($black, .05);
+$card-cap-bg: lighten($gray-700, .5%);
 $card-bg: $default-bg;
 
 // Modals
@@ -65,7 +65,7 @@ $dropdown-bg: $default-bg;
 $dropdown-border-color: $border-color;
 $dropdown-link-color: $body-color;
 $dropdown-link-hover-color: $body-color;
-$dropdown-link-hover-bg: $gray-800;
+$dropdown-link-hover-bg: $gray-600;
 
 // Close
 

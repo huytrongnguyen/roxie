@@ -59,6 +59,12 @@ body, input, textarea, select, button {
     }
     &.bg-#{$color} {
       color: color-yiq($value);
+      .card-header {
+        background-color: darken($value, 5%);
+      }
+      .card-footer {
+        background-color: darken($value, 5%);
+      }
     }
     &.bg-outline-#{$color} {
       .card-header {

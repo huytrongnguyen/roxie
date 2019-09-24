@@ -42,7 +42,7 @@ $breadcrumb-bg: $default-bg;
 // Cards
 
 $card-border-color: $border-color;
-$card-cap-bg: rgba($black, .05);
+$card-cap-bg: darken($gray, .5%);
 $card-bg: $default-bg;
 
 // Modals
