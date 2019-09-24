@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight.js';
+import { ColumnLayout } from '@roxie/components';
 
 export function LayoutExample() {
   return <Fragment>
@@ -12,7 +13,7 @@ export function LayoutExample() {
     </ol>
     <div className="pt-3">
       <div className="container">
-        <div className="card">
+        <div className="card mb-3">
           <div className="card-header">Accordion Layout</div>
           <div className="card-body">
             <div id="accordionExample" className="accordion">
@@ -133,7 +134,63 @@ export function LayoutExample() {
             `}</Highlight>
           </div>
         </div>
-        <div className="card">
+        <div className="card mb-3">
+          <div className="card-header">Border Layout</div>
+          <div className="card-body">
+          </div>
+          <div className="card-footer">
+            <Highlight language="js">{`
+import React from 'react';
+import { Container } from '@roxie/components';
+            `}</Highlight>
+            <Highlight language="html">{`
+            `}</Highlight>
+          </div>
+        </div>
+        <div className="card mb-3">
+          <div className="card-header">Column Layout</div>
+          <div className="card-body">
+            <div className="card" style={{width:400,height:200}}>
+              <div className="card-header">Container Panel</div>
+              <div className="card-body p-0">
+                <ColumnLayout>
+                  <div className="card" style={{height:100}}>
+                    <div className="card-header">Child Panel 1</div>
+                    <div className="card-body"></div>
+                  </div>
+                  <div className="card" style={{height:100}}>
+                    <div className="card-header">Child Panel 2</div>
+                    <div className="card-body"></div>
+                  </div>
+                </ColumnLayout>
+              </div>
+            </div>
+          </div>
+          <div className="card-footer">
+            <Highlight language="js">{`
+import React from 'react';
+import { ColumnLayout } from '@roxie/components';
+            `}</Highlight>
+            <Highlight language="html">{`
+<div className="card" style={{width:400,height:200}}>
+  <div className="card-header">Container Panel</div>
+  <div className="card-body p-0">
+    <ColumnLayout>
+      <div className="card" style={{height:100}}>
+        <div className="card-header">Child Panel 1</div>
+        <div className="card-body"></div>
+      </div>
+      <div className="card" style={{height:100}}>
+        <div className="card-header">Child Panel 2</div>
+        <div className="card-body"></div>
+      </div>
+    </ColumnLayout>
+  </div>
+</div>
+            `}</Highlight>
+          </div>
+        </div>
+        <div className="card mb-3">
           <div className="card-header">HBox Layout</div>
           <div className="card-body">
             <div className="d-flex flex-row">
@@ -170,7 +227,7 @@ export function LayoutExample() {
             `}</Highlight>
           </div>
         </div>
-        <div className="card">
+        <div className="card mb-3">
           <div className="card-header">VBox Layout</div>
           <div className="card-body">
             <div className="d-flex flex-column" style={{height: 500}}>

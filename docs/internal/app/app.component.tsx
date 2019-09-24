@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Link, Switch, Route } from 'react-router-dom';
 import { Roxie } from '@roxie/core';
 
 import pkg from '../../../package.json';
 
-import { Home } from './guides';
+import {
+  Home, GettingStarted,
+  LayoutConcept,
+} from './guides';
 import {
   ComponentExample, ButtonExample, PanelExample, WindowExample, LayoutExample,
   FormFieldExample, FormFieldTypeExample,
   KitchenSink,
-
 } from './examples/kitchen-sink';
+import { AdminDashboard } from './examples/admin-dashboard';
 
 export function App() {
   return <Router>
-    <header className="navbar navbar-expand-lg fixed-top">
-      <a href="/roxie" className="navbar-brand font-weight-bold">Roxie {pkg.version}</a>
+    <header className="app-header navbar navbar-expand-lg fixed-top">
+      <Link to="/roxie" className="navbar-brand font-weight-bold">Roxie {pkg.version}</Link>
       <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -26,6 +29,8 @@ export function App() {
     </header>
     <main>
       <Switch>
+        <Route exact path="/introduction/getting-started" component={GettingStarted} />
+        <Route exact path="/core-concepts/layouts" component={LayoutConcept} />
         <Route exact path="/examples/kitchen-sink" component={KitchenSink} />
         <Route exact path="/examples/kitchen-sink/components" component={ComponentExample} />
         <Route exact path="/examples/kitchen-sink/components/buttons" component={ButtonExample} />
@@ -34,6 +39,7 @@ export function App() {
         <Route exact path="/examples/kitchen-sink/components/layouts" component={LayoutExample} />
         <Route exact path="/examples/kitchen-sink/components/panels" component={PanelExample} />
         <Route exact path="/examples/kitchen-sink/components/windows" component={WindowExample} />
+        <Route exact path="/examples/admin-dashboard" component={AdminDashboard} />
         <Route component={Home} />
       </Switch>
     </main>

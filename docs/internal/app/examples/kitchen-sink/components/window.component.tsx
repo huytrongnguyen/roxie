@@ -12,7 +12,7 @@ export function WindowExample() {
     </ol>
     <div className="pt-3">
       <div className="container">
-        <div className="card">
+        <div className="card mb-3">
           <div className="card-header">Basic Window</div>
           <div className="card-body">
             <div className="modal d-block position-relative" tabIndex={-1} style={{zIndex: 1}}>

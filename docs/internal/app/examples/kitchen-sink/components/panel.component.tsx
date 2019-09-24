@@ -12,7 +12,7 @@ export function PanelExample() {
     </ol>
     <div className="pt-3">
       <div className="container">
-        <div className="card">
+        <div className="card mb-3">
           <div className="card-header">Basic Panels</div>
           <div className="card-body">
             <div className="card-columns">
@@ -159,7 +159,7 @@ export function PanelExample() {
             `}</Highlight>
           </div>
         </div>
-        <div className="card">
+        <div className="card mb-3">
           <div className="card-header">Basic Tab</div>
           <div className="card-body">
             <div className="card">

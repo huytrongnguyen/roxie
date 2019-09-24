@@ -12,7 +12,7 @@ export function ButtonExample() {
     </ol>
     <div className="pt-3">
       <div className="container">
-        <div className="card">
+        <div className="card mb-3">
           <div className="card-header">Basic Buttons</div>
           <div className="card-body">
             <div>
@@ -63,7 +63,7 @@ export function ButtonExample() {
             `}</Highlight>
           </div>
         </div>
-        <div className="card">
+        <div className="card mb-3">
           <div className="card-header">Custom Buttons</div>
           <div className="card-body">
             <button type="button" className="btn btn-default btn-lg mr-1">Large</button>
@@ -90,7 +90,7 @@ export function ButtonExample() {
             `}</Highlight>
           </div>
         </div>
-        <div className="card">
+        <div className="card mb-3">
           <div className="card-header">Menu Buttons</div>
           <div className="card-body d-flex flex-row">
             <div className="btn-group mr-1">
@@ -134,7 +134,7 @@ export function ButtonExample() {
             `}</Highlight>
           </div>
         </div>
-        <div className="card">
+        <div className="card mb-3">
           <div className="card-header">Group Buttons</div>
           <div className="card-body">
             <div className="btn-group">

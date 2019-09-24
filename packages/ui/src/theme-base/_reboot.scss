@@ -44,8 +44,6 @@ body, input, textarea, select, button {
   }
 }
 
-.card { margin-bottom: 1rem; }
-.accordion .card { margin-bottom: 0; }
 @each $color, $value in $theme-colors {
   .card {
     &.bg-#{$color}, &.bg-outline-#{$color} {
@@ -90,45 +88,9 @@ body, input, textarea, select, button {
 .navbar {
   height: 3rem;
   border-bottom: 1px solid $border-color;
+  background-color: $default-bg;
 }
 .nav-link { cursor: pointer; }
-
-.toast {
-  color: $gray;
-  .close {
-    color: $gray;
-  }
-  .toast-header {
-    color: $gray;
-    font-weight: bold;
-  }
-  &.toast-success {
-    background-color: $green !important;
-    .toast-header {
-      background-color: $green !important;
-    }
-  }
-  &.toast-warning {
-    background-color: $yellow !important;
-    .toast-header {
-      background-color: $yellow !important;
-    }
-  }
-  &.toast-error {
-    background-color: $red !important;
-    .toast-header {
-      background-color: $red !important;
-    }
-  }
-}
-
-.navbar {
-  background-color: $default-bg;
-}
-
-.btn-default {
-  background-color: $default-bg;
-}
 
 .btn-outline-secondary {
   color: $body-color;

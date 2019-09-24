@@ -15,7 +15,7 @@ export function FormFieldTypeExample() {
     </ol>
     <div className="pt-3">
       <div className="container">
-        <div className="card">
+        <div className="card mb-3">
           <div className="card-header">Basic Form Fields</div>
           <div className="card-body">
             <div className="form-group row">

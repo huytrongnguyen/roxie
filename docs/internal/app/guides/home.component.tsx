@@ -7,23 +7,31 @@ export function Home() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-6">
-            <div className="card">
+            <div className="card mb-3">
               <div className="card-header">1. Introduction</div>
               <div className="card-body">
                 <p>Learn about the basics of app building with Roxie</p>
+                <Link to="/introduction/getting-started">Getting Started</Link>
               </div>
             </div>
           </div>
           <div className="col-6">
-            <div className="card">
+            <div className="card mb-3">
               <div className="card-header">2. Core Concepts</div>
               <div className="card-body">
                 <p>Start learning the core concepts of Roxie</p>
+                <ul>
+                  <li>The Class System</li>
+                  <li>Components</li>
+                  <li><Link to="/core-concepts/layouts">Layouts and Containers</Link></li>
+                  <li>Data Packages</li>
+                  <li>Events</li>
+                </ul>
               </div>
             </div>
           </div>
           <div className="col-6">
-            <div className="card">
+            <div className="card mb-3">
               <div className="card-header">3. Components</div>
               <div className="card-body">
                 <p>Dig into the most common Roxie components</p>
@@ -31,7 +39,7 @@ export function Home() {
             </div>
           </div>
           <div className="col-6">
-            <div className="card">
+            <div className="card mb-3">
               <div className="card-header">4. Application Architecture</div>
               <div className="card-body">
                 <p>Architect-ing your application</p>
@@ -39,7 +47,7 @@ export function Home() {
             </div>
           </div>
           <div className="col-6">
-            <div className="card">
+            <div className="card mb-3">
               <div className="card-header">5. Roxie Themes</div>
               <div className="card-body">
                 <p>Explore how to style your Ext JS application</p>
@@ -47,7 +55,7 @@ export function Home() {
             </div>
           </div>
           <div className="col-6">
-            <div className="card">
+            <div className="card mb-3">
               <div className="card-header">6. Examples</div>
               <div className="card-body">
                 <dl>
