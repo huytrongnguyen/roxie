@@ -3,7 +3,6 @@ import { Roxie } from '@roxie/core';
 
 interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
   layout?: string,
-  fullscreen?: boolean,
   north?: ReactElement,
   south?: ReactElement,
   west?: ReactElement,
@@ -19,13 +18,13 @@ const layoutClass = {
   'fit': 'flex-fill fit-layout',
 }
 
-export function Container(props: ContainerProps) {
-  const { layout = '', north, south, west, east, center, children } = props;
+export function Container(props: ContainerProps) {console.log({props});
+  const { layout = '', north, south, west, east, center, children, className, ...others } = props;
 
   if (layout === 'border') {
-    return <div {...props} className={Roxie.classNames('d-flex flex-column', props.className)}>
+    return <div className={Roxie.classNames('d-flex flex-column', className)} {...others}>
       {north}
-      <div className="d-flex flex-row flex-fill">
+      <div className="d-flex flex-row flex-fill fullscreen">
         {west}
         <div className="flex-fill fit-layout">{center || children}</div>
         {east}
@@ -34,7 +33,7 @@ export function Container(props: ContainerProps) {
     </div>
   }
 
-  return <div {...props} className={Roxie.classNames(layoutClass[layout], props.fullscreen ? 'fullscreen' : '', props.className)}>
+  return <div className={Roxie.classNames(layoutClass[layout], props.className)} {...others}>
     {props.children}
   </div>
 }

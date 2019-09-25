@@ -1,0 +1,16 @@
+@import 'mixin';
+
+*:focus, *:active, *:read-only {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none !important;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+body, input, textarea, select, button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #react-root { @include fit(); }

@@ -56,9 +56,5 @@
     "build-docs": "parcel build docs/internal/index.html --no-source-maps --no-content-hash --no-autoinstall --out-dir docs --public-url /roxie",
     "start-docs": "node server.js",
     "test": "jest"
-  },
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
   }
 }
