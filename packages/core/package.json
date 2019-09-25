@@ -10,7 +10,8 @@
     "build": "tsc"
   },
   "dependencies": {
-    "jquery": "3.4.1"
+    "jquery": "3.4.1",
+    "date-fns": "2.3.0"
   },
   "publishConfig": {
     "access": "public"

@@ -33,5 +33,3 @@ export class LocalCache {
     }
   }
 }
-
-export const Cache = new LocalCache();

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Highlight from 'react-highlight.js';
-import { ColumnLayout } from '@roxie/components';
+import { Container } from '@roxie/components';
 
 export function LayoutConcept() {
   return <Fragment>
@@ -17,7 +17,46 @@ export function LayoutConcept() {
           <p>
             A container is a special type of component that can contain other components.
             A typical Roxie application is made up of several layers of nested Components.
+            Let's take a look at how being a container allows a component to contain other components:
           </p>
+          <div className="card">
+            <div className="card-body">
+              <div className="card" style={{width:400,height:300}}>
+                <div className="card-header">Container Panel</div>
+                <Container className="card-body p-0">
+                  <div className="card" style={{width:'75%',height:100}}>
+                    <div className="card-header">Child Panel 1</div>
+                    <div className="card-body" />
+                  </div>
+                  <div className="card" style={{width:'75%',height:100}}>
+                    <div className="card-header">Child Panel 2</div>
+                    <div className="card-body" />
+                  </div>
+                </Container>
+              </div>
+            </div>
+            <div className="card-footer">
+              <Highlight language="js">{`
+import React from 'react';
+import { Container } from '@roxie/components';
+              `}</Highlight>
+              <Highlight language="html">{`
+<div className="card" style={{width:400,height:300}}>
+  <div className="card-header">Container Panel</div>
+  <Container className="card-body p-0">
+    <div className="card" style={{width:'75%',height:100}}>
+      <div className="card-header">Child Panel 1</div>
+      <div className="card-body" />
+    </div>
+    <div className="card" style={{width:'75%',height:100}}>
+      <div className="card-header">Child Panel 2</div>
+      <div className="card-body" />
+    </div>
+  </Container>
+</div>
+              `}</Highlight>
+            </div>
+          </div>
           <h3>Layouts</h3>
           <p>
             Every container has a layout that manages the sizing and positioning of its child components.
@@ -25,6 +64,7 @@ export function LayoutConcept() {
           </p>
           <h4>Using Layouts</h4>
           <p>
+            In the above example we did not specify a layout for the Container Panel.
             Let's assume, for example, we want our two child components to be positioned side by side, and to each take up exactly 50% of the width of the container
             - we can use a Column Layout simply by providing a layout config on the container:
           </p>
@@ -32,18 +72,16 @@ export function LayoutConcept() {
             <div className="card-body">
               <div className="card" style={{width:400,height:200}}>
                 <div className="card-header">Container Panel</div>
-                <div className="card-body p-0">
-                  <ColumnLayout>
-                    <div className="card" style={{height:100}}>
-                      <div className="card-header">Child Panel 1</div>
-                      <div className="card-body"></div>
-                    </div>
-                    <div className="card" style={{height:100}}>
-                      <div className="card-header">Child Panel 2</div>
-                      <div className="card-body"></div>
-                    </div>
-                  </ColumnLayout>
-                </div>
+                <Container layout="column" className="card-body p-0">
+                  <div className="card" style={{height:100}}>
+                    <div className="card-header">Child Panel 1</div>
+                    <div className="card-body" />
+                  </div>
+                  <div className="card" style={{height:100}}>
+                    <div className="card-header">Child Panel 2</div>
+                    <div className="card-body" />
+                  </div>
+                </Container>
               </div>
             </div>
             <div className="card-footer">
@@ -54,18 +92,16 @@ import { Panel } from '@roxie/components';
               <Highlight language="html">{`
 <div className="card" style={{width:400,height:200}}>
   <div className="card-header">Container Panel</div>
-  <div className="card-body p-0">
-    <ColumnLayout>
-      <div className="card" style={{height:100}}>
-        <div className="card-header">Child Panel 1</div>
-        <div className="card-body"></div>
-      </div>
-      <div className="card" style={{height:100}}>
-        <div className="card-header">Child Panel 2</div>
-        <div className="card-body"></div>
-      </div>
-    </ColumnLayout>
-  </div>
+  <Container layout="column" className="card-body p-0">
+    <div className="card" style={{height:100}}>
+      <div className="card-header">Child Panel 1</div>
+      <div className="card-body" />
+    </div>
+    <div className="card" style={{height:100}}>
+      <div className="card-header">Child Panel 2</div>
+      <div className="card-body" />
+    </div>
+  </Container>
 </div>
               `}</Highlight>
             </div>

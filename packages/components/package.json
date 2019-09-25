@@ -12,6 +12,7 @@
   "dependencies": {
     "@roxie/core": "^1.2.0",
     "@roxie/ui": "^1.2.0",
+    "c3": "0.7.9",
     "react": "16.9.0",
     "react-dom": "16.9.0"
   },

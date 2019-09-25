@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { ReactElement } from 'react';
+import dateFns from 'date-fns';
 
 import './lang/number';
 import './lang/string';
@@ -7,7 +7,6 @@ import './lang/array';
 
 import { LocalCache } from './cache';
 import { Subject } from './observable';
-import { render } from 'react-dom';
 
 
 export const Roxie = {
@@ -50,6 +49,16 @@ export const Roxie = {
     format: (value: number = 0, decimal: number = 0) => (value || 0).toLocaleString('en', { maximumFractionDigits: decimal }),
     parse: (value: string) => parseInt(value, 10),
     percentage: (ratio: number = 0, decimal: number = 2) => `${Roxie.Number.format((ratio || 0) * 100, decimal)}%`,
+  },
+  Date: {
+    format: (date?: number | Date, pattern: string = 'yyyy-MM-dd HH:mm:ss') => dateFns.format(date || Roxie.Date.now(), pattern),
+    parse: (date?: string) => date ? dateFns.parseISO(date) : Roxie.Date.now(),
+    now() {
+      var now = new Date();
+      var utc =  Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
+      return new Date(utc);
+    },
+    getUnixTime: (date: number | Date) => dateFns.getTime(date),
   },
   Object: {
     isEmpty(o: any) {
