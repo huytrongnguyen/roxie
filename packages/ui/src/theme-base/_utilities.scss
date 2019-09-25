@@ -1,5 +1,6 @@
 .cursor-pointer { cursor: pointer; }
 .auto-scroll-y { overflow-y: auto; }
+.fullscreen { @include fit(); }
 
 @each $side in (top, right, bottom, left) {
   .border-#{$side}-0 {

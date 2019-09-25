@@ -13,6 +13,43 @@ export function LayoutExample() {
     </ol>
     <div className="pt-3">
       <div className="container">
+      <div className="card mb-3">
+          <div className="card-header">Table Layout</div>
+          <div className="card-body">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="offset-4 col-4 border">Cell 2</div>
+                <div className="col-4 border">Cell 3</div>
+              </div>
+              <div className="row">
+                <div className="col-4 border">Cell 1</div>
+                <div className="col-4 border">Cell 4</div>
+                <div className="col-4 border">Cell 5</div>
+              </div>
+              <div className="row">
+                <div className="col-8 border">Cell 6</div>
+              </div>
+            </div>
+          </div>
+          <div className="card-footer">
+            <Highlight language="html">{`
+<div className="container-fluid">
+  <div className="row">
+    <div className="offset-4 col-4 border">Cell 2</div>
+    <div className="col-4 border">Cell 3</div>
+  </div>
+  <div className="row">
+    <div className="col-4 border">Cell 1</div>
+    <div className="col-4 border">Cell 4</div>
+    <div className="col-4 border">Cell 5</div>
+  </div>
+  <div className="row">
+    <div className="col-8 border">Cell 6</div>
+  </div>
+</div>
+            `}</Highlight>
+          </div>
+        </div>
         <div className="card mb-3">
           <div className="card-header">Accordion Layout</div>
           <div className="card-body">
@@ -135,81 +172,6 @@ export function LayoutExample() {
           </div>
         </div>
         <div className="card mb-3">
-          <div className="card-header">Border Layout</div>
-          <div className="card-body">
-          </div>
-          <div className="card-footer">
-            <Highlight language="js">{`
-import React from 'react';
-import { Container } from '@roxie/components';
-            `}</Highlight>
-            <Highlight language="html">{`
-            `}</Highlight>
-          </div>
-        </div>
-        <div className="card mb-3">
-          <div className="card-header">Column Layout</div>
-          <div className="card-body">
-            <div className="card" style={{width:400,height:200}}>
-              <div className="card-header">Container Panel</div>
-              <Container layout="column" className="card-body p-0">
-                <div className="card" style={{height:100}}>
-                  <div className="card-header">Child Panel 1</div>
-                  <div className="card-body"></div>
-                </div>
-                <div className="card" style={{height:100}}>
-                  <div className="card-header">Child Panel 2</div>
-                  <div className="card-body"></div>
-                </div>
-              </Container>
-            </div>
-          </div>
-          <div className="card-footer">
-            <Highlight language="html">{`
-<div className="card" style={{width:400,height:200}}>
-  <div className="card-header">Container Panel</div>
-  <Container layout="column" className="card-body p-0">
-    <div className="card" style={{height:100}}>
-      <div className="card-header">Child Panel 1</div>
-      <div className="card-body"></div>
-    </div>
-    <div className="card" style={{height:100}}>
-      <div className="card-header">Child Panel 2</div>
-      <div className="card-body"></div>
-    </div>
-  </Container>
-</div>
-            `}</Highlight>
-          </div>
-        </div>
-        <div className="card mb-3">
-          <div className="card-header">Fit Layout</div>
-          <div className="card-body">
-            <div className="card" style={{height:200}}>
-              <div className="card-header">Container Panel</div>
-              <Container layout="fit" className="card-body">
-                <div className="card">
-                  <div className="card-header">Inner Panel</div>
-                  <div className="card-body">This panel is fit within its container.</div>
-                </div>
-              </Container>
-            </div>
-          </div>
-          <div className="card-footer">
-            <Highlight language="html">{`
-<div className="card" style={{height:200}}>
-  <div className="card-header">Container Panel</div>
-  <Container layout="fit" className="card-body">
-    <div className="card">
-      <div className="card-header">Inner Panel</div>
-      <div className="card-body">This panel is fit within its container.</div>
-    </div>
-  </Container>
-</div>
-            `}</Highlight>
-          </div>
-        </div>
-        <div className="card mb-3">
           <div className="card-header">HBox Layout</div>
           <div className="card-body">
             <Container layout="hbox">
@@ -284,39 +246,115 @@ import { Container } from '@roxie/components';
           </div>
         </div>
         <div className="card mb-3">
-          <div className="card-header">Table Layout</div>
+          <div className="card-header">Column Layout</div>
           <div className="card-body">
-            <div className="container-fluid">
-              <div className="row">
-                <div className="offset-4 col-4 border">Cell 2</div>
-                <div className="col-4 border">Cell 3</div>
-              </div>
-              <div className="row">
-                <div className="col-4 border">Cell 1</div>
-                <div className="col-4 border">Cell 4</div>
-                <div className="col-4 border">Cell 5</div>
-              </div>
-              <div className="row">
-                <div className="col-8 border">Cell 6</div>
-              </div>
+            <div className="card" style={{width:400,height:200}}>
+              <div className="card-header">Container Panel</div>
+              <Container layout="column" className="card-body p-0">
+                <div className="card" style={{height:100}}>
+                  <div className="card-header">Child Panel 1</div>
+                  <div className="card-body"></div>
+                </div>
+                <div className="card" style={{height:100}}>
+                  <div className="card-header">Child Panel 2</div>
+                  <div className="card-body"></div>
+                </div>
+              </Container>
             </div>
           </div>
           <div className="card-footer">
             <Highlight language="html">{`
-<div className="container-fluid">
-  <div className="row">
-    <div className="offset-4 col-4 border">Cell 2</div>
-    <div className="col-4 border">Cell 3</div>
-  </div>
-  <div className="row">
-    <div className="col-4 border">Cell 1</div>
-    <div className="col-4 border">Cell 4</div>
-    <div className="col-4 border">Cell 5</div>
-  </div>
-  <div className="row">
-    <div className="col-8 border">Cell 6</div>
-  </div>
+<div className="card" style={{width:400,height:200}}>
+  <div className="card-header">Container Panel</div>
+  <Container layout="column" className="card-body p-0">
+    <div className="card" style={{height:100}}>
+      <div className="card-header">Child Panel 1</div>
+      <div className="card-body"></div>
+    </div>
+    <div className="card" style={{height:100}}>
+      <div className="card-header">Child Panel 2</div>
+      <div className="card-body"></div>
+    </div>
+  </Container>
 </div>
+            `}</Highlight>
+          </div>
+        </div>
+        <div className="card mb-3">
+          <div className="card-header">Fit Layout</div>
+          <div className="card-body">
+            <div className="card" style={{height:200}}>
+              <div className="card-header">Container Panel</div>
+              <Container layout="fit" className="card-body p-0">
+                <div className="card">
+                  <div className="card-header">Inner Panel</div>
+                  <div className="card-body">This panel is fit within its container.</div>
+                </div>
+              </Container>
+            </div>
+          </div>
+          <div className="card-footer">
+            <Highlight language="html">{`
+<div className="card" style={{height:200}}>
+  <div className="card-header">Container Panel</div>
+  <Container layout="fit" className="card-body">
+    <div className="card">
+      <div className="card-header">Inner Panel</div>
+      <div className="card-body">This panel is fit within its container.</div>
+    </div>
+  </Container>
+</div>
+            `}</Highlight>
+          </div>
+        </div>
+        <div className="card mb-3">
+          <div className="card-header">Border Layout</div>
+          <div className="card-body">
+            <Container layout="border" style={{width:700,height:400}}
+                        north={<div className="card">
+                          <div className="card-header">North Region</div>
+                          <div className="card-body"></div>
+                        </div>}
+                        south={<div className="card" style={{height:100}}>
+                          <div className="card-header">South Region</div>
+                          <div className="card-body">height: 100px</div>
+                        </div>}
+                        west={<div className="card" style={{width:125}}>
+                          <div className="card-header">West Region</div>
+                          <div className="card-body">width: 125px</div>
+                        </div>}
+                        east={<div className="card">
+                          <div className="card-header">East Region</div>
+                          <div className="card-body"></div>
+                        </div>}
+                        center={<div className="card">
+                          <div className="card-header">Center Region</div>
+                          <div className="card-body"></div>
+                        </div>} />
+          </div>
+          <div className="card-footer">
+            <Highlight language="html">{`
+<Container layout="border" style={{width:700,height:400}}
+            north={<div className="card">
+              <div className="card-header">North Region</div>
+              <div className="card-body"></div>
+            </div>}
+            south={<div className="card">
+              <div className="card-header">South Region</div>
+              <div className="card-body"></div>
+            </div>}
+            west={<div className="card">
+              <div className="card-header">West Region</div>
+              <div className="card-body"></div>
+            </div>}
+            east={<div className="card">
+              <div className="card-header">East Region</div>
+              <div className="card-body"></div>
+            </div>}
+            center={<div className="card">
+              <div className="card-header">Center Region</div>
+              <div className="card-body"></div>
+            </div>} />
             `}</Highlight>
           </div>
         </div>

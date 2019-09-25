@@ -3,3 +3,9 @@
     flex: 1 1 auto !important;
   }
 }
+
+.fit-layout {
+  > * {
+    @include fit();
+  }
+}

@@ -11,6 +11,8 @@ body, input, textarea, select, button {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body { @include fit(); }
+
 .breadcrumb {
   min-height: 3rem;
   max-height: 3rem;
