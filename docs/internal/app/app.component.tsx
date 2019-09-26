@@ -7,7 +7,7 @@ import pkg from '../../../package.json';
 
 import {
   Home, GettingStarted,
-  LayoutConcept,
+  LayoutConcept, ComponentConcept, ThemingConcept,
 } from './guides';
 import {
   ComponentExample, ButtonExample, PanelExample, WindowExample, LayoutExample,
@@ -24,19 +24,21 @@ export function App() {
       west={<AppSidebar />}
       center={<main className="auto-scroll-y">
         <Switch>
-          <Route exact path="/introduction/getting-started" component={GettingStarted} />
-          <Route exact path="/core-concepts/layouts" component={LayoutConcept} />
-          <Route exact path="/examples/kitchen-sink" component={KitchenSink} />
-          <Route exact path="/examples/kitchen-sink/components" component={ComponentExample} />
-          <Route exact path="/examples/kitchen-sink/components/buttons" component={ButtonExample} />
-          <Route exact path="/examples/kitchen-sink/components/form-fields" component={FormFieldExample} />
-          <Route exact path="/examples/kitchen-sink/components/form-fields/field-types" component={FormFieldTypeExample} />
-          <Route exact path="/examples/kitchen-sink/components/layouts" component={LayoutExample} />
-          <Route exact path="/examples/kitchen-sink/components/panels" component={PanelExample} />
-          <Route exact path="/examples/kitchen-sink/components/windows" component={WindowExample} />
-          <Route exact path="/examples/kitchen-sink/trees" component={TreeExample} />
-          <Route exact path="/examples/admin-dashboard" component={AdminDashboard} />
-          <Route component={Home} />
+          <ProtectedRoute exact path="/introduction/getting-started" component={GettingStarted} title="Getting Started" />
+          <ProtectedRoute exact path="/core-concepts/layouts" component={LayoutConcept} title="Layouts and Containers" />
+          <ProtectedRoute exact path="/core-concepts/components" component={ComponentConcept} title="Components" />
+          <ProtectedRoute exact path="/core-concepts/theming" component={ThemingConcept} title="Theming" />
+          <ProtectedRoute exact path="/examples/kitchen-sink" component={KitchenSink} title="Examples" />
+          <ProtectedRoute exact path="/examples/kitchen-sink/components" component={ComponentExample} title="Examples" />
+          <ProtectedRoute exact path="/examples/kitchen-sink/components/buttons" component={ButtonExample} title="Examples" />
+          <ProtectedRoute exact path="/examples/kitchen-sink/components/form-fields" component={FormFieldExample} title="Examples" />
+          <ProtectedRoute exact path="/examples/kitchen-sink/components/form-fields/field-types" component={FormFieldTypeExample} title="Examples" />
+          <ProtectedRoute exact path="/examples/kitchen-sink/components/layouts" component={LayoutExample} title="Examples" />
+          <ProtectedRoute exact path="/examples/kitchen-sink/components/panels" component={PanelExample} title="Examples" />
+          <ProtectedRoute exact path="/examples/kitchen-sink/components/windows" component={WindowExample} title="Examples" />
+          <ProtectedRoute exact path="/examples/kitchen-sink/trees" component={TreeExample} title="Examples" />
+          <ProtectedRoute exact path="/examples/admin-dashboard" component={AdminDashboard} title="Examples" />
+          <ProtectedRoute component={Home} title="Docs" />
         </Switch>
       </main>}
     />
@@ -96,10 +98,17 @@ export function AppSidebar() {
       <NavLink to="/introduction/getting-started" className="list-group-item list-group-item-action" activeClassName="active">Getting Started</NavLink>
       <span className="list-group-item text-uppercase font-weight-bold">Core Concepts</span>
       <span className="list-group-item list-group-item-action text-muted">The Class System</span>
-      <span className="list-group-item list-group-item-action text-muted">Components</span>
+      <NavLink to="/core-concepts/components" className="list-group-item list-group-item-action" activeClassName="active">Components</NavLink>
+      <NavLink to="/core-concepts/theming" className="list-group-item list-group-item-action" activeClassName="active">Theming</NavLink>
       <NavLink to="/core-concepts/layouts" className="list-group-item list-group-item-action" activeClassName="active">Layouts and Containers</NavLink>
       <span className="list-group-item list-group-item-action text-muted">Data Packages</span>
       <span className="list-group-item list-group-item-action text-muted">Events</span>
     </div>
   </aside>
+}
+
+export function ProtectedRoute({ component: Component, title = '', ...others }) {
+  document.title = `${title ? `${title} | ` : ''}Roxie ${pkg.version}`
+
+  return <Route {...others} render={props => <Component {...props} />} />
 }

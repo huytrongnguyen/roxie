@@ -22,7 +22,8 @@ export function Home() {
                 <p>Start learning the core concepts of Roxie</p>
                 <ul>
                   <li>The Class System</li>
-                  <li>Components</li>
+                  <li><Link to="/core-concepts/components">Components</Link></li>
+                  <li><Link to="/core-concepts/theming">Theming</Link></li>
                   <li><Link to="/core-concepts/layouts">Layouts and Containers</Link></li>
                   <li>Data Packages</li>
                   <li>Events</li>

@@ -68,7 +68,7 @@ import { Container } from '@roxie/components';
             Let's assume, for example, we want our two child components to be positioned side by side, and to each take up exactly 50% of the width of the container
             - we can use a Column Layout simply by providing a layout config on the container:
           </p>
-          <div className="card">
+          <div className="card mb-3">
             <div className="card-body">
               <div className="card" style={{width:400,height:200}}>
                 <div className="card-header">Container Panel</div>
@@ -106,6 +106,13 @@ import { Panel } from '@roxie/components';
               `}</Highlight>
             </div>
           </div>
+          <h4>Flexible Layouts</h4>
+            <p>Roxie provides the following layouts that automatically adjust the size of child elements based on the available space:</p>
+            <ul>
+              <li><code>fit</code> - Sizes a single child element so that it fills 100% of the height and width of the parent.</li>
+              <li><code>hbox</code> - A subclass of box layout with horizontal alignment.</li>
+              <li><code>vbox</code> - A subclass of box layout with vertical alignment.</li>
+            </ul>
         </div>
       </div>
     </div>

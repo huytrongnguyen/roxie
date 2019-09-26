@@ -1,5 +1,11 @@
 # Roxie Core
 
+## [1.2.0]
+> Sep 26, 2019
+
+* Clean up code
+* Update docs
+
 ## [0.9.4]
 > Apr 6, 2019
 
