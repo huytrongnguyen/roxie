@@ -91,3 +91,11 @@
     color: $body-color;
   }
 }
+
+.list-group-item-action {
+  cursor: pointer;
+}
+
+.flex-fill {
+  flex: 1 1 0% !important;
+}

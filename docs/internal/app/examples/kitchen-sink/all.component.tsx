@@ -12,7 +12,7 @@ export function KitchenSink() {
         <div className="row">
           <div className="col-2"><Link to="/examples/kitchen-sink/components" className="btn btn-default btn-block">Components</Link></div>
           <div className="col-2"><Link to="/examples/kitchen-sink/grids" className="btn btn-default btn-block disabled">Grids</Link></div>
-          <div className="col-2"><Link to="/examples/kitchen-sink/trees" className="btn btn-default btn-block disabled">Trees</Link></div>
+          <div className="col-2"><Link to="/examples/kitchen-sink/trees" className="btn btn-default btn-block">Trees</Link></div>
           <div className="col-2"><Link to="/examples/kitchen-sink/charts" className="btn btn-default btn-block disabled">Charts</Link></div>
         </div>
       </div>

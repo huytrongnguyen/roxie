@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Link, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Link, NavLink, Switch, Route } from 'react-router-dom';
 import { Roxie } from '@roxie/core';
 import { Container } from '@roxie/components';
 
@@ -12,6 +12,7 @@ import {
 import {
   ComponentExample, ButtonExample, PanelExample, WindowExample, LayoutExample,
   FormFieldExample, FormFieldTypeExample,
+  TreeExample,
   KitchenSink,
 } from './examples/kitchen-sink';
 import { AdminDashboard } from './examples/admin-dashboard';
@@ -19,13 +20,8 @@ import { AdminDashboard } from './examples/admin-dashboard';
 export function App() {
   return <Router>
     <Container layout="border" className="fullscreen"
-      north={<header className="navbar navbar-expand-lg">
-        <Link to="/roxie" className="navbar-brand font-weight-bold">Roxie {pkg.version}</Link>
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav mr-auto"></ul>
-          <ThemeSelection />
-        </div>
-      </header>}
+      north={<AppHeader />}
+      west={<AppSidebar />}
       center={<main className="auto-scroll-y">
         <Switch>
           <Route exact path="/introduction/getting-started" component={GettingStarted} />
@@ -38,12 +34,23 @@ export function App() {
           <Route exact path="/examples/kitchen-sink/components/layouts" component={LayoutExample} />
           <Route exact path="/examples/kitchen-sink/components/panels" component={PanelExample} />
           <Route exact path="/examples/kitchen-sink/components/windows" component={WindowExample} />
+          <Route exact path="/examples/kitchen-sink/trees" component={TreeExample} />
           <Route exact path="/examples/admin-dashboard" component={AdminDashboard} />
           <Route component={Home} />
         </Switch>
       </main>}
     />
   </Router>
+}
+
+export function AppHeader() {
+  return <header className="navbar navbar-expand-lg">
+    <Link to="/roxie" className="navbar-brand font-weight-bold">Roxie {pkg.version}</Link>
+    <div className="collapse navbar-collapse">
+      <ul className="navbar-nav mr-auto"></ul>
+      <ThemeSelection />
+    </div>
+  </header>
 }
 
 const ThemeList = [
@@ -81,4 +88,18 @@ export function ThemeSelection() {
       </div>
     </li>
   </ul>
+}
+
+export function AppSidebar() {
+  return <aside style={{width:300}} className="border-right auto-scroll-y">
+    <div className="list-group list-group-flush">
+      <NavLink to="/introduction/getting-started" className="list-group-item list-group-item-action" activeClassName="active">Getting Started</NavLink>
+      <span className="list-group-item text-uppercase font-weight-bold">Core Concepts</span>
+      <span className="list-group-item list-group-item-action text-muted">The Class System</span>
+      <span className="list-group-item list-group-item-action text-muted">Components</span>
+      <NavLink to="/core-concepts/layouts" className="list-group-item list-group-item-action" activeClassName="active">Layouts and Containers</NavLink>
+      <span className="list-group-item list-group-item-action text-muted">Data Packages</span>
+      <span className="list-group-item list-group-item-action text-muted">Events</span>
+    </div>
+  </aside>
 }

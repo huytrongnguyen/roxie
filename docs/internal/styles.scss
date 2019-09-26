@@ -6,6 +6,14 @@
   @import '../../node_modules/highlight.js/scss/vs2015.scss';
 }
 
+html, body, #react-root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 main { margin-top: 3rem; }
 pre { margin-bottom: 0 !important; }
 

@@ -29,6 +29,10 @@ $body-color: $gray-dark;
 
 $border-color: $gray-300;
 
+// Typography
+
+$text-muted: $gray-500;
+
 // Forms
 
 $input-color: $body-color;
@@ -66,6 +70,13 @@ $dropdown-border-color: $border-color;
 $dropdown-link-color: $body-color;
 $dropdown-link-hover-color: $body-color;
 $dropdown-link-hover-bg: $gray;
+
+// List group
+
+$list-group-bg: $default-bg;
+$list-group-border-color: $border-color;
+$list-group-hover-bg: $gray;
+$list-group-action-color: $body-color;
 
 // Close
 

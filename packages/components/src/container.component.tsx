@@ -18,7 +18,7 @@ const layoutClass = {
   'fit': 'flex-fill fit-layout',
 }
 
-export function Container(props: ContainerProps) {console.log({props});
+export function Container(props: ContainerProps) {
   const { layout = '', north, south, west, east, center, children, className, ...others } = props;
 
   if (layout === 'border') {
