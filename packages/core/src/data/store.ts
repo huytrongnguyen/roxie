@@ -9,13 +9,24 @@ type ProxyConfig = {
   },
 }
 
-export type StoreConfig = {
+export type StoreConfig<T> = {
   proxy?: ProxyConfig,
   resolver?: (data: any, params?: HttpParams) => any,
+  data?: T,
 }
 
 export class DataStore<T> extends Subject<T> {
-  constructor(protected config: StoreConfig = {}) { super() }
+  constructor(protected config: StoreConfig<T> = {}) {
+    super();
+    if (config.data) {
+      const interval = setInterval(() => {
+        if (this.subcriber) {
+          this.next(config.data);
+          clearInterval(interval);
+        }
+      }, 100)
+    }
+  }
 
   load(params?: HttpParams) {
     this.fetch(params)

@@ -36,7 +36,7 @@ export function LayoutConcept() {
               </div>
             </div>
             <div className="card-footer">
-              <Highlight language="js">{`
+              <Highlight language="ts">{`
 import React from 'react';
 import { Container } from '@roxie/components';
               `}</Highlight>
@@ -85,7 +85,7 @@ import { Container } from '@roxie/components';
               </div>
             </div>
             <div className="card-footer">
-              <Highlight language="js">{`
+              <Highlight language="ts">{`
 import React from 'react';
 import { Panel } from '@roxie/components';
               `}</Highlight>

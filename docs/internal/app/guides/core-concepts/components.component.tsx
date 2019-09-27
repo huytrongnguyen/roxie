@@ -9,9 +9,11 @@ export function ComponentConcept() {
           <h2>Components</h2>
           <h3>Importing Components from <code>@roxie/components</code></h3>
           <p>All Roxie components can be imported <code>@roxie/components</code> packages using ECMAScript module syntax. For example:</p>
-          <Highlight language="js">{`
+          <div className="card card-header">
+            <Highlight language="ts">{`
 import { Container } from '@roxie/components';
-          `}</Highlight>
+            `}</Highlight>
+          </div>
         </div>
       </div>
     </div>

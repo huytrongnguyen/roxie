@@ -1,5 +1,18 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Highlight from 'react-highlight.js';
+import { DataStore } from '@roxie/core';
+
+type User = {
+  name: string;
+  email: string;
+}
+
+const UserStore = new DataStore<User[]>({
+  data: [
+    { name: 'Tim Smith', email: 'tim101@gmail.com' },
+    { name: 'Jill Lindsey', email: 'jlindsey890@gmail.com' }
+  ]
+});
 
 export function DataConcept() {
   return <Fragment>
@@ -16,7 +29,12 @@ export function DataConcept() {
             The <code>DataStore</code> class is used to load data into grids, trees, lists, charts, D3 visualizations and more.
             This example shows the typical usage of <code>DataStore</code>:
           </p>
-          <Highlight language="js">{`
+          <div className="card">
+            <div className="card-body">
+              <Users />
+            </div>
+            <div className="card-footer">
+              <Highlight language="ts">{`
 import React, { Fragment, useState, useEffect } from 'react';
 import { DataStore } from '@roxie/core';
 
@@ -25,27 +43,21 @@ type User = {
   email: string;
 }
 
-const UserStore = new DataStore<User[]>();
+const UserStore = new DataStore<User[]>({
+  data: [
+    { name: 'Tim Smith', email: 'tim101@gmail.com' },
+    { name: 'Jill Lindsey', email: 'jlindsey890@gmail.com' }
+  ]
+});
 
 function Users() {
-  useEffect(() => {
-    UserStore.next([
-      { name: 'Tim Smith', email: 'tim101@gmail.com' },
-      { name: 'Jill Lindsey', email: 'jlindsey890@gmail.com' }
-    ])
-  }, [])
-
-  return <UserTable />
-}
-
-function UserTable() {
   const [users, setUsers] = useState([] as User[]);
 
   useEffect(() => {
     UserStore.subscribe(setUsers);
   }, [])
 
-  return <table>
+  return <table className="table table-striped table-bordered">
     <thead>
       <tr>
         <th>Name</th>
@@ -60,10 +72,40 @@ function UserTable() {
     </tbody>
   </table>
 }
-          `}</Highlight>
+              `}</Highlight>
+            </div>
+          </div>
+          <p>
+            A store can be configured with a <code>model</code>.
+            The example above uses inline data via the <code>data</code> config.
+            In most real-world applications, you'll configure your store with a <code>proxy</code> to fetch data from the server.
+          </p>
         </div>
       </div>
     </div>
   </Fragment>
+}
+
+function Users() {
+  const [users, setUsers] = useState([] as User[]);
+
+  useEffect(() => {
+    UserStore.subscribe(setUsers);
+  }, [])
+
+  return <table className="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {users.map((user, index) => <tr key={index}>
+        <td>{user.name}</td>
+        <td>{user.email}</td>
+      </tr>)}
+    </tbody>
+  </table>
 }
 

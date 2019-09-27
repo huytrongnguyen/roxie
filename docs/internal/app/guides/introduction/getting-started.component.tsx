@@ -24,7 +24,8 @@ export function GettingStarted() {
             <dd><code>@roxie/components</code></dd>
           </dl>
           <h3>Updating index.html</h3>
-          <Highlight language="html">{`
+          <div className="card card-header">
+            <Highlight language="html">{`
 <!doctype html>
 <html lang="en" class="${themeCode}">
 <head>
@@ -37,7 +38,8 @@ export function GettingStarted() {
   ...
 </body>
 </html>
-          `}</Highlight>
+            `}</Highlight>
+          </div>
         </div>
       </div>
     </div>
