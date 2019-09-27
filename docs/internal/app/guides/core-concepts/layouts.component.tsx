@@ -36,24 +36,25 @@ export function LayoutConcept() {
               </div>
             </div>
             <div className="card-footer">
-              <Highlight language="ts">{`
+              <Highlight language="tsx">{`
 import React from 'react';
 import { Container } from '@roxie/components';
-              `}</Highlight>
-              <Highlight language="html">{`
-<div className="card" style={{width:400,height:300}}>
-  <div className="card-header">Container Panel</div>
-  <Container className="card-body p-0">
-    <div className="card" style={{width:'75%',height:100}}>
-      <div className="card-header">Child Panel 1</div>
-      <div className="card-body" />
-    </div>
-    <div className="card" style={{width:'75%',height:100}}>
-      <div className="card-header">Child Panel 2</div>
-      <div className="card-body" />
-    </div>
-  </Container>
-</div>
+
+function Layout() {
+  return <div className="card" style={{width:400,height:300}}>
+    <div className="card-header">Container Panel</div>
+    <Container className="card-body p-0">
+      <div className="card" style={{width:'75%',height:100}}>
+        <div className="card-header">Child Panel 1</div>
+        <div className="card-body" />
+      </div>
+      <div className="card" style={{width:'75%',height:100}}>
+        <div className="card-header">Child Panel 2</div>
+        <div className="card-body" />
+      </div>
+    </Container>
+  </div>
+}
               `}</Highlight>
             </div>
           </div>
@@ -85,24 +86,25 @@ import { Container } from '@roxie/components';
               </div>
             </div>
             <div className="card-footer">
-              <Highlight language="ts">{`
+              <Highlight language="tsx">{`
 import React from 'react';
 import { Panel } from '@roxie/components';
-              `}</Highlight>
-              <Highlight language="html">{`
-<div className="card" style={{width:400,height:200}}>
-  <div className="card-header">Container Panel</div>
-  <Container layout="column" className="card-body p-0">
-    <div className="card" style={{height:100}}>
-      <div className="card-header">Child Panel 1</div>
-      <div className="card-body" />
-    </div>
-    <div className="card" style={{height:100}}>
-      <div className="card-header">Child Panel 2</div>
-      <div className="card-body" />
-    </div>
-  </Container>
-</div>
+
+function Layout() {
+  return <div className="card" style={{width:400,height:200}}>
+    <div className="card-header">Container Panel</div>
+    <Container layout="column" className="card-body p-0">
+      <div className="card" style={{height:100}}>
+        <div className="card-header">Child Panel 1</div>
+        <div className="card-body" />
+      </div>
+      <div className="card" style={{height:100}}>
+        <div className="card-header">Child Panel 2</div>
+        <div className="card-body" />
+      </div>
+    </Container>
+  </div>
+}
               `}</Highlight>
             </div>
           </div>
