@@ -1,7 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Highlight from 'react-highlight.js';
+import { Roxie } from '@roxie/core';
 
 export function GettingStarted() {
+  const [themeCode, setThemeCode] = useState('');
+
+  useEffect(() => {
+    setThemeCode(Roxie.Cache.get('roxie-theme'));
+  }, [])
+
   return <Fragment>
     <div className="pt-3">
       <div className="container-fluid">
@@ -19,11 +26,11 @@ export function GettingStarted() {
           <h3>Updating index.html</h3>
           <Highlight language="html">{`
 <!doctype html>
-<html lang="en" class="roxie-theme-light">
+<html lang="en" class="${themeCode}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="node_modules/@roxie/ui/roxie-theme-light.css" />
+  <link rel="stylesheet" href="node_modules/@roxie/ui/${themeCode}.css" />
   ...
 </head>
 <body>

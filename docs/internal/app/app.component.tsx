@@ -7,7 +7,7 @@ import pkg from '../../../package.json';
 
 import {
   Home, GettingStarted,
-  LayoutConcept, ComponentConcept, ThemingConcept,
+  PackageConcept, LayoutConcept, ComponentConcept, ThemingConcept, DataConcept,
 } from './guides';
 import {
   ComponentExample, ButtonExample, PanelExample, WindowExample, LayoutExample,
@@ -25,9 +25,11 @@ export function App() {
       center={<main className="auto-scroll-y">
         <Switch>
           <ProtectedRoute exact path="/introduction/getting-started" component={GettingStarted} title="Getting Started" />
-          <ProtectedRoute exact path="/core-concepts/layouts" component={LayoutConcept} title="Layouts and Containers" />
+          <ProtectedRoute exact path="/core-concepts/packages" component={PackageConcept} title="Roxie Packages" />
           <ProtectedRoute exact path="/core-concepts/components" component={ComponentConcept} title="Components" />
           <ProtectedRoute exact path="/core-concepts/theming" component={ThemingConcept} title="Theming" />
+          <ProtectedRoute exact path="/core-concepts/layouts" component={LayoutConcept} title="Layouts and Containers" />
+          <ProtectedRoute exact path="/core-concepts/data" component={DataConcept} title="Data Package" />
           <ProtectedRoute exact path="/examples/kitchen-sink" component={KitchenSink} title="Examples" />
           <ProtectedRoute exact path="/examples/kitchen-sink/components" component={ComponentExample} title="Examples" />
           <ProtectedRoute exact path="/examples/kitchen-sink/components/buttons" component={ButtonExample} title="Examples" />
@@ -97,12 +99,11 @@ export function AppSidebar() {
     <div className="list-group list-group-flush">
       <NavLink to="/introduction/getting-started" className="list-group-item list-group-item-action" activeClassName="active">Getting Started</NavLink>
       <span className="list-group-item text-uppercase font-weight-bold">Core Concepts</span>
-      <span className="list-group-item list-group-item-action text-muted">The Class System</span>
+      <NavLink to="/core-concepts/packages" className="list-group-item list-group-item-action" activeClassName="active">Roxie Packages</NavLink>
       <NavLink to="/core-concepts/components" className="list-group-item list-group-item-action" activeClassName="active">Components</NavLink>
       <NavLink to="/core-concepts/theming" className="list-group-item list-group-item-action" activeClassName="active">Theming</NavLink>
       <NavLink to="/core-concepts/layouts" className="list-group-item list-group-item-action" activeClassName="active">Layouts and Containers</NavLink>
-      <span className="list-group-item list-group-item-action text-muted">Data Packages</span>
-      <span className="list-group-item list-group-item-action text-muted">Events</span>
+      <NavLink to="/core-concepts/data" className="list-group-item list-group-item-action" activeClassName="active">Data Package</NavLink>
     </div>
   </aside>
 }

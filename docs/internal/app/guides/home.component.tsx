@@ -21,12 +21,11 @@ export function Home() {
               <div className="card-body">
                 <p>Start learning the core concepts of Roxie</p>
                 <ul>
-                  <li>The Class System</li>
+                <li><Link to="/core-concepts/packages">Roxie Packages</Link></li>
                   <li><Link to="/core-concepts/components">Components</Link></li>
                   <li><Link to="/core-concepts/theming">Theming</Link></li>
                   <li><Link to="/core-concepts/layouts">Layouts and Containers</Link></li>
-                  <li>Data Packages</li>
-                  <li>Events</li>
+                  <li><Link to="/core-concepts/data">Data Package</Link></li>
                 </ul>
               </div>
             </div>

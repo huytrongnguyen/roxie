@@ -15,7 +15,7 @@ export type StoreConfig = {
 }
 
 export class DataStore<T> extends Subject<T> {
-  constructor(protected config: StoreConfig) { super() }
+  constructor(protected config: StoreConfig = {}) { super() }
 
   load(params?: HttpParams) {
     this.fetch(params)
