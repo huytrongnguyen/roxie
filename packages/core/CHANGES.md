@@ -1,6 +1,6 @@
 # Roxie Core
 
-## [1.2.3]
+## [1.2.4]
 > Sep 28, 2019
 
 * Supports to load intial data from `DataStore`
