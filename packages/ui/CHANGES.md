@@ -1,6 +1,6 @@
 # Roxie UI
 
-## [1.2.1]
+## [1.2.2]
 > Sep 28, 2019
 
 * [#9] Cannot resolve dependency '../node_modules/font-awesome/css/font-awesome.css'
