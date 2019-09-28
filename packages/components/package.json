@@ -1,6 +1,6 @@
 {
   "name": "@roxie/components",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Roxie component functions",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@roxie/core": "^1.2.2",
+    "@roxie/core": "^1.2.4",
     "@roxie/ui": "^1.2.1",
     "c3": "0.7.9",
     "react": "16.9.0",
