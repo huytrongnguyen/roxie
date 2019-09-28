@@ -1,6 +1,6 @@
 {
   "name": "roxie",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "JavaScript library that build on top of React",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
@@ -55,7 +55,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "publish": "lerna publish --from-git --no-git-tag-version",
+    "publish": "lerna publish --no-git-tag-version",
     "build-docs": "parcel build docs/internal/index.html --no-source-maps --no-content-hash --no-autoinstall --out-dir docs --public-url /roxie",
     "start-docs": "node server.js",
     "test": "jest"
