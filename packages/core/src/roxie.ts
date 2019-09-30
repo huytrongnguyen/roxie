@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import dateFns from 'date-fns';
+import { format as formatDate, parseISO as parseDate, getTime } from 'date-fns';
 
 import './lang/number';
 import './lang/string';
@@ -51,14 +51,14 @@ export const Roxie = {
     percentage: (ratio: number = 0, decimal: number = 2) => `${Roxie.Number.format((ratio || 0) * 100, decimal)}%`,
   },
   Date: {
-    format: (date?: number | Date, pattern: string = 'yyyy-MM-dd HH:mm:ss') => dateFns.format(date || Roxie.Date.now(), pattern),
-    parse: (date?: string) => date ? dateFns.parseISO(date) : Roxie.Date.now(),
+    format: (date?: number | Date, pattern: string = 'yyyy-MM-dd HH:mm:ss') => formatDate(date || Roxie.Date.now(), pattern),
+    parse: (date?: string) => date ? parseDate(date) : Roxie.Date.now(),
     now() {
       var now = new Date();
       var utc =  Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
       return new Date(utc);
     },
-    getUnixTime: (date: number | Date) => dateFns.getTime(date),
+    getUnixTime: (date: number | Date) => getTime(date),
   },
   Object: {
     isEmpty(o: any) {
