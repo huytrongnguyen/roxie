@@ -8,6 +8,7 @@ import pkg from '../../../package.json';
 import {
   Home, GettingStarted,
   PackageConcept, LayoutConcept, ComponentConcept, ThemingConcept, DataConcept,
+  ContainerComponent, DialogComponent, ChartComponent,
 } from './guides';
 import {
   ComponentExample, ButtonExample, PanelExample, WindowExample, LayoutExample,
@@ -30,6 +31,11 @@ export function App() {
           <ProtectedRoute exact path="/core-concepts/theming" component={ThemingConcept} title="Theming" />
           <ProtectedRoute exact path="/core-concepts/layouts" component={LayoutConcept} title="Layouts and Containers" />
           <ProtectedRoute exact path="/core-concepts/data" component={DataConcept} title="Data Package" />
+          <ProtectedRoute exact path="/components/container" component={ContainerComponent} title="Container" />
+          <ProtectedRoute exact path="/components/dialog" component={DialogComponent} title="Dialog" />
+          <ProtectedRoute exact path="/components/form" component={ContainerComponent} title="Form" />
+          <ProtectedRoute exact path="/components/grid" component={ContainerComponent} title="Grid" />
+          <ProtectedRoute exact path="/components/chart" component={ChartComponent} title="Chart" />
           <ProtectedRoute exact path="/examples/kitchen-sink" component={KitchenSink} title="Examples" />
           <ProtectedRoute exact path="/examples/kitchen-sink/components" component={ComponentExample} title="Examples" />
           <ProtectedRoute exact path="/examples/kitchen-sink/components/buttons" component={ButtonExample} title="Examples" />

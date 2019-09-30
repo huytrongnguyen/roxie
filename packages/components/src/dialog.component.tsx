@@ -6,7 +6,7 @@ export function Dialog(props: { id?: string, className?: string, title?: string,
   const { id = 'dialog', className = '', title = 'Dialog', children } = props;
 
   return <section id={id} className={Roxie.classNames('modal fade', className)} tabIndex={-1} role="dialog">
-    <div className="modal-dialog" role="document">
+    <div className="modal-dialog modal-dialog-centered" role="document">
       <div className="modal-content">
         <div className="modal-header">
           <h5 className="modal-title">{title}</h5>

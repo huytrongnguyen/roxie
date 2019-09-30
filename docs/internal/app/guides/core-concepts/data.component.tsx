@@ -39,14 +39,14 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { DataStore } from '@roxie/core';
 
 type User = {
-  name: string;
-  email: string;
+  name: string,
+  email: string,
 }
 
 const UserStore = new DataStore<User[]>({
   data: [
     { name: 'Tim Smith', email: 'tim101@gmail.com' },
-    { name: 'Jill Lindsey', email: 'jlindsey890@gmail.com' }
+    { name: 'Jill Lindsey', email: 'jlindsey890@gmail.com' },
   ]
 });
 

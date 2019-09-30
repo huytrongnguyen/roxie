@@ -21,7 +21,7 @@ export function Home() {
               <div className="card-body">
                 <p>Start learning the core concepts of Roxie</p>
                 <ul>
-                <li><Link to="/core-concepts/packages">Roxie Packages</Link></li>
+                  <li><Link to="/core-concepts/packages">Roxie Packages</Link></li>
                   <li><Link to="/core-concepts/components">Components</Link></li>
                   <li><Link to="/core-concepts/theming">Theming</Link></li>
                   <li><Link to="/core-concepts/layouts">Layouts and Containers</Link></li>
@@ -35,6 +35,12 @@ export function Home() {
               <div className="card-header">3. Components</div>
               <div className="card-body">
                 <p>Dig into the most common Roxie components</p>
+                <ul>
+                  <li><Link to="/components/forms">Forms</Link></li>
+                  <li><Link to="/components/grids">Grids</Link></li>
+                  <li><Link to="/components/trees">Trees</Link></li>
+                  <li><Link to="/components/charts">Charts</Link></li>
+                </ul>
               </div>
             </div>
           </div>

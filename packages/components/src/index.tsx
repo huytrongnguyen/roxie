@@ -1,4 +1,4 @@
-import React, { Fragment, PropsWithChildren, ReactNode, createElement, ReactElement } from 'react';
+import React, { Fragment, PropsWithChildren, ReactElement } from 'react';
 import { render } from 'react-dom';
 
 export * from './container.component';
