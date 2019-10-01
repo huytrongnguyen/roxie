@@ -1,25 +1,26 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight.js';
+import { Dialog } from '@roxie/components';
 
-export function WindowExample() {
+export function DialogExample() {
   return <Fragment>
     <ol className="breadcrumb">
       <li className="breadcrumb-item">Kitchen Sink</li>
       <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">All</Link></li>
       <li className="breadcrumb-item"><Link to="/examples/kitchen-sink/components">Components</Link></li>
-      <li className="breadcrumb-item">Windows</li>
+      <li className="breadcrumb-item">Dialogs</li>
     </ol>
     <div className="pt-3">
       <div className="container">
         <div className="card mb-3">
-          <div className="card-header">Basic Window</div>
+          <div className="card-header">Basic Dialog</div>
           <div className="card-body">
             <div className="modal d-block position-relative" tabIndex={-1} style={{zIndex: 1}}>
               <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content">
                   <div className="modal-header">
-                    <h5 className="modal-title">Window</h5>
+                    <h5 className="modal-title">Dialog</h5>
                     <button type="button" className="close" data-dismiss="modal">&times;</button>
                   </div>
                   <div className="modal-body">
@@ -57,7 +58,7 @@ export function WindowExample() {
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Window</h5>
+        <h5 class="modal-title">Dialog</h5>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
@@ -88,6 +89,48 @@ export function WindowExample() {
     </div>
   </div>
 </div>
+            `}</Highlight>
+          </div>
+        </div>
+        <div className="card mb-3">
+          <div className="card-header">Popup Dialog</div>
+          <div className="card-body">
+            <button type="button" className="btn btn-default" data-toggle="modal" data-target="#popup-dialog">Open Dialog</button>
+            <Dialog id="popup-dialog" title="New message">
+              <div className="form-group">
+                <label className="col-form-label">Recipient:</label>
+                <input type="text" className="form-control" />
+              </div>
+              <div className="form-group">
+                <label className="col-form-label">Message:</label>
+                <textarea className="form-control"></textarea>
+              </div>
+              <div className="d-flex justify-content-end">
+                <button type="button" className="btn btn-outline-secondary mr-1" data-dismiss="modal">Cancel</button>
+                <button type="button" className="btn btn-primary">Send</button>
+              </div>
+            </Dialog>
+          </div>
+          <div className="card-footer">
+            <Highlight language="tsx">{`
+import React from 'react';
+import { Dialog } from '@roxie/components';
+
+<button type="button" className="btn btn-default" data-toggle="modal" data-target="#popup-dialog">Open Dialog</button>
+<Dialog id="popup-dialog" title="New message">
+  <div className="form-group">
+    <label className="col-form-label">Recipient:</label>
+    <input type="text" className="form-control" />
+  </div>
+  <div className="form-group">
+    <label className="col-form-label">Message:</label>
+    <textarea className="form-control"></textarea>
+  </div>
+  <div className="d-flex justify-content-end">
+    <button type="button" className="btn btn-outline-secondary mr-1" data-dismiss="modal">Cancel</button>
+    <button type="button" className="btn btn-primary">Send</button>
+  </div>
+</Dialog>
             `}</Highlight>
           </div>
         </div>

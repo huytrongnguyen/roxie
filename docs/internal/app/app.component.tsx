@@ -8,10 +8,10 @@ import pkg from '../../../package.json';
 import {
   Home, GettingStarted,
   PackageConcept, LayoutConcept, ComponentConcept, ThemingConcept, DataConcept,
-  ContainerComponent, DialogComponent, ChartComponent,
+  DialogComponent, ChartComponent,
 } from './guides';
 import {
-  ComponentExample, ButtonExample, PanelExample, WindowExample, LayoutExample,
+  ComponentExample, ButtonExample, PanelExample, DialogExample, LayoutExample,
   FormFieldExample, FormFieldTypeExample,
   TreeExample,
   KitchenSink,
@@ -31,10 +31,8 @@ export function App() {
           <ProtectedRoute exact path="/core-concepts/theming" component={ThemingConcept} title="Theming" />
           <ProtectedRoute exact path="/core-concepts/layouts" component={LayoutConcept} title="Layouts and Containers" />
           <ProtectedRoute exact path="/core-concepts/data" component={DataConcept} title="Data Package" />
-          <ProtectedRoute exact path="/components/container" component={ContainerComponent} title="Container" />
           <ProtectedRoute exact path="/components/dialog" component={DialogComponent} title="Dialog" />
-          <ProtectedRoute exact path="/components/form" component={ContainerComponent} title="Form" />
-          <ProtectedRoute exact path="/components/grid" component={ContainerComponent} title="Grid" />
+          <ProtectedRoute exact path="/components/grid" component={DialogComponent} title="Grid" />
           <ProtectedRoute exact path="/components/chart" component={ChartComponent} title="Chart" />
           <ProtectedRoute exact path="/examples/kitchen-sink" component={KitchenSink} title="Examples" />
           <ProtectedRoute exact path="/examples/kitchen-sink/components" component={ComponentExample} title="Examples" />
@@ -43,7 +41,7 @@ export function App() {
           <ProtectedRoute exact path="/examples/kitchen-sink/components/form-fields/field-types" component={FormFieldTypeExample} title="Examples" />
           <ProtectedRoute exact path="/examples/kitchen-sink/components/layouts" component={LayoutExample} title="Examples" />
           <ProtectedRoute exact path="/examples/kitchen-sink/components/panels" component={PanelExample} title="Examples" />
-          <ProtectedRoute exact path="/examples/kitchen-sink/components/windows" component={WindowExample} title="Examples" />
+          <ProtectedRoute exact path="/examples/kitchen-sink/components/dialogs" component={DialogExample} title="Examples" />
           <ProtectedRoute exact path="/examples/kitchen-sink/trees" component={TreeExample} title="Examples" />
           <ProtectedRoute exact path="/examples/admin-dashboard" component={AdminDashboard} title="Examples" />
           <ProtectedRoute component={Home} title="Docs" />
@@ -110,6 +108,13 @@ export function AppSidebar() {
       <NavLink to="/core-concepts/theming" className="list-group-item list-group-item-action" activeClassName="active">Theming</NavLink>
       <NavLink to="/core-concepts/layouts" className="list-group-item list-group-item-action" activeClassName="active">Layouts and Containers</NavLink>
       <NavLink to="/core-concepts/data" className="list-group-item list-group-item-action" activeClassName="active">Data Package</NavLink>
+      <span className="list-group-item text-uppercase font-weight-bold">Components</span>
+      <NavLink to="/components/dialog" className="list-group-item list-group-item-action" activeClassName="active">Dialog</NavLink>
+      <NavLink to="/components/grid" className="list-group-item list-group-item-action" activeClassName="active">Grid</NavLink>
+      <NavLink to="/components/tree" className="list-group-item list-group-item-action" activeClassName="active">Tree</NavLink>
+      <NavLink to="/components/chart" className="list-group-item list-group-item-action" activeClassName="active">Chart</NavLink>
+      <span className="list-group-item text-uppercase font-weight-bold">Examples</span>
+      <NavLink to="/examples/kitchen-sink" className="list-group-item list-group-item-action" activeClassName="active">Kitchen Sink</NavLink>
     </div>
   </aside>
 }

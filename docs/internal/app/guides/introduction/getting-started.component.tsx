@@ -12,20 +12,21 @@ export function GettingStarted() {
   return <Fragment>
     <div className="pt-3">
       <div className="container-fluid">
-        <div className="card card-body mb-3">
-          <h2>Getting Started with Roxie</h2>
-          <p>This guide will show you how to add Roxie to your application.</p>
-          <h3>Requirements</h3>
-          <dl>
-            <dt>Vanilla application requires the following:</dt>
-            <dd><code>@roxie/core</code></dd>
-            <dd><code>@roxie/ui</code></dd>
-            <dt>React application requires the following:</dt>
-            <dd><code>@roxie/components</code></dd>
-          </dl>
-          <h3>Updating index.html</h3>
-          <div className="card card-header">
-            <Highlight language="html">{`
+        <div className="card-columns">
+          <div className="card card-body mb-3">
+            <h2>Getting Started with Roxie</h2>
+            <p>This guide will show you how to add Roxie to your application.</p>
+            <h3>Requirements</h3>
+            <dl>
+              <dt>Vanilla application requires the following:</dt>
+              <dd><code>@roxie/core</code></dd>
+              <dd><code>@roxie/ui</code></dd>
+              <dt>React application requires the following:</dt>
+              <dd><code>@roxie/components</code></dd>
+            </dl>
+            <h3>Updating <code>index.html</code></h3>
+            <div className="card card-header mb-3">
+              <Highlight language="html">{`
 <!doctype html>
 <html lang="en" class="${themeCode}">
 <head>
@@ -35,10 +36,33 @@ export function GettingStarted() {
   ...
 </head>
 <body>
-  ...
+  <script src="node_modules/@roxie/ui/ui.js"></script>
 </body>
 </html>
             `}</Highlight>
+            </div>
+            <h3>Adding Roxie to an Existing React Application</h3>
+            <p>Updating <code>body</code>></p>
+            <div className="card card-header mb-3">
+              <Highlight language="html">{`
+<body>
+  <div id="react-root"></div>
+  <script src="node_modules/@roxie/ui/ui.js"></script>
+  <script src="main.tsx"></script>
+</body>
+              `}</Highlight>
+            </div>
+            <p>Launching your Application</p>
+            <div className="card card-header">
+            <Highlight language="tsx">{`
+import React from 'react';
+import { render } from 'react-dom';
+
+import { App } from './app/app.component';
+
+render(<App />, document.getElementById('react-root'));
+              `}</Highlight>
+            </div>
           </div>
         </div>
       </div>

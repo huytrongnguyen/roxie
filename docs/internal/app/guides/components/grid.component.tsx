@@ -2,12 +2,12 @@ import React, { Fragment } from 'react';
 import Highlight from 'react-highlight.js';
 import { Dialog } from '@roxie/components';
 
-export function DialogComponent() {
+export function GridComponent() {
   return <Fragment>
     <div className="pt-3">
       <div className="container-fluid">
         <div className="card card-body mb-3">
-          <h2>Dialog</h2>
+          <h2>Grid</h2>
           <p>
             This class provides a convenient way to display a "popup" component.
             Dialogs are not subject to the restrictions of browser popup windows, but provide similar modal experiences.

@@ -4,8 +4,8 @@
   "description": "Roxie component functions",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "main": "index.js",
+  "typings": "index.d.ts",
   "scripts": {
     "build": "tsc"
   },
@@ -19,10 +19,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "directories": {
-    "lib": "lib"
-  },
   "files": [
-    "lib"
+    "dist/**/*",
+    "LICENSE"
   ]
 }

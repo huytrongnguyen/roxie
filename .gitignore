@@ -13,7 +13,6 @@ pids
 *.pid.lock
 *.lock
 .DS_Store
-lib
 package-lock.json
 .cache
 roxie-theme-*.*.js

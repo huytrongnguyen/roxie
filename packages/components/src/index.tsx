@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 
 export * from './container.component';
 export * from './dialog.component';
+export * from './grid.component';
 export * from './chart.component';
 
 export function Viewport(props: PropsWithChildren<any>) {

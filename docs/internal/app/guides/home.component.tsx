@@ -11,7 +11,9 @@ export function Home() {
               <div className="card-header">1. Introduction</div>
               <div className="card-body">
                 <p>Learn about the basics of app building with Roxie</p>
-                <Link to="/introduction/getting-started">Getting Started</Link>
+                <dl>
+                  <dd><Link to="/introduction/getting-started">Getting Started</Link></dd>
+                </dl>
               </div>
             </div>
           </div>
@@ -20,13 +22,13 @@ export function Home() {
               <div className="card-header">2. Core Concepts</div>
               <div className="card-body">
                 <p>Start learning the core concepts of Roxie</p>
-                <ul>
-                  <li><Link to="/core-concepts/packages">Roxie Packages</Link></li>
-                  <li><Link to="/core-concepts/components">Components</Link></li>
-                  <li><Link to="/core-concepts/theming">Theming</Link></li>
-                  <li><Link to="/core-concepts/layouts">Layouts and Containers</Link></li>
-                  <li><Link to="/core-concepts/data">Data Package</Link></li>
-                </ul>
+                <dl>
+                  <dd><Link to="/core-concepts/packages">Roxie Packages</Link></dd>
+                  <dd><Link to="/core-concepts/components">Components</Link></dd>
+                  <dd><Link to="/core-concepts/theming">Theming</Link></dd>
+                  <dd><Link to="/core-concepts/layouts">Layouts and Containers</Link></dd>
+                  <dd><Link to="/core-concepts/data">Data Package</Link></dd>
+                </dl>
               </div>
             </div>
           </div>
@@ -35,12 +37,12 @@ export function Home() {
               <div className="card-header">3. Components</div>
               <div className="card-body">
                 <p>Dig into the most common Roxie components</p>
-                <ul>
-                  <li><Link to="/components/forms">Forms</Link></li>
-                  <li><Link to="/components/grids">Grids</Link></li>
-                  <li><Link to="/components/trees">Trees</Link></li>
-                  <li><Link to="/components/charts">Charts</Link></li>
-                </ul>
+                <dl>
+                  <dd><Link to="/components/dialog">Dialog</Link></dd>
+                  <dd><Link to="/components/grid">Grid</Link></dd>
+                  <dd><Link to="/components/tree">Tree</Link></dd>
+                  <dd><Link to="/components/chart">Chart</Link></dd>
+                </dl>
               </div>
             </div>
           </div>

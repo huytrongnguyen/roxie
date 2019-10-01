@@ -4,13 +4,10 @@
   @import 'theme-light/variables';
   @import 'roxie-theme-base';
 
-  .navbar {
-    background-color: $default-bg;
-  }
+  .navbar { background-color: $default-bg; }
+  .navbar-brand { color: $body-color; font-weight: bold; }
 
-  .btn-default {
-    background-color: $default-bg;
-  }
+  .btn-default { background-color: $default-bg; }
 
   .btn-outline-secondary {
     color: $body-color;

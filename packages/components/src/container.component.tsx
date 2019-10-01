@@ -22,18 +22,18 @@ export function Container(props: ContainerProps) {
   const { layout = '', north, south, west, east, center, children, className, ...others } = props;
 
   if (layout === 'border') {
-    return <div className={Roxie.classNames('d-flex flex-column', className)} {...others}>
+    return <div className={Roxie.classNames('d-flex flex-column fullscreen', className)} {...others}>
       {north}
       <div className="d-flex flex-row flex-fill fullscreen">
         {west}
-        <div className="flex-fill fit-layout">{center || children}</div>
+        <div className="flex-fill fit-layout fullscreen">{center || children}</div>
         {east}
       </div>
       {south}
     </div>
   }
 
-  return <div className={Roxie.classNames(layoutClass[layout], props.className)} {...others}>
+  return <section className={Roxie.classNames(layoutClass[layout], props.className)} {...others}>
     {props.children}
-  </div>
+  </section>
 }

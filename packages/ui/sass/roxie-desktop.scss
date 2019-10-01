@@ -1,0 +1,3 @@
+@import 'theme-base/mixin';
+
+html, body, #react-root { @include fit(); }

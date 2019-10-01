@@ -9,9 +9,9 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@roxie/core": ["packages/core/lib"],
-      "@roxie/components": ["packages/components/lib"],
-      "@roxie/ui": ["packages/ui/lib"]
+      "@roxie/core": ["packages/core/dist"],
+      "@roxie/components": ["packages/components/dist"],
+      "@roxie/ui": ["packages/ui/dist/js"]
     },
     "inlineSourceMap": true,
     "esModuleInterop": true,

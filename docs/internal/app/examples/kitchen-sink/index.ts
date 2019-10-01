@@ -5,5 +5,5 @@ export * from './components/form-field.component';
 export * from './components/form-field-type.component';
 export * from './components/layout.component';
 export * from './components/panel.component';
-export * from './components/window.component';
+export * from './components/dialog.component';
 export * from './tree.component';

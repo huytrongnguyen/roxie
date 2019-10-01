@@ -1,4 +1,7 @@
 .cursor-pointer { cursor: pointer; }
+.no-scroll { overflow: hidden; }
+.auto-scroll { overflow: auto; }
+.auto-scroll-x { overflow-x: auto; }
 .auto-scroll-y { overflow-y: auto; }
 .fullscreen { @include fit(); }
 

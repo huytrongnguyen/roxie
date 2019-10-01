@@ -30,9 +30,9 @@
     "yarn": "1.17.3"
   },
   "alias": {
-    "@roxie/core": "./packages/core/lib",
-    "@roxie/components": "./packages/components/lib",
-    "@roxie/ui": "./packages/ui/lib"
+    "@roxie/core": "./packages/core/dist",
+    "@roxie/components": "./packages/components/dist",
+    "@roxie/ui": "./packages/ui/dist/js"
   },
   "jest": {
     "verbose": true,
@@ -55,7 +55,8 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "publish": "lerna publish --no-git-tag-version",
+    "changed": "lerna changed",
+    "publish": "lerna publish from-package --yes",
     "build-docs": "parcel build docs/internal/index.html --no-source-maps --no-content-hash --no-autoinstall --out-dir docs --public-url /roxie",
     "start-docs": "node server.js",
     "test": "jest"

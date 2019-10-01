@@ -19,5 +19,5 @@ export function Chart(props: { config: ChartConfiguration, data: any, dataOrient
     })
   }, [data])
 
-  return <div id={chartId} />
+  return <section id={chartId} />
 }
