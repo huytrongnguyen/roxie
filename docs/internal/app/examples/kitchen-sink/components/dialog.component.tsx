@@ -12,7 +12,7 @@ export function DialogExample() {
       <li className="breadcrumb-item">Dialogs</li>
     </ol>
     <div className="pt-3">
-      <div className="container">
+      <div className="container-fluid">
         <div className="card mb-3">
           <div className="card-header">Basic Dialog</div>
           <div className="card-body">

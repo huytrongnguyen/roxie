@@ -14,7 +14,7 @@ export function FormFieldTypeExample() {
       <li className="breadcrumb-item">Field Types</li>
     </ol>
     <div className="pt-3">
-      <div className="container">
+      <div className="container-fluid">
         <div className="card mb-3">
           <div className="card-header">Basic Form Fields</div>
           <div className="card-body">

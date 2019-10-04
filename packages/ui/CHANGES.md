@@ -1,5 +1,13 @@
 # Roxie UI
 
+## [1.3.0]
+
+* Breaking changes on css
+  * Override bootstrap with `roxie-ui.css`
+  * New color scheme for `roxie-theme-dark.css`
+  * Rename `ui.js` to `roxie-ui.js`
+
+
 ## [1.2.2]
 > Sep 28, 2019
 

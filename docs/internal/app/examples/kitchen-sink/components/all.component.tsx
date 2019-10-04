@@ -9,7 +9,7 @@ export function ComponentExample() {
       <li className="breadcrumb-item">Components</li>
     </ol>
     <div className="pt-3">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-2"><Link to="/examples/kitchen-sink/components/buttons" className="btn btn-default btn-block">Buttons</Link></div>
           <div className="col-2"><Link to="/examples/kitchen-sink/components/form-fields" className="btn btn-default btn-block">Form Fields</Link></div>

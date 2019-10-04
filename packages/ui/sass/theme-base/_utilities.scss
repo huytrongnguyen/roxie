@@ -14,5 +14,23 @@
 .btn-default {
   border-color: $border-color;
   color: $body-color;
-  background-color: $default-bg;
+  background-color: $body-bg;
+}
+
+@each $color, $value in $theme-colors {
+  .card {
+    &.bg-outline-#{$color} {
+      border: $card-border-width solid darken($value, 10%);
+      .card-header {
+        border-bottom: $card-border-width solid darken($value, 10%);
+        color: color-yiq($value);
+        background-color: $value;
+      }
+      .card-footer {
+        border-top: $card-border-width solid darken($value, 10%);
+        color: color-yiq($value);
+        background-color: $value;
+      }
+    }
+  }
 }

@@ -8,7 +8,7 @@ import pkg from '../../../package.json';
 import {
   Home, GettingStarted,
   PackageConcept, LayoutConcept, ComponentConcept, ThemingConcept, DataConcept,
-  DialogComponent, ChartComponent,
+  DialogComponent, GridComponent, ChartComponent,
 } from './guides';
 import {
   ComponentExample, ButtonExample, PanelExample, DialogExample, LayoutExample,
@@ -20,7 +20,7 @@ import { AdminDashboard } from './examples/admin-dashboard';
 
 export function App() {
   return <Router>
-    <Container layout="border" className="fullscreen"
+    <Container layout="border"
       north={<AppHeader />}
       west={<AppSidebar />}
       center={<main className="auto-scroll-y">
@@ -32,7 +32,7 @@ export function App() {
           <ProtectedRoute exact path="/core-concepts/layouts" component={LayoutConcept} title="Layouts and Containers" />
           <ProtectedRoute exact path="/core-concepts/data" component={DataConcept} title="Data Package" />
           <ProtectedRoute exact path="/components/dialog" component={DialogComponent} title="Dialog" />
-          <ProtectedRoute exact path="/components/grid" component={DialogComponent} title="Grid" />
+          <ProtectedRoute exact path="/components/grid" component={GridComponent} title="Grid" />
           <ProtectedRoute exact path="/components/chart" component={ChartComponent} title="Chart" />
           <ProtectedRoute exact path="/examples/kitchen-sink" component={KitchenSink} title="Examples" />
           <ProtectedRoute exact path="/examples/kitchen-sink/components" component={ComponentExample} title="Examples" />
@@ -79,7 +79,7 @@ export function ThemeSelection() {
     const prevTheme = currentTheme.value;
     setCurrentTheme(nextTheme);
     Roxie.Cache.set('roxie-theme', nextTheme.value);
-    Roxie.query('html').removeClass(prevTheme).addClass(nextTheme.value);
+    Roxie.query('#react-root').removeClass(prevTheme).addClass(nextTheme.value);
   }
 
   return <ul className="navbar-nav">
@@ -111,7 +111,6 @@ export function AppSidebar() {
       <span className="list-group-item text-uppercase font-weight-bold">Components</span>
       <NavLink to="/components/dialog" className="list-group-item list-group-item-action" activeClassName="active">Dialog</NavLink>
       <NavLink to="/components/grid" className="list-group-item list-group-item-action" activeClassName="active">Grid</NavLink>
-      <NavLink to="/components/tree" className="list-group-item list-group-item-action" activeClassName="active">Tree</NavLink>
       <NavLink to="/components/chart" className="list-group-item list-group-item-action" activeClassName="active">Chart</NavLink>
       <span className="list-group-item text-uppercase font-weight-bold">Examples</span>
       <NavLink to="/examples/kitchen-sink" className="list-group-item list-group-item-action" activeClassName="active">Kitchen Sink</NavLink>

@@ -10,7 +10,7 @@ export function TreeExample() {
       <li className="breadcrumb-item">Trees</li>
     </ol>
     <div className="pt-3">
-      <div className="container">
+      <div className="container-fluid">
         <div className="card mb-3">
           <div className="card-header">List</div>
           <div className="card-body">

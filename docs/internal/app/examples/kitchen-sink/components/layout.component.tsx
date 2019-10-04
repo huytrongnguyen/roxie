@@ -12,7 +12,7 @@ export function LayoutExample() {
       <li className="breadcrumb-item">Layouts</li>
     </ol>
     <div className="pt-3">
-      <div className="container">
+      <div className="container-fluid">
       <div className="card mb-3">
           <div className="card-header">Table Layout</div>
           <div className="card-body">

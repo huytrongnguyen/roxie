@@ -1,88 +1,88 @@
-@import '../theme-base/variables';
+// @import '../theme-base/variables';
 @import '../theme-base/color/light';
 
-// Custom variables
+// // Custom variables
 
-$default-bg: $white;
+// $default-bg: $white;
 
-// Bootstrap variable overrides
+// // Bootstrap variable overrides
 
-// Color system
+// // Color system
 
-$theme-colors: (
-  "primary": $blue,
-  "secondary": $gray-300,
-  "success": $green,
-  "danger": $red,
-  "warning": $yellow,
-  "info": $teal,
-  "light": $gray-100,
-  "dark": $gray-900,
-);
+// $theme-colors: (
+//   "primary": $blue,
+//   "secondary": $gray-300,
+//   "success": $green,
+//   "danger": $red,
+//   "warning": $yellow,
+//   "info": $teal,
+//   "light": $gray-100,
+//   "dark": $gray-900,
+// );
 
-// Body
+// // Body
 
-$body-bg: $gray-100;
-$body-color: $gray-dark;
+// $body-bg: $gray-100;
+// $body-color: $gray-dark;
 
-// Components
+// // Components
 
-$border-color: $gray-300;
+// $border-color: $gray-300;
 
-// Typography
+// // Typography
 
-$text-muted: $gray-500;
+// $text-muted: $gray-500;
 
-// Forms
+// // Forms
 
-$input-color: $body-color;
-$input-bg: $default-bg;
-$input-border-color: $border-color;
+// $input-color: $body-color;
+// $input-bg: $default-bg;
+// $input-border-color: $border-color;
 
-// Breadcrumbs
+// // Breadcrumbs
 
-$breadcrumb-bg: $default-bg;
+// $breadcrumb-bg: $default-bg;
 
-// Cards
+// // Cards
 
-$card-border-color: $border-color;
-$card-cap-bg: darken($gray, .5%);
-$card-bg: $default-bg;
+// $card-border-color: $border-color;
+// $card-cap-bg: darken($gray, .5%);
+// $card-bg: $default-bg;
 
-// Modals
+// // Modals
 
-$modal-content-color: $body-color;
-$modal-content-bg: $default-bg;
-$modal-content-border-color: $border-color;
+// $modal-content-color: $body-color;
+// $modal-content-bg: $default-bg;
+// $modal-content-border-color: $border-color;
 
-// Navs
+// // Navs
 
-$nav-tabs-border-color: $border-color;
-$nav-tabs-link-hover-border-color: $border-color $border-color $nav-tabs-border-color;
-$nav-tabs-link-active-color: $body-color;
-$nav-tabs-link-active-bg: $default-bg;
-$nav-tabs-link-active-border-color: $border-color $border-color $nav-tabs-link-active-bg;
+// $nav-tabs-border-color: $border-color;
+// $nav-tabs-link-hover-border-color: $border-color $border-color $nav-tabs-border-color;
+// $nav-tabs-link-active-color: $body-color;
+// $nav-tabs-link-active-bg: $default-bg;
+// $nav-tabs-link-active-border-color: $border-color $border-color $nav-tabs-link-active-bg;
 
-// Dropdowns
+// // Dropdowns
 
-$dropdown-bg: $default-bg;
-$dropdown-border-color: $border-color;
-$dropdown-link-color: $body-color;
-$dropdown-link-hover-color: $body-color;
-$dropdown-link-hover-bg: $gray;
+// $dropdown-bg: $default-bg;
+// $dropdown-border-color: $border-color;
+// $dropdown-link-color: $body-color;
+// $dropdown-link-hover-color: $body-color;
+// $dropdown-link-hover-bg: $gray;
 
-// List group
+// // List group
 
-$list-group-bg: $default-bg;
-$list-group-border-color: $border-color;
-$list-group-hover-bg: $gray;
-$list-group-action-color: $body-color;
+// $list-group-bg: $default-bg;
+// $list-group-border-color: $border-color;
+// $list-group-hover-bg: $gray;
+// $list-group-action-color: $body-color;
 
-// Close
+// // Close
 
-$close-color: $body-color;
+// $close-color: $body-color;
 
-// Code
+// // Code
 
-$pre-color: $body-color;
-$code-color: $body-color;
+// $pre-color: $body-color;
+// $code-color: $body-color;

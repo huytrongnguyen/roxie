@@ -1,18 +1,16 @@
-@import 'theme-base/root';
-
 .roxie-theme-dark {
   @import 'theme-dark/variables';
-  @import 'roxie-theme-base';
+  // @import 'roxie-theme-base';
 
-  .navbar { background-color: $default-bg; }
-  .navbar-brand { color: $body-color; font-weight: bold; }
+  // .navbar { background-color: $default-bg; }
+  // .navbar-brand { color: $body-color; font-weight: bold; }
 
-  .btn-default { background-color: $default-bg; }
+  // .btn-default { background-color: $default-bg; }
 
-  .btn-outline-dark {
-    color: $body-color;
-    &:disabled, &.disabled {
-      color: $body-color;
-    }
-  }
+  // .btn-outline-dark {
+  //   color: $body-color;
+  //   &:disabled, &.disabled {
+  //     color: $body-color;
+  //   }
+  // }
 }

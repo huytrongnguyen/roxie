@@ -1,3 +1,16 @@
+*:focus, *:active, *:read-only {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none !important;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+body, input, textarea, select, button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .breadcrumb {
   min-height: 3rem;
   max-height: 3rem;
@@ -33,33 +46,8 @@
 
 @each $color, $value in $theme-colors {
   .card {
-    &.bg-#{$color}, &.bg-outline-#{$color} {
-      border: $card-border-width solid darken($value, 10%);
-      .card-header {
-        border-bottom: $card-border-width solid darken($value, 10%);
-      }
-      .card-footer {
-        border-top: $card-border-width solid darken($value, 10%);
-      }
-    }
     &.bg-#{$color} {
       color: color-yiq($value);
-      .card-header {
-        background-color: darken($value, 5%);
-      }
-      .card-footer {
-        background-color: darken($value, 5%);
-      }
-    }
-    &.bg-outline-#{$color} {
-      .card-header {
-        color: color-yiq($value);
-        background-color: $value;
-      }
-      .card-footer {
-        color: color-yiq($value);
-        background-color: $value;
-      }
     }
   }
 }
@@ -75,22 +63,9 @@
 .navbar {
   height: 3rem;
   border-bottom: 1px solid $border-color;
-  background-color: $default-bg;
+  background-color: $body-bg;
 }
 .nav-link { cursor: pointer; }
-
-.btn-outline-secondary {
-  color: $body-color;
-  &:disabled, &.disabled {
-    color: $body-color;
-  }
-}
-.btn-outline-dark {
-  color: $body-color;
-  &:disabled, &.disabled {
-    color: $body-color;
-  }
-}
 
 .list-group-item-action {
   cursor: pointer;

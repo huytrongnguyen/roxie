@@ -18,23 +18,22 @@ export function DataConcept() {
   return <Fragment>
     <div className="pt-3">
       <div className="container-fluid">
-        <div className="card card-body mb-3">
-          <h2>Data Packages</h2>
-          <p>
-            Many of the components in Roxie that handle large volumes of data such as grids and charts.
-            This guide explains the basics of using the Roxie data package.
-          </p>
-          <h3>DataStore</h3>
-          <p>
-            The <code>DataStore</code> class is used to load data into grids, trees, lists, charts, D3 visualizations and more.
-            This example shows the typical usage of <code>DataStore</code>:
-          </p>
-          <div className="card mb-3">
-            <div className="card-body">
-              <Users />
-            </div>
-            <div className="card-footer">
-              <Highlight language="tsx">{`
+        <h2>Data Packages</h2>
+        <p>
+          Many of the components in Roxie that handle large volumes of data such as grids and charts.
+          This guide explains the basics of using the Roxie data package.
+        </p>
+        <h3>DataStore</h3>
+        <p>
+          The <code>DataStore</code> class is used to load data into grids, trees, lists, charts, D3 visualizations and more.
+          This example shows the typical usage of <code>DataStore</code>:
+        </p>
+        <div className="card mb-3">
+          <div className="card-body">
+            <Users />
+          </div>
+          <div className="card-footer">
+            <Highlight language="tsx">{`
 import React, { Fragment, useState, useEffect } from 'react';
 import { DataStore } from '@roxie/core';
 
@@ -72,21 +71,21 @@ function Users() {
     </tbody>
   </table>
 }
-              `}</Highlight>
-            </div>
+            `}</Highlight>
           </div>
-          <p>
-            A store can be configured with a <code>model</code>.
-            The example above uses inline data via the <code>data</code> config.
-            In most real-world applications, you'll configure your store with a <code>proxy</code> to fetch data from the server.
-          </p>
-          <h3>Proxy</h3>
-          <p>
-            A store can fetch data from the server by setting the <code>proxy</code> config.
-            We can modify the store in the previous example to fetch data from <code>users.json</code> using <code>Ajax</code>:
-          </p>
-          <div className="card card-header mb-3">
-            <Highlight language="tsx">{`
+        </div>
+        <p>
+          A store can be configured with a <code>model</code>.
+          The example above uses inline data via the <code>data</code> config.
+          In most real-world applications, you'll configure your store with a <code>proxy</code> to fetch data from the server.
+        </p>
+        <h3>Proxy</h3>
+        <p>
+          A store can fetch data from the server by setting the <code>proxy</code> config.
+          We can modify the store in the previous example to fetch data from <code>users.json</code> using <code>Ajax</code>:
+        </p>
+        <div className="card card-header mb-3">
+          <Highlight language="tsx">{`
 import React, { Fragment, useState, useEffect } from 'react';
 import { DataStore } from '@roxie/core';
 
@@ -124,13 +123,12 @@ function Users() {
     </tbody>
   </table>
 }
-            `}</Highlight>
-          </div>
-          <h3>Sorting</h3>
-          <p>TBD</p>
-          <h3>Filtering</h3>
-          <p>TBD</p>
+          `}</Highlight>
         </div>
+        <h3>Sorting</h3>
+        <p>TBD</p>
+        <h3>Filtering</h3>
+        <p>TBD</p>
       </div>
     </div>
   </Fragment>

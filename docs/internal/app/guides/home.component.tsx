@@ -40,7 +40,6 @@ export function Home() {
                 <dl>
                   <dd><Link to="/components/dialog">Dialog</Link></dd>
                   <dd><Link to="/components/grid">Grid</Link></dd>
-                  <dd><Link to="/components/tree">Tree</Link></dd>
                   <dd><Link to="/components/chart">Chart</Link></dd>
                 </dl>
               </div>

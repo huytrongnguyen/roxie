@@ -8,7 +8,7 @@ export function KitchenSink() {
       <li className="breadcrumb-item">All</li>
     </ol>
     <div className="pt-3">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-2"><Link to="/examples/kitchen-sink/components" className="btn btn-default btn-block">Components</Link></div>
           <div className="col-2"><Link to="/examples/kitchen-sink/grids" className="btn btn-default btn-block disabled">Grids</Link></div>

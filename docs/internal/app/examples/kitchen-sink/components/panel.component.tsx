@@ -11,7 +11,7 @@ export function PanelExample() {
       <li className="breadcrumb-item">Panels</li>
     </ol>
     <div className="pt-3">
-      <div className="container">
+      <div className="container-fluid">
         <div className="card mb-3">
           <div className="card-header">Basic Panels</div>
           <div className="card-body">

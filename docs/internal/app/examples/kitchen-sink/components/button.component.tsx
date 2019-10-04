@@ -11,7 +11,7 @@ export function ButtonExample() {
       <li className="breadcrumb-item">Buttons</li>
     </ol>
     <div className="pt-3">
-      <div className="container">
+      <div className="container-fluid">
         <div className="card mb-3">
           <div className="card-header">Basic Buttons</div>
           <div className="card-body">
@@ -69,8 +69,6 @@ export function ButtonExample() {
             <button type="button" className="btn btn-default btn-lg mr-1">Large</button>
             <button type="button" className="btn btn-default mr-1">Medium</button>
             <button type="button" className="btn btn-default btn-sm mr-1">Small</button>
-            <button type="button" className="btn btn-default mr-1"><i className="fa fa-home" /></button>
-            <button type="button" className="btn btn-default mr-1"><i className="fa fa-home mr-1" />Icon and text</button>
             <button type="button" className="btn btn-link mr-1">Link</button>
             <button type="button" className="btn btn-outline-secondary mr-1" data-toggle="button">Toggle</button>
             <button type="button" className="btn btn-default mr-1" disabled>Disabled</button>
@@ -81,8 +79,6 @@ export function ButtonExample() {
 <button type="button" class="btn btn-default btn-lg">Large</button>
 <button type="button" class="btn btn-default">Medium</button>
 <button type="button" class="btn btn-default btn-sm">Small</button>
-<button type="button" class="btn btn-default"><i class="fa fa-home"></i></button>
-<button type="button" class="btn btn-default"><i class="fa fa-home mr-1"></i>Icon and text</button>
 <button type="button" class="btn btn-link">Link</button>
 <button type="button" class="btn btn-outline-secondary" data-toggle="button">Toggle</button>
 <button type="button" class="btn btn-default" disabled>Disabled</button>
