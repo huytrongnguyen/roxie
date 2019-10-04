@@ -53,7 +53,7 @@ export function App() {
 
 export function AppHeader() {
   return <header className="navbar navbar-expand-lg">
-    <Link to="/roxie" className="navbar-brand font-weight-bold">Roxie {pkg.version}</Link>
+    <Link to="/roxie" className="navbar-brand">Roxie {pkg.version}</Link>
     <div className="collapse navbar-collapse">
       <ul className="navbar-nav mr-auto"></ul>
       <ThemeSelection />

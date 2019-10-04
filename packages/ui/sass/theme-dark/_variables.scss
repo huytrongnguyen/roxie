@@ -1,4 +1,4 @@
-@import '../theme-base/variables';
+// @import '../theme-base/variables';
 @import '../theme-base/color/dark';
 
 // Custom variables
@@ -22,67 +22,67 @@ $theme-colors: (
 
 // Body
 
-$body-bg: $gray-dark;
-$body-color: $gray;
+// $body-bg: $gray-dark;
+// $body-color: $gray;
 
-// Components
+// // Components
 
-$border-color: $gray-600;
+// $border-color: $gray-600;
 
-// Typography
+// // Typography
 
-$text-muted: $gray-400;
+// $text-muted: $gray-400;
 
-// Forms
+// // Forms
 
-$input-color: $body-color;
-$input-bg: $default-bg;
-$input-border-color: $border-color;
+// $input-color: $body-color;
+// $input-bg: $default-bg;
+// $input-border-color: $border-color;
 
-// Breadcrumbs
+// // Breadcrumbs
 
-$breadcrumb-bg: $default-bg;
+// $breadcrumb-bg: $default-bg;
 
-// Cards
+// // Cards
 
-$card-border-color: $border-color;
-$card-cap-bg: lighten($gray-700, .5%);
-$card-bg: $default-bg;
+// $card-border-color: $border-color;
+// $card-cap-bg: lighten($gray-700, .5%);
+// $card-bg: $default-bg;
 
-// Modals
+// // Modals
 
-$modal-content-color: $body-color;
-$modal-content-bg: $default-bg;
-$modal-content-border-color: $border-color;
+// $modal-content-color: $body-color;
+// $modal-content-bg: $default-bg;
+// $modal-content-border-color: $border-color;
 
-// Navs
+// // Navs
 
-$nav-tabs-border-color: $border-color;
-$nav-tabs-link-hover-border-color: $border-color $border-color $nav-tabs-border-color;
-$nav-tabs-link-active-color: $body-color;
-$nav-tabs-link-active-bg: $default-bg;
-$nav-tabs-link-active-border-color: $border-color $border-color $nav-tabs-link-active-bg;
+// $nav-tabs-border-color: $border-color;
+// $nav-tabs-link-hover-border-color: $border-color $border-color $nav-tabs-border-color;
+// $nav-tabs-link-active-color: $body-color;
+// $nav-tabs-link-active-bg: $default-bg;
+// $nav-tabs-link-active-border-color: $border-color $border-color $nav-tabs-link-active-bg;
 
-// Dropdowns
+// // Dropdowns
 
-$dropdown-bg: $default-bg;
-$dropdown-border-color: $border-color;
-$dropdown-link-color: $body-color;
-$dropdown-link-hover-color: $body-color;
-$dropdown-link-hover-bg: $gray-600;
+// $dropdown-bg: $default-bg;
+// $dropdown-border-color: $border-color;
+// $dropdown-link-color: $body-color;
+// $dropdown-link-hover-color: $body-color;
+// $dropdown-link-hover-bg: $gray-600;
 
-// List group
+// // List group
 
-$list-group-bg: $default-bg;
-$list-group-border-color: $border-color;
-$list-group-hover-bg: $gray-600;
-$list-group-action-color: $body-color;
+// $list-group-bg: $default-bg;
+// $list-group-border-color: $border-color;
+// $list-group-hover-bg: $gray-600;
+// $list-group-action-color: $body-color;
 
-// Close
+// // Close
 
-$close-color: $body-color;
+// $close-color: $body-color;
 
-// Code
+// // Code
 
-$pre-color: $body-color;
-$code-color: $body-color;
+// $pre-color: $body-color;
+// $code-color: $body-color;

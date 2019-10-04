@@ -56,7 +56,7 @@ export function LayoutExample() {
             <div id="accordionExample" className="accordion">
               <div className="card">
                 <div className="card-header">
-                  <button type="button" className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse1">
+                  <button type="button" className="btn btn-block text-left collapsed" data-toggle="collapse" data-target="#collapse1">
                     Accordion Item 1
                   </button>
                 </div>
@@ -74,7 +74,7 @@ export function LayoutExample() {
               </div>
               <div className="card">
                 <div className="card-header">
-                  <button type="button" className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2">
+                  <button type="button" className="btn btn-block text-left collapsed" data-toggle="collapse" data-target="#collapse2">
                     Accordion Item 2
                   </button>
                 </div>
@@ -92,7 +92,7 @@ export function LayoutExample() {
               </div>
               <div className="card">
                 <div className="card-header">
-                  <button type="button" className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse3">
+                  <button type="button" className="btn btn-block text-left collapsed" data-toggle="collapse" data-target="#collapse3">
                     Accordion Item 3
                   </button>
                 </div>
@@ -115,7 +115,7 @@ export function LayoutExample() {
   <div id="accordionExample" class="accordion">
     <div class="card">
       <div class="card-header">
-        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse1">
+        <button type="button" class="btn btn-block text-left collapsed" data-toggle="collapse" data-target="#collapse1">
           Accordion Item 1
         </button>
       </div>
@@ -133,7 +133,7 @@ export function LayoutExample() {
     </div>
     <div class="card">
       <div class="card-header">
-        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2">
+        <button type="button" class="btn btn-block text-left collapsed" data-toggle="collapse" data-target="#collapse2">
           Accordion Item 2
         </button>
       </div>
@@ -151,7 +151,7 @@ export function LayoutExample() {
     </div>
     <div class="card">
       <div class="card-header">
-        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse3">
+        <button type="button" class="btn btn-block text-left collapsed" data-toggle="collapse" data-target="#collapse3">
           Accordion Item 3
         </button>
       </div>

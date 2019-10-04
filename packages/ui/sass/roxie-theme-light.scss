@@ -1,22 +1,48 @@
 .roxie-theme-light {
   @import 'theme-light/variables';
-//   @import 'roxie-theme-base';
+  @import '../node_modules/bootstrap/scss/functions';
 
-//   .navbar { background-color: $default-bg; }
-//   .navbar-brand { color: $body-color; font-weight: bold; }
+  .navbar { background-color: $default-bg; }
+  .navbar-brand { color: $body-color; }
 
-//   .btn-default { background-color: $default-bg; }
+  .breadcrumb {
+    background-color: $default-bg;
+    .breadcrumb-item {
+      &:after {
+        border-left: 1.5rem solid $default-bg;
+      }
+    }
+  }
 
-//   .btn-outline-secondary {
-//     color: $body-color;
-//     &:disabled, &.disabled {
-//       color: $body-color;
-//     }
-//   }
-//   .btn-outline-light {
-//     color: $body-color;
-//     &:disabled, &.disabled {
-//       color: $body-color;
-//     }
-//   }
+  @each $color, $value in $theme-colors {
+    .btn-#{$color} {
+      color: color-yiq($value);
+      border-color: darken($value, 10%);
+      background-color: $value;
+      &:hover, &:focus {
+        color: color-yiq($value);
+        border-color: darken($value, 10%);
+      }
+    }
+    .btn-outline-#{$color} {
+      color: $value;
+      border-color: $value;
+      &:hover, &:focus {
+        color: color-yiq($value);
+        border-color: darken($value, 10%);
+        background-color: $value;
+      }
+    }
+  }
+  .btn-outline-secondary, .btn-outline-light { color: $body-color; }
+  .btn-default { border-color: $border-color; }
+
+  .dropdown-item {
+    &:hover, &:focus {
+      background-color: $border-color;
+    }
+    &:active, &.active {
+      background-color: $active-color;
+    }
+  }
 }

@@ -1,33 +1,41 @@
 // @import '../theme-base/variables';
 @import '../theme-base/color/light';
 
-// // Custom variables
+// Custom variables
 
-// $default-bg: $white;
+$default-bg: $white;
+$active-color: $blue;
 
 // // Bootstrap variable overrides
 
-// // Color system
+// Color system
 
-// $theme-colors: (
-//   "primary": $blue,
-//   "secondary": $gray-300,
-//   "success": $green,
-//   "danger": $red,
-//   "warning": $yellow,
-//   "info": $teal,
-//   "light": $gray-100,
-//   "dark": $gray-900,
-// );
+$theme-colors: (
+  "primary": $blue,
+  "secondary": $gray-300,
+  "success": $green,
+  "danger": $red,
+  "warning": $yellow,
+  "info": $teal,
+  "light": $gray-100,
+  "dark": $gray-900,
+);
 
-// // Body
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold: 150;
 
-// $body-bg: $gray-100;
-// $body-color: $gray-dark;
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark: $gray-900;
+$yiq-text-light: $white;
 
-// // Components
+// Body
 
-// $border-color: $gray-300;
+$body-bg: $gray-100;
+$body-color: $gray-dark;
+
+// Components
+
+$border-color: $gray-300;
 
 // // Typography
 

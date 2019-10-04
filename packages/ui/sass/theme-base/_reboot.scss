@@ -65,6 +65,7 @@ body, input, textarea, select, button {
   border-bottom: 1px solid $border-color;
   background-color: $body-bg;
 }
+.navbar-brand { font-weight: 500; }
 .nav-link { cursor: pointer; }
 
 .list-group-item-action {
