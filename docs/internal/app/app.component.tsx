@@ -79,7 +79,7 @@ export function ThemeSelection() {
     const prevTheme = currentTheme.value;
     setCurrentTheme(nextTheme);
     Roxie.Cache.set('roxie-theme', nextTheme.value);
-    Roxie.query('#react-root').removeClass(prevTheme).addClass(nextTheme.value);
+    Roxie.query('html').removeClass(prevTheme).addClass(nextTheme.value);
   }
 
   return <ul className="navbar-nav">

@@ -1,16 +1,195 @@
 .roxie-theme-dark {
   @import 'theme-dark/variables';
-  // @import 'roxie-theme-base';
+  @import 'theme-base/functions';
 
-  // .navbar { background-color: $default-bg; }
-  // .navbar-brand { color: $body-color; font-weight: bold; }
+  body {
+    color: $body-color;
+    background-color: $body-bg;
+  }
 
-  // .btn-default { background-color: $default-bg; }
+  a { color: $blue; }
 
-  // .btn-outline-dark {
-  //   color: $body-color;
-  //   &:disabled, &.disabled {
-  //     color: $body-color;
-  //   }
-  // }
+  .navbar {
+    background-color: $default-bg;
+    border-bottom: 1px solid $border-color;
+  }
+  .navbar-brand { color: $body-color; }
+
+  .breadcrumb {
+    background-color: $default-bg;
+    border-bottom: 1px solid $border-color;
+    .breadcrumb-item {
+      &:before {
+        border-left: 1.5rem solid $border-color;
+      }
+      &:after {
+        border-left: 1.5rem solid $default-bg;
+      }
+    }
+  }
+
+  .border { border: 1px solid $border-color !important; }
+  @each $side in (top, right, bottom, left) {
+    .border-#{$side} {
+      border-#{$side}: 1px solid $border-color !important;
+    }
+  }
+
+  .btn { color: $body-color; }
+  @each $color, $value in $theme-colors {
+    .btn-#{$color} {
+      color: color-yiq($value);
+      border-color: darken($value, 10%);
+      background-color: $value;
+      &:hover, &:focus {
+        color: color-yiq($value);
+        border-color: darken($value, 10%);
+        background-color: darken($value, 7.5%);
+      }
+    }
+    .btn-outline-#{$color} {
+      color: $value;
+      border-color: $value;
+      &:hover, &:focus {
+        color: color-yiq($value);
+        border-color: darken($value, 10%);
+        background-color: $value;
+      }
+    }
+    .bg-#{$color} {
+      background-color: $value !important;
+    }
+    .card {
+      &.bg-#{$color} {
+        color: color-yiq($value);
+        border: 1px solid darken($value, 10%);
+        .card-header {
+          background-color: darken($value, 5%);
+          border-bottom: 1px solid darken($value, 10%);
+        }
+        .card-footer {
+          background-color: darken($value, 5%);
+          border-top: 1px solid darken($value, 10%);
+        }
+      }
+      &.bg-outline-#{$color} {
+        border: 1px solid $value;
+        .card-header {
+          color: color-yiq($value);
+          background-color: $value;
+          border-bottom: 1px solid $value;
+        }
+        .card-footer {
+          color: color-yiq($value);
+          background-color: $value;
+          border-top: 1px solid $value;
+        }
+      }
+    }
+    // .list-group-item-#{$color} {
+    //   color: color-level($value, 6);
+    //   background-color: color-level($value, -9);
+    //   &.list-group-item-action {
+    //     &:hover,
+    //     &:focus {
+    //       color: color-level($value, 6);
+    //       background-color: darken(color-level($value, -9), 5%);
+    //     }
+    //     &.active {
+    //       color: $white;
+    //       background-color: color-level($value, 6);
+    //       border-color: color-level($value, 6);
+    //     }
+    //   }
+    // }
+  }
+  .btn-outline-secondary, .btn-outline-light { color: $body-color; }
+  .btn-default {
+    color: $body-color;
+    background-color: $default-bg;
+    border: 1px solid $border-color;
+  }
+
+  .dropdown-menu {
+    color: $body-color;
+    background-color: $default-bg;
+    border: 1px solid $border-color;
+  }
+  .dropdown-item {
+    color: $body-color;
+    &:hover, &:focus { background-color: $border-color; }
+    &:active, &.active { background-color: $active-color; }
+    &:disabled, &.disabled { color: $border-color; }
+  }
+
+  .card {
+    background-color: $default-bg;
+    border: 1px solid $border-color;
+  }
+  .card-header {
+    background: lighten($gray-700, .5%);
+    border-bottom: 1px solid $border-color;
+  }
+  .card-footer {
+    background: lighten($gray-700, .5%);
+    border-top: 1px solid $border-color;
+  }
+
+  .list-group-item {
+    background-color: $default-bg;
+    border: 1px solid $border-color;
+  }
+  .list-group-item-action {
+    color: $body-color;
+    &:hover, &:focus {
+      background-color: $gray-600;
+    }
+    &.active {
+      background-color: $blue;
+    }
+  }
+  .list-group-flush {
+    .list-group-item {
+      border-right: 0;
+      border-left: 0;
+    }
+  }
+
+  .nav-tabs {
+    .nav-link {
+      &:hover, &:focus {
+        border-color: $border-color;
+      }
+      &.active {
+        color: $body-color;
+        background-color: $default-bg;
+        border-color: $border-color $border-color $default-bg;
+      }
+    }
+  }
+
+  .table { color: $body-color; }
+  .table-bordered {
+    border: 1px solid $border-color;
+    th, td { border: 1px solid $border-color; }
+    thead th { border-bottom: 2px solid $border-color; }
+  }
+
+  .modal-content {
+    background-color: $default-bg;
+    border: 1px solid $border-color;
+  }
+  .modal-header {
+    border-bottom: 1px solid $border-color;
+    background: lighten($gray-700, .5%);
+  }
+
+  .close { color: $body-color; }
+
+  .form-control {
+    color: $body-color;
+    background-color: $default-bg;
+    border: 1px solid $border-color;
+  }
+  .form-control-plaintext { color: $body-color; }
 }

@@ -1,13 +1,30 @@
-// @import '../theme-base/variables';
-@import '../theme-base/color/dark';
-
-// Custom variables
-
-$default-bg: $gray-800;
-
 // Bootstrap variable overrides
 
 // Color system
+
+$black:    rgb(0,0,0);
+$white:    rgb(255,255,255);
+$blue:     rgb(64,156,255);
+$indigo:   rgb(125,122,255);
+$purple:   rgb(218,143,255);
+$pink:     rgb(255,100,130);
+$red:      rgb(255,105,97);
+$orange:   rgb(255,179,64);
+$yellow:   rgb(255,212,38);
+$green:    rgb(48,219,91);
+$teal:     rgb(112,215,255);
+$brown:    rgb(181,148,105);
+$gray:     rgb(142,142,147);
+$gray-100: rgb(242,242,247);
+$gray-200: rgb(229,229,234);
+$gray-300: rgb(209,209,214);
+$gray-400: rgb(199,199,204);
+$gray-500: rgb(174,174,178);
+$gray-600: rgb(99,99,102);
+$gray-700: rgb(72,72,74);
+$gray-800: rgb(58,58,60);
+$gray-900: rgb(44,44,46);
+$gray-dark:rgb(28,28,30);
 
 $theme-colors: (
   "primary": $blue,
@@ -20,69 +37,21 @@ $theme-colors: (
   "dark": $gray-dark,
 );
 
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold: 150;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark: $gray-900;
+$yiq-text-light: $white;
+
+$default-bg: $gray-800;
+$active-color: $blue;
+
 // Body
 
-// $body-bg: $gray-dark;
-// $body-color: $gray;
+$body-bg: $gray-800;
+$body-color: $gray-100;
 
-// // Components
+// Components
 
-// $border-color: $gray-600;
-
-// // Typography
-
-// $text-muted: $gray-400;
-
-// // Forms
-
-// $input-color: $body-color;
-// $input-bg: $default-bg;
-// $input-border-color: $border-color;
-
-// // Breadcrumbs
-
-// $breadcrumb-bg: $default-bg;
-
-// // Cards
-
-// $card-border-color: $border-color;
-// $card-cap-bg: lighten($gray-700, .5%);
-// $card-bg: $default-bg;
-
-// // Modals
-
-// $modal-content-color: $body-color;
-// $modal-content-bg: $default-bg;
-// $modal-content-border-color: $border-color;
-
-// // Navs
-
-// $nav-tabs-border-color: $border-color;
-// $nav-tabs-link-hover-border-color: $border-color $border-color $nav-tabs-border-color;
-// $nav-tabs-link-active-color: $body-color;
-// $nav-tabs-link-active-bg: $default-bg;
-// $nav-tabs-link-active-border-color: $border-color $border-color $nav-tabs-link-active-bg;
-
-// // Dropdowns
-
-// $dropdown-bg: $default-bg;
-// $dropdown-border-color: $border-color;
-// $dropdown-link-color: $body-color;
-// $dropdown-link-hover-color: $body-color;
-// $dropdown-link-hover-bg: $gray-600;
-
-// // List group
-
-// $list-group-bg: $default-bg;
-// $list-group-border-color: $border-color;
-// $list-group-hover-bg: $gray-600;
-// $list-group-action-color: $body-color;
-
-// // Close
-
-// $close-color: $body-color;
-
-// // Code
-
-// $pre-color: $body-color;
-// $code-color: $body-color;
+$border-color: $gray-600;
