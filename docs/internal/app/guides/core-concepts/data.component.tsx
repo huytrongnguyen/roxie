@@ -3,11 +3,11 @@ import Highlight from 'react-highlight.js';
 import { DataStore } from '@roxie/core';
 
 type User = {
-  name: string;
-  email: string;
+  name: string,
+  email: string,
 }
 
-const UserStore = new DataStore<User[]>({
+const UserStore = new DataStore<User>({
   data: [
     { name: 'Tim Smith', email: 'tim101@gmail.com' },
     { name: 'Jill Lindsey', email: 'jlindsey890@gmail.com' }
@@ -56,7 +56,7 @@ function Users() {
     UserStore.subscribe(setUsers);
   }, [])
 
-  return <table className="table table-striped table-bordered">
+  return <table className="table table-bordered table-striped table-hover">
     <thead>
       <tr>
         <th>Name</th>
@@ -90,8 +90,8 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { DataStore } from '@roxie/core';
 
 type User = {
-  name: string;
-  email: string;
+  name: string,
+  email: string,
 }
 
 const UserStore = new DataStore<User[]>({
@@ -141,7 +141,7 @@ function Users() {
     UserStore.subscribe(setUsers);
   }, [])
 
-  return <table className="table table-striped table-bordered mb-0">
+  return <table className="table table-bordered table-striped table-hover mb-0">
     <thead>
       <tr>
         <th>Name</th>

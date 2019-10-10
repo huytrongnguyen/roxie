@@ -8,7 +8,6 @@ import './lang/array';
 import { LocalCache } from './cache';
 import { Subject } from './observable';
 
-
 export const Roxie = {
   query: (selector: string) => $(selector),
   isEmpty: (value: any) => value == null || value === '' || (Roxie.isArray(value) && value.length === 0) || Roxie.Object.isEmpty(value),

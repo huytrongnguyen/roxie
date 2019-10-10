@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { PlainObject } from './types';
 
 export type HttpParams = {
   pathParams?: { [key:string]: any },
@@ -10,13 +11,14 @@ export type AjaxSettings = {
   url: string,
   method?: string,
   params?: HttpParams,
+  headers?: PlainObject<string>,
   onError?: (msg: string) => void,
   onComplete?: () => void,
 }
 
 export const Ajax = {
   request: async <T>(settings: AjaxSettings) => {
-    const { method = 'get', params = {}, onError, onComplete } = settings;
+    const { method = 'get', params = {}, headers = {}, onError, onComplete } = settings;
     let { url } = settings;
 
     if (params.pathParams) {
@@ -28,7 +30,7 @@ export const Ajax = {
     }
 
     try {
-      const jqAjaxSettings: JQueryAjaxSettings = { url, method, contentType: 'application/json;charset=UTF-8' };
+      const jqAjaxSettings: JQueryAjaxSettings = { url, method, contentType: 'application/json;charset=UTF-8', headers };
       params.body && (jqAjaxSettings.data = JSON.stringify(params.body));
       return (await $.ajax(jqAjaxSettings)) as T;
     } catch (jqXHR) {

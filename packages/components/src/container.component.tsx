@@ -22,7 +22,7 @@ export function Container(props: ContainerProps) {
   const { layout = '', north, south, west, east, center, children, className, ...others } = props;
 
   if (layout === 'border') {
-    return <div className={Roxie.classNames('d-flex flex-column fullscreen', className)} {...others}>
+    return <section className={Roxie.classNames('d-flex flex-column fullscreen', className)} {...others}>
       {north}
       <div className="d-flex flex-row flex-fill fullscreen">
         {west}
@@ -30,7 +30,7 @@ export function Container(props: ContainerProps) {
         {east}
       </div>
       {south}
-    </div>
+    </section>
   }
 
   return <section className={Roxie.classNames(layoutClass[layout], props.className)} {...others}>

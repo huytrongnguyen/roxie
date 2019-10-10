@@ -19,7 +19,9 @@ export function GettingStarted() {
           <dt>Vanilla application requires the following:</dt>
           <dd><code>@roxie/core</code></dd>
           <dd><code>@roxie/ui</code></dd>
-          <dt>React application requires the following:</dt>
+          <dt>React 16.9+ application requires the following:</dt>
+          <dd><code>react</code></dd>
+          <dd><code>react-dom</code></dd>
           <dd><code>@roxie/components</code></dd>
         </dl>
         <h3>Updating <code>index.html</code></h3>
@@ -40,11 +42,11 @@ export function GettingStarted() {
         `}</Highlight>
         </div>
         <h3>Adding Roxie to an Existing React Application</h3>
-        <p>Updating <code>body</code>></p>
+
+        <p>Updating <code>body</code></p>
         <div className="card card-header mb-3">
           <Highlight language="html">{`
 <body>
-  <div id="react-root"></div>
   <script src="node_modules/@roxie/ui/ui.js"></script>
   <script src="main.tsx"></script>
 </body>
@@ -54,11 +56,11 @@ export function GettingStarted() {
         <div className="card card-header mb-3">
           <Highlight language="tsx">{`
 import React from 'react';
-import { render } from 'react-dom';
+import { launch } from '@roxie/components';
 
 import { App } from './app/app.component';
 
-render(<App />, document.getElementById('react-root'));
+launch(<App />);
         `}</Highlight>
         </div>
       </div>

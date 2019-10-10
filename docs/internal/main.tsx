@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { launch } from '@roxie/components';
 
 import { App } from './app/app.component';
 
-render(<App />, document.getElementById('react-root'));
+launch(<App />);

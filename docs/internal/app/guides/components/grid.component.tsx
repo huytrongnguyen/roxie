@@ -1,6 +1,22 @@
 import React, { Fragment } from 'react';
 import Highlight from 'react-highlight.js';
-import { Dialog } from '@roxie/components';
+import { DataStore } from '@roxie/core';
+import { Grid, Column } from '@roxie/components';
+
+type User = {
+  name: string,
+  email: string,
+  phone: string,
+}
+
+const UserStore = new DataStore<User>({
+  data: [
+    { name: 'Lisa', email: 'lisa@simpsons.com', phone: '555-111-1224' },
+    { name: 'Bart', email: 'bart@simpsons.com', phone: '555-222-1234' },
+    { name: 'Homer', email: 'home@simpsons.com', phone: '555-222-1244' },
+    { name: 'Marge', email: 'marge@simpsons.com', phone: '555-222-1254' },
+  ]
+});
 
 export function GridComponent() {
   return <Fragment>
@@ -8,39 +24,46 @@ export function GridComponent() {
       <div className="container-fluid">
         <h2>Grid</h2>
         <p>
-          This class provides a convenient way to display a "popup" component.
-          Dialogs are not subject to the restrictions of browser popup windows, but provide similar modal experiences.
+          Grids are an excellent way of showing large amounts of tabular data on the client side.
+          Grid makes it easy to fetch, sort and filter large amounts of data.
         </p>
+        <p>Grids are composed of two main pieces - a <code>DataStore</code> full of data and a set of columns to render.</p>
         <div className="card mb-3">
           <div className="card-body">
-            <button type="button" className="btn btn-default" data-toggle="modal" data-target="#dialog">Show Dialog</button>
-            <Dialog id="dialog" title="Dialog">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <div className="d-flex justify-content-end">
-                <button type="button" className="btn btn-outline-secondary mr-1" data-dismiss="modal">Cancel</button>
-                <button type="button" className="btn btn-primary">OK</button>
-              </div>
-            </Dialog>
+            <Grid store={UserStore}>
+              <Column headerText="Name" dataIndex="name" />
+              <Column headerText="Email" dataIndex="email" />
+              <Column headerText="Phone" dataIndex="phone" />
+            </Grid>
           </div>
           <div className="card-footer">
             <Highlight language="tsx">{`
-import React from 'react';
-import { Dialog } from '@roxie/components';
+import React, { Fragment } from 'react';
+import { DataStore } from '@roxie/core';
+import { Grid, Column } from '@roxie/components';
 
-<button type="button" className="btn btn-default" data-toggle="modal" data-target="#dialog">Show Dialog</button>
-<Dialog id="dialog" title="Dialog">
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
-  <div className="d-flex justify-content-end">
-    <button type="button" className="btn btn-outline-secondary mr-1" data-dismiss="modal">Cancel</button>
-    <button type="button" className="btn btn-primary">OK</button>
-  </div>
-</Dialog>
+type User = {
+  name: string,
+  email: string,
+  phone: string,
+}
+
+const UserStore = new DataStore<User>({
+  data: [
+    { name: 'Lisa', email: 'lisa@simpsons.com', phone: '555-111-1224' },
+    { name: 'Bart', email: 'bart@simpsons.com', phone: '555-222-1234' },
+    { name: 'Homer', email: 'home@simpsons.com', phone: '555-222-1244' },
+    { name: 'Marge', email: 'marge@simpsons.com', phone: '555-222-1254' },
+  ]
+});
+
+function Users() {
+  return <Grid store={UserStore}>
+    <Column headerText="Name" dataIndex="name" />
+    <Column headerText="Email" dataIndex="email" />
+    <Column headerText="Phone" dataIndex="phone" />
+  </Grid>
+}
             `}</Highlight>
           </div>
         </div>

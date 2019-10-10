@@ -37,9 +37,6 @@ $theme-colors: (
   "dark": $gray-900,
 );
 
-// Set a specific jump point for requesting color jumps
-$theme-color-interval: 8% !default;
-
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
 $yiq-contrasted-threshold: 150;
 
@@ -52,9 +49,20 @@ $active-color: $blue;
 
 // Body
 
-$body-bg: $gray-100;
+$body-bg: $white;
 $body-color: $gray-dark;
+
+// Links
+
+$link-color: $blue;
+$link-hover-color: darken($link-color, 15%);
 
 // Components
 
 $border-color: $gray-300;
+$component-active-color: $white;
+$component-active-bg: $blue;
+$component-hover-bg: rgba($gray-100, .75);
+$component-accent-bg: rgba($gray-100, .5);
+$component-disabled-color: $gray-500;
+$component-cap-bg: $gray-100;

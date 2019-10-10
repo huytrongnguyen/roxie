@@ -28,7 +28,7 @@ $gray-dark:rgb(28,28,30);
 
 $theme-colors: (
   "primary": $blue,
-  "secondary": $gray-300,
+  "secondary": $gray-500,
   "success": $green,
   "danger": $red,
   "warning": $yellow,
@@ -52,6 +52,17 @@ $active-color: $blue;
 $body-bg: $gray-800;
 $body-color: $gray-100;
 
+// Links
+
+$link-color: $blue;
+$link-hover-color: darken($link-color, 15%);
+
 // Components
 
 $border-color: $gray-600;
+$component-active-color: $white;
+$component-active-bg: $blue;
+$component-hover-bg: rgba($gray-700, .75);
+$component-accent-bg: rgba($gray-700, .5);
+$component-disabled-color: $gray-600;
+$component-cap-bg: lighten($gray-700, .5%);
