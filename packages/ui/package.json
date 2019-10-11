@@ -1,7 +1,7 @@
 {
   "name": "@roxie/ui",
-  "version": "1.4.0",
-  "description": "Roxie UI functions",
+  "version": "1.4.1",
+  "description": "The styles of Roxie, based on Bootstrap with many themes",
   "author": "huytrongnguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
   "main": "dist/js/roxie-ui.js",
@@ -12,12 +12,12 @@
   },
   "dependencies": {
     "bootstrap": "4.3.1",
-    "c3": "0.7.8",
+    "c3": "0.7.10",
     "jquery": "3.4.1",
     "popper.js": "1.15.0"
   },
   "devDependencies": {
-    "sass": "1.22.12"
+    "sass": "1.23.0"
   },
   "publishConfig": {
     "access": "public"

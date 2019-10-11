@@ -1,23 +1,68 @@
 import React, { useState, useEffect } from 'react';
 import { generate, ChartConfiguration, ChartAPI } from 'c3';
-import { Roxie } from '@roxie/core';
+import { Roxie, DataStore } from '@roxie/core';
 
-export function Chart(props: { config: ChartConfiguration, data: any, dataOriented?: string }) {
-  const { config, data, dataOriented = 'columns' } = props,
-        chartId = Roxie.guid('chart-'),
-        [chartApi, setChartApi] = useState(null as ChartAPI);
+export interface ChartProps {
+  store: DataStore<any>,
+  series: Series,
+  axes?: Axes,
+}
+
+export interface Series {
+  type: string,
+  xField: string,
+  yField: string[],
+}
+
+export interface Axes {
+  type: string,
+  field: string,
+  title?: string,
+  position: 'inner-right' | 'inner-center' | 'inner-left' | 'outer-right' | 'outer-center' | 'outer-left' | 'inner-top' | 'inner-middle' | 'inner-bottom' | 'outer-top' | 'outer-middle' | 'outer-bottom',
+}
+
+export function Chart(props: ChartProps) {
+  const { store, series, axes } = props,
+        [chartId] = useState(Roxie.guid('chart-')),
+        [config] = useState({
+          bindto: `#${chartId}`,
+          data: {
+            json: [],
+            keys: { value: series.yField },
+            type: series.type,
+          },
+          bar: { width: { ratio: 0.5 } },
+          pie: { expand: false },
+        } as c3.ChartConfiguration);
 
   useEffect(() => {
-    config.bindto = `#${chartId}`;
-    config.data[dataOriented] = data;
-    setChartApi(generate(config));
-  }, []);
+    store.subscribe(data => {
+      if (!data) return;
 
-  useEffect(() => {
-    chartApi && chartApi.load({
-      [dataOriented]: data,
-    })
-  }, [data])
+      config.data.json = data;
+      if (series.type === 'pie') {
+        config.data.json = data.map(item => {
+          return { [item[series.xField]]: item[series.yField[0]] }
+        });
+        config.data.keys.value = data.map(item => item[series.xField]);
+        console.log(config);
+      }
+      if (axes && axes.type === 'category') {
+        config.axis = {
+          x: {
+            type: 'category',
+            categories: data.map(item => item[axes.field]),
+            label: {
+              text: axes.title || '',
+              position: axes.position || 'outer-center',
+            },
+          },
+        };
+      }
 
-  return <section id={chartId} />
+      generate(config);
+    });
+  }, [])
+
+  return <section id={chartId} className='c3' />
 }

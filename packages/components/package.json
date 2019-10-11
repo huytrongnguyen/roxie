@@ -1,7 +1,7 @@
 {
   "name": "@roxie/components",
-  "version": "1.4.0",
-  "description": "Roxie component functions",
+  "version": "1.4.1",
+  "description": "Built-in React components of Roxie",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
   "main": "index.js",
@@ -11,13 +11,12 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "@roxie/core": "^1.3.0",
-    "@roxie/ui": "^1.3.0",
-    "c3": "0.7.9"
+    "@roxie/core": "^1.4.1",
+    "@roxie/ui": "^1.4.1"
   },
   "peerDependencies": {
-    "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   },
   "publishConfig": {
     "access": "public"

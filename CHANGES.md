@@ -1,3 +1,13 @@
+## [1.4.1]
+
+### Roxie Core
+
+* Not override array function to prevent an issue with `c3`, `d3`
+
+### Roxie Components
+
+* Implement `Chart` component
+
 ## [1.4.0]
 > Oc 10, 2019
 
@@ -9,7 +19,7 @@
 * Implement `DataModel` to load single data
 * Update `DataStore` to load an array
 
-### Roxie Styles
+### Roxie UI
 
 * Correct `roxie-theme-light` color
 * Refactor code
@@ -26,7 +36,7 @@
 * Supports to load intial data from `DataStore`
 * Update docs
 
-### Roxie Styles
+### Roxie UI
 
 * Breaking changes on css
   * Override bootstrap with `roxie-ui.css`
@@ -42,7 +52,7 @@
 ## [1.2.2]
 > Sep 28, 2019
 
-### Roxie Styles
+### Roxie UI
 
 * [#9] Cannot resolve dependency '../node_modules/font-awesome/css/font-awesome.css'
 
