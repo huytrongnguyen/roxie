@@ -1,4 +1,16 @@
+## [1.4.2]
+> Oct 12, 2019
+
+### Roxie Core
+
+* [#13] Cannot resolve dependency '@roxie/components'
+
+### Roxie Components
+
+* [#13] Cannot resolve dependency '@roxie/components'
+
 ## [1.4.1]
+> Oct 11, 2019
 
 ### Roxie Core
 
@@ -9,7 +21,7 @@
 * Implement `Chart` component
 
 ## [1.4.0]
-> Oc 10, 2019
+> Oct 10, 2019
 
 ### Roxie Core
 

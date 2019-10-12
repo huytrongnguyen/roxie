@@ -1,11 +1,11 @@
 {
   "name": "@roxie/core",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "The core of Roxie",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
-  "main": "index.js",
-  "typings": "index.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsc"
   },
@@ -17,7 +17,7 @@
     "access": "public"
   },
   "files": [
-    "dist/**/*",
+    "dist",
     "LICENSE"
   ]
 }
