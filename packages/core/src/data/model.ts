@@ -3,12 +3,27 @@ import { HttpParams } from '../ajax';
 
 import { ProxyConfig, request } from './proxy';
 
-export interface ModelConfig {
+export interface ModelConfig<T> {
   proxy?: ProxyConfig,
+  data?: T,
 }
 
 export class DataModel<T> extends Subject<T> {
-  constructor(protected config: ModelConfig = {}) { super() }
+  constructor(protected config: ModelConfig<T> = {}) {
+    super();
+    if (config.data) {
+      const interval = setInterval(() => {
+        if (this.subscriber) {
+          this.next(config.data);
+          clearInterval(interval);
+        }
+      }, 100)
+    }
+  }
+
+  loadData(value: T) {
+    this.next(value);
+  }
 
   load(params?: HttpParams) {
     this.fetch(params)
