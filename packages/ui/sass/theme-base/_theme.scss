@@ -92,6 +92,11 @@ a {
   border: 1px solid $border-color;
 }
 .form-control-plaintext { color: $body-color; }
+.input-group-text {
+  color: $body-color;
+  background-color: $component-cap-bg;
+  border: 1px solid $border-color;
+}
 
 // Cards
 
