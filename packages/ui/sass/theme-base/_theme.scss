@@ -269,3 +269,20 @@ code { color: $body-color; }
     background-color: $value !important;
   }
 }
+
+.c3 {
+  path, .tick line { stroke: $border-color; }
+  .tick text, .c3-axis text, .c3-legend-item text, .c3-chart-arcs-title { fill: $body-color; }
+  .c3-tooltip {
+    background-color: $body-bg;
+    tr { border: 1px solid $border-color; }
+    th {
+      color: $body-color;
+      background-color: $component-cap-bg;
+    }
+    td {
+      background-color: $body-bg;
+      border-left: 1px dotted $border-color;
+    }
+  }
+}
