@@ -179,7 +179,10 @@ a {
 }
 .dropdown-item {
   color: $body-color;
-  &:hover, &:focus { background-color: $component-hover-bg; }
+  &:hover, &:focus {
+    color: $body-color;
+    background-color: $component-hover-bg;
+  }
   &.active, &:active {
     color: $component-active-color;
     background-color: $component-active-bg;
