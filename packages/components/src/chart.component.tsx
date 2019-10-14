@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { generate, ChartConfiguration, ChartAPI } from 'c3';
+import { generate, ChartConfiguration } from 'c3';
 import { Roxie, DataStore } from '@roxie/core';
 
 export interface ChartProps {
@@ -33,7 +33,7 @@ export function Chart(props: ChartProps) {
           },
           bar: { width: { ratio: 0.5 } },
           pie: { expand: false },
-        } as c3.ChartConfiguration);
+        } as ChartConfiguration);
 
   useEffect(() => {
     store.subscribe(data => {

@@ -41,18 +41,6 @@ export function ChartComponent() {
         </p>
         <h3>Chart Component Management</h3>
         <p>A Chart component manages the following items:</p>
-        <h4>Axes</h4>
-        <p>
-          Axes help series to map data values into coordinates.
-          They are bound to the type of data that needs to be represented.
-        </p>
-        <ul>
-          <li>
-            <strong>category </strong>
-            - the data attached to this axis belongs to a finite set.
-            The data points are evenly placed along the axis.
-          </li>
-        </ul>
         <h4>Series</h4>
         <p>
           Series is an abstract class extended by concrete visualizations, such as Line Series, Bar Series, or Scatter Series.

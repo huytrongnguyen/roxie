@@ -1,3 +1,24 @@
+## [1.5.0]
+> Oct 14, 2019
+
+### Roxie Core
+
+* [#14] Store/Model should have a function `loadData`
+* [#17] Store/Model should supports multiple subscribers
+* [#18] `Roxie.isEmpty` is not working if value is undefined
+
+### Roxie UI
+
+* [#15] Re-styling chart on `roxie-theme-dark`
+* [#16] Re-styling input group on `roxie-theme-dark`
+* [#19] Re-styling link dropdown item
+
+### Roxie Components
+
+* Implement `Dropdown` component
+* Implement `List` component
+* Implement `TabPanel` component
+
 ## [1.4.2]
 > Oct 12, 2019
 

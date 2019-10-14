@@ -6,5 +6,8 @@ export * from './core-concepts/themeing.component';
 export * from './core-concepts/layouts.component';
 export * from './core-concepts/data.component';
 export * from './components/dialog.component';
+export * from './components/dropdown.component';
+export * from './components/tabpanel.component';
+export * from './components/list.component';
 export * from './components/grid.component';
 export * from './components/chart.component';

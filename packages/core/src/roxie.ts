@@ -9,7 +9,7 @@ import { LocalCache } from './cache';
 import { Subject } from './observable';
 
 export const Roxie = {
-  query: (selector: string) => $(selector),
+  query: (selector: any) => $(selector),
   isEmpty: (value: any) => value === undefined || value == null || value === '' || (Roxie.isArray(value) && value.length === 0) || Roxie.Object.isEmpty(value),
   isNotEmpty: (value: any) => !Roxie.isEmpty(value),
   isString: (value: any) => typeof value === 'string',

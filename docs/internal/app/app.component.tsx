@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Link, NavLink, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Link, NavLink as RNavLink, Switch, Route as RRoute } from 'react-router-dom';
 import { Roxie } from '@roxie/core';
 import { Container } from '@roxie/components';
 
@@ -8,7 +8,7 @@ import pkg from '../../../package.json';
 import {
   Home, GettingStarted,
   PackageConcept, LayoutConcept, ComponentConcept, ThemingConcept, DataConcept,
-  DialogComponent, GridComponent, ChartComponent,
+  DialogComponent, DropdownComponent, TabPanelComponent, ListComponent, GridComponent, ChartComponent,
 } from './guides';
 import {
   ComponentExample, ButtonExample, PanelExample, DialogExample, LayoutExample,
@@ -25,26 +25,29 @@ export function App() {
       west={<AppSidebar />}
       center={<main className="auto-scroll-y">
         <Switch>
-          <ProtectedRoute exact path="/introduction/getting-started" component={GettingStarted} title="Getting Started" />
-          <ProtectedRoute exact path="/core-concepts/packages" component={PackageConcept} title="Roxie Packages" />
-          <ProtectedRoute exact path="/core-concepts/components" component={ComponentConcept} title="Components" />
-          <ProtectedRoute exact path="/core-concepts/theming" component={ThemingConcept} title="Theming" />
-          <ProtectedRoute exact path="/core-concepts/layouts" component={LayoutConcept} title="Layouts and Containers" />
-          <ProtectedRoute exact path="/core-concepts/data" component={DataConcept} title="Data Package" />
-          <ProtectedRoute exact path="/components/dialog" component={DialogComponent} title="Dialog" />
-          <ProtectedRoute exact path="/components/grid" component={GridComponent} title="Grid" />
-          <ProtectedRoute exact path="/components/chart" component={ChartComponent} title="Chart" />
-          <ProtectedRoute exact path="/examples/kitchen-sink" component={KitchenSink} title="Examples" />
-          <ProtectedRoute exact path="/examples/kitchen-sink/components" component={ComponentExample} title="Examples" />
-          <ProtectedRoute exact path="/examples/kitchen-sink/components/buttons" component={ButtonExample} title="Examples" />
-          <ProtectedRoute exact path="/examples/kitchen-sink/components/form-fields" component={FormFieldExample} title="Examples" />
-          <ProtectedRoute exact path="/examples/kitchen-sink/components/form-fields/field-types" component={FormFieldTypeExample} title="Examples" />
-          <ProtectedRoute exact path="/examples/kitchen-sink/components/layouts" component={LayoutExample} title="Examples" />
-          <ProtectedRoute exact path="/examples/kitchen-sink/components/panels" component={PanelExample} title="Examples" />
-          <ProtectedRoute exact path="/examples/kitchen-sink/components/dialogs" component={DialogExample} title="Examples" />
-          <ProtectedRoute exact path="/examples/kitchen-sink/trees" component={TreeExample} title="Examples" />
-          <ProtectedRoute exact path="/examples/admin-dashboard" component={AdminDashboard} title="Examples" />
-          <ProtectedRoute component={Home} title="Docs" />
+          <Route exact path="/introduction/getting-started" component={GettingStarted} title="Getting Started" />
+          <Route exact path="/core-concepts/packages" component={PackageConcept} title="Roxie Packages" />
+          <Route exact path="/core-concepts/components" component={ComponentConcept} title="Components" />
+          <Route exact path="/core-concepts/theming" component={ThemingConcept} title="Theming" />
+          <Route exact path="/core-concepts/layouts" component={LayoutConcept} title="Layouts and Containers" />
+          <Route exact path="/core-concepts/data" component={DataConcept} title="Data Package" />
+          <Route exact path="/components/dialog" component={DialogComponent} title="Dialog" />
+          <Route exact path="/components/dropdown" component={DropdownComponent} title="Dropdown" />
+          <Route exact path="/components/tabpanel" component={TabPanelComponent} title="Dropdown" />
+          <Route exact path="/components/list" component={ListComponent} title="Chart" />
+          <Route exact path="/components/grid" component={GridComponent} title="Grid" />
+          <Route exact path="/components/chart" component={ChartComponent} title="Chart" />
+          <Route exact path="/examples/kitchen-sink" component={KitchenSink} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/components" component={ComponentExample} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/components/buttons" component={ButtonExample} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/components/form-fields" component={FormFieldExample} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/components/form-fields/field-types" component={FormFieldTypeExample} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/components/layouts" component={LayoutExample} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/components/panels" component={PanelExample} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/components/dialogs" component={DialogExample} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/trees" component={TreeExample} title="Examples" />
+          <Route exact path="/examples/admin-dashboard" component={AdminDashboard} title="Examples" />
+          <Route component={Home} title="Docs" />
         </Switch>
       </main>}
     />
@@ -53,7 +56,7 @@ export function App() {
 
 export function AppHeader() {
   return <header className="navbar navbar-expand-lg">
-    <Link to="/roxie" className="navbar-brand">Roxie {pkg.version}</Link>
+    <Link to="/" className="navbar-brand">Roxie {pkg.version}</Link>
     <div className="collapse navbar-collapse">
       <ul className="navbar-nav mr-auto"></ul>
       <ThemeSelection />
@@ -101,25 +104,32 @@ export function ThemeSelection() {
 export function AppSidebar() {
   return <aside style={{width:300}} className="border-right auto-scroll-y">
     <div className="list-group list-group-flush">
-      <NavLink to="/introduction/getting-started" className="list-group-item list-group-item-action" activeClassName="active">Getting Started</NavLink>
+      <NavLink to="/introduction/getting-started" text="Getting Started" />
       <span className="list-group-item text-uppercase font-weight-bold">Core Concepts</span>
-      <NavLink to="/core-concepts/packages" className="list-group-item list-group-item-action" activeClassName="active">Roxie Packages</NavLink>
-      <NavLink to="/core-concepts/components" className="list-group-item list-group-item-action" activeClassName="active">Components</NavLink>
-      <NavLink to="/core-concepts/theming" className="list-group-item list-group-item-action" activeClassName="active">Theming</NavLink>
-      <NavLink to="/core-concepts/layouts" className="list-group-item list-group-item-action" activeClassName="active">Layouts and Containers</NavLink>
-      <NavLink to="/core-concepts/data" className="list-group-item list-group-item-action" activeClassName="active">Data Package</NavLink>
+      <NavLink to="/core-concepts/packages" text="Roxie Packages" />
+      <NavLink to="/core-concepts/components" text="Components" />
+      <NavLink to="/core-concepts/theming" text="Theming" />
+      <NavLink to="/core-concepts/layouts" text="Layouts and Containers" />
+      <NavLink to="/core-concepts/data" text="Data Package" />
       <span className="list-group-item text-uppercase font-weight-bold">Components</span>
-      <NavLink to="/components/dialog" className="list-group-item list-group-item-action" activeClassName="active">Dialog</NavLink>
-      <NavLink to="/components/grid" className="list-group-item list-group-item-action" activeClassName="active">Grid</NavLink>
-      <NavLink to="/components/chart" className="list-group-item list-group-item-action" activeClassName="active">Chart</NavLink>
+      <NavLink to="/components/dialog" text="Dialog" />
+      <NavLink to="/components/dropdown" text="Dropdown" />
+      <NavLink to="/components/tabpanel" text="TabPanel" />
+      <NavLink to="/components/list" text="List" />
+      <NavLink to="/components/grid" text="Grid" />
+      <NavLink to="/components/chart" text="Chart" />
       <span className="list-group-item text-uppercase font-weight-bold">Examples</span>
-      <NavLink to="/examples/kitchen-sink" className="list-group-item list-group-item-action" activeClassName="active">Kitchen Sink</NavLink>
+      <NavLink to="/examples/kitchen-sink" text="Kitchen Sink" />
     </div>
   </aside>
 }
 
-export function ProtectedRoute({ component: Component, title = '', ...others }) {
+export function NavLink(props: { to: string, text: string }) {
+  return <RNavLink to={props.to} className="list-group-item list-group-item-action" activeClassName="active">{props.text}</RNavLink>
+}
+
+export function Route({ component: Component, title = '', ...others }) {
   document.title = `${title ? `${title} | ` : ''}Roxie ${pkg.version}`
 
-  return <Route {...others} render={props => <Component {...props} />} />
+  return <RRoute {...others} render={props => <Component {...props} />} />
 }

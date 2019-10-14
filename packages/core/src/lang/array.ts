@@ -1,5 +1,17 @@
 interface Array<T> {
+  /**
+   * Creates an object composed of keys generated from the results of running each element of `collection` through `key`.
+   *
+   * @param key
+   */
   groupBy(key: string): { [key:string]: T[] },
+
+  /**
+   * Removes all elements from `array` that `predicate` returns truthy and returns an array of the removed elements.
+   *
+   * @param predicate
+   */
+  remove(predicate: (value: T, index?: number, array?: T[]) => boolean): T[],
 }
 
 Array.prototype.groupBy = function<T>(this: T[], key: string) {
@@ -10,4 +22,14 @@ Array.prototype.groupBy = function<T>(this: T[], key: string) {
     }
     return result;
   }, {});
+}
+
+Array.prototype.remove = function<T>(this: T[], predicate: (value: T, index?: number, array?: T[]) => boolean) {
+  const result: T[] = [];
+  for (let i = 0; i < this.length; ++i) {
+    if (predicate(this[i], i, this)) {
+      result.push(...this.splice(i, 1));
+    }
+  }
+  return result;
 }
