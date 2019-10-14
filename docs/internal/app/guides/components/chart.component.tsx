@@ -3,66 +3,20 @@ import Highlight from 'react-highlight.js';
 import { DataStore } from '@roxie/core';
 import { Chart } from '@roxie/components';
 
-type Area = {
+type ChartData = {
   name: string,
   data1: number,
   data2: number,
   data3: number,
 }
 
-const AreaStore = new DataStore<Area>({
+const ChartStore = new DataStore<ChartData>({
   data: [
     { name: 'metric one', data1: 10, data2: 12, data3: 14 },
     { name: 'metric two', data1: 7, data2: 8, data3: 16 },
     { name: 'metric three', data1: 5, data2: 2, data3: 14 },
     { name: 'metric four', data1: 2, data2: 14, data3: 6 },
     { name: 'metric five', data1: 27, data2: 38, data3: 36 },
-  ]
-});
-
-type Bar = {
-  name: string,
-  data1: number,
-}
-
-const BarStore = new DataStore<Bar>({
-  data: [
-    { name: 'metric one', data1: 10 },
-    { name: 'metric two', data1: 7 },
-    { name: 'metric three', data1: 5 },
-    { name: 'metric four', data1: 2 },
-    { name: 'metric five', data1: 2 },
-  ]
-});
-
-type Line = {
-  name: string,
-  data1: number,
-  data2: number,
-}
-
-const LineStore = new DataStore<Line>({
-  data: [
-    { name: 'metric one', data1: 14, data2: 19 },
-    { name: 'metric two', data1: 16, data2: 7 },
-    { name: 'metric three', data1: 11, data2: 25 },
-    { name: 'metric four', data1: 6, data2: 4 },
-    { name: 'metric five', data1: 36, data2: 12 },
-  ]
-});
-
-type Pie = {
-  name: string,
-  data1: number,
-}
-
-const PieStore = new DataStore<Pie>({
-  data: [
-    { name: 'metric one', data1: 14 },
-    { name: 'metric two', data1: 16 },
-    { name: 'metric three', data1: 14 },
-    { name: 'metric four', data1: 6 },
-    { name: 'metric five', data1: 36 },
   ]
 });
 
@@ -109,7 +63,7 @@ export function ChartComponent() {
         <h5>Area</h5>
         <div className="card mb-3">
           <div className="card-body">
-            <Chart  store={AreaStore}
+            <Chart  store={ChartStore}
                     series={{ type: 'area', xField: 'name', yField: ['data1', 'data2', 'data3'] }}
                     axes={{ type: 'category', field: 'name', title: 'Sample Values' }} />
           </div>
@@ -119,14 +73,14 @@ import React from 'react';
 import { DataStore } from '@roxie/core';
 import { Chart } from '@roxie/components';
 
-type Area = {
+type ChartData = {
   name: string,
   data1: number,
   data2: number,
   data3: number,
 }
 
-const AreaStore = new DataStore<Area>({
+const ChartStore = new DataStore<ChartData>({
   data: [
     { name: 'metric one', data1: 10, data2: 12, data3: 14 },
     { name: 'metric two', data1: 7, data2: 8, data3: 16 },
@@ -137,9 +91,8 @@ const AreaStore = new DataStore<Area>({
 });
 
 function AreaExample() {
-  return <Chart store={AreaStore}
-                series={{ type: 'area', xField: 'name', yField: ['data1', 'data2', 'data3'] }}
-                axes={{ type: 'category', field: 'name', title: 'Sample Values' }} />
+  return <Chart store={ChartStore}
+                series={{ type: 'area', xField: 'name', yField: ['data1', 'data2', 'data3'] }} />
 }
             `}</Highlight>
           </div>
@@ -147,9 +100,8 @@ function AreaExample() {
         <h5>Bar</h5>
         <div className="card mb-3">
           <div className="card-body">
-            <Chart  store={BarStore}
-                    series={{ type: 'bar', xField: 'name', yField: ['data1'] }}
-                    axes={{ type: 'category', field: 'name', title: 'Sample Values' }} />
+            <Chart  store={ChartStore}
+                    series={{ type: 'bar', xField: 'name', yField: ['data1'] }} />
           </div>
           <div className="card-footer">
             <Highlight language="tsx">{`
@@ -157,25 +109,26 @@ import React from 'react';
 import { DataStore } from '@roxie/core';
 import { Chart } from '@roxie/components';
 
-type Bar = {
+type ChartData = {
   name: string,
   data1: number,
+  data2: number,
+  data3: number,
 }
 
-const BarStore = new DataStore<Bar>({
+const ChartStore = new DataStore<ChartData>({
   data: [
-    { name: 'metric one', data1: 10 },
-    { name: 'metric two', data1: 7 },
-    { name: 'metric three', data1: 5 },
-    { name: 'metric four', data1: 2 },
-    { name: 'metric five', data1: 2 },
+    { name: 'metric one', data1: 10, data2: 12, data3: 14 },
+    { name: 'metric two', data1: 7, data2: 8, data3: 16 },
+    { name: 'metric three', data1: 5, data2: 2, data3: 14 },
+    { name: 'metric four', data1: 2, data2: 14, data3: 6 },
+    { name: 'metric five', data1: 27, data2: 38, data3: 36 },
   ]
 });
 
 function BarExample() {
-  return <Chart store={BarStore}
-                series={{ type: 'bar', xField: 'name', yField: ['data1'] }}
-                axes={{ type: 'category', field: 'name', title: 'Sample Values' }} />
+  return <Chart store={ChartStore}
+                series={{ type: 'bar', xField: 'name', yField: ['data1'] }} />
 }
             `}</Highlight>
           </div>
@@ -183,9 +136,8 @@ function BarExample() {
         <h5>Line</h5>
         <div className="card mb-3">
           <div className="card-body">
-            <Chart  store={LineStore}
-                    series={{ type: 'line', xField: 'name', yField: ['data1', 'data2'] }}
-                    axes={{ type: 'category', field: 'name', title: 'Sample Values' }} />
+            <Chart  store={ChartStore}
+                    series={{ type: 'line', xField: 'name', yField: ['data1', 'data2'] }} />
           </div>
           <div className="card-footer">
             <Highlight language="tsx">{`
@@ -193,26 +145,26 @@ import React from 'react';
 import { DataStore } from '@roxie/core';
 import { Chart } from '@roxie/components';
 
-type Line = {
+type ChartData = {
   name: string,
   data1: number,
   data2: number,
+  data3: number,
 }
 
-const LineStore = new DataStore<Line>({
+const ChartStore = new DataStore<ChartData>({
   data: [
-    { name: 'metric one', data1: 14, data2: 19 },
-    { name: 'metric two', data1: 16, data2: 7 },
-    { name: 'metric three', data1: 11, data2: 25 },
-    { name: 'metric four', data1: 6, data2: 4 },
-    { name: 'metric five', data1: 36, data2: 12 },
+    { name: 'metric one', data1: 10, data2: 12, data3: 14 },
+    { name: 'metric two', data1: 7, data2: 8, data3: 16 },
+    { name: 'metric three', data1: 5, data2: 2, data3: 14 },
+    { name: 'metric four', data1: 2, data2: 14, data3: 6 },
+    { name: 'metric five', data1: 27, data2: 38, data3: 36 },
   ]
 });
 
 function LineExample() {
-  return <Chart store={LineStore}
-                series={{ type: 'bar', xField: 'name', yField: ['data1', 'data2'] }}
-                axes={{ type: 'category', field: 'name', title: 'Sample Values' }} />
+  return <Chart store={ChartStore}
+                series={{ type: 'bar', xField: 'name', yField: ['data1', 'data2'] }} />
 }
             `}</Highlight>
           </div>
@@ -220,7 +172,7 @@ function LineExample() {
         <h5>Pie</h5>
         <div className="card mb-3">
           <div className="card-body">
-            <Chart  store={PieStore}
+            <Chart  store={ChartStore}
                     series={{ type: 'pie', xField: 'name', yField: ['data1'] }} />
           </div>
           <div className="card-footer">
@@ -229,23 +181,25 @@ import React from 'react';
 import { DataStore } from '@roxie/core';
 import { Chart } from '@roxie/components';
 
-type Pie = {
+type ChartData = {
   name: string,
   data1: number,
+  data2: number,
+  data3: number,
 }
 
-const PieStore = new DataStore<Pie>({
+const ChartStore = new DataStore<ChartData>({
   data: [
-    { name: 'metric one', data1: 14 },
-    { name: 'metric two', data1: 16 },
-    { name: 'metric three', data1: 14 },
-    { name: 'metric four', data1: 6 },
-    { name: 'metric five', data1: 36 },
+    { name: 'metric one', data1: 10, data2: 12, data3: 14 },
+    { name: 'metric two', data1: 7, data2: 8, data3: 16 },
+    { name: 'metric three', data1: 5, data2: 2, data3: 14 },
+    { name: 'metric four', data1: 2, data2: 14, data3: 6 },
+    { name: 'metric five', data1: 27, data2: 38, data3: 36 },
   ]
 });
 
-function LineExample() {
-  return <Chart store={PieStore}
+function PieExample() {
+  return <Chart store={ChartStore}
                 series={{ type: 'bar', xField: 'name', yField: ['data1'] }} />
 }
             `}</Highlight>

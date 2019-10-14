@@ -12,12 +12,7 @@ export class DataModel<T> extends Subject<T> {
   constructor(protected config: ModelConfig<T> = {}) {
     super();
     if (config.data) {
-      const interval = setInterval(() => {
-        if (this.subscriber) {
-          this.next(config.data);
-          clearInterval(interval);
-        }
-      }, 100)
+      this.loadData(config.data);
     }
   }
 

@@ -10,7 +10,7 @@ export interface ChartProps {
 
 export interface Series {
   type: string,
-  xField: string,
+  xField?: string,
   yField: string[],
 }
 
@@ -22,7 +22,7 @@ export interface Axes {
 }
 
 export function Chart(props: ChartProps) {
-  const { store, series, axes } = props,
+  const { store, series } = props,
         [chartId] = useState(Roxie.guid('chart-')),
         [config] = useState({
           bindto: `#${chartId}`,
@@ -45,17 +45,12 @@ export function Chart(props: ChartProps) {
           return { [item[series.xField]]: item[series.yField[0]] }
         });
         config.data.keys.value = data.map(item => item[series.xField]);
-        console.log(config);
       }
-      if (axes && axes.type === 'category') {
+      if (series.xField) {
         config.axis = {
           x: {
             type: 'category',
-            categories: data.map(item => item[axes.field]),
-            label: {
-              text: axes.title || '',
-              position: axes.position || 'outer-center',
-            },
+            categories: data.map(item => item[series.xField]),
           },
         };
       }
