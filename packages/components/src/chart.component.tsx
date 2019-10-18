@@ -5,20 +5,12 @@ import { Roxie, DataStore } from '@roxie/core';
 export interface ChartProps {
   store: DataStore<any>,
   series: Series,
-  axes?: Axes,
 }
 
 export interface Series {
   type: string,
   xField?: string,
   yField: string[],
-}
-
-export interface Axes {
-  type: string,
-  field: string,
-  title?: string,
-  position?: 'inner-right' | 'inner-center' | 'inner-left' | 'outer-right' | 'outer-center' | 'outer-left' | 'inner-top' | 'inner-middle' | 'inner-bottom' | 'outer-top' | 'outer-middle' | 'outer-bottom',
 }
 
 export function Chart(props: ChartProps) {

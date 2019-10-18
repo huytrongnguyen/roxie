@@ -25,6 +25,10 @@ export function ThemingConcept() {
               <td>roxie-theme-dark</td>
               <td>Dark theme</td>
             </tr>
+            <tr>
+              <td>roxie-theme-gray</td>
+              <td>Gray theme</td>
+            </tr>
           </tbody>
         </table>
       </div>

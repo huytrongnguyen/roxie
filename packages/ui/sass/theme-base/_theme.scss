@@ -286,3 +286,16 @@ code { color: $body-color; }
     }
   }
 }
+
+.roxie-datepicker-portal {
+  .roxie-datepicker-cell {
+    &:hover, &:focus {
+      color: $body-color;
+      background-color: $component-hover-bg;
+    }
+    &.active {
+      color: $component-active-color;
+      background-color: $component-active-bg;
+    }
+  }
+}

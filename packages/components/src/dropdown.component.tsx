@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Roxie } from '@roxie/core';
 
-Roxie.query(document).on('click', '.dropdown-multi-select .dropdown-menu', e => e.stopPropagation());
+Roxie.query(document).on('click', '.dropdown.dropdown-multi-select .dropdown-menu', e => e.stopPropagation());
 
 type DropdownProps = {
   options: any[],
@@ -21,9 +21,7 @@ type DropdownProps = {
   className?: string,
 }
 
-export function Dropdown(props: DropdownProps) {
-  const [searchFilter, setSearchFilter] = useState('');
-
+export function Dropdown(props: DropdownProps) {console.log('render');
   const {
     options,
     displayField = 'name',
@@ -41,6 +39,8 @@ export function Dropdown(props: DropdownProps) {
     valueChange,
     className = '',
   } = props;
+
+  const [searchFilter, setSearchFilter] = useState('');
 
   function displayText() {
     if (!smartButtonText || !value.length) {
@@ -61,13 +61,14 @@ export function Dropdown(props: DropdownProps) {
       newValue = [opt];
     } else if (isSelected(opt)) {
       newValue = value.remove(item => item[valueField] === opt[valueField]);
+      newValue = value;
     } else {
       newValue = options.filter(item => isSelected(item) || item[valueField] === opt[valueField]);
     }
-    valueChange && valueChange(newValue);
+    valueChange && valueChange([...newValue]);
   }
 
-  return <div className={`dropdown ${multiple ? 'dropdown-multi-select' : ''} ${className}`}>
+  return <div className={Roxie.classNames('dropdown', { 'dropdown-multi-select': multiple }, className)}>
     <button className={Roxie.classNames('btn btn-default dropdown-toggle border', buttonClass)} style={buttonStyle} type="button" data-toggle="dropdown">
       {displayText()}
     </button>
@@ -77,9 +78,12 @@ export function Dropdown(props: DropdownProps) {
             value={searchFilter} onChange={event => setSearchFilter(event.target.value)} />
       </div>}
       <div className="dropdown-item-list">
-        {options.map(opt => <span className={`dropdown-item ${isSelected(opt) ? 'active': ''}`} key={opt[valueField]} onClick={() => select(opt)}>
-          {opt[displayField]}
-        </span>)}
+        {options.map(opt => {
+          if (searchFilter && !opt[displayField].toLowerCase().startsWith(searchFilter.toLowerCase())) return null;
+          return <span className={Roxie.classNames('dropdown-item', { active: isSelected(opt) })} key={opt[valueField]} onClick={() => select(opt)}>
+            {opt[displayField]}
+          </span>
+        })}
       </div>
     </div>
   </div>

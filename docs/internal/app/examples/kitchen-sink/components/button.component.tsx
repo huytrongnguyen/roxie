@@ -70,8 +70,10 @@ export function ButtonExample() {
             <button type="button" className="btn btn-default mr-1">Medium</button>
             <button type="button" className="btn btn-default btn-sm mr-1">Small</button>
             <button type="button" className="btn btn-link mr-1">Link</button>
-            <button type="button" className="btn btn-outline-secondary mr-1" data-toggle="button">Toggle</button>
+            <button type="button" className="btn btn-outline-primary mr-1" data-toggle="button">Toggle</button>
             <button type="button" className="btn btn-default mr-1" disabled>Disabled</button>
+            <button type="button" className="btn btn-default mr-1"><i className="fa fa-home" /></button>
+            <button type="button" className="btn btn-default mr-1"><i className="fa fa-home mr-1" />Home</button>
             <button type="button" className="btn btn-default btn-block mt-1 mr-1">Block</button>
           </div>
           <div className="card-footer">
@@ -80,8 +82,10 @@ export function ButtonExample() {
 <button type="button" class="btn btn-default">Medium</button>
 <button type="button" class="btn btn-default btn-sm">Small</button>
 <button type="button" class="btn btn-link">Link</button>
-<button type="button" class="btn btn-outline-secondary" data-toggle="button">Toggle</button>
+<button type="button" class="btn btn-outline-primary" data-toggle="button">Toggle</button>
 <button type="button" class="btn btn-default" disabled>Disabled</button>
+<button type="button" class="btn btn-default"><i class="fa fa-home"></i></button>
+<button type="button" class="btn btn-default"><i class="fa fa-home mr-1"></i>Home</button>
 <button type="button" class="btn btn-default btn-block">Block</button>
             `}</Highlight>
           </div>
@@ -131,7 +135,7 @@ export function ButtonExample() {
           </div>
         </div>
         <div className="card mb-3">
-          <div className="card-header">Group Buttons</div>
+          <div className="card-header">Group of Buttons</div>
           <div className="card-body">
             <div className="btn-group">
               <button type="button" className="btn btn-outline-secondary">Left</button>

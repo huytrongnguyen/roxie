@@ -10,3 +10,21 @@
     border-#{$side}: 0 !important;
   }
 }
+
+.roxie-datepicker {
+  .dropdown-toggle {
+    &:after {
+      content: none;
+    }
+  }
+}
+.roxie-datepicker-portal {
+  width: calc(1.75rem * 7);
+  roxie-datepicker-title {
+    height: 1.75rem;
+  }
+  .roxie-datepicker-cell {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}

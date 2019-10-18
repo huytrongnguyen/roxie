@@ -52,6 +52,10 @@ body, input, textarea, select, button {
   }
 }
 
+.dropdown-item-list {
+  max-height: 12rem;
+  overflow-y: auto;
+}
 .dropdown-item { cursor: pointer; }
 
 .form-control-file, .form-check, .custom-control {

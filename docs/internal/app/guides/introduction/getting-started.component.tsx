@@ -25,18 +25,19 @@ export function GettingStarted() {
           <dd><code>@roxie/components</code></dd>
         </dl>
         <h3>Updating <code>index.html</code></h3>
-        <div className="card card-header mb-3">
+        <div className="card card-footer mb-3">
           <Highlight language="html">{`
 <!doctype html>
 <html lang="en" class="${themeCode}">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="node_modules/@roxie/ui/${themeCode}.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="node_modules/@roxie/ui/dist/css/roxie-ui.css" />
+  <link rel="stylesheet" href="node_modules/@roxie/ui/dist/css/${themeCode}.css" />
   ...
 </head>
 <body>
-  <script src="node_modules/@roxie/ui/ui.js"></script>
+<script src="node_modules/@roxie/ui/dist/js/roxie-ui.js"></script>
 </body>
 </html>
         `}</Highlight>
@@ -44,16 +45,16 @@ export function GettingStarted() {
         <h3>Adding Roxie to an Existing React Application</h3>
 
         <p>Updating <code>body</code></p>
-        <div className="card card-header mb-3">
+        <div className="card card-footer mb-3">
           <Highlight language="html">{`
 <body>
-  <script src="node_modules/@roxie/ui/ui.js"></script>
+  <script src="node_modules/@roxie/ui/dist/js/roxie-ui.js"></script>
   <script src="main.tsx"></script>
 </body>
         `}</Highlight>
         </div>
         <p>Launching your Application</p>
-        <div className="card card-header mb-3">
+        <div className="card card-footer mb-3">
           <Highlight language="tsx">{`
 import React from 'react';
 import { launch } from '@roxie/components';

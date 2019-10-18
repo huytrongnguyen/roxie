@@ -52,8 +52,7 @@ export function ChartComponent() {
         <div className="card mb-3">
           <div className="card-body">
             <Chart  store={ChartStore}
-                    series={{ type: 'area', xField: 'name', yField: ['data1', 'data2', 'data3'] }}
-                    axes={{ type: 'category', field: 'name', title: 'Sample Values' }} />
+                    series={{ type: 'area', xField: 'name', yField: ['data1', 'data2', 'data3'] }} />
           </div>
           <div className="card-footer">
             <Highlight language="tsx">{`

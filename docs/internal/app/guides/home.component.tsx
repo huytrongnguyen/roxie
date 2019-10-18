@@ -38,10 +38,8 @@ export function Home() {
               <div className="card-body">
                 <p>Dig into the most common Roxie components</p>
                 <dl>
-                  <dd><Link to="/components/dialog">Dialog</Link></dd>
                   <dd><Link to="/components/dropdown">Dropdown</Link></dd>
                   <dd><Link to="/components/tabpanel">TabPanel</Link></dd>
-                  <dd><Link to="/components/list">List</Link></dd>
                   <dd><Link to="/components/grid">Grid</Link></dd>
                   <dd><Link to="/components/chart">Chart</Link></dd>
                 </dl>
@@ -53,6 +51,9 @@ export function Home() {
               <div className="card-header">4. Application Architecture</div>
               <div className="card-body">
                 <p>Architect-ing your application</p>
+                <dl>
+                  <dd><Link to="/architecture/application-architecture">Application Architecture</Link></dd>
+                </dl>
               </div>
             </div>
           </div>

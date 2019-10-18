@@ -1,3 +1,26 @@
+## [1.6.0]
+> Oct 16, 2019
+
+### Docs
+
+* Update docs
+
+### Roxie Core
+
+* Remove redundant space in `Roxie.classNames` function
+* Import all `date-fns` functions into Roxie.Date
+
+### Roxie UI
+
+* Using `font-awesome` v4.7.0 for icon
+* Supports `roxie-theme-dark`
+
+### Roxie Components
+
+* Fix issue cannot filter on dropdown
+* Fix issue cannot unselect item on dropdown
+* Implement `DatePickerPortal`, `DatePicker` component
+
 ## [1.5.1]
 > Oct 14, 2019
 

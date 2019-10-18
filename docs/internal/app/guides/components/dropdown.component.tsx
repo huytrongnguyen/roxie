@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Highlight from 'react-highlight.js';
 import { Dropdown } from '@roxie/components';
 
@@ -9,6 +9,8 @@ const data = [
 ]
 
 export function DropdownComponent() {
+  const [selectedValues, setSelectedValues] = useState([]);
+
   return <Fragment>
     <div className="pt-3">
       <div className="container-fluid">
@@ -20,7 +22,8 @@ export function DropdownComponent() {
         </p>
         <div className="card mb-3">
           <div className="card-body">
-            <Dropdown options={data} valueField="abbrev" displayField="name" />
+            <Dropdown options={data} valueField="abbrev" displayField="name" multiple
+                      value={selectedValues} valueChange={setSelectedValues} />
           </div>
           <div className="card-footer">
             <Highlight language="tsx">{`
@@ -34,7 +37,8 @@ const data = [
 ]
 
 function States() {
-  return <Dropdown options={data} valueField="abbrev" displayField="name" />
+  return <Dropdown  options={data} valueField="abbrev" displayField="name" multiple
+                    value={selectedValues} valueChange={setSelectedValues} />
 }
             `}</Highlight>
           </div>
