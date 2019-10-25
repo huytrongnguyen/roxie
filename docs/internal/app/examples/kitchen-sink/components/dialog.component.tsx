@@ -6,8 +6,7 @@ import { Dialog } from '@roxie/components';
 export function DialogExample() {
   return <Fragment>
     <ol className="breadcrumb">
-      <li className="breadcrumb-item">Kitchen Sink</li>
-      <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">All</Link></li>
+      <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">Kitchen Sink</Link></li>
       <li className="breadcrumb-item"><Link to="/examples/kitchen-sink/components">Components</Link></li>
       <li className="breadcrumb-item">Dialogs</li>
     </ol>

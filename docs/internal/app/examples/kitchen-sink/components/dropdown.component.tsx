@@ -1,7 +1,7 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight.js';
-import { Dropdown } from '@roxie/components';
+import { Container, Dropdown } from '@roxie/components';
 
 const states: [ number, string, string, string ][] = [
   [0, 'AL', 'Alabama', 'The Heart of Dixie'],
@@ -66,24 +66,26 @@ export function DropdownExample() {
   const [stateList] = useState(states.map(state => { return { abbr: state[1], name: state[2] } as State })),
         [selectedStates, setSelectedStates] = useState([] as State[]);
 
-  return <Fragment>
+  return <Container layout="vbox" className="fullscreen">
     <ol className="breadcrumb">
-      <li className="breadcrumb-item">Kitchen Sink</li>
-      <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">All</Link></li>
+      <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">Kitchen Sink</Link></li>
       <li className="breadcrumb-item"><Link to="/examples/kitchen-sink/components">Components</Link></li>
       <li className="breadcrumb-item"><Link to="/examples/kitchen-sink/components/form-fields">Form Fields</Link></li>
       <li className="breadcrumb-item">Dropdown</li>
     </ol>
-    <div className="pt-3">
-      <div className="container-fluid">
+    <Container layout="fit" className="fullscreen">
+      <div className="auto-scroll-y p-3">
         <div className="card mb-3">
+          <div className="card-header">Simple Dropdown</div>
           <div className="card-body">
-            <Dropdown options={stateList} multiple
-                      displayField="name" valueField="abbr"
-                      value={selectedStates} valueChange={setSelectedStates} />
+            <div className="d-inline-block">
+              <Dropdown options={stateList} multiple
+                        displayField="name" valueField="abbr"
+                        value={selectedStates} valueChange={setSelectedStates} />
+            </div>
           </div>
           <div className="card-footer">
-            <Highlight language="tsx">{`
+            <Highlight language="ts">{`
 const states: [ number, string, string, string ][] = [
   [0, 'AL', 'Alabama', 'The Heart of Dixie'],
   [1, 'AK', 'Alaska', 'The Land of the Midnight Sun'],
@@ -155,6 +157,6 @@ function Example() {
           </div>
         </div>
       </div>
-    </div>
-  </Fragment>
+    </Container>
+  </Container>
 }

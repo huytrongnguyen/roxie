@@ -21,19 +21,14 @@ type DropdownProps = {
   className?: string,
 }
 
-export function Dropdown(props: DropdownProps) {console.log('render');
+export function Dropdown(props: DropdownProps) {
   const {
     options,
     displayField = 'name',
     valueField = 'value',
     multiple = false,
-    defaultText = 'Select',
-    separator = ': ',
     smartButtonText = true,
-    rightAligned = false,
     searchBox = true,
-    buttonClass = '',
-    buttonStyle = {},
     searchBoxClass = '',
     value = [],
     valueChange,
@@ -44,11 +39,10 @@ export function Dropdown(props: DropdownProps) {console.log('render');
 
   function displayText() {
     if (!smartButtonText || !value.length) {
-      return defaultText;
+      return '';
     }
 
-    const names = value.map(item => item[displayField]).join(',');
-    return `${defaultText}${separator}${names}`;
+    return value.map(item => item[displayField]).join(',');
   }
 
   function isSelected(opt: any) {
@@ -68,22 +62,23 @@ export function Dropdown(props: DropdownProps) {console.log('render');
     valueChange && valueChange([...newValue]);
   }
 
-  return <div className={Roxie.classNames('dropdown', { 'dropdown-multi-select': multiple }, className)}>
-    <button className={Roxie.classNames('btn btn-default dropdown-toggle border', buttonClass)} style={buttonStyle} type="button" data-toggle="dropdown">
-      {displayText()}
-    </button>
-    <div className={`dropdown-menu p-0 ${rightAligned ? 'dropdown-menu-right' : ''}`}>
-      {searchBox && <div className="p-1 border-bottom">
-        <input type="text" className={Roxie.classNames('form-control', searchBoxClass)} name="searchFilter" placeholder="Search..."
-            value={searchFilter} onChange={event => setSearchFilter(event.target.value)} />
-      </div>}
-      <div className="dropdown-item-list">
-        {options.map(opt => {
-          if (searchFilter && !opt[displayField].toLowerCase().startsWith(searchFilter.toLowerCase())) return null;
-          return <span className={Roxie.classNames('dropdown-item', { active: isSelected(opt) })} key={opt[valueField]} onClick={() => select(opt)}>
-            {opt[displayField]}
-          </span>
-        })}
+  return <div className={Roxie.classNames('dropdown input-group', { 'dropdown-multi-select': multiple }, className)}>
+    <input type="text" className="form-control" value={displayText()} readOnly />
+    <div className="input-group-append">
+      <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" />
+      <div className="dropdown-menu p-0">
+        {searchBox && <div className="p-1 border-bottom">
+          <input type="text" className={Roxie.classNames('form-control', searchBoxClass)} name="searchFilter" placeholder="Search..."
+              value={searchFilter} onChange={event => setSearchFilter(event.target.value)} />
+        </div>}
+        <div className="dropdown-item-list">
+          {options.map(opt => {
+            if (searchFilter && !opt[displayField].toLowerCase().startsWith(searchFilter.toLowerCase())) return null;
+            return <span className={Roxie.classNames('dropdown-item', { active: isSelected(opt) })} key={opt[valueField]} onClick={() => select(opt)}>
+              {opt[displayField]}
+            </span>
+          })}
+        </div>
       </div>
     </div>
   </div>

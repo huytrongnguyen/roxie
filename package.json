@@ -1,6 +1,6 @@
 {
   "name": "roxie",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "JavaScript library that build on top of React and Bootstrap",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",

@@ -15,7 +15,8 @@ export function List(props: ListProps) {
         [data, setData] = useState([]);
 
   useEffect(() => {
-    store.subscribe(value => setData(value || []));
+    const subscription = store.subscribe(value => setData(value || []));
+    return () => subscription.unsubscribe();
   }, [])
 
   return <section className={Roxie.classNames('list-group', className)}>

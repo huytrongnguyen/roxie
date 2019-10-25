@@ -1,5 +1,27 @@
+## [1.7.0]
+
+### Docs
+
+* Update docs
+
+### Roxie Core
+
+* Supports to parse query string `select ... from ... where ...` to `Query` object
+* Supports to `unsubscribe` on `Subject`
+
+### Roxie UI
+
+* Supports `roxie-theme-blueprint`, `roxie-theme-triton`
+* Update `roxie-theme-dark`
+
+### Roxie Components
+
+* Re-styling `Dropdown`
+* Implement `FileField` component
+* Unsubscribe `Store` when `Grid`, `List` unmounted
+
 ## [1.6.0]
-> Oct 16, 2019
+> Oct 18, 2019
 
 ### Docs
 

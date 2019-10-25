@@ -1,0 +1,70 @@
+// Bootstrap variable overrides
+
+// Color system
+
+$black:    #10161a;
+$white:    #fff;
+$blue:     #137cbd;
+$indigo:   #5642a6;
+$purple:   #8f398f;
+$pink:     #db2c6f;
+$red:      #db3737;
+$orange:   #a66321;
+$orange:   #d13913;
+$yellow:   #d9822b;
+$green:    #0a6640;
+$green:    #0f9960;
+$teal:     #669eff;
+$brown:    #96622d;
+$gray:     #bfccd6;
+$gray-100: #f5f8fa;
+$gray-200: #ebf1f5;
+$gray-300: #e1e8ed;
+$gray-400: #d8e1e8;
+$gray-500: #ced9e0;
+$gray-600: #8a9ba8;
+$gray-700: #5c7080;
+$gray-800: #394b59;
+$gray-900: #293742;
+$gray-dark:#182026;
+
+$theme-colors: (
+  "primary": $blue,
+  "secondary": $gray-300,
+  "success": $green,
+  "danger": $red,
+  "warning": $yellow,
+  "info": $teal,
+  "light": $gray-100,
+  "dark": $gray-900,
+);
+
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold: 150;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark: $gray-900;
+$yiq-text-light: $white;
+
+$default-bg: $white;
+$active-color: $blue;
+
+// Body
+
+$body-bg: $gray-100;
+$body-color: $gray-dark;
+
+// Links
+
+$link-color: $blue;
+$link-hover-color: $blue;
+
+// Components
+
+$border-color: $gray-300;
+$component-active-color: $white;
+$component-active-bg: $blue;
+$component-hover-bg: $gray-200;
+$component-accent-bg: $gray-100;
+$component-disabled-color: $gray-500;
+$component-cap-bg: $gray-200;

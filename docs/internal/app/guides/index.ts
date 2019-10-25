@@ -6,6 +6,7 @@ export * from './core-concepts/themeing.component';
 export * from './core-concepts/layouts.component';
 export * from './core-concepts/data.component';
 export * from './architecture/application-architecture.component';
+export * from './architecture/view-controller.component';
 export * from './components/dialog.component';
 export * from './components/dropdown.component';
 export * from './components/tabpanel.component';

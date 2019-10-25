@@ -21,8 +21,9 @@ export function Grid(props: GridProps) {
         [data, setData] = useState([]);
 
   useEffect(() => {
-    props.store.subscribe(value => setData(value || []));
+    const subscription = props.store.subscribe(value => setData(value || []));
     setColumns(Children.toArray(props.children).map(child => child.props));
+    return () => subscription.unsubscribe();
   }, [])
 
   return <Container layout="vbox" className="table table-striped table-bordered table-hover fullscreen">

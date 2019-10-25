@@ -8,12 +8,13 @@ import pkg from '../../../package.json';
 import {
   Home, GettingStarted,
   PackageConcept, LayoutConcept, ComponentConcept, ThemingConcept, DataConcept,
-  DialogComponent, DropdownComponent, TabPanelComponent, ListComponent, GridComponent, ChartComponent, ApplicationArchitecture,
+  DialogComponent, DropdownComponent, TabPanelComponent, ListComponent, GridComponent, ChartComponent,
+  ApplicationArchitecture, ViewController,
 } from './guides';
 import {
-  ComponentExample, ButtonExample, PanelExample, DialogExample, LayoutExample, TabExample,
-  FormFieldExample,DatePickerExample, DropdownExample, FormFieldTypeExample,
-  GridExample, ListViewExample, GridViewExample,
+  ComponentExample, ButtonExample, FormExample, PanelExample, DialogExample, LayoutExample, TabExample, TooltipExample,
+  FormFieldExample, DatePickerExample, DropdownExample, FileUploadExample, FormFieldTypeExample,
+  GridExample, TableExample, GridViewExample, ListViewExample,
   TreeExample,
   ChartExample, ColumnChartExample, BarChartExample, LineChartExample, AreaChartExample, PieChartExample,
   KitchenSink,
@@ -34,6 +35,7 @@ export function App() {
           <Route exact path="/core-concepts/layouts" component={LayoutConcept} title="Layouts and Containers" />
           <Route exact path="/core-concepts/data" component={DataConcept} title="Data Package" />
           <Route exact path="/architecture/application-architecture" component={ApplicationArchitecture} title="Intro to App Architecture" />
+          <Route exact path="/architecture/view-controller" component={ViewController} title="ViewController" />
           <Route exact path="/components/dialog" component={DialogComponent} title="Dialog" />
           <Route exact path="/components/dropdown" component={DropdownComponent} title="Dropdown" />
           <Route exact path="/components/tabpanel" component={TabPanelComponent} title="Dropdown" />
@@ -46,14 +48,18 @@ export function App() {
           <Route exact path="/examples/kitchen-sink/components/form-fields" component={FormFieldExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components/form-fields/date" component={DatePickerExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components/form-fields/dropdown" component={DropdownExample} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/components/form-fields/file-uploads" component={FileUploadExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components/form-fields/field-types" component={FormFieldTypeExample} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/components/forms" component={FormExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components/layouts" component={LayoutExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components/panels" component={PanelExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components/tabs" component={TabExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components/dialogs" component={DialogExample} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/components/tooltips" component={TooltipExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/grids" component={GridExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/grids/lists" component={ListViewExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/grids/grids" component={GridViewExample} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/grids/tables" component={TableExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/trees" component={TreeExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/charts" component={ChartExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/charts/column" component={ColumnChartExample} title="Examples" />
@@ -83,6 +89,8 @@ const ThemeList = [
   { name: 'Light', value: 'roxie-theme-light' },
   { name: 'Dark', value: 'roxie-theme-dark' },
   { name: 'Gray', value: 'roxie-theme-gray' },
+  { name: 'Blueprint', value: 'roxie-theme-blueprint' },
+  { name: 'Triton', value: 'roxie-theme-triton' },
 ]
 
 export function ThemeSelection() {
@@ -129,6 +137,7 @@ export function AppSidebar() {
       <NavLink to="/core-concepts/data" text="Data Package" />
       <span className="list-group-item text-uppercase font-weight-bold">App Architecture</span>
       <NavLink to="/architecture/application-architecture" text="Intro to App Architecture" />
+      <NavLink to="/architecture/view-controller" text="ViewController" />
       <span className="list-group-item text-uppercase font-weight-bold">Components</span>
       <NavLink to="/components/dropdown" text="Dropdown" />
       <NavLink to="/components/tabpanel" text="TabPanel" />

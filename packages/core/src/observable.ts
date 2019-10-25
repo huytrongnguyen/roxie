@@ -12,8 +12,22 @@ export class Observable<T> {
   }
 }
 
+export class Subscription<T> {
+  constructor(private subject: Subject<T>, private subscriber: Observer<T>) { }
+
+  unsubscribe() {
+    const { observers } = this.subject;
+    if (!observers || !observers.length) return;
+
+    const subscriberIndex = observers.indexOf(this.subscriber);
+    if (subscriberIndex > -1) {
+      observers.splice(subscriberIndex, 1);
+    }
+  }
+}
+
 export class Subject<T> implements Observer<T> {
-  private observers: Observer<T>[] = [];
+  public observers: Observer<T>[] = [];
   private _value: T;
 
   subscribe(next: (value: T) => void, error?: (reason: any) => void, complete?: () => void) {
@@ -22,18 +36,23 @@ export class Subject<T> implements Observer<T> {
     if (this._value) {
       subscriber.next(this._value);
     }
+    return new Subscription<T>(this, subscriber);
   }
 
-  next = (value: T) => {
+  next(value: T) {
     this._value = value;
     this.observers.forEach(observer => observer.next && observer.next(value));
   }
 
-  error = (reason: any) => {
+  error(reason: any) {
     this.observers.forEach(observer => observer.error && observer.error(reason));
   }
 
-  complete = () => {
+  complete() {
     this.observers.forEach(observer => observer.error && observer.complete());
+  }
+
+  unsubscribe() {
+    this.observers = [];
   }
 }

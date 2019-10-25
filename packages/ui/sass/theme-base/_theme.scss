@@ -14,6 +14,9 @@ a {
   &:hover { color: $link-hover-color; }
 }
 
+// Typography
+fieldset { border: 1px solid $border-color; }
+
 // Tables
 
 .table {
@@ -23,11 +26,9 @@ a {
 .table-bordered {
   border: 1px solid $border-color;
   th, td {
-    padding: 0.5rem;
     border: 1px solid $border-color;
   }
   .table-cell {
-    padding: 0.5rem;
     border-right: 1px solid $border-color;
     &:last-child { border-right: 0; }
   }
@@ -35,17 +36,53 @@ a {
     border-bottom: 1px solid $border-color;
     &:last-child { border-bottom: 0; }
   }
-  thead th, .table-header .table-cell { border-bottom: 2px solid $border-color; }
+  thead th, .table-header .table-cell { border-bottom: 1px solid $border-color; }
 }
 .table-striped {
   tbody tr:nth-of-type(odd), .table-body .table-row:nth-of-type(odd) {
     background-color: $component-accent-bg;
   }
 }
+@each $color, $value in $theme-colors {
+  .table-#{$color} {
+    &, > th, > td {
+      color: color-level($value, 6);
+      background-color: color-level($value, -9);
+    }
+  }
+}
+.table-active {
+  &, > th, > td {
+    background-color: $border-color;
+  }
+}
 .table-hover {
   tbody tr:hover, .table-body .table-row:hover {
     color: $body-color;
     background-color: $component-hover-bg;
+  }
+  @each $color, $value in $theme-colors {
+    $background: color-level($value, -9);
+    $hover-background: darken($background, 5%);
+    $table-color: color-level($value, 6);
+    .table-#{$color} {
+      &:hover {
+        color: $table-color;
+        background-color: $hover-background;
+        > th, > td {
+          color: $table-color;
+          background-color: $hover-background;
+        }
+      }
+    }
+  }
+  .table-active {
+    &:hover {
+      background-color: $border-color;
+      > th, > td {
+        background-color: $border-color;
+      }
+    }
   }
 }
 
@@ -90,6 +127,9 @@ a {
   color: $body-color;
   background-color: $default-bg;
   border: 1px solid $border-color;
+  &:focus {
+    border: 1px solid $active-color;
+  }
 }
 .form-control-plaintext { color: $body-color; }
 .input-group-text {
@@ -140,6 +180,18 @@ a {
       }
     }
   }
+}
+
+// Tooltips
+
+@each $side in (top, right, bottom, left) {
+  .tooltip.bs-tooltip-auto[x-placement^=#{$side}] .arrow::before, .tooltip.bs-tooltip-#{$side} .arrow::before {
+    border-#{$side}-color: $border-color;
+  }
+}
+.tooltip-inner {
+  color: $body-color;
+  background-color: $border-color;
 }
 
 // Modals
@@ -211,6 +263,7 @@ a {
     color: $component-active-color;
     background-color: $component-active-bg;
   }
+  &.disabled { color: $component-disabled-color; }
 }
 .list-group-flush {
   .list-group-item {

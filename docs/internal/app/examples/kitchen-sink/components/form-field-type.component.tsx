@@ -1,20 +1,20 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight.js';
+import { Container } from '@roxie/components';
 
 export function FormFieldTypeExample() {
   const [numberValue, setNumberValue] = useState('5');
 
-  return <Fragment>
+  return <Container layout="vbox" className="fullscreen">
     <ol className="breadcrumb">
-      <li className="breadcrumb-item">Kitchen Sink</li>
-      <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">All</Link></li>
+      <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">Kitchen Sink</Link></li>
       <li className="breadcrumb-item"><Link to="/examples/kitchen-sink/components">Components</Link></li>
       <li className="breadcrumb-item"><Link to="/examples/kitchen-sink/components/form-fields">Form Fields</Link></li>
       <li className="breadcrumb-item">Field Types</li>
     </ol>
-    <div className="pt-3">
-      <div className="container-fluid">
+    <Container layout="fit" className="fullscreen">
+      <div className="auto-scroll-y p-3">
         <div className="card mb-3">
           <div className="card-header">Basic Form Fields</div>
           <div className="card-body">
@@ -171,6 +171,6 @@ export function FormFieldTypeExample() {
           </div>
         </div>
       </div>
-    </div>
-  </Fragment>
+    </Container>
+  </Container>
 }

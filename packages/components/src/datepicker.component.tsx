@@ -1,45 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Roxie } from '@roxie/core';
 
-type DatePickerProps = {
+type DatePickerPortalProps = {
   value?: Date,
   onChange?: (value: Date) => void,
-  dateFormat?: string,
+  className?: string,
 }
 
-export function DatePicker(props: DatePickerProps) {
-  const [dateFormat] = useState(props.dateFormat || 'yyyy-MM-dd'),
-        [dateStr, setDateStr] = useState(''),
-        [value, setValue] = useState(null as Date);
-
-  useEffect(() => {
-    let value = props.value || new Date();
-    value = new Date(value.getFullYear(), value.getMonth(), value.getDate());
-    setValue(value);
-    setDateStr(Roxie.Date.format(value, dateFormat));
-  }, [props.value])
-
-  function update() {
-    const date = Roxie.Date.parse(dateStr, dateFormat, value);
-    setValue(date);
-    props.onChange && props.onChange(date);
-  }
-
-  function select(selectedDate: Date) {
-    setValue(selectedDate);
-    setDateStr(Roxie.Date.format(selectedDate, dateFormat));
-    props.onChange && props.onChange(selectedDate);
-  }
-
-  return <div className="roxie-datepicker dropdown">
-    <input type="text" className="form-control text-center dropdown-toggle" data-toggle="dropdown" value={dateStr} onChange={e => setDateStr(e.target.value)} onBlur={update} />
-    <div className="dropdown-menu border-0 p-0">
-      <DatePickerPortal value={value} onChange={select} />
-    </div>
-  </div>
-}
-
-export function DatePickerPortal(props: { value?: Date, onChange?: (value: Date) => void, className?: string }) {
+export function DatePickerPortal(props: DatePickerPortalProps) {
   const [value, setValue] = useState(null as Date),
         [date, setDate] = useState(null as Date),
         [month, setMonth] = useState(''),
@@ -134,7 +102,7 @@ export function DatePickerPortal(props: { value?: Date, onChange?: (value: Date)
                   'roxie-datepicker-cell cursor-pointer text-center',
                   {
                     'text-muted': day < 0,
-                    'active': Roxie.Date.compareAsc(value, selectedDate) === 0,
+                    'active font-weight-bold': Roxie.Date.compareAsc(value, selectedDate) === 0,
                   },
                 );
           return <div key={dayIndex} className={className} onClick={() => select(selectedDate)}>
@@ -142,6 +110,44 @@ export function DatePickerPortal(props: { value?: Date, onChange?: (value: Date)
           </div>
         })}
       </div>)}
+    </div>
+  </div>
+}
+
+type DatePickerProps = {
+  value?: Date,
+  onChange?: (value: Date) => void,
+  dateFormat?: string,
+}
+
+export function DatePicker(props: DatePickerProps) {
+  const [dateFormat] = useState(props.dateFormat || 'yyyy-MM-dd'),
+        [dateStr, setDateStr] = useState(''),
+        [value, setValue] = useState(null as Date);
+
+  useEffect(() => {
+    let value = props.value || new Date();
+    value = new Date(value.getFullYear(), value.getMonth(), value.getDate());
+    setValue(value);
+    setDateStr(Roxie.Date.format(value, dateFormat));
+  }, [props.value])
+
+  function update() {
+    const date = Roxie.Date.parse(dateStr, dateFormat, value);
+    setValue(date);
+    props.onChange && props.onChange(date);
+  }
+
+  function select(selectedDate: Date) {
+    setValue(selectedDate);
+    setDateStr(Roxie.Date.format(selectedDate, dateFormat));
+    props.onChange && props.onChange(selectedDate);
+  }
+
+  return <div className="roxie-datepicker dropdown">
+    <input type="text" className="form-control text-center dropdown-toggle" data-toggle="dropdown" value={dateStr} onChange={e => setDateStr(e.target.value)} onBlur={update} />
+    <div className="dropdown-menu border-0 p-0">
+      <DatePickerPortal value={value} onChange={select} />
     </div>
   </div>
 }

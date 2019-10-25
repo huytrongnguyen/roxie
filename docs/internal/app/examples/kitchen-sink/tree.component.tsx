@@ -1,16 +1,16 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight.js';
+import { Container } from '@roxie/components';
 
 export function TreeExample() {
-  return <Fragment>
+  return <Container layout="vbox" className="fullscreen">
     <ol className="breadcrumb">
-      <li className="breadcrumb-item">Kitchen Sink</li>
-      <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">All</Link></li>
+      <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">Kitchen Sink</Link></li>
       <li className="breadcrumb-item">Trees</li>
     </ol>
-    <div className="pt-3">
-      <div className="container-fluid">
+    <Container layout="fit" className="fullscreen">
+      <div className="auto-scroll-y p-3">
         <div className="card mb-3">
           <div className="card-header">List</div>
           <div className="card-body">
@@ -51,6 +51,6 @@ export function TreeExample() {
           </div>
         </div>
       </div>
-    </div>
-  </Fragment>
+    </Container>
+  </Container>
 }

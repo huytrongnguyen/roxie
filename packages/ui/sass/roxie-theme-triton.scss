@@ -1,0 +1,191 @@
+.roxie-theme-triton {
+  @import 'theme-triton/variables';
+  @import 'theme-base/theme';
+
+  fieldset { background-color: #f6f6f6; }
+  legend { color: #919191; }
+
+  @mixin button-variant() {
+    $btn-color: #f0f0f0 !important;
+    color: $btn-color;
+    border-color: #5897ce;
+    background-color: #5fa2dd;
+    &:not(:disabled):not(.disabled):hover, &:not(:disabled):not(.disabled):focus {
+      color: $btn-color;
+      border-color: #518bbd;
+      background-color: #5795cb;
+    }
+    &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+      color: $btn-color;
+      border-color: #42719a;
+      background-color: #477aa6;
+    }
+    &:disabled, &.disabled {
+      color: $btn-color;
+      border-color: #5897ce;
+      background-color: #5fa2dd;
+    }
+  }
+  .btn-default {
+    @include button-variant();
+  }
+  @each $color, $value in $theme-colors {
+    .btn-#{$color}, .btn-outline-#{$color} {
+      @include button-variant();
+    }
+  }
+
+  .dropdown-item {
+    &:hover, &:focus {
+      color: $component-active-color;
+    }
+  }
+
+  .card {
+    border: 1px solid $component-cap-bg;
+  }
+  .card-header {
+    color: #f0f0f0;
+    border-bottom: 1px solid $component-cap-bg;
+    .btn {
+      color: #f0f0f0;
+    }
+  }
+  .card-footer {
+    color: $body-color;
+    background-color: #ececec;
+    border-top: 1px solid $component-cap-bg;
+  }
+  @each $color, $value in $theme-colors {
+    .card {
+      &.bg-#{$color}, &.bg-outline-#{$color} {
+        border: 1px solid $component-cap-bg;
+        .card-header {
+          color: #f0f0f0;
+          background-color: $component-cap-bg;
+          border-bottom: 1px solid $component-cap-bg;
+        }
+        .card-footer {
+          color: $body-color;
+          background-color: #ececec;
+          border-top: 1px solid $component-cap-bg;
+        }
+        .card-body {
+          color: $body-color;
+        }
+      }
+    }
+  }
+
+  @each $color, $value in $theme-colors {
+    .bg-#{$color} {
+      background-color: $default-bg !important;
+    }
+  }
+
+  .input-group-text {
+    background-color: $default-bg;
+  }
+
+  .text-muted { color: $component-disabled-color !important; }
+
+  .modal-content { border: 1px solid $component-cap-bg; }
+  .modal-header { color: $white; }
+
+  .close { color: $white; }
+
+  .nav-tabs {
+    .nav-link {
+      &:hover, &:focus {
+        background: rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+      &.disabled { opacity: 0.3; }
+      &.active {
+        background: $default-bg;
+        border-color: $default-bg;
+      }
+    }
+  }
+
+  .table {
+    thead, .table-header {
+      background-color: #fff;
+    }
+    tbody, .table-body {
+      background-color: #fff;
+    }
+  }
+  .table-bordered {
+    $table-border-color: #e9e9e9;
+    border: 1px solid $table-border-color;
+    th, td {
+      border: 1px solid $table-border-color;
+    }
+    .table-cell {
+      border-right: 1px solid $table-border-color;
+      &:last-child { border-right: 0; }
+    }
+    .table-row {
+      border-bottom: 1px solid $table-border-color;
+      &:last-child { border-bottom: 0; }
+    }
+    thead th, .table-header .table-cell { border-bottom: 1px solid $table-border-color; }
+  }
+  .table-striped {
+    tbody tr:nth-of-type(odd), .table-body .table-row:nth-of-type(odd) {
+      background-color: #f6f6f6;
+    }
+  }
+  @each $color, $value in $theme-colors {
+    .table-#{$color} {
+      &, > th, > td {
+        color: $body-color;
+        background-color: #ffefbb;
+      }
+    }
+  }
+  .table-active {
+    &, > th, > td {
+      background-color: #ffefbb;
+    }
+  }
+  .table-hover {
+    tbody tr:hover, .table-body .table-row:hover {
+      color: $body-color;
+      background-color: #eaeff4;
+    }
+    @each $color, $value in $theme-colors {
+      .table-#{$color} {
+        &:hover {
+          color: $body-color;
+          background-color: #ffefbb;
+          > th, > td {
+            color: $body-color;
+            background-color: #ffefbb;
+          }
+        }
+      }
+    }
+    .table-active {
+      &:hover {
+        background-color: #ffefbb;
+        > th, > td {
+          background-color: #ffefbb;
+        }
+      }
+    }
+  }
+
+  .list-group-item-action {
+    &:hover, &:focus { color: $component-active-color; }
+  }
+
+  .c3 {
+    .c3-tooltip {
+      background-color: $white;
+      th { color: $white; }
+      td { background-color: $white; }
+    }
+  }
+}

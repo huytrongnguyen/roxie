@@ -53,6 +53,7 @@ export function Home() {
                 <p>Architect-ing your application</p>
                 <dl>
                   <dd><Link to="/architecture/application-architecture">Application Architecture</Link></dd>
+                  <dd><Link to="/architecture/view-controller">View Controller</Link></dd>
                 </dl>
               </div>
             </div>

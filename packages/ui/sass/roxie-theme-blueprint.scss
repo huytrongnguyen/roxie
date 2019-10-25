@@ -1,0 +1,11 @@
+.roxie-theme-blueprint {
+  @import 'theme-blueprint/variables';
+  @import 'theme-base/theme';
+
+  .btn-default {
+    background-color: $gray-100;
+    &:not(:disabled):not(.disabled):hover {
+      background-color: $gray-200;
+    }
+  }
+}

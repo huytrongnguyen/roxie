@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight.js';
 import { DataStore } from '@roxie/core';
-import { Chart } from '@roxie/components';
+import { Container, Chart } from '@roxie/components';
 
 type Browser = {
   month: string,
@@ -31,15 +31,14 @@ const BrowserStore = new DataStore<Browser>({
 });
 
 export function LineChartExample() {
-  return <Fragment>
+  return <Container layout="vbox" className="fullscreen">
     <ol className="breadcrumb">
-      <li className="breadcrumb-item">Kitchen Sink</li>
-      <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">All</Link></li>
+      <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">Kitchen Sink</Link></li>
       <li className="breadcrumb-item"><Link to="/examples/kitchen-sink/charts">Charts</Link></li>
       <li className="breadcrumb-item">Line Charts</li>
     </ol>
-    <div className="pt-3">
-      <div className="container-fluid">
+    <Container layout="fit" className="fullscreen">
+      <div className="auto-scroll-y p-3">
       <div className="card mb-3">
           <div className="card-header">Basic Line Chart</div>
           <div className="card-body">
@@ -47,7 +46,7 @@ export function LineChartExample() {
                     series={{ type: 'line', xField: 'month', yField: ['data1', 'data2', 'data3', 'data4'] }} />
           </div>
           <div className="card-footer">
-            <Highlight language="tsx">{`
+            <Highlight language="ts">{`
 import React from 'react';
 import { DataStore } from '@roxie/core';
 import { Chart } from '@roxie/components';
@@ -88,6 +87,6 @@ function LineChartExample() {
           </div>
         </div>
       </div>
-    </div>
-  </Fragment>
+    </Container>
+  </Container>
 }

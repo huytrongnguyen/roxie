@@ -11,6 +11,17 @@
   }
 }
 
+.dropdown-item-list {
+  max-height: 12rem;
+  overflow-y: auto;
+}
+.dropdown.input-group {
+  .dropdown-menu {
+    transform: translate3d(0px, 35px, 0px) !important;
+    width: 100%;
+  }
+}
+
 .roxie-datepicker {
   .dropdown-toggle {
     &:after {

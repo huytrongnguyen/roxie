@@ -1,18 +1,17 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight.js';
-import { TabPanel, Tab } from '@roxie/components';
+import { Container, TabPanel, Tab } from '@roxie/components';
 
 export function TabExample() {
-  return <Fragment>
+  return <Container layout="vbox" className="fullscreen">
     <ol className="breadcrumb">
-      <li className="breadcrumb-item">Kitchen Sink</li>
-      <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">All</Link></li>
+      <li className="breadcrumb-item"><Link to="/examples/kitchen-sink">Kitchen Sink</Link></li>
       <li className="breadcrumb-item"><Link to="/examples/kitchen-sink/components">Components</Link></li>
       <li className="breadcrumb-item">Tabs</li>
     </ol>
-    <div className="pt-3">
-      <div className="container-fluid">
+    <Container layout="fit" className="fullscreen">
+      <div className="auto-scroll-y p-3">
         <div className="card mb-3">
           <div className="card-header">Basic Tabs</div>
           <div className="card-body">
@@ -50,13 +49,12 @@ export function TabExample() {
             </TabPanel>
           </div>
           <div className="card-footer">
-            <Highlight language="html">{`
+            <Highlight language="jsx">{`
 import React, { Fragment } from 'react';
 import { TabPanel, Tab } from '@roxie/components';
 
 function TabPanelExample() {
   return <TabPanel>
-  <TabPanel>
     <Tab title="Home">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -93,6 +91,6 @@ function TabPanelExample() {
           </div>
         </div>
       </div>
-    </div>
-  </Fragment>
+    </Container>
+  </Container>
 }
