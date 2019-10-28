@@ -3,7 +3,8 @@ import * as dateFns from 'date-fns';
 declare global {
   interface Date {
     format(pattern: string): string,
-    getUnixTime(): number,
+    toUnixTime(): number,
+    toUnixTimeMilliseconds(): number,
     add(amount: number, key: string): Date,
     substract(amount: number, key: string): Date,
     diff(dateToCompare: Date, key: string): number,
@@ -13,7 +14,8 @@ declare global {
 }
 
 Date.prototype.format = function (this: Date, pattern: string) { return dateFns.lightFormat(this, pattern); }
-Date.prototype.getUnixTime = function (this: Date) { return dateFns.getUnixTime(this); }
+Date.prototype.toUnixTime = function (this: Date) { return dateFns.getUnixTime(this); }
+Date.prototype.toUnixTimeMilliseconds = function (this: Date) { return dateFns.getTime(this); }
 
 Date.prototype.add = function (this: Date, amount: number, key: string) {
   switch (key) {

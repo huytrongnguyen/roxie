@@ -3,6 +3,7 @@
 ### Roxie Core
 
 * [#20] Should supports extension methods on Date
+* [#21] Missing logger with latest version
 
 ## [1.7.0]
 > Oct 25, 2019

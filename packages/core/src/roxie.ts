@@ -53,6 +53,7 @@ export const Roxie = {
   },
   Date: {
     DAYS_IN_WEEK: 7,
+    DEFAULT_PATTERN: "yyyy-MM-dd'T'HH:mm:ss",
     ...dateFns,
     format: (date?: number | Date, pattern: string = 'yyyy-MM-dd HH:mm:ss') => dateFns.format(date || new Date(), pattern),
     now: () => new Date(),
@@ -61,7 +62,9 @@ export const Roxie = {
       var utc =  Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
       return new Date(utc);
     },
-    getUnixTime: (date: number | Date) => dateFns.getTime(date),
+    fromUnixTime: (value: number) => dateFns.fromUnixTime(value),
+    toUnixTime: (date: number | Date) => dateFns.getUnixTime(date),
+    toUnixTimeMilliseconds: (date: number | Date) => dateFns.getTime(date),
   },
   Object: {
     isEmpty(o: any) {
@@ -77,6 +80,11 @@ export const Roxie = {
   JSON: {
     encode: (value: any, space?: string | number) => JSON.stringify(value, null, space),
     decode: (value: string) => JSON.parse(value),
+  },
+  Logger: {
+    logInfo: (msg: string) => console.log(`${Roxie.Date.now().format(Roxie.Date.DEFAULT_PATTERN)} INFO: ${msg}`),
+    logWarning: (msg: string) => console.warn(`${Roxie.Date.now().format(Roxie.Date.DEFAULT_PATTERN)} WARNING: ${msg}`),
+    logError: (msg: string) => console.error(`${Roxie.Date.now().format(Roxie.Date.DEFAULT_PATTERN)} ERROR: ${msg}`),
   },
   Cache: new LocalCache(),
 }
