@@ -1,0 +1,24 @@
+{
+  "name": "@roxie/server",
+  "version": "1.8.0",
+  "description": "The Roxie server",
+  "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@roxie/core": "^1.8.0",
+    "express": "4.17.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ]
+}

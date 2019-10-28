@@ -6,6 +6,10 @@
 * [#21] Missing logger with latest version
 * [#22] Should use axios instead of jquery ajax
 
+### Roxie Server
+
+* [#23] Should keep `@roxie/server` up to date
+
 ## [1.7.0]
 > Oct 25, 2019
 
