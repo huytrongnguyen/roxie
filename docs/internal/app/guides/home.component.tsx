@@ -60,9 +60,11 @@ export function Home() {
           </div>
           <div className="col-6">
             <div className="card mb-3">
-              <div className="card-header">5. Roxie Themes</div>
+              <div className="card-header">5. API</div>
               <div className="card-body">
-                <p>Explore how to style your Ext JS application</p>
+                <dl>
+                  <dd><Link to="/date">Date</Link></dd>
+                </dl>
               </div>
             </div>
           </div>

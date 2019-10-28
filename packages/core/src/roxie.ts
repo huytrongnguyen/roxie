@@ -4,6 +4,7 @@ import * as dateFns from 'date-fns';
 import './lang/number';
 import './lang/string';
 import './lang/array';
+import './lang/date';
 
 import { LocalCache } from './cache';
 import { Subject } from './observable';

@@ -11,6 +11,7 @@ import {
   DialogComponent, DropdownComponent, TabPanelComponent, ListComponent, GridComponent, ChartComponent,
   ApplicationArchitecture, ViewController,
 } from './guides';
+import { NumberApi, StringApi, DateApi } from './api';
 import {
   ComponentExample, ButtonExample, FormExample, PanelExample, DialogExample, LayoutExample, TabExample, TooltipExample,
   FormFieldExample, DatePickerExample, DropdownExample, FileUploadExample, FormFieldTypeExample,
@@ -42,6 +43,9 @@ export function App() {
           <Route exact path="/components/list" component={ListComponent} title="Chart" />
           <Route exact path="/components/grid" component={GridComponent} title="Grid" />
           <Route exact path="/components/chart" component={ChartComponent} title="Chart" />
+          <Route exact path="/number" component={NumberApi} title="Number" />
+          <Route exact path="/string" component={StringApi} title="String" />
+          <Route exact path="/date" component={DateApi} title="Date" />
           <Route exact path="/examples/kitchen-sink" component={KitchenSink} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components" component={ComponentExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components/buttons" component={ButtonExample} title="Examples" />
@@ -143,6 +147,10 @@ export function AppSidebar() {
       <NavLink to="/components/tabpanel" text="TabPanel" />
       <NavLink to="/components/grid" text="Grid" />
       <NavLink to="/components/chart" text="Chart" />
+      <span className="list-group-item text-uppercase font-weight-bold">API</span>
+      <NavLink to="/number" text="Number" />
+      <NavLink to="/string" text="String" />
+      <NavLink to="/date" text="Date" />
       <span className="list-group-item text-uppercase font-weight-bold">Examples</span>
       <NavLink to="/examples/kitchen-sink" text="Kitchen Sink" />
     </div>
