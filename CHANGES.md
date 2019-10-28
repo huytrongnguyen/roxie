@@ -4,6 +4,7 @@
 
 * [#20] Should supports extension methods on Date
 * [#21] Missing logger with latest version
+* [#22] Should use axios instead of jquery ajax
 
 ## [1.7.0]
 > Oct 25, 2019

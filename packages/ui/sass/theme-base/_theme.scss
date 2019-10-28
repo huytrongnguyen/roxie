@@ -305,8 +305,20 @@ fieldset { border: 1px solid $border-color; }
 
 // Code
 
-pre { color: $body-color; }
-code { color: $body-color; }
+pre {
+  color: $body-color;
+  code {
+    border: none;
+    border-radius: none;
+    padding: 0;
+  }
+}
+code {
+  color: $body-color;
+  border: 1px solid $border-color;
+  border-radius: .25rem;
+  padding: .125rem;
+}
 
 // Utilities
 

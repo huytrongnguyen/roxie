@@ -1,4 +1,5 @@
-import $ from 'jquery';
+import axios, { AxiosRequestConfig, Method } from 'axios';
+
 import { PlainObject } from './types';
 
 export type HttpParams = {
@@ -12,13 +13,14 @@ export type AjaxSettings = {
   method?: string,
   params?: HttpParams,
   headers?: PlainObject<string>,
-  onError?: (msg: string) => void,
+  onError?: (msg: string, error?: any) => void,
   onComplete?: () => void,
+  defaultValue?: any,
 }
 
 export const Ajax = {
   request: async <T>(settings: AjaxSettings) => {
-    const { method = 'get', params = {}, headers = {}, onError, onComplete } = settings;
+    const { method = 'get', params = {}, headers = {}, onError, onComplete, defaultValue = null } = settings;
     let { url } = settings;
 
     if (params.pathParams) {
@@ -30,15 +32,14 @@ export const Ajax = {
     }
 
     try {
-      const jqAjaxSettings: JQueryAjaxSettings = { url, method, contentType: 'application/json;charset=UTF-8', headers };
-      params.body && (jqAjaxSettings.data = JSON.stringify(params.body));
-      return (await $.ajax(jqAjaxSettings)) as T;
-    } catch (jqXHR) {
-      const { responseText, status, statusText } = jqXHR,
-            msg = `Http failure response for "${url}": ${responseText || `${status} ${statusText}`}`;
+      const config: AxiosRequestConfig = { method: method as Method, url, headers };
+      params.body && (config.data = params.body);
+      return (await axios(config)).data as T;
+    } catch (error) {
+      const msg = `Http failure response for "${url}": ${error.message}`;
       console.error(msg);
-      onError && onError(msg);
-      return null;
+      onError && onError(msg, error.response);
+      return defaultValue;
     } finally {
       onComplete && onComplete();
     }
