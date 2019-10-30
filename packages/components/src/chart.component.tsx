@@ -28,7 +28,7 @@ export function Chart(props: ChartProps) {
         } as ChartConfiguration);
 
   useEffect(() => {
-    store.subscribe(data => {
+    const subscription = store.subscribe(data => {
       if (!data) return;
 
       config.data.json = data;
@@ -48,6 +48,8 @@ export function Chart(props: ChartProps) {
       }
 
       generate(config);
+
+      return () => subscription.unsubscribe();
     });
   }, [])
 

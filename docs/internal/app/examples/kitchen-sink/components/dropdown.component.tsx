@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight.js';
+import { DataStore } from '@roxie/core';
 import { Container, Dropdown } from '@roxie/components';
 
 const states: [ number, string, string, string ][] = [
@@ -62,9 +63,12 @@ type State = {
   name: string,
 }
 
+const StateStore = new DataStore<State>({
+  data: states.map(state => { return { abbr: state[1], name: state[2] } as State }),
+});
+
 export function DropdownExample() {
-  const [stateList] = useState(states.map(state => { return { abbr: state[1], name: state[2] } as State })),
-        [selectedStates, setSelectedStates] = useState([] as State[]);
+  const [selectedStates, setSelectedStates] = useState([] as State[]);
 
   return <Container layout="vbox" className="fullscreen">
     <ol className="breadcrumb">
@@ -79,7 +83,7 @@ export function DropdownExample() {
           <div className="card-header">Simple Dropdown</div>
           <div className="card-body">
             <div className="d-inline-block">
-              <Dropdown options={stateList} multiple
+              <Dropdown store={StateStore} multiple
                         displayField="name" valueField="abbr"
                         value={selectedStates} valueChange={setSelectedStates} />
             </div>
@@ -145,11 +149,14 @@ type State = {
   name: string,
 }
 
-function Example() {
-  const [stateList] = useState(states.map(state => { return { abbr: state[1], name: state[2] } as State })),
-        [selectedStates, setSelectedStates] = useState([] as State[]);
+const StateStore = new DataStore<State>({
+  data: states.map(state => { return { abbr: state[1], name: state[2] } as State }),
+});
 
-  return <Dropdown  options={stateList} multiple
+function Example() {
+  const [selectedStates, setSelectedStates] = useState([] as State[]);
+
+  return <Dropdown  store={StateStore} multiple
                     displayField="name" valueField="abbr"
                     value={selectedStates} valueChange={setSelectedStates} />
 }

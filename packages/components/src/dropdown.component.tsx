@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { Roxie } from '@roxie/core';
+import React, { useState, useEffect } from 'react';
+import { Roxie, DataStore } from '@roxie/core';
 
 Roxie.query(document).on('click', '.dropdown.dropdown-multi-select .dropdown-menu', e => e.stopPropagation());
 
 type DropdownProps = {
+  store: DataStore<any>,
   options: any[],
   displayField?: string,
   valueField?: string,
@@ -23,7 +24,6 @@ type DropdownProps = {
 
 export function Dropdown(props: DropdownProps) {
   const {
-    options,
     displayField = 'name',
     valueField = 'value',
     multiple = false,
@@ -35,7 +35,13 @@ export function Dropdown(props: DropdownProps) {
     className = '',
   } = props;
 
-  const [searchFilter, setSearchFilter] = useState('');
+  const [searchFilter, setSearchFilter] = useState(''),
+        [options, setOptions] = useState([]);
+
+  useEffect(() => {
+    const subscription = props.store.subscribe(value => setOptions(value || []));
+    return () => subscription.unsubscribe();
+  }, [])
 
   function displayText() {
     if (!smartButtonText || !value.length) {

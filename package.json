@@ -63,5 +63,8 @@
     "watch-docs": "parcel watch docs/internal/index.html --no-source-maps --no-autoinstall --no-hmr --out-dir docs/dist",
     "start-docs": "node server.js",
     "test": "jest"
+  },
+  "dependencies": {
+    "packages": "^0.0.8"
   }
 }

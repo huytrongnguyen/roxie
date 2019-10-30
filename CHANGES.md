@@ -15,6 +15,11 @@
 
 * [#24] Correct theme for `.page-link` class
 
+### Roxie Components
+
+* `Dropdown` should load data from `DataStore`
+* Supports to unsubscribe `DataStore` when `Chart` unloaded
+
 ### Docs
 
 * Update docs

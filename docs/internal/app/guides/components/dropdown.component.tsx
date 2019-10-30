@@ -1,12 +1,20 @@
 import React, { Fragment, useState } from 'react';
 import Highlight from 'react-highlight.js';
+import { DataStore } from '@roxie/core';
 import { Dropdown } from '@roxie/components';
 
-const data = [
-  { name:'Alabama', abbrev:'AL' },
-  { name:'Alaska',  abbrev:'AK' },
-  { name:'Arizona', abbrev:'AZ' },
-]
+type State = {
+  abbrev: string,
+  name: string,
+}
+
+const StateStore = new DataStore<State>({
+  data: [
+    { name:'Alabama', abbrev:'AL' },
+    { name:'Alaska',  abbrev:'AK' },
+    { name:'Arizona', abbrev:'AZ' },
+  ],
+});
 
 export function DropdownComponent() {
   const [selectedValues, setSelectedValues] = useState([]);
@@ -22,7 +30,7 @@ export function DropdownComponent() {
         </p>
         <div className="card mb-3">
           <div className="card-body">
-            <Dropdown options={data} valueField="abbrev" displayField="name" multiple
+            <Dropdown store={StateStore} valueField="abbrev" displayField="name" multiple
                       value={selectedValues} valueChange={setSelectedValues} />
           </div>
           <div className="card-footer">
@@ -30,14 +38,16 @@ export function DropdownComponent() {
 import React, { Fragment } from 'react';
 import { Dropdown } from '@roxie/components';
 
-const data = [
-  { name:'Alabama', abbrev:'AL' },
-  { name:'Alaska',  abbrev:'AK' },
-  { name:'Arizona', abbrev:'AZ' },
-]
+const StateStore = new DataStore<State>({
+  data: [
+    { name:'Alabama', abbrev:'AL' },
+    { name:'Alaska',  abbrev:'AK' },
+    { name:'Arizona', abbrev:'AZ' },
+  ],
+});
 
 function States() {
-  return <Dropdown  options={data} valueField="abbrev" displayField="name" multiple
+  return <Dropdown  store={StateStore} valueField="abbrev" displayField="name" multiple
                     value={selectedValues} valueChange={setSelectedValues} />
 }
             `}</Highlight>
