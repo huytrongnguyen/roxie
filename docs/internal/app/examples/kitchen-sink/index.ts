@@ -12,6 +12,7 @@ export * from './components/panel.component';
 export * from './components/tab.component';
 export * from './components/dialog.component';
 export * from './components/tooltip.component';
+export * from './components/toolbar.component';
 export * from './grids/all.component';
 export * from './grids/list.component';
 export * from './grids/grid.component';

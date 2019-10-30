@@ -49,10 +49,10 @@ birthday = new Date(1989,11,17,3,24,0);
           </div>
         </div>
         <div className="card mb-3">
-          <div className="card-header"><pre className="d-inline"><code>getUnixTime()</code></pre> - get the seconds timestamp of the given date</div>
-          <div className="card-body">{(new Date()).getUnixTime()}</div>
+          <div className="card-header"><pre className="d-inline"><code>toUnixTime()</code></pre> - get the seconds timestamp of the given date</div>
+          <div className="card-body">{(new Date()).toUnixTime()}</div>
           <div className="card-footer">
-            <Highlight language="ts">{`(new Date()).getUnixTime()`}</Highlight>
+            <Highlight language="ts">{`(new Date()).toUnixTime()`}</Highlight>
           </div>
         </div>
         <div className="card mb-3">

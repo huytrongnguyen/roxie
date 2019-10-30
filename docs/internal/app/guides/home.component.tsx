@@ -63,6 +63,8 @@ export function Home() {
               <div className="card-header">5. API</div>
               <div className="card-body">
                 <dl>
+                  <dd><Link to="/number">Number</Link></dd>
+                  <dd><Link to="/string">String</Link></dd>
                   <dd><Link to="/date">Date</Link></dd>
                 </dl>
               </div>

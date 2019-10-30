@@ -15,6 +15,7 @@ a {
 }
 
 // Typography
+
 fieldset { border: 1px solid $border-color; }
 
 // Tables
@@ -91,15 +92,23 @@ fieldset { border: 1px solid $border-color; }
 .btn { color: $body-color; }
 .btn-link { color: $link-color; }
 .btn-default {
-  color: $body-color !important;
+  color: $body-color;
   border-color: $border-color;
+  &:not(:disabled):not(.disabled):hover,
+  &:not(:disabled):not(.disabled):focus,
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: $body-color;
+    background-color: darken($default-bg, 7.5%);
+  }
 }
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
     color: color-yiq($value);
     border-color: darken($value, 10%);
     background-color: $value;
-    &:hover, &:focus,
+    &:not(:disabled):not(.disabled):hover,
+    &:not(:disabled):not(.disabled):focus,
     &:not(:disabled):not(.disabled):active,
     &:not(:disabled):not(.disabled).active {
       color: color-yiq($value);
@@ -194,6 +203,15 @@ fieldset { border: 1px solid $border-color; }
   background-color: $border-color;
 }
 
+// Badges
+
+@each $color, $value in $theme-colors {
+  .badge-#{$color} {
+    color: color-yiq($value);
+    background-color: $value;
+  }
+}
+
 // Modals
 
 .modal-content {
@@ -204,6 +222,28 @@ fieldset { border: 1px solid $border-color; }
   border-bottom: 1px solid $border-color;
   background: $component-cap-bg;
 }
+
+// Alerts
+
+.alert-default {
+  color: $body-color;
+  border-color: $border-color;
+  .alert-link {
+    color: $link-color;
+  }
+}
+@each $color, $value in $theme-colors {
+  .alert-#{$color} {
+    $alert-color: color-level($value, 6);
+    color: $alert-color;
+    background-color: color-level($value, -10);
+    border-color: color-level($value, -9);
+    .alert-link {
+      color: darken($alert-color, 10%);
+    }
+  }
+}
+.alert-secondary, .alert-light { border-color: $border-color; }
 
 // Navs
 
@@ -245,6 +285,32 @@ fieldset { border: 1px solid $border-color; }
     background-color: $component-active-bg;
   }
   &.disabled, &:disabled { color: $component-disabled-color; }
+}
+
+// Pagination
+
+.page-link {
+  color: $body-color;
+  background-color: $default-bg;
+  border: 1px solid $border-color;
+
+  &:hover {
+    background-color: darken($default-bg, 7.5%);
+    cursor: pointer;
+  }
+}
+.page-item {
+  &.active .page-link {
+    color: $component-active-color;
+    background-color: $component-active-bg;
+    border-color: $component-active-bg;
+    &:hover { cursor: default; }
+  }
+  &.disabled .page-link {
+    color: $component-disabled-color;
+    background-color: transparent;
+    border: 1px solid $border-color;
+  }
 }
 
 // List group

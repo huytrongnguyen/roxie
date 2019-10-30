@@ -1,11 +1,9 @@
 const express = require('express');
-const Bundler = require('parcel');
 
 const portNumber = 4200,
-      app = express(),
-      bundler = new Bundler('docs/internal/index.html', { sourceMaps: false, contentHash: false, autoInstall: false, outDir: 'docs/dist' });
+      app = express();
 
-app .use(bundler.middleware())
+app .use('/', express.static('docs/dist'))
     .listen(portNumber, err => {
       if (err) {
         console.error('Unable to start Express.', err);

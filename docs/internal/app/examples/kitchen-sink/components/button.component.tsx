@@ -15,7 +15,10 @@ export function ButtonExample() {
         <div className="card mb-3">
           <div className="card-header">Basic Buttons</div>
           <div className="card-body">
-            <div>
+            <div className="mt-1">
+              <button type="button" className="btn btn-default mr-1">Default</button>
+            </div>
+            <div className="mt-1">
               <button type="button" className="btn btn-primary mr-1">Primary</button>
               <button type="button" className="btn btn-secondary mr-1">Secondary</button>
               <button type="button" className="btn btn-success mr-1">Success</button>
@@ -34,9 +37,6 @@ export function ButtonExample() {
               <button type="button" className="btn btn-outline-info mr-1">Info</button>
               <button type="button" className="btn btn-outline-light mr-1">Light</button>
               <button type="button" className="btn btn-outline-dark mr-1">Dark</button>
-            </div>
-            <div className="mt-1">
-              <button type="button" className="btn btn-default mr-1">Default</button>
             </div>
           </div>
           <div className="card-footer">
@@ -138,16 +138,16 @@ export function ButtonExample() {
           <div className="card-header">Group of Buttons</div>
           <div className="card-body">
             <div className="btn-group">
-              <button type="button" className="btn btn-outline-secondary">Left</button>
-              <button type="button" className="btn btn-outline-secondary">Middle</button>
-              <button type="button" className="btn btn-outline-secondary">Right</button>
+              <button type="button" className="btn btn-default">Left</button>
+              <button type="button" className="btn btn-default">Middle</button>
+              <button type="button" className="btn btn-default">Right</button>
             </div>
           </div>
           <div className="card-footer">
             <Highlight language="html">{`
-<button type="button" class="btn btn-outline-secondary">Left</button>
-<button type="button" class="btn btn-outline-secondary">Middle</button>
-<button type="button" class="btn btn-outline-secondary">Right</button>
+<button type="button" class="btn btn-default">Left</button>
+<button type="button" class="btn btn-default">Middle</button>
+<button type="button" class="btn btn-default">Right</button>
             `}</Highlight>
           </div>
         </div>

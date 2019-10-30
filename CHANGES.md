@@ -1,5 +1,6 @@
 ## [1.8.0]
 
+
 ### Roxie Core
 
 * [#20] Should supports extension methods on Date
@@ -10,12 +11,16 @@
 
 * [#23] Should keep `@roxie/server` up to date
 
-## [1.7.0]
-> Oct 25, 2019
+### Roxie UI
+
+* [#24] Correct theme for `.page-link` class
 
 ### Docs
 
 * Update docs
+
+## [1.7.0]
+> Oct 25, 2019
 
 ### Roxie Core
 
@@ -33,12 +38,12 @@
 * Implement `FileField` component
 * Unsubscribe `Store` when `Grid`, `List` unmounted
 
-## [1.6.0]
-> Oct 18, 2019
-
 ### Docs
 
 * Update docs
+
+## [1.6.0]
+> Oct 18, 2019
 
 ### Roxie Core
 
@@ -55,6 +60,10 @@
 * Fix issue cannot filter on dropdown
 * Fix issue cannot unselect item on dropdown
 * Implement `DatePickerPortal`, `DatePicker` component
+
+### Docs
+
+* Update docs
 
 ## [1.5.1]
 > Oct 14, 2019

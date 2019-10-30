@@ -60,6 +60,7 @@
     "changed": "lerna changed",
     "publish": "lerna publish from-package --yes",
     "build-docs": "parcel build docs/internal/index.html --no-source-maps --no-content-hash --no-autoinstall --out-dir docs --public-url /roxie",
+    "watch-docs": "parcel watch docs/internal/index.html --no-source-maps --no-autoinstall --no-hmr --out-dir docs/dist",
     "start-docs": "node server.js",
     "test": "jest"
   }

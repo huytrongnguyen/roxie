@@ -27,7 +27,7 @@ export function TooltipExample() {
             <button type="button" className="btn btn-default mr-1" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
               Tooltip on left
             </button>
-            <button type="button" className="btn btn-secondary" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+            <button type="button" className="btn btn-default mr-1" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
               Tooltip with HTML
             </button>
           </div>
@@ -45,7 +45,7 @@ export function TooltipExample() {
 <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
   Tooltip on left
 </button>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
   Tooltip with HTML
 </button>
             `}</Highlight>

@@ -2,111 +2,12 @@
   @import 'theme-triton/variables';
   @import 'theme-base/theme';
 
+  // Typography
+
   fieldset { background-color: #f6f6f6; }
   legend { color: #919191; }
 
-  @mixin button-variant() {
-    $btn-color: #f0f0f0 !important;
-    color: $btn-color;
-    border-color: #5897ce;
-    background-color: #5fa2dd;
-    &:not(:disabled):not(.disabled):hover, &:not(:disabled):not(.disabled):focus {
-      color: $btn-color;
-      border-color: #518bbd;
-      background-color: #5795cb;
-    }
-    &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
-      color: $btn-color;
-      border-color: #42719a;
-      background-color: #477aa6;
-    }
-    &:disabled, &.disabled {
-      color: $btn-color;
-      border-color: #5897ce;
-      background-color: #5fa2dd;
-    }
-  }
-  .btn-default {
-    @include button-variant();
-  }
-  @each $color, $value in $theme-colors {
-    .btn-#{$color}, .btn-outline-#{$color} {
-      @include button-variant();
-    }
-  }
-
-  .dropdown-item {
-    &:hover, &:focus {
-      color: $component-active-color;
-    }
-  }
-
-  .card {
-    border: 1px solid $component-cap-bg;
-  }
-  .card-header {
-    color: #f0f0f0;
-    border-bottom: 1px solid $component-cap-bg;
-    .btn {
-      color: #f0f0f0;
-    }
-  }
-  .card-footer {
-    color: $body-color;
-    background-color: #ececec;
-    border-top: 1px solid $component-cap-bg;
-  }
-  @each $color, $value in $theme-colors {
-    .card {
-      &.bg-#{$color}, &.bg-outline-#{$color} {
-        border: 1px solid $component-cap-bg;
-        .card-header {
-          color: #f0f0f0;
-          background-color: $component-cap-bg;
-          border-bottom: 1px solid $component-cap-bg;
-        }
-        .card-footer {
-          color: $body-color;
-          background-color: #ececec;
-          border-top: 1px solid $component-cap-bg;
-        }
-        .card-body {
-          color: $body-color;
-        }
-      }
-    }
-  }
-
-  @each $color, $value in $theme-colors {
-    .bg-#{$color} {
-      background-color: $default-bg !important;
-    }
-  }
-
-  .input-group-text {
-    background-color: $default-bg;
-  }
-
-  .text-muted { color: $component-disabled-color !important; }
-
-  .modal-content { border: 1px solid $component-cap-bg; }
-  .modal-header { color: $white; }
-
-  .close { color: $white; }
-
-  .nav-tabs {
-    .nav-link {
-      &:hover, &:focus {
-        background: rgba(0, 0, 0, 0.08);
-        border-color: rgba(0, 0, 0, 0.08);
-      }
-      &.disabled { opacity: 0.3; }
-      &.active {
-        background: $default-bg;
-        border-color: $default-bg;
-      }
-    }
-  }
+  // Tables
 
   .table {
     thead, .table-header {
@@ -177,9 +78,165 @@
     }
   }
 
+  // Buttons
+
+  @mixin button-variant() {
+    $btn-color: #f0f0f0 !important;
+    color: $btn-color;
+    border-color: #5897ce;
+    background-color: #5fa2dd;
+    &:not(:disabled):not(.disabled):hover, &:not(:disabled):not(.disabled):focus {
+      color: $btn-color;
+      border-color: #518bbd;
+      background-color: #5795cb;
+    }
+    &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+      color: $btn-color;
+      border-color: #42719a;
+      background-color: #477aa6;
+    }
+    &:disabled, &.disabled {
+      color: $btn-color;
+      border-color: #5897ce;
+      background-color: #5fa2dd;
+    }
+  }
+  .btn-default {
+    @include button-variant();
+  }
+  @each $color, $value in $theme-colors {
+    .btn-#{$color}, .btn-outline-#{$color} {
+      @include button-variant();
+    }
+  }
+
+  // Forms
+
+  .input-group-text {
+    background-color: $default-bg;
+  }
+
+  // Cards
+
+  .card {
+    border: 1px solid $component-cap-bg;
+  }
+  .card-header {
+    color: #f0f0f0;
+    border-bottom: 1px solid $component-cap-bg;
+    .btn {
+      color: #f0f0f0;
+    }
+  }
+  .card-footer {
+    color: $body-color;
+    background-color: $default-bg;
+    border-top: 1px solid $component-cap-bg;
+  }
+  @each $color, $value in $theme-colors {
+    .card {
+      &.bg-#{$color}, &.bg-outline-#{$color} {
+        border: 1px solid $component-cap-bg;
+        .card-header {
+          color: #f0f0f0;
+          background-color: $component-cap-bg;
+          border-bottom: 1px solid $component-cap-bg;
+        }
+        .card-footer {
+          color: $body-color;
+          background-color: $default-bg;
+          border-top: 1px solid $component-cap-bg;
+        }
+        .card-body {
+          color: $body-color;
+        }
+      }
+    }
+  }
+
+  // Modals
+
+  .modal-content { border: 1px solid $component-cap-bg; }
+  .modal-header { color: $white; }
+
+  // Alerts
+
+  @mixin alert-variant() {
+    color: $body-color;
+    border-color: #5fa2dd;
+    background-color: $white;
+    .alert-link {
+      color: $link-color;
+    }
+  }
+  .alert-default {
+    @include alert-variant();
+  }
+  @each $color, $value in $theme-colors {
+    .alert-#{$color} {
+      @include alert-variant();
+    }
+  }
+
+  // Navs
+
+  .nav-tabs {
+    .nav-link {
+      &:hover, &:focus {
+        background: rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+      &.disabled { opacity: 0.3; }
+      &.active {
+        background: $default-bg;
+        border-color: $default-bg;
+      }
+    }
+  }
+
+  // Dropdowns
+
+  .dropdown-item {
+    &:hover, &:focus {
+      color: $component-active-color;
+    }
+  }
+
+  // List group
+
   .list-group-item-action {
     &:hover, &:focus { color: $component-active-color; }
   }
+  @each $color, $value in $theme-colors {
+    .list-group-item-#{$color} {
+      color: $component-active-color;
+      background-color: $component-active-bg;
+      &.list-group-item-action {
+        &:hover, &:focus {
+          color: $component-active-color;
+          background-color: $component-active-bg;
+        }
+        &.active {
+          color: $component-active-color;
+          background-color: $component-active-bg;
+        }
+      }
+    }
+  }
+
+  // Close
+
+  .close { color: $white; }
+
+  // Utilities
+
+  @each $color, $value in $theme-colors {
+    .bg-#{$color} {
+      background-color: $default-bg !important;
+    }
+  }
+
+  .text-muted { color: $component-disabled-color !important; }
 
   .c3 {
     .c3-tooltip {

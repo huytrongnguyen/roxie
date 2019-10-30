@@ -16,7 +16,7 @@ export function DialogExample() {
           <div className="card-header">Basic Dialog</div>
           <div className="card-body">
             <div className="modal d-block position-relative" tabIndex={-1} style={{zIndex: 1}}>
-              <div className="modal-dialog modal-dialog-centered">
+              <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
                     <h5 className="modal-title">Dialog</h5>
@@ -54,7 +54,7 @@ export function DialogExample() {
           <div className="card-footer">
             <Highlight language="html">{`
 <div class="modal" tabIndex="1">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Dialog</h5>
@@ -130,6 +130,33 @@ import { Dialog } from '@roxie/components';
     <button type="button" className="btn btn-primary">Send</button>
   </div>
 </Dialog>
+            `}</Highlight>
+          </div>
+        </div>
+        <div className="card mb-3">
+          <div className="card-header">Basic Alerts</div>
+          <div className="card-body">
+            <div className="alert alert-default">A simple default alert with <a href="#" className="alert-link">an example link</a></div>
+            <div className="alert alert-primary">A simple primary alert <a href="#" className="alert-link">an example link</a></div>
+            <div className="alert alert-secondary">A simple secondary alert <a href="#" className="alert-link">an example link</a></div>
+            <div className="alert alert-success">A simple success alert <a href="#" className="alert-link">an example link</a></div>
+            <div className="alert alert-danger">A simple danger alert <a href="#" className="alert-link">an example link</a></div>
+            <div className="alert alert-warning">A simple warning alert <a href="#" className="alert-link">an example link</a></div>
+            <div className="alert alert-info">A simple info alert <a href="#" className="alert-link">an example link</a></div>
+            <div className="alert alert-light">A simple light alert <a href="#" className="alert-link">an example link</a></div>
+            <div className="alert alert-dark">A simple dark alert <a href="#" className="alert-link">an example link</a></div>
+          </div>
+          <div className="card-footer">
+            <Highlight language="html">{`
+<div class="alert alert-default">A simple default alert <a href="#" className="alert-link">an example link</a></div>
+<div class="alert alert-primary">A simple primary alert <a href="#" className="alert-link">an example link</a></div>
+<div class="alert alert-secondary">A simple secondary alert <a href="#" className="alert-link">an example link</a></div>
+<div class="alert alert-success">A simple success alert <a href="#" className="alert-link">an example link</a></div>
+<div class="alert alert-danger">A simple danger alert <a href="#" className="alert-link">an example link</a></div>
+<div class="alert alert-warning">A simple warning alert <a href="#" className="alert-link">an example link</a></div>
+<div class="alert alert-info">A simple info alert <a href="#" className="alert-link">an example link</a></div>
+<div class="alert alert-light">A simple light alert <a href="#" className="alert-link">an example link</a></div>
+<div class="alert alert-dark">A simple dark alert <a href="#" className="alert-link">an example link</a></div>
             `}</Highlight>
           </div>
         </div>

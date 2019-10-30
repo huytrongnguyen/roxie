@@ -75,7 +75,7 @@ export function DropdownExample() {
     </ol>
     <Container layout="fit" className="fullscreen">
       <div className="auto-scroll-y p-3">
-        <div className="card mb-3">
+        <div className="card">
           <div className="card-header">Simple Dropdown</div>
           <div className="card-body">
             <div className="d-inline-block">

@@ -13,7 +13,7 @@ import {
 } from './guides';
 import { NumberApi, StringApi, DateApi } from './api';
 import {
-  ComponentExample, ButtonExample, FormExample, PanelExample, DialogExample, LayoutExample, TabExample, TooltipExample,
+  ComponentExample, ButtonExample, FormExample, PanelExample, DialogExample, LayoutExample, TabExample, TooltipExample, ToolbarExample,
   FormFieldExample, DatePickerExample, DropdownExample, FileUploadExample, FormFieldTypeExample,
   GridExample, TableExample, GridViewExample, ListViewExample,
   TreeExample,
@@ -60,6 +60,7 @@ export function App() {
           <Route exact path="/examples/kitchen-sink/components/tabs" component={TabExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components/dialogs" component={DialogExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components/tooltips" component={TooltipExample} title="Examples" />
+          <Route exact path="/examples/kitchen-sink/components/toolbars" component={ToolbarExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/grids" component={GridExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/grids/lists" component={ListViewExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/grids/grids" component={GridViewExample} title="Examples" />

@@ -19,6 +19,7 @@ export function ComponentExample() {
           <div className="col-2 mb-2"><Link to="/examples/kitchen-sink/components/tabs" className="btn btn-default btn-block">Tabs</Link></div>
           <div className="col-2 mb-2"><Link to="/examples/kitchen-sink/components/dialogs" className="btn btn-default btn-block">Dialogs</Link></div>
           <div className="col-2 mb-2"><Link to="/examples/kitchen-sink/components/tooltips" className="btn btn-default btn-block">Tooltips</Link></div>
+          <div className="col-2 mb-2"><Link to="/examples/kitchen-sink/components/toolbars" className="btn btn-default btn-block">Toolbars</Link></div>
         </div>
       </div>
     </Container>
