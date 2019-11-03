@@ -96,6 +96,8 @@ const ThemeList = [
   { name: 'Gray', value: 'roxie-theme-gray' },
   { name: 'Blueprint', value: 'roxie-theme-blueprint' },
   { name: 'Triton', value: 'roxie-theme-triton' },
+  { name: 'iOS', value: 'roxie-theme-ios' },
+  { name: 'macOS', value: 'roxie-theme-macos' },
 ]
 
 export function ThemeSelection() {
