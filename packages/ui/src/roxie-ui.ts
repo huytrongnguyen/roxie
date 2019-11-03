@@ -1,4 +1,4 @@
-import 'jquery/dist/jquery.slim';
+import 'jquery';
 import 'popper.js';
 import 'bootstrap';
 

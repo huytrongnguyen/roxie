@@ -1,4 +1,4 @@
-import $ from 'jquery/dist/jquery.slim';
+import $ from 'jquery';
 import * as dateFns from 'date-fns';
 
 import './lang/number';

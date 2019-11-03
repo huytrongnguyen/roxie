@@ -1,5 +1,16 @@
-## [1.8.0]
+## [1.8.1]
+>  Nov 3, 2019
 
+### Roxie Core
+
+* [#25] Issue with `jquery-slim`
+
+### Roxie UI
+
+* [#25] Issue with `jquery-slim`
+
+## [1.8.0]
+>  Nov 1, 2019
 
 ### Roxie Core
 
