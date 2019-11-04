@@ -249,12 +249,16 @@ fieldset { border: 1px solid $border-color; }
 
 .nav-tabs {
   .nav-link {
-    &:hover, &:focus { border-color: $border-color; }
+    &:hover, &:focus {
+      border-color: $border-color;
+      background-color: $default-bg;
+    }
     &.disabled { color: $component-disabled-color; }
     &.active {
       color: $body-color;
       background-color: $default-bg;
       border-color: $border-color $border-color $default-bg;
+      &:hover, &:focus { background-color: $default-bg; }
     }
   }
 }

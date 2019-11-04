@@ -1,5 +1,12 @@
+## [1.8.4]
+> Nov 4, 2019
+
+### Roxie UI
+
+* Supports `roxie-theme-blue`, `roxie-theme-ios`, `roxie-theme-macos`
+
 ## [1.8.3]
->  Nov 3, 2019
+> Nov 3, 2019
 
 ### Roxie Core
 

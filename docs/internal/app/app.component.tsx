@@ -94,10 +94,11 @@ const ThemeList = [
   { name: 'Light', value: 'roxie-theme-light' },
   { name: 'Dark', value: 'roxie-theme-dark' },
   { name: 'Gray', value: 'roxie-theme-gray' },
+  { name: 'Blue', value: 'roxie-theme-blue' },
   { name: 'Blueprint', value: 'roxie-theme-blueprint' },
   { name: 'Triton', value: 'roxie-theme-triton' },
-  { name: 'iOS', value: 'roxie-theme-ios' },
-  { name: 'macOS', value: 'roxie-theme-macos' },
+  { name: 'iOS Classic', value: 'roxie-theme-ios' },
+  { name: 'macOS Classic', value: 'roxie-theme-macos' },
 ]
 
 export function ThemeSelection() {

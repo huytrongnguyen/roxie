@@ -1,0 +1,305 @@
+.roxie-theme-blue {
+  @import 'theme-blue/variables';
+  @import 'theme-base/theme';
+
+  // Typography
+
+  fieldset { border: 1px solid #b5b8c8; }
+
+  // Tables
+
+  .table {
+    thead, .table-header {
+      background-color: #c5c5c5;
+      background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #f9f9f9), color-stop(0%, #e6e3e3));
+      background-image: -webkit-linear-gradient(top, #f9f9f9, #e6e3e3);
+      background-image: -moz-linear-gradient(top, #f9f9f9, #e6e3e3);
+      background-image: -o-linear-gradient(top, #f9f9f9, #e6e3e3);
+      background-image: -ms-linear-gradient(top, #f9f9f9, #e6e3e3);
+      background-image: linear-gradient(top, #f9f9f9, #e6e3e3);
+    }
+    tbody, .table-body {
+      background-color: #fafafa;
+    }
+  }
+  .table-bordered {
+    border: 1px solid $border-color;
+    th, td {
+      border: 1px solid $border-color;
+    }
+    .table-cell {
+      border-right: 1px solid $border-color;
+      &:last-child { border-right: 0; }
+    }
+    .table-row {
+      border-bottom: 1px solid $border-color;
+      &:last-child { border-bottom: 0; }
+    }
+    thead th, .table-header .table-cell { border-bottom: 1px solid $border-color; }
+  }
+  .table-striped {
+    tbody tr:nth-of-type(odd), .table-body .table-row:nth-of-type(odd) {
+      background-color: $white;
+    }
+  }
+  @each $color, $value in $theme-colors {
+    .table-#{$color} {
+      &, > th, > td {
+        color: $body-color;
+        background-color: #e0e0e0;
+      }
+    }
+  }
+  .table-active {
+    &, > th, > td {
+      background-color: #e0e0e0;
+    }
+  }
+  .table-hover {
+    tbody tr:hover, .table-body .table-row:hover {
+      color: $body-color;
+      background-color: #efefef;
+    }
+    @each $color, $value in $theme-colors {
+      .table-#{$color} {
+        &:hover {
+          color: $body-color;
+          background-color: #e0e0e0;
+          > th, > td {
+            color: $body-color;
+            background-color: #e0e0e0;
+          }
+        }
+      }
+    }
+    .table-active {
+      &:hover {
+        background-color: #e0e0e0;
+        > th, > td {
+          background-color: #e0e0e0;
+        }
+      }
+    }
+  }
+
+  // Buttons
+
+  @mixin button-variant() {
+    color: $body-color;
+    border-color: #d1d1d1;
+    background-color: $white;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #fff), color-stop(48%, #f9f9f9), color-stop(52%, #e2e2e2), color-stop(0%, #e7e7e7));
+    background-image: -webkit-linear-gradient(top, #fff, #f9f9f9 48%, #e2e2e2 52%, #e7e7e7);
+    background-image: -moz-linear-gradient(top, #fff, #f9f9f9 48%, #e2e2e2 52%, #e7e7e7);
+    background-image: -o-linear-gradient(top, #fff, #f9f9f9 48%, #e2e2e2 52%, #e7e7e7);
+    background-image: -ms-linear-gradient(top, #fff, #f9f9f9 48%, #e2e2e2 52%, #e7e7e7);
+    background-image: linear-gradient(top, #fff, #f9f9f9 48%, #e2e2e2 52%, #e7e7e7);
+    &:not(:disabled):not(.disabled):hover, &:not(:disabled):not(.disabled):focus {
+      color: $body-color;
+      border-color: #b0ccf2;
+      background-color: #e4f3ff;
+      background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #e4f3ff), color-stop(48%, #d9edff), color-stop(52%, #c2d8f2), color-stop(0%, #c6dcf6));
+      background-image: -webkit-linear-gradient(top, #e4f3ff, #d9edff 48%, #c2d8f2 52%, #c6dcf6);
+      background-image: -moz-linear-gradient(top, #e4f3ff, #d9edff 48%, #c2d8f2 52%, #c6dcf6);
+      background-image: -o-linear-gradient(top, #e4f3ff, #d9edff 48%, #c2d8f2 52%, #c6dcf6);
+      background-image: -ms-linear-gradient(top, #e4f3ff, #d9edff 48%, #c2d8f2 52%, #c6dcf6);
+      background-image: linear-gradient(top, #e4f3ff, #d9edff 48%, #c2d8f2 52%, #c6dcf6);
+    }
+    &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+      color: $body-color;
+      border-color: #9ebae1;
+      background-color: #b6cbe4;
+      background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #b6cbe4), color-stop(48%, #bfd2e6), color-stop(52%, #8dc0f5), color-stop(0%, #98c5f5));
+      background-image: -webkit-linear-gradient(top, #b6cbe4, #bfd2e6 48%, #8dc0f5 52%, #98c5f5);
+      background-image: -moz-linear-gradient(top, #b6cbe4, #bfd2e6 48%, #8dc0f5 52%, #98c5f5);
+      background-image: -o-linear-gradient(top, #b6cbe4, #bfd2e6 48%, #8dc0f5 52%, #98c5f5);
+      background-image: -ms-linear-gradient(top, #b6cbe4, #bfd2e6 48%, #8dc0f5 52%, #98c5f5);
+      background-image: linear-gradient(top, #b6cbe4, #bfd2e6 48%, #8dc0f5 52%, #98c5f5);
+    }
+    &:disabled, &.disabled {
+      border-color: #e1e1e1;
+      background-color: #f7f7f7;
+      background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #f7f7f7), color-stop(48%, #f1f1f1), color-stop(52%, #dadada), color-stop(0%, #dfdfdf));
+      background-image: -webkit-linear-gradient(top, #f7f7f7, #f1f1f1 48%, #dadada 52%, #dfdfdf);
+      background-image: -moz-linear-gradient(top, #f7f7f7, #f1f1f1 48%, #dadada 52%, #dfdfdf);
+      background-image: -o-linear-gradient(top, #f7f7f7, #f1f1f1 48%, #dadada 52%, #dfdfdf);
+      background-image: -ms-linear-gradient(top, #f7f7f7, #f1f1f1 48%, #dadada 52%, #dfdfdf);
+      background-image: linear-gradient(top, #f7f7f7, #f1f1f1 48%, #dadada 52%, #dfdfdf);
+    }
+  }
+  .btn-default {
+    @include button-variant();
+  }
+  @each $color, $value in $theme-colors {
+    .btn-#{$color}, .btn-outline-#{$color} {
+      @include button-variant();
+    }
+  }
+
+  // Forms
+
+  .form-control {
+    color: $body-color;
+    background-color: $white;
+    border: 1px solid #b5b8c8;
+    &:focus {
+      border: 1px solid #7eadd9;
+    }
+  }
+  .form-control-plaintext { color: $body-color; }
+  .input-group-text {
+    color: $body-color;
+    background-color: $component-cap-bg;
+    border: 1px solid $border-color;
+  }
+
+  // Cards
+
+  @mixin card-header-variant() {
+    background-color: #cbddf3;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #dae7f6), color-stop(45%, #cddef3), color-stop(46%, #abc7ec), color-stop(50%, #abc7ec), color-stop(51%, #b8cfee), color-stop(0%, #cbddf3));
+    background-image: -webkit-linear-gradient(top, #dae7f6, #cddef3 45%, #abc7ec 46%, #abc7ec 50%, #b8cfee 51%, #cbddf3);
+    background-image: -moz-linear-gradient(top, #dae7f6, #cddef3 45%, #abc7ec 46%, #abc7ec 50%, #b8cfee 51%, #cbddf3);
+    background-image: -o-linear-gradient(top, #dae7f6, #cddef3 45%, #abc7ec 46%, #abc7ec 50%, #b8cfee 51%, #cbddf3);
+    background-image: -ms-linear-gradient(top, #dae7f6, #cddef3 45%, #abc7ec 46%, #abc7ec 50%, #b8cfee 51%, #cbddf3);
+    background-image: linear-gradient(top, #dae7f6, #cddef3 45%, #abc7ec 46%, #abc7ec 50%, #b8cfee 51%, #cbddf3);
+  }
+  .card-header {
+    @include card-header-variant();
+  }
+  @mixin card-footer-variant() {
+    background-color: #d8d8d8;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #e6e6e6), color-stop(0%, #efefef));
+    background-image: -webkit-linear-gradient(top, #e6e6e6, #efefef);
+    background-image: -moz-linear-gradient(top, #e6e6e6, #efefef);
+    background-image: -o-linear-gradient(top, #e6e6e6, #efefef);
+    background-image: -ms-linear-gradient(top, #e6e6e6, #efefef);
+    background-image: linear-gradient(top, #e6e6e6, #efefef);
+  }
+  .card-footer {
+    @include card-footer-variant();
+  }
+  @each $color, $value in $theme-colors {
+    .card {
+      &.bg-#{$color}, &.bg-outline-#{$color} {
+        border: 1px solid $border-color;
+        .card-header {
+          color: $body-color;
+          @include card-header-variant();
+          border-bottom: 1px solid $border-color;
+        }
+        .card-footer {
+          color: $body-color;
+          @include card-footer-variant();
+          border-top: 1px solid $border-color;
+        }
+        .card-body {
+          color: $body-color;
+        }
+      }
+    }
+  }
+
+  // Alerts
+
+  @mixin alert-variant() {
+    color: $body-color;
+    border-color: #a9a9a9;
+    background-color: #e8e8e8;
+    .alert-link {
+      color: $link-color;
+    }
+  }
+  .alert-default {
+    @include alert-variant();
+  }
+  @each $color, $value in $theme-colors {
+    .alert-#{$color} {
+      @include alert-variant();
+    }
+  }
+
+  // Dropdowns
+
+  .dropdown-menu {
+    color: $body-color;
+    background-color: $body-bg;
+    border: 1px solid #99bce8;
+  }
+  .dropdown-item {
+    color: $body-color;
+    &:hover, &:focus {
+      color: $body-color;
+      background-color: #d9e8fb;
+    }
+    &.active, &:active {
+      color: $body-color;
+      background-color: #d9e8fb;
+    }
+    &.disabled, &:disabled { color: $component-disabled-color; }
+  }
+
+  // List group
+
+  @each $color, $value in $theme-colors {
+    .list-group-item-#{$color} {
+      color: $component-active-color;
+      background-color: $component-active-bg;
+      &.list-group-item-action {
+        &:hover, &:focus {
+          color: $component-active-color;
+          background-color: $component-active-bg;
+        }
+        &.active {
+          color: $component-active-color;
+          background-color: $component-active-bg;
+        }
+      }
+    }
+  }
+
+  // Breadcrumbs
+
+  .breadcrumb {
+    background-color: #d3e1f1;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #dfe9f5), color-stop(0%, #d3e1f1));
+    background-image: -webkit-linear-gradient(top, #dfe9f5, #d3e1f1);
+    background-image: -moz-linear-gradient(top, #dfe9f5, #d3e1f1);
+    background-image: -o-linear-gradient(top, #dfe9f5, #d3e1f1);
+    background-image: -ms-linear-gradient(top, #dfe9f5, #d3e1f1);
+    background-image: linear-gradient(top, #dfe9f5, #d3e1f1);
+    border-bottom: 1px solid #99bce8;
+    .breadcrumb-item {
+      &:before {
+        border-left: 1.5rem solid transparent;
+        content: '\f0da';
+        font: normal normal normal 14px/1 FontAwesome;
+        margin-top: -20px;
+        margin-left: -10px;
+      }
+      &:after { border-left: 1.5rem solid transparent; }
+      &:last-child {
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+
+  // Utilities
+
+  @each $color, $value in $theme-colors {
+    .bg-#{$color} {
+      background-color: $default-bg !important;
+    }
+  }
+
+  .text-muted { color: $component-disabled-color !important; }
+
+  .c3 {
+    .c3-tooltip {
+      background-color: $white;
+      td { background-color: $white; }
+    }
+  }
+}

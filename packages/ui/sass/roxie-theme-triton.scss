@@ -183,14 +183,9 @@
   .nav-tabs {
     .nav-link {
       &:hover, &:focus {
-        background: rgba(0, 0, 0, 0.08);
-        border-color: rgba(0, 0, 0, 0.08);
+        color: $body-color;
       }
       &.disabled { opacity: 0.3; }
-      &.active {
-        background: $default-bg;
-        border-color: $default-bg;
-      }
     }
   }
 

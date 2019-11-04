@@ -44,25 +44,25 @@ $yiq-contrasted-threshold: 150;
 $yiq-text-dark: $gray-900;
 $yiq-text-light: $white;
 
-$default-bg: $white;
+$default-bg: #dfe9f6;
 $active-color: $blue;
 
 // Body
 
 $body-bg: $white;
-$body-color: #333;
+$body-color: $black;
 
 // Links
 
-$link-color: #2a6496;
-$link-hover-color: #2a6496;
+$link-color: $body-color;
+$link-hover-color: $body-color;
 
 // Components
 
-$border-color: #ada6ac;
+$border-color: #99bce8;
 $component-active-color: $body-color;
-$component-active-bg: #d3d3d3;
-$component-hover-bg: #e0e0e0;
+$component-active-bg: #cbdaf0;
+$component-hover-bg: #dae5f3;
 $component-accent-bg: rgba($gray-100, .5);
 $component-disabled-color: #b7b7b7;
-$component-cap-bg: #f5f7f9;
+$component-cap-bg: #ced9e7;

@@ -10,13 +10,12 @@
 
   .table {
     thead, .table-header {
-      background-color: #c5c5c5;
-      background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #f9f9f9), color-stop(0%, #e6e3e3));
-      background-image: -webkit-linear-gradient(top, #f9f9f9, #e6e3e3);
-      background-image: -moz-linear-gradient(top, #f9f9f9, #e6e3e3);
-      background-image: -o-linear-gradient(top, #f9f9f9, #e6e3e3);
-      background-image: -ms-linear-gradient(top, #f9f9f9, #e6e3e3);
-      background-image: linear-gradient(top, #f9f9f9, #e6e3e3);
+      background-color: #e5e5e5;
+      background-image: -webkit-linear-gradient(-89deg, #f5f5f5 0, #e5e5e5 100%);
+      background-image: -moz-linear-gradient(-89deg, #f5f5f5 0, #e5e5e5 100%);
+      background-image: -o-linear-gradient(-89deg, #f5f5f5 0, #e5e5e5 100%);
+      background-image: -ms-linear-gradient(-89deg, #f5f5f5 0, #e5e5e5 100%);
+      background-image: linear-gradient(-89deg, #f5f5f5 0, #e5e5e5 100%);
     }
     tbody, .table-body {
       background-color: #fafafa;
@@ -45,38 +44,41 @@
   @each $color, $value in $theme-colors {
     .table-#{$color} {
       &, > th, > td {
-        color: $body-color;
-        background-color: #e0e0e0;
+        color: $white;
+        background-color: #3874d7;
       }
     }
   }
   .table-active {
     &, > th, > td {
-      background-color: #e0e0e0;
+      color: $white;
+      background-color: #3874d7;
     }
   }
   .table-hover {
     tbody tr:hover, .table-body .table-row:hover {
       color: $body-color;
-      background-color: #efefef;
+      background-color: #cbcbcb;
     }
     @each $color, $value in $theme-colors {
       .table-#{$color} {
         &:hover {
-          color: $body-color;
-          background-color: #e0e0e0;
+          color: $white;
+          background-color: #3874d7;
           > th, > td {
-            color: $body-color;
-            background-color: #e0e0e0;
+            color: $white;
+            background-color: #3874d7;
           }
         }
       }
     }
     .table-active {
       &:hover {
-        background-color: #e0e0e0;
+        color: $white;
+        background-color: #3874d7;
         > th, > td {
-          background-color: #e0e0e0;
+          color: $white;
+          background-color: #3874d7;
         }
       }
     }
@@ -95,28 +97,18 @@
     background-image: linear-gradient(0deg, #ededed 0, #f3f3f3 50%, #fafafa 50%, #fff 100%);
     &:not(:disabled):not(.disabled):hover, &:not(:disabled):not(.disabled):focus {
       color: $body-color;
+      border-color: #979797;
+    }
+    &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+      color: $body-color;
       border-color: #557bc8;
-      background-color: #ededed;
       background-image: -webkit-linear-gradient(0deg, #a1c5eb 0, #649fec 46%, #4191ec 53%, #94c4eb 100%);
       background-image: -moz-linear-gradient(0deg, #a1c5eb 0, #649fec 46%, #4191ec 53%, #94c4eb 100%);
       background-image: -o-linear-gradient(0deg, #a1c5eb 0, #649fec 46%, #4191ec 53%, #94c4eb 100%);
       background-image: -ms-linear-gradient(0deg, #a1c5eb 0, #649fec 46%, #4191ec 53%, #94c4eb 100%);
       background-image: linear-gradient(0deg, #a1c5eb 0, #649fec 46%, #4191ec 53%, #94c4eb 100%);
     }
-    &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
-      color: $body-color;
-      border-color: #9d9d9d;
-      background-color: #d6d6d6;
-      background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #c7c7c7), color-stop(0%, #e0e0e0));
-      background-image: -webkit-linear-gradient(top, #c7c7c7, #e0e0e0);
-      background-image: -moz-linear-gradient(top, #c7c7c7, #e0e0e0);
-      background-image: -o-linear-gradient(top, #c7c7c7, #e0e0e0);
-      background-image: -ms-linear-gradient(top, #c7c7c7, #e0e0e0);
-      background-image: linear-gradient(top, #c7c7c7, #e0e0e0);
-    }
     &:disabled, &.disabled {
-      border-color: #ccc;
-      background-color: $white;
       background-image: -webkit-linear-gradient(0deg, #ededed 0, #f3f3f3 50%, #fafafa 50%, #fff 100%);
       background-image: -o-linear-gradient(0deg, #ededed 0, #f3f3f3 50%, #fafafa 50%, #fff 100%);
       background-image: -o-linear-gradient(0deg, #ededed 0, #f3f3f3 50%, #fafafa 50%, #fff 100%);
@@ -132,13 +124,28 @@
       @include button-variant();
     }
   }
+  .btn-primary {
+    color: $body-color;
+    border-color: #56586f;
+    background-color: #d4e9fc;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #d3f7fd), color-stop(.5, #87c5fb), color-stop(.5, #a1d1f9), color-stop(1, #d4e9fc));
+    background-image: -webkit-linear-gradient(center bottom, #d3f7fd 0, #87c5fb 50%, #a1d1f9 50%, #d4e9fc 100%);
+    background-image: -moz-linear-gradient(center bottom, #d3f7fd 0, #87c5fb 50%, #a1d1f9 50%, #d4e9fc 100%);
+    background-image: -o-linear-gradient(center bottom, #d3f7fd 0, #87c5fb 50%, #a1d1f9 50%, #d4e9fc 100%);
+    background-image: -ms-linear-gradient(center bottom, #d3f7fd 0, #87c5fb 50%, #a1d1f9 50%, #d4e9fc 100%);
+    background-image: linear-gradient(center bottom, #d3f7fd 0, #87c5fb 50%, #a1d1f9 50%, #d4e9fc 100%);
+    &:not(:disabled):not(.disabled):hover, &:not(:disabled):not(.disabled):focus {
+      color: $body-color;
+      border-color: #56586f;
+    }
+  }
 
   // Forms
 
   .form-control {
     color: $body-color;
     background-color: $white;
-    border: 1px solid #b5b8c8;
+    border: 1px solid #9b9b9b;
     &:focus {
       border: 1px solid #a1a1a1;
     }
@@ -165,27 +172,8 @@
   .card-header {
     @include card-header-variant();
   }
-  // @mixin card-body-variant() {
-  //   background-image:  -webkit-linear-gradient(rgba(233, 233, 233, 1.0), rgba(178, 178, 178, 1.0) 16px, #ededed, #ededed 16px);
-  //   background-image:  -moz-linear-gradient(rgba(233, 233, 233, 1.0), rgba(178, 178, 178, 1.0) 16px, #ededed, #ededed 16px);
-  //   background-image:  -o-linear-gradient(rgba(233, 233, 233, 1.0), rgba(178, 178, 178, 1.0) 16px, #ededed, #ededed 16px);
-  //   background-image:  -ms-linear-gradient(rgba(233, 233, 233, 1.0), rgba(178, 178, 178, 1.0) 16px, #ededed, #ededed 16px);
-  //   background-image:  linear-gradient(rgba(233, 233, 233, 1.0), rgba(178, 178, 178, 1.0) 16px, #ededed, #ededed 16px);
-  // }
-  // .card-body {
-  //   @include card-body-variant();
-  // }
-  @mixin card-footer-variant() {
-    background-color: #d8d8d8;
-    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #e6e6e6), color-stop(0%, #efefef));
-    background-image: -webkit-linear-gradient(top, #e6e6e6, #efefef);
-    background-image: -moz-linear-gradient(top, #e6e6e6, #efefef);
-    background-image: -o-linear-gradient(top, #e6e6e6, #efefef);
-    background-image: -ms-linear-gradient(top, #e6e6e6, #efefef);
-    background-image: linear-gradient(top, #e6e6e6, #efefef);
-  }
   .card-footer {
-    @include card-footer-variant();
+    background-color: #e8e8e8;
   }
   @each $color, $value in $theme-colors {
     .card {
@@ -198,7 +186,7 @@
         }
         .card-footer {
           color: $body-color;
-          @include card-footer-variant();
+          background-color: #e8e8e8;
           border-top: 1px solid $border-color;
         }
         .card-body {
@@ -232,11 +220,20 @@
   .nav-tabs {
     .nav-link {
       &:hover, &:focus {
-        background: #f0f0f0;
-        border-color: #b5b5b5;
+        background-color: #e6e6e6;
+        background-image: -webkit-linear-gradient(-89deg, #e1e1e1 0, #e6e6e6 100%);
+        background-image: -moz-linear-gradient(-89deg, #e1e1e1 0, #e6e6e6 100%);
+        background-image: -o-linear-gradient(-89deg, #e1e1e1 0, #e6e6e6 100%);
+        background-image: -ms-linear-gradient(-89deg, #e1e1e1 0, #e6e6e6 100%);
+        background-image: linear-gradient(-89deg, #e1e1e1 0, #e6e6e6 100%);
+        border-color: #a8a8a8;
       }
       &.active {
         border-color: $border-color $border-color $default-bg;
+        &:hover, &:focus {
+          background-color: $white;
+          background-image: none;
+        }
       }
     }
   }
@@ -250,13 +247,14 @@
   }
   .dropdown-item {
     color: $body-color;
-    &:hover, &:focus {
-      color: $body-color;
-      background-color: #e0e0e0;
-    }
-    &.active, &:active {
-      color: $body-color;
-      background-color: #d3d3d3;
+    &:hover, &:focus, &.active, &:active {
+      color: $white;
+      background-color: #2261f6;
+      background-image: -webkit-linear-gradient(-89deg, #6288f8 0, #2261f6 100%);
+      background-image: -moz-linear-gradient(-89deg, #6288f8 0, #2261f6 100%);
+      background-image: -o-linear-gradient(-89deg, #6288f8 0, #2261f6 100%);
+      background-image: -ms-linear-gradient(-89deg, #6288f8 0, #2261f6 100%);
+      background-image: linear-gradient(-89deg, #6288f8 0, #2261f6 100%);
     }
     &.disabled, &:disabled { color: $component-disabled-color; }
   }
@@ -273,11 +271,6 @@
     background-image: linear-gradient(-89deg, #e8ecf1 0, #d1d8e0 100%);
   }
   .list-group-item-action {
-  //   color: $body-color;
-  //   &:hover, &:focus {
-  //     color: $body-color;
-  //     background-color: $component-hover-bg;
-  //   }
     &.active {
       color: $white;
       background-image: -webkit-linear-gradient(-89deg, #69b1e5 0, #3485d0 100%);
@@ -286,7 +279,6 @@
       background-image: -ms-linear-gradient(-89deg, #69b1e5 0, #3485d0 100%);
       background-image: linear-gradient(-89deg, #69b1e5 0, #3485d0 100%);
     }
-  //   &.disabled { color: $component-disabled-color; }
   }
   @each $color, $value in $theme-colors {
     .list-group-item-#{$color} {
