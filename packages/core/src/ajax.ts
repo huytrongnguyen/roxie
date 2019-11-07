@@ -3,8 +3,8 @@ import axios, { AxiosRequestConfig, Method } from 'axios';
 import { PlainObject } from './types';
 
 export type HttpParams = {
-  pathParams?: { [key:string]: any },
-  queryParams?: { [key:string]: any },
+  pathParams?: PlainObject,
+  queryParams?: PlainObject,
   body?: any;
 }
 

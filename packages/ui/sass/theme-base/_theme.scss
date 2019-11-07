@@ -293,15 +293,14 @@ fieldset { border: 1px solid $border-color; }
 
 // Pagination
 
-.page-link {
+.page-link, .page-text {
   color: $body-color;
   background-color: $default-bg;
   border: 1px solid $border-color;
-
-  &:hover {
-    background-color: darken($default-bg, 7.5%);
-    cursor: pointer;
-  }
+}
+.page-link:hover {
+  background-color: darken($default-bg, 7.5%);
+  cursor: pointer;
 }
 .page-item {
   &.active .page-link {
@@ -313,6 +312,9 @@ fieldset { border: 1px solid $border-color; }
   &.disabled .page-link {
     color: $component-disabled-color;
     background-color: transparent;
+    border: 1px solid $border-color;
+  }
+  >.form-control {
     border: 1px solid $border-color;
   }
 }

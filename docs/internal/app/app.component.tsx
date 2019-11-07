@@ -7,11 +7,11 @@ import pkg from '../../../package.json';
 
 import {
   Home, GettingStarted,
-  PackageConcept, LayoutConcept, ComponentConcept, ThemingConcept, DataConcept,
+  PackageConcept, ClassConcept, LayoutConcept, ComponentConcept, ThemingConcept, DataConcept,
   DialogComponent, DropdownComponent, TabPanelComponent, ListComponent, GridComponent, ChartComponent,
   ApplicationArchitecture, ViewController,
 } from './guides';
-import { NumberApi, StringApi, DateApi } from './api';
+import { NumberApi, StringApi, DateApi, AjaxApi, ModelApi, StoreApi } from './api';
 import {
   ComponentExample, ButtonExample, FormExample, PanelExample, DialogExample, LayoutExample, TabExample, TooltipExample, ToolbarExample,
   FormFieldExample, DatePickerExample, DropdownExample, FileUploadExample, FormFieldTypeExample,
@@ -31,8 +31,9 @@ export function App() {
         <Switch>
           <Route exact path="/introduction/getting-started" component={GettingStarted} title="Getting Started" />
           <Route exact path="/core-concepts/packages" component={PackageConcept} title="Roxie Packages" />
+          <Route exact path="/core-concepts/classes" component={ClassConcept} title="The Class System" />
           <Route exact path="/core-concepts/components" component={ComponentConcept} title="Components" />
-          <Route exact path="/core-concepts/theming" component={ThemingConcept} title="Theming" />
+          <Route exact path="/core-concepts/theming" component={ThemingConcept} title="Theming System" />
           <Route exact path="/core-concepts/layouts" component={LayoutConcept} title="Layouts and Containers" />
           <Route exact path="/core-concepts/data" component={DataConcept} title="Data Package" />
           <Route exact path="/architecture/application-architecture" component={ApplicationArchitecture} title="Intro to App Architecture" />
@@ -46,6 +47,9 @@ export function App() {
           <Route exact path="/number" component={NumberApi} title="Number" />
           <Route exact path="/string" component={StringApi} title="String" />
           <Route exact path="/date" component={DateApi} title="Date" />
+          <Route exact path="/ajax" component={AjaxApi} title="Ajax" />
+          <Route exact path="/model" component={ModelApi} title="Model" />
+          <Route exact path="/store" component={StoreApi} title="Store" />
           <Route exact path="/examples/kitchen-sink" component={KitchenSink} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components" component={ComponentExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/components/buttons" component={ButtonExample} title="Examples" />
@@ -139,8 +143,9 @@ export function AppSidebar() {
       <NavLink to="/introduction/getting-started" text="Getting Started" />
       <span className="list-group-item text-uppercase font-weight-bold">Core Concepts</span>
       <NavLink to="/core-concepts/packages" text="Roxie Packages" />
+      <NavLink to="/core-concepts/theming" text="Theming System" />
+      <NavLink to="/core-concepts/classes" text="The Class System" />
       <NavLink to="/core-concepts/components" text="Components" />
-      <NavLink to="/core-concepts/theming" text="Theming" />
       <NavLink to="/core-concepts/layouts" text="Layouts and Containers" />
       <NavLink to="/core-concepts/data" text="Data Package" />
       <span className="list-group-item text-uppercase font-weight-bold">App Architecture</span>
@@ -155,6 +160,9 @@ export function AppSidebar() {
       <NavLink to="/number" text="Number" />
       <NavLink to="/string" text="String" />
       <NavLink to="/date" text="Date" />
+      <NavLink to="/ajax" text="Ajax" />
+      <NavLink to="/model" text="Model" />
+      <NavLink to="/store" text="Store" />
       <span className="list-group-item text-uppercase font-weight-bold">Examples</span>
       <NavLink to="/examples/kitchen-sink" text="Kitchen Sink" />
     </div>

@@ -1,20 +1,39 @@
 import { Ajax, HttpParams } from '../ajax';
+import { ReaderConfig } from './reader';
+import { WriterConfig } from './writer';
 
 export interface ProxyConfig {
   url: string,
   method?: string,
-  reader?: {
-    rootProperty: string,
-  },
+  reader?: ReaderConfig,
+  writer?: WriterConfig,
 }
 
-export async function request<T>(proxy: ProxyConfig, params?: HttpParams) {
-
-  const { url, method = 'get', reader } = proxy,
+export async function query<T>(proxy: ProxyConfig, params?: HttpParams) {
+  const { url, method = 'get', reader = {} as ReaderConfig } = proxy,
         response = await Ajax.request<any>({ url, method, params })
 
   if (!response) return null;
 
+  if (reader.keepRawData) {
+    reader.rawData = response;
+  }
+
+  if (reader.transform) {
+    return reader.transform<T>(response);
+  }
+
   const result: T = reader && reader.rootProperty ? response[reader.rootProperty] : response;
   return result;
+}
+
+export function mutate(data: any, proxy: ProxyConfig, params: HttpParams = {}) {
+  const { url, method = 'post', writer = {} as WriterConfig } = proxy;
+
+  if (writer.transform) {
+    data = writer.transform(data);
+  }
+
+  params.body = data;
+  return Ajax.request({ url, method, params });
 }

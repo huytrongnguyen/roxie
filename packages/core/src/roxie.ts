@@ -8,6 +8,7 @@ import './lang/date';
 
 import { LocalCache } from './cache';
 import { Subject } from './observable';
+import { Uuid } from './generator';
 
 export const Roxie = {
   query: (selector: any) => $(selector),
@@ -21,6 +22,7 @@ export const Roxie = {
   isDate: (value: any) => toString.call(value) === '[object Date]',
   clone: (value: any) => Roxie.JSON.encode(value).decode(),
   guid: (prefix: string = '', suffix: string = '') => `${prefix}${(Math.random() * (1<<30)).toString(16).replace('.', '')}${suffix}`,
+  uuid: Uuid.generate,
   classNames(...expressions: any[]) {
     return expressions
         .filter(exp => Roxie.isNotEmpty(exp))

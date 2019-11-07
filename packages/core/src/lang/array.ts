@@ -12,6 +12,10 @@ interface Array<T> {
    * @param predicate
    */
   remove(predicate: (value: T, index?: number, array?: T[]) => boolean): T[],
+
+  add(value: T): void;
+  insert(index: number, value: T): void;
+  removeAt(index: number): void;
 }
 
 Array.prototype.groupBy = function<T>(this: T[], key: string) {
@@ -33,3 +37,7 @@ Array.prototype.remove = function<T>(this: T[], predicate: (value: T, index?: nu
   }
   return result;
 }
+
+Array.prototype.add = function<T>(this: T[], value: T) { this.push(value); }
+Array.prototype.insert = function<T>(this: T[], index: number, value: T) { this.splice(index, 0, value); }
+Array.prototype.removeAt = function<T>(this: T[], index: number) { this.splice(index, 1); }

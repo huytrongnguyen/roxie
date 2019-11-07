@@ -1,3 +1,23 @@
+## [Unreleased]
+
+### Roxie Core
+
+* Supports to generate UUID, Sequential ID
+* Supports to create/update/save model
+* Supports to sort on store
+
+### Roxie UI
+
+* Update `pagination` style
+
+### Roxie Components
+
+* Implement `Paging` component
+
+### Docs
+
+* Update docs
+
 ## [1.8.4]
 > Nov 4, 2019
 

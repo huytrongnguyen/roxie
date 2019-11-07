@@ -18,7 +18,7 @@ export function LayoutConcept() {
           A typical Roxie application is made up of several layers of nested Components.
           Let's take a look at how being a container allows a component to contain other components:
         </p>
-        <div className="card">
+        <div className="card mb-3">
           <div className="card-body">
             <div className="card" style={{width:400,height:300}}>
               <div className="card-header">Container Panel</div>

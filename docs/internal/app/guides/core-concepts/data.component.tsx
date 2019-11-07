@@ -34,8 +34,7 @@ export function DataConcept() {
         </p>
         <div className="card card-footer mb-3">
           <Highlight language="tsx">{`
-import React, { Fragment, useState, useEffect } from 'react';
-import { DataStore } from '@roxie/core';
+import { DataModel } from '@roxie/core';
 
 type User = {
   name: string,
@@ -115,7 +114,7 @@ type User = {
   email: string,
 }
 
-const UserStore = new DataStore<User[]>({
+const UserStore = new DataStore<User>({
   proxy: {
     url: 'users.json'
   }

@@ -24,8 +24,9 @@ export function Home() {
                 <p>Start learning the core concepts of Roxie</p>
                 <dl>
                   <dd><Link to="/core-concepts/packages">Roxie Packages</Link></dd>
+                  <dd><Link to="/core-concepts/theming">Theming System</Link></dd>
+                  <dd><Link to="/core-concepts/classes">The Class System</Link></dd>
                   <dd><Link to="/core-concepts/components">Components</Link></dd>
-                  <dd><Link to="/core-concepts/theming">Theming</Link></dd>
                   <dd><Link to="/core-concepts/layouts">Layouts and Containers</Link></dd>
                   <dd><Link to="/core-concepts/data">Data Package</Link></dd>
                 </dl>
@@ -60,19 +61,7 @@ export function Home() {
           </div>
           <div className="col-6">
             <div className="card mb-3">
-              <div className="card-header">5. API</div>
-              <div className="card-body">
-                <dl>
-                  <dd><Link to="/number">Number</Link></dd>
-                  <dd><Link to="/string">String</Link></dd>
-                  <dd><Link to="/date">Date</Link></dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-          <div className="col-6">
-            <div className="card mb-3">
-              <div className="card-header">6. Examples</div>
+              <div className="card-header">5. Examples</div>
               <div className="card-body">
                 <dl>
                   <dt>Sample Applications</dt>

@@ -13,6 +13,7 @@ export function Column(props: GridColumnProps) {
 }
 
 interface GridProps extends PropsWithChildren<any> {
+  className: string,
   store: DataStore<any>,
 }
 
@@ -26,7 +27,7 @@ export function Grid(props: GridProps) {
     return () => subscription.unsubscribe();
   }, [])
 
-  return <Container layout="vbox" className="table table-striped table-bordered table-hover fullscreen">
+  return <Container layout="vbox" className={Roxie.classNames('table table-striped table-bordered table-hover fullscreen', props.className)}>
     <Container layout="hbox" className="table-header">
       {columns.map((col, index) => {
         const { headerText, dataIndex, className, ...others } = col;

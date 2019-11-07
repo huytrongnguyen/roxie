@@ -28,19 +28,19 @@ export class Subscription<T> {
 
 export class Subject<T> implements Observer<T> {
   public observers: Observer<T>[] = [];
-  private _value: T;
+  public value: T;
 
   subscribe(next: (value: T) => void, error?: (reason: any) => void, complete?: () => void) {
     const subscriber = { next, error, complete };
     this.observers.push(subscriber);
-    if (this._value) {
-      subscriber.next(this._value);
+    if (this.value) {
+      subscriber.next(this.value);
     }
     return new Subscription<T>(this, subscriber);
   }
 
   next(value: T) {
-    this._value = value;
+    this.value = value;
     this.observers.forEach(observer => observer.next && observer.next(value));
   }
 
