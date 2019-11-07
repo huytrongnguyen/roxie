@@ -11,7 +11,7 @@ declare global {
 
 String.prototype.decode = function(this: string) { return JSON.parse(this); }
 String.prototype.parseInt = function(this: string) { return parseInt(this, 10); }
-String.prototype.parseDate = function(this: string) { return dateFns.parseISO(this); }
+String.prototype.parseDate = function(this: string, pattern?: string, backupDate: Date = new Date()) { return dateFns.parse(this, pattern, backupDate); }
 
 const formatRE = /(\{[^\}^\{]+\})/g;
 String.prototype.format = function(this: string, ...args: any[]) {

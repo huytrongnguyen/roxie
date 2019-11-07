@@ -5,6 +5,7 @@
 * Supports to generate UUID, Sequential ID
 * Supports to create/update/save model
 * Supports to sort on store
+* [#26] `parseDate` return Invalid Date
 
 ### Roxie UI
 
