@@ -13,7 +13,7 @@ declare global {
   }
 }
 
-Date.prototype.format = function (this: Date, pattern: string) { return dateFns.lightFormat(this, pattern); }
+Date.prototype.format = function (this: Date, pattern: string) { return dateFns.format(this, pattern); }
 Date.prototype.toUnixTime = function (this: Date) { return dateFns.getUnixTime(this); }
 Date.prototype.toUnixTimeMilliseconds = function (this: Date) { return dateFns.getTime(this); }
 

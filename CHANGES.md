@@ -6,6 +6,7 @@
 * Supports to create/update/save model
 * Supports to sort on store
 * [#26] `parseDate` return Invalid Date
+* [#27] `Date.format('MMM')` not working
 
 ### Roxie UI
 
