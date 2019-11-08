@@ -23,7 +23,7 @@ export class DataStore<T> extends Entity<T[]> {
 
   currentPage = 1;
 
-  constructor(public config: StoreConfig<T> = {}) { super(); }
+  constructor(public config: StoreConfig<T> = {}) { super(config); }
 
   // Loads an array of data straight into the Store.
   loadData(data: T[]) {

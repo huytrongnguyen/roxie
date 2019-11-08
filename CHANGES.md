@@ -15,6 +15,7 @@
 ### Roxie Components
 
 * Implement `Paging` component
+* Supports `renderer` function on `Column` component
 
 ### Docs
 

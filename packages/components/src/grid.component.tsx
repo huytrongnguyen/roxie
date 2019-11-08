@@ -1,4 +1,4 @@
-import React, { useState, useEffect, HTMLAttributes, PropsWithChildren, Children } from 'react';
+import React, { useState, useEffect, HTMLAttributes, PropsWithChildren, Children, ReactElement } from 'react';
 import { DataStore, Roxie } from '@roxie/core';
 
 import { Container } from './container.component';
@@ -6,6 +6,7 @@ import { Container } from './container.component';
 interface GridColumnProps extends HTMLAttributes<HTMLDivElement> {
   headerText: string,
   dataIndex: string,
+  renderer?: (value: any, record: any, rowIndex: number, colIndex: number, store: DataStore<any>) => string | ReactElement,
 }
 
 export function Column(props: GridColumnProps) {
@@ -13,8 +14,8 @@ export function Column(props: GridColumnProps) {
 }
 
 interface GridProps extends PropsWithChildren<any> {
-  className: string,
   store: DataStore<any>,
+  className?: string,
 }
 
 export function Grid(props: GridProps) {
@@ -30,7 +31,7 @@ export function Grid(props: GridProps) {
   return <Container layout="vbox" className={Roxie.classNames('table table-striped table-bordered table-hover fullscreen', props.className)}>
     <Container layout="hbox" className="table-header">
       {columns.map((col, index) => {
-        const { headerText, dataIndex, className, ...others } = col;
+        const { headerText, dataIndex, renderer, className, ...others } = col;
         return <div key={index} className={Roxie.classNames('table-cell', className)} style={{flex:1}} {...others}>
           {col.headerText}
         </div>
@@ -39,9 +40,9 @@ export function Grid(props: GridProps) {
     <Container layout="vbox" className="table-body flex-fill fullscreen">
       {data.map((item, rowIndex) => <Container layout="hbox" key={rowIndex} className="table-row">
         {columns.map((col, colIndex) => {
-          const { headerText, dataIndex, className, ...others } = col;
+          const { headerText, dataIndex, renderer, className, ...others } = col;
           return <div key={colIndex} className={Roxie.classNames('table-cell', className)} style={{flex:1}} {...others}>
-            {item[col.dataIndex]}
+            {renderer ? renderer(item[col.dataIndex], item, rowIndex, colIndex, props.store) : item[col.dataIndex]}
           </div>
         })}
       </Container>)}
