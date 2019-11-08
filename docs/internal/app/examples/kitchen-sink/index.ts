@@ -16,8 +16,6 @@ export * from './components/toolbar.component';
 export * from './grids/all.component';
 export * from './grids/list.component';
 export * from './grids/grid.component';
-export * from './grids/table.component';
-export * from './tree.component';
 export * from './charts/all.component';
 export * from './charts/column.component';
 export * from './charts/bar.component';

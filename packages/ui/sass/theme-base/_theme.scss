@@ -344,17 +344,19 @@ fieldset { border: 1px solid $border-color; }
   }
 }
 @each $color, $value in $theme-colors {
+  $list-bg-color: color-level($value, -9);
+  $list-color: color-level($value, 6);
   .list-group-item-#{$color} {
-    color: color-level($value, 6);
-    background-color: color-level($value, -9);
+    color: $list-color;
+    background-color: $list-bg-color;
     &.list-group-item-action {
       &:hover, &:focus {
-        color: color-level($value, 6);
-        background-color: darken(color-level($value, -9), 5%);
+        color: $list-color;
+        background-color: darken($list-bg-color, 5%);
       }
       &.active {
-        background-color: color-level($value, 6);
-        border-color: color-level($value, 6);
+        background-color: $list-color;
+        border-color: $list-color;
       }
     }
   }

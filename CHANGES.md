@@ -1,4 +1,5 @@
-## [Unreleased]
+## [1.9.0]
+> Nov 8, 2019
 
 ### Roxie Core
 
@@ -11,6 +12,7 @@
 ### Roxie UI
 
 * Update `pagination` style
+* Update `navbar` style
 
 ### Roxie Components
 

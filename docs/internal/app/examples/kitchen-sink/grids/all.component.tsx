@@ -11,7 +11,6 @@ export function GridExample() {
     <Container layout="fit" className="fullscreen">
       <div className="auto-scroll-y p-3">
         <div className="row">
-          <div className="col-2 mb-2"><Link to="/examples/kitchen-sink/grids/tables" className="btn btn-default btn-block">Table</Link></div>
           <div className="col-2 mb-2"><Link to="/examples/kitchen-sink/grids/grids" className="btn btn-default btn-block">Grid</Link></div>
           <div className="col-2 mb-2"><Link to="/examples/kitchen-sink/grids/lists" className="btn btn-default btn-block">Lists</Link></div>
         </div>

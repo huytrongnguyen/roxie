@@ -84,7 +84,7 @@
     $btn-color: #f0f0f0 !important;
     color: $btn-color;
     border-color: #5897ce;
-    background-color: #5fa2dd;
+    background-color: $component-cap-bg;
     &:not(:disabled):not(.disabled):hover, &:not(:disabled):not(.disabled):focus {
       color: $btn-color;
       border-color: #518bbd;
@@ -98,7 +98,7 @@
     &:disabled, &.disabled {
       color: $btn-color;
       border-color: #5897ce;
-      background-color: #5fa2dd;
+      background-color: $component-cap-bg;
     }
   }
   .btn-default {
@@ -163,7 +163,7 @@
 
   @mixin alert-variant() {
     color: $body-color;
-    border-color: #5fa2dd;
+    border-color: $component-cap-bg;
     background-color: $white;
     .alert-link {
       color: $link-color;
@@ -188,6 +188,15 @@
       &.disabled { opacity: 0.3; }
     }
   }
+
+  // Navbar
+
+  .navbar {
+    color: $white;
+    background-color: $component-cap-bg;
+    border-bottom: 1px solid $component-cap-bg;
+  }
+  .navbar-brand { color: $white !important; }
 
   // Dropdowns
 

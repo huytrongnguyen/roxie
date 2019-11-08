@@ -15,8 +15,7 @@ import { NumberApi, StringApi, DateApi, AjaxApi, ModelApi, StoreApi } from './ap
 import {
   ComponentExample, ButtonExample, FormExample, PanelExample, DialogExample, LayoutExample, TabExample, TooltipExample, ToolbarExample,
   FormFieldExample, DatePickerExample, DropdownExample, FileUploadExample, FormFieldTypeExample,
-  GridExample, TableExample, GridViewExample, ListViewExample,
-  TreeExample,
+  GridExample, GridViewExample, ListViewExample,
   ChartExample, ColumnChartExample, BarChartExample, LineChartExample, AreaChartExample, PieChartExample,
   KitchenSink,
 } from './examples/kitchen-sink';
@@ -68,8 +67,6 @@ export function App() {
           <Route exact path="/examples/kitchen-sink/grids" component={GridExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/grids/lists" component={ListViewExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/grids/grids" component={GridViewExample} title="Examples" />
-          <Route exact path="/examples/kitchen-sink/grids/tables" component={TableExample} title="Examples" />
-          <Route exact path="/examples/kitchen-sink/trees" component={TreeExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/charts" component={ChartExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/charts/column" component={ColumnChartExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/charts/bar" component={BarChartExample} title="Examples" />
