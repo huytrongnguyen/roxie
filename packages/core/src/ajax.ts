@@ -18,6 +18,8 @@ export type AjaxSettings = {
   defaultValue?: any,
 }
 
+export const pendingRequests = axios.CancelToken.source();
+
 export const Ajax = {
   request: async <T>(settings: AjaxSettings) => {
     const { method = 'get', params = {}, onError, onComplete, defaultValue = null } = settings;
@@ -32,13 +34,22 @@ export const Ajax = {
     }
 
     try {
-      const config: AxiosRequestConfig = { method: method as Method, url, headers: params.headers || {} };
+      const config: AxiosRequestConfig = {
+        url,
+        method: method as Method,
+        headers: params.headers || {},
+        cancelToken: pendingRequests.token,
+      };
       params.body && (config.data = params.body);
       return (await axios(config)).data as T;
     } catch (error) {
-      const msg = `Http failure response for "${url}": ${error.message}`;
-      console.error(msg);
-      onError && onError(msg, error.response);
+      if (axios.isCancel(error)) {
+        console.log(`${url} request cancelled.`);
+      } else {
+        const msg = `Http failure response for "${url}": ${error.message}`;
+        console.error(msg);
+        onError && onError(msg, error.response);
+      }
       return defaultValue;
     } finally {
       onComplete && onComplete();

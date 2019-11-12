@@ -1,12 +1,14 @@
-## [Unreleased]
+## [1.9.1]
+> Nov 12, 2019
 
 ### Roxie Core
 
 * [#28] Supports to add `headers` to `HttpParams`
+* [#29] Supports to cancel pending requests
 
 ### Roxie UI
 
-* [#29] Improve `toastr` methods
+* [#30] Improve `toastr` methods
 
 ## [1.9.0]
 > Nov 8, 2019
