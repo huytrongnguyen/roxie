@@ -1,3 +1,9 @@
+## [Unreleased]
+
+### Roxie Core
+
+* [#28] Supports to add `headers` to `HttpParams`
+
 ## [1.9.0]
 > Nov 8, 2019
 

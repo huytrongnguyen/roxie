@@ -5,14 +5,14 @@ import { PlainObject } from './types';
 export type HttpParams = {
   pathParams?: PlainObject,
   queryParams?: PlainObject,
-  body?: any;
+  body?: any,
+  headers?: PlainObject,
 }
 
 export type AjaxSettings = {
   url: string,
   method?: string,
   params?: HttpParams,
-  headers?: PlainObject<string>,
   onError?: (msg: string, error?: any) => void,
   onComplete?: () => void,
   defaultValue?: any,
@@ -20,7 +20,7 @@ export type AjaxSettings = {
 
 export const Ajax = {
   request: async <T>(settings: AjaxSettings) => {
-    const { method = 'get', params = {}, headers = {}, onError, onComplete, defaultValue = null } = settings;
+    const { method = 'get', params = {}, onError, onComplete, defaultValue = null } = settings;
     let { url } = settings;
 
     if (params.pathParams) {
@@ -32,7 +32,7 @@ export const Ajax = {
     }
 
     try {
-      const config: AxiosRequestConfig = { method: method as Method, url, headers };
+      const config: AxiosRequestConfig = { method: method as Method, url, headers: params.headers || {} };
       params.body && (config.data = params.body);
       return (await axios(config)).data as T;
     } catch (error) {
