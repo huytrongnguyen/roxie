@@ -16,7 +16,8 @@
     "c3": "0.7.10",
     "font-awesome": "4.7.0",
     "jquery": "3.4.1",
-    "popper.js": "1.15.0"
+    "popper.js": "1.15.0",
+    "toastr": "2.1.4"
   },
   "devDependencies": {
     "sass": "1.23.0"

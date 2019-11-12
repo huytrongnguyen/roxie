@@ -4,6 +4,10 @@
 
 * [#28] Supports to add `headers` to `HttpParams`
 
+### Roxie UI
+
+* [#29] Improve `toastr` methods
+
 ## [1.9.0]
 > Nov 8, 2019
 
