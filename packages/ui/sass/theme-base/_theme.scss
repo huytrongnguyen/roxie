@@ -438,3 +438,18 @@ code {
     }
   }
 }
+
+.sidebar-nav {
+  .nav-link {
+    color: $body-color;
+    &:hover, &:focus {
+      color: $body-color;
+      background-color: $component-hover-bg;
+    }
+    &.active {
+      color: $component-active-color;
+      background-color: $component-active-bg;
+    }
+    &.disabled { color: $component-disabled-color; }
+  }
+}

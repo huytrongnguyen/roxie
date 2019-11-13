@@ -67,3 +67,19 @@
   }
 }
 
+.sidebar-nav {
+  display: flex;
+  flex-flow: column;
+  overflow-y: auto;
+  .nav-title {
+    padding: .5rem 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .nav-dropdown-items {
+    flex-flow: column;
+    .nav-link {
+      padding-left: 2.5rem;
+    }
+  }
+}

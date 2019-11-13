@@ -329,4 +329,14 @@
       td { background-color: $white; }
     }
   }
+
+  .sidebar-nav {
+    .nav-link {
+      color: $component-active-color;
+      &:hover, &:focus {
+        color: $component-active-color;
+        background-color: $component-active-bg;
+      }
+    }
+  }
 }

@@ -249,4 +249,12 @@
       td { background-color: $white; }
     }
   }
+
+  .sidebar-nav {
+    .nav-link {
+      &:hover, &:focus {
+        color: $component-active-color;
+      }
+    }
+  }
 }

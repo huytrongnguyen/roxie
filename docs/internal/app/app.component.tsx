@@ -135,39 +135,39 @@ export function ThemeSelection() {
 }
 
 export function AppSidebar() {
-  return <aside style={{width:300}} className="border-right auto-scroll-y">
-    <div className="list-group list-group-flush">
-      <NavLink to="/introduction/getting-started" text="Getting Started" />
-      <span className="list-group-item text-uppercase font-weight-bold">Core Concepts</span>
-      <NavLink to="/core-concepts/packages" text="Roxie Packages" />
-      <NavLink to="/core-concepts/theming" text="Theming System" />
-      <NavLink to="/core-concepts/classes" text="The Class System" />
-      <NavLink to="/core-concepts/components" text="Components" />
-      <NavLink to="/core-concepts/layouts" text="Layouts and Containers" />
-      <NavLink to="/core-concepts/data" text="Data Package" />
-      <span className="list-group-item text-uppercase font-weight-bold">App Architecture</span>
-      <NavLink to="/architecture/application-architecture" text="Intro to App Architecture" />
-      <NavLink to="/architecture/view-controller" text="ViewController" />
-      <span className="list-group-item text-uppercase font-weight-bold">Components</span>
-      <NavLink to="/components/dropdown" text="Dropdown" />
-      <NavLink to="/components/tabpanel" text="TabPanel" />
-      <NavLink to="/components/grid" text="Grid" />
-      <NavLink to="/components/chart" text="Chart" />
-      <span className="list-group-item text-uppercase font-weight-bold">API</span>
-      <NavLink to="/number" text="Number" />
-      <NavLink to="/string" text="String" />
-      <NavLink to="/date" text="Date" />
-      <NavLink to="/ajax" text="Ajax" />
-      <NavLink to="/model" text="Model" />
-      <NavLink to="/store" text="Store" />
-      <span className="list-group-item text-uppercase font-weight-bold">Examples</span>
-      <NavLink to="/examples/kitchen-sink" text="Kitchen Sink" />
+  return <aside className="border-right auto-scroll-y" style={{width:300}}>
+    <div className="sidebar-nav nav">
+      <li className="nav-item"><NavLink to="/introduction/getting-started" text="Getting Started" /></li>
+      <li className="nav-title">Core Concepts</li>
+      <li className="nav-item"><NavLink to="/core-concepts/packages" text="Roxie Packages" /></li>
+      <li className="nav-item"><NavLink to="/core-concepts/theming" text="Theming System" /></li>
+      <li className="nav-item"><NavLink to="/core-concepts/classes" text="The Class System" /></li>
+      <li className="nav-item"><NavLink to="/core-concepts/components" text="Components" /></li>
+      <li className="nav-item"><NavLink to="/core-concepts/layouts" text="Layouts and Containers" /></li>
+      <li className="nav-item"><NavLink to="/core-concepts/data" text="Data Package" /></li>
+      <li className="nav-title">App Architecture</li>
+      <li className="nav-item"><NavLink to="/architecture/application-architecture" text="Intro to App Architecture" /></li>
+      <li className="nav-item"><NavLink to="/architecture/view-controller" text="ViewController" /></li>
+      <li className="nav-title">Components</li>
+      <li className="nav-item"><NavLink to="/components/dropdown" text="Dropdown" /></li>
+      <li className="nav-item"><NavLink to="/components/tabpanel" text="TabPanel" /></li>
+      <li className="nav-item"><NavLink to="/components/grid" text="Grid" /></li>
+      <li className="nav-item"><NavLink to="/components/chart" text="Chart" /></li>
+      <li className="nav-title">API</li>
+      <li className="nav-item"><NavLink to="/number" text="Number" /></li>
+      <li className="nav-item"><NavLink to="/string" text="String" /></li>
+      <li className="nav-item"><NavLink to="/date" text="Date" /></li>
+      <li className="nav-item"><NavLink to="/ajax" text="Ajax" /></li>
+      <li className="nav-item"><NavLink to="/model" text="Model" /></li>
+      <li className="nav-item"><NavLink to="/store" text="Store" /></li>
+      <li className="nav-title">Examples</li>
+      <li className="nav-item"><NavLink to="/examples/kitchen-sink" text="Kitchen Sink" /></li>
     </div>
   </aside>
 }
 
 export function NavLink(props: { to: string, text: string }) {
-  return <RNavLink to={props.to} className="list-group-item list-group-item-action" activeClassName="active">{props.text}</RNavLink>
+  return <RNavLink to={props.to} className="nav-link" activeClassName="active">{props.text}</RNavLink>
 }
 
 export function Route({ component: Component, title = '', ...others }) {

@@ -79,7 +79,10 @@ legend {
   background-color: $body-bg;
 }
 .navbar-brand { font-weight: 500; }
-.nav-link { cursor: pointer; }
+.nav-link {
+  cursor: pointer;
+  .nav-icon { width: 1.5rem; }
+}
 
 .list-group-item-action { cursor: pointer; }
 

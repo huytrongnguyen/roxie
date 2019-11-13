@@ -1,4 +1,11 @@
-## [1.9.1]
+## [1.9.3]
+> Nov 13, 2019
+
+### Roxie UI
+
+* [#33] Supports sidebar styling
+
+## [1.9.2]
 > Nov 12, 2019
 
 ### Roxie Core
