@@ -1,5 +1,3 @@
-import { HttpParams } from '../ajax';
-
 import { ProxyConfig } from './proxy';
 import { Sorter, sort } from './sorter';
 import { EntityConfig, Entity } from './entity';

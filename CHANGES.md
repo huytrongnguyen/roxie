@@ -4,6 +4,7 @@
 ### Roxie Core
 
 * [#31] Supports `fromQueryString`, `toQueryString` to Roxie.Object
+* [#32] Should export Entity, Reader, Writer, Sorter
 
 ### Roxie UI
 
