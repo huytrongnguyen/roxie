@@ -78,6 +78,17 @@ export const Roxie = {
 
       return true;
     },
+    fromQueryString: (queryString: string) => {
+      queryString = queryString.replace('?', '');
+      return queryString.split('&').reduce((queryParams, paramStr: string) => {
+        const param = paramStr.split('=');
+        queryParams[param[0]] = param[1];
+        return queryParams;
+      }, {} as any);
+    },
+    toQueryString: (queryParams: { [key:string]: any }) => {
+      return Object.entries(queryParams).map(([key, value]) => `${key}=${value}`).join('&');
+    },
   },
   JSON: {
     encode: (value: any, space?: string | number) => JSON.stringify(value, null, space),

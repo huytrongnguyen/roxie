@@ -1,6 +1,10 @@
 ## [1.9.3]
 > Nov 13, 2019
 
+### Roxie Core
+
+* [#31] Supports `fromQueryString`, `toQueryString` to Roxie.Object
+
 ### Roxie UI
 
 * [#33] Supports sidebar styling
