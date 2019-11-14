@@ -1,6 +1,13 @@
 ## [1.9.4]
 > Nov 14, 2019
 
+### Roxie Core
+
+* [#35] `onError`, `onComplete` is not working
+  * Remove `onError`, `onComplete`, `defaultValue` since it's unused
+  * Re-thrown `error` instead of of return `defaultValue`
+  * Fix issue in `Subject.complete` function
+
 ### Roxie UI
 
 * [#34] Supports to show a dropdown toggle icon on nav-link

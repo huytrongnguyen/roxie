@@ -13,16 +13,13 @@ export type AjaxSettings = {
   url: string,
   method?: string,
   params?: HttpParams,
-  onError?: (msg: string, error?: any) => void,
-  onComplete?: () => void,
-  defaultValue?: any,
 }
 
 export const pendingRequests = axios.CancelToken.source();
 
 export const Ajax = {
   request: async <T>(settings: AjaxSettings) => {
-    const { method = 'get', params = {}, onError, onComplete, defaultValue = null } = settings;
+    const { method = 'get', params = {} } = settings;
     let { url } = settings;
 
     if (params.pathParams) {
@@ -48,11 +45,8 @@ export const Ajax = {
       } else {
         const msg = `Http failure response for "${url}": ${error.message}`;
         console.error(msg);
-        onError && onError(msg, error.response);
       }
-      return defaultValue;
-    } finally {
-      onComplete && onComplete();
+      throw error;
     }
   },
 }

@@ -49,7 +49,7 @@ export class Subject<T> implements Observer<T> {
   }
 
   complete() {
-    this.observers.forEach(observer => observer.error && observer.complete());
+    this.observers.forEach(observer => observer.complete && observer.complete());
   }
 
   unsubscribe() {
