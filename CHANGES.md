@@ -1,3 +1,10 @@
+## [1.9.4]
+> Nov 14, 2019
+
+### Roxie UI
+
+* [#34] Supports to show a dropdown toggle icon on nav-link
+
 ## [1.9.3]
 > Nov 13, 2019
 

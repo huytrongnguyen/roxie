@@ -82,4 +82,21 @@
       padding-left: 2.5rem;
     }
   }
+  .nav-dropdown-toggle {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      margin-top: -7px;
+      font: normal normal normal 14px/1 FontAwesome;
+    }
+    &[aria-expanded="true"]:before {
+      content: "\f077";
+    }
+    &[aria-expanded="false"]:before {
+      content: "\f078";
+    }
+  }
 }
