@@ -27,9 +27,18 @@ export function readDirectoryContents(path: string) {
   });
 }
 
-export function readJsonFile(path: string, defaultValue?: any) {
+export function readFile(path: string, defaultValue?: string) {
   try {
-    return JSON.parse(fs.readFileSync(path, { encoding: 'utf8' }));
+    return fs.readFileSync(path, { encoding: 'utf8' });
+  } catch (err) {
+    Roxie.Logger.logError(err);
+    return defaultValue;
+  }
+}
+
+export function readJsonFile<T = any>(path: string, defaultValue?: T) {
+  try {
+    return JSON.parse(fs.readFileSync(path, { encoding: 'utf8' })) as T;
   } catch (err) {
     Roxie.Logger.logError(err);
     return defaultValue;
@@ -41,5 +50,25 @@ export function writeJsonFile(path: string, data: any) {
     fs.writeFileSync(path, JSON.stringify(data), { encoding: 'utf8' });
   } catch (err) {
     Roxie.Logger.logError(err);
+  }
+}
+
+export function readCsvFile<T = any>(path: string) {
+  try {
+    const csv = fs.readFileSync(path, { encoding: 'utf8' }),
+          contents = csv.split('\n').filter(line => line.length).map(line => line.split('\t')),
+          fieldNames = contents[0];
+
+    return contents.slice(1)
+        .map(line => {
+          return fieldNames.reduce((item, name, index) => {
+            let value = line[index];
+            item[name] = value;
+            return item;
+          }, {} as T);
+    })
+  } catch (err) {
+    Roxie.Logger.logError(err);
+    return [];
   }
 }

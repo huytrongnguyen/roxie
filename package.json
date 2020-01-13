@@ -1,6 +1,6 @@
 {
   "name": "roxie",
-  "version": "1.9.4",
+  "version": "1.10.0",
   "description": "JavaScript library that build on top of React and Bootstrap",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
@@ -14,22 +14,22 @@
     "@types/jest": "24.0.18",
     "@types/jquery": "3.3.31",
     "@types/node": "12.7.11",
-    "@types/react": "16.9.5",
-    "@types/react-dom": "16.9.1",
+    "@types/react": "16.9.17",
+    "@types/react-dom": "16.9.4",
     "@types/react-highlight.js": "1.0.0",
-    "@types/react-router-dom": "5.1.0",
+    "@types/react-router-dom": "5.1.3",
     "@types/toastr": "2.1.37",
     "express": "4.17.1",
     "jest": "24.9.0",
     "lerna": "3.16.4",
     "parcel": "1.12.3",
-    "react": "16.9.0",
-    "react-dom": "16.9.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
     "react-highlight.js": "1.0.7",
     "react-router-dom": "5.1.2",
     "sass": "1.23.0",
     "ts-jest": "24.1.0",
-    "typescript": "3.6.3",
+    "typescript": "3.7.4",
     "yarn": "1.19.0"
   },
   "alias": {
@@ -64,8 +64,5 @@
     "watch-docs": "parcel watch docs/internal/index.html --no-source-maps --no-autoinstall --no-hmr --out-dir docs/dist",
     "start-docs": "node server.js",
     "test": "jest"
-  },
-  "dependencies": {
-    "packages": "^0.0.8"
   }
 }

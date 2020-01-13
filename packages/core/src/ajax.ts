@@ -15,9 +15,8 @@ export type AjaxSettings = {
   params?: HttpParams,
 }
 
-export const pendingRequests = axios.CancelToken.source();
-
 export const Ajax = {
+  pendingRequests: axios.CancelToken.source(),
   request: async <T>(settings: AjaxSettings) => {
     const { method = 'get', params = {} } = settings;
     let { url } = settings;
@@ -35,7 +34,7 @@ export const Ajax = {
         url,
         method: method as Method,
         headers: params.headers || {},
-        cancelToken: pendingRequests.token,
+        cancelToken: Ajax.pendingRequests.token,
       };
       params.body && (config.data = params.body);
       return (await axios(config)).data as T;

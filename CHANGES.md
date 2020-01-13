@@ -1,3 +1,24 @@
+## [1.10.0]
+> Jan 13, 2020
+
+### Roxie Core
+
+* Add `Ajax`, `Store` fields to `Roxie`
+* Upgrade dependency `data-fns@2.9.0`
+
+### Roxie UI
+
+* Upgrade dependency `bootstrap@4.4.1`
+
+### Roxie Components
+
+* Upgrade dependency `react@16.12.0`
+* Implement `AgGrid` component
+
+### Roxie Server
+
+* Implement `readFile`, `readCsvFile` functions
+
 ## [1.9.4]
 > Nov 14, 2019
 

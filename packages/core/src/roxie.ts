@@ -6,9 +6,11 @@ import './lang/string';
 import './lang/array';
 import './lang/date';
 
+import { Ajax } from './ajax';
 import { LocalCache } from './cache';
 import { Subject } from './observable';
 import { Uuid } from './generator';
+import { StoreConfig, DataStore } from './data';
 
 export const Roxie = {
   query: (selector: any) => $(selector),
@@ -47,6 +49,13 @@ export const Roxie = {
     const timer = setInterval(() => subject.next(counter++), period);
     subject.complete = () => clearInterval(timer);
     return subject;
+  },
+  range: (to: number, from = 0) => {
+    const arr: number[] = [];
+    for (let i = from; i <= to; ++i) {
+      arr.push(i);
+    }
+    return arr;
   },
   Number: {
     format: (value: number = 0, decimal: number = 0) => (value || 0).toLocaleString('en', { maximumFractionDigits: decimal }),
@@ -100,4 +109,6 @@ export const Roxie = {
     logError: (msg: string) => console.error(`${Roxie.Date.now().format(Roxie.Date.DEFAULT_PATTERN)} ERROR: ${msg}`),
   },
   Cache: new LocalCache(),
+  Ajax,
+  Store: <T = any>(config: StoreConfig<T> = {}) => new DataStore<T>(config),
 }

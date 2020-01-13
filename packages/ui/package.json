@@ -1,6 +1,6 @@
 {
   "name": "@roxie/ui",
-  "version": "1.9.4",
+  "version": "1.10.0",
   "description": "The styles of Roxie, based on Bootstrap with many themes",
   "author": "huytrongnguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
@@ -12,11 +12,11 @@
     "watch": "sass --style=compressed --no-source-map --watch sass:dist/css"
   },
   "dependencies": {
-    "bootstrap": "4.3.1",
+    "bootstrap": "4.4.1",
     "c3": "0.7.10",
     "font-awesome": "4.7.0",
     "jquery": "3.4.1",
-    "popper.js": "1.15.0",
+    "popper.js": "1.16.0",
     "toastr": "2.1.4"
   },
   "devDependencies": {
