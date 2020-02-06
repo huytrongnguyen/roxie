@@ -17,6 +17,7 @@ export function Column(props: GridColumnProps) {
 interface GridProps extends PropsWithChildren<any> {
   store: DataStore<any>,
   className?: string,
+  fit?: boolean
 }
 
 const SCROLL_WIDTH = getScrollWidth();
@@ -29,9 +30,9 @@ export function Grid(props: GridProps) {
   useEffect(() => {
     const subscription = props.store.subscribe(value => setData(value || []));
     setColumns(Children.toArray(props.children).map(child => child.props));
-    const header = $(`#${gridId} .table-header-viewport`),
-          body = $(`#${gridId} .table-body-viewport`);
-    $(`#${gridId} .table-body-viewport`).on('scroll', function () { header.scrollLeft(body.scrollLeft()) });
+    const header = $(`#${gridId} .table-header-container`),
+          body = $(`#${gridId} .table-body-container`);
+    body.on('scroll', function () { header.scrollLeft(body.scrollLeft()) });
     return () => {
       subscription.unsubscribe();
       $(`#${gridId}`).off('scroll');
@@ -39,31 +40,29 @@ export function Grid(props: GridProps) {
   }, [])
 
   return <Container id={gridId} layout="vbox" className={Roxie.classNames('table table-striped table-bordered table-hover fullscreen', props.className)}>
-    <div className="table-header-viewport d-flex no-scroll">
-      <div className="table-header-container d-flex">
+    <div className={Roxie.classNames('table-header-container no-scroll', { 'd-flex': !props.fit })}>
         <Container layout="hbox" className="table-header">
           {columns.map((col, index) => {
-            const { headerText, dataIndex, renderer, className, ...others } = col;
-            return <div key={index} className={Roxie.classNames('table-cell', className)} style={{flex:1}} {...others}>
+            const { headerText, dataIndex, renderer, className, style, ...others } = col;
+            return <div key={index} className={Roxie.classNames('table-cell', className)} style={style} {...others}>
               {col.headerText}
             </div>
           })}
           <div style={{width:SCROLL_WIDTH}} />
         </Container>
-      </div>
     </div>
-    <div className="table-body-viewport d-flex fullscreen auto-scroll-x scroll-y">
+    <div className={Roxie.classNames('table-body-container fullscreen auto-scroll-x scroll-y', { 'd-flex': !props.fit })}>
       <div>
-        <Container layout="vbox" className="table-body">
-          {data.map((item, rowIndex) => <Container layout="hbox" key={rowIndex} className="table-row">
-            {columns.map((col, colIndex) => {
-              const { headerText, dataIndex, renderer, className, ...others } = col;
-              return <div key={colIndex} className={Roxie.classNames('table-cell', className)} style={{flex:1}} {...others}>
-                {renderer ? renderer(item[col.dataIndex], item, rowIndex, colIndex, props.store) : item[col.dataIndex]}
-              </div>
-            })}
-          </Container>)}
-        </Container>
+          <Container layout="vbox" className="table-body">
+            {data.map((item, rowIndex) => <Container layout="hbox" key={rowIndex} className="table-row">
+              {columns.map((col, colIndex) => {
+                const { headerText, dataIndex, renderer, className, style, ...others } = col;
+                return <div key={colIndex} className={Roxie.classNames('table-cell', className)} style={style} {...others}>
+                  {renderer ? renderer(item[col.dataIndex], item, rowIndex, colIndex, props.store) : item[col.dataIndex]}
+                </div>
+              })}
+            </Container>)}
+          </Container>
       </div>
     </div>
   </Container>

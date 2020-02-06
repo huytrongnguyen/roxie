@@ -11,7 +11,7 @@ export interface ProxyConfig {
   headers?: PlainObject,
 }
 
-export async function query<T>(proxy: ProxyConfig, params?: HttpParams, resolver?: (data: any, params?: HttpParams) => T) {
+export async function query<T>(proxy: ProxyConfig, params: HttpParams = {}, resolver?: (data: any, params?: HttpParams) => T) {
   const { url, method = 'get', reader = {} as ReaderConfig } = proxy;
   params.headers = Object.assign({}, proxy.headers || {}, params.headers || {});
   const response = await Ajax.request<any>({ url, method, params });

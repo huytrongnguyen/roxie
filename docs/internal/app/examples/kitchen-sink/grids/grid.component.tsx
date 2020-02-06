@@ -95,11 +95,11 @@ export function BasicGrid() {
   return <div className="card mb-3">
     <div className="card-header">Basic Grid</div>
     <div className="card-body">
-      <Grid store={EmployeeStore}>
-        <Column headerText="First Name" dataIndex="firstname" />
-        <Column headerText="Last Name" dataIndex="lastname" />
-        <Column headerText="Hired Month" dataIndex="hired" renderer={(value: string) => value.parseDate('MM/dd/yyyy').format('MMM')} />
-        <Column headerText="Department (Yrs)" dataIndex="dep" renderer={(value: string, record: Employee) => `${value} (${record.seniority})`} />
+      <Grid store={EmployeeStore} fit>
+        <Column headerText="First Name" dataIndex="firstname" className="col-3" />
+        <Column headerText="Last Name" dataIndex="lastname" className="col-3" />
+        <Column headerText="Hired Month" dataIndex="hired" className="col-3" renderer={(value: string) => value.parseDate('MM/dd/yyyy').format('MMM')} />
+        <Column headerText="Department (Yrs)" dataIndex="dep" className="col-3" renderer={(value: string, record: Employee) => `${value} (${record.seniority})`} />
       </Grid>
     </div>
     <div className="card-footer">
@@ -126,11 +126,11 @@ const EmployeeStore = new DataStore<Employee>({
 });
 
 function Employees() {
-  return <Grid store={EmployeeStore}>
-    <Column headerText="First Name" dataIndex="firstname" />
-    <Column headerText="Last Name" dataIndex="lastname" />
-    <Column headerText="Hired Month" dataIndex="hired" renderer={(value: string) => value.parseDate('MM/dd/yyyy').format('MMM')} />
-    <Column headerText="Department (Yrs)" dataIndex="dep" renderer={(value: string, record: Employee) => \`$\{value} ($\{record.seniority})\`} />
+  return <Grid store={EmployeeStore} fit>
+    <Column headerText="First Name" dataIndex="firstname" className="col-3" />
+    <Column headerText="Last Name" dataIndex="lastname" className="col-3" />
+    <Column headerText="Hired Month" dataIndex="hired" className="col-3" renderer={(value: string) => value.parseDate('MM/dd/yyyy').format('MMM')} />
+    <Column headerText="Department (Yrs)" dataIndex="dep" className="col-3" renderer={(value: string, record: Employee) => \`$\{value} ($\{record.seniority})\`} />
   </Grid>
 }
       `}</Highlight>
@@ -167,14 +167,16 @@ export function GridWithPaging() {
     <div className="card-body">
       <div className="card">
         <div className="card-body p-0">
-          <Grid store={UserStore} className="border-0">
-            <Column headerText="ID" dataIndex="id" />
-            <Column headerText="First Name" dataIndex="firstName" />
-            <Column headerText="Last Name" dataIndex="lastName" />
-            <Column headerText="Title" dataIndex="title" />
-            <Column headerText="Address" dataIndex="address" />
-            <Column headerText="Company" dataIndex="company" />
-          </Grid>
+          <div style={{height:300}}>
+            <Grid store={UserStore} className="border-0">
+              <Column headerText="ID" dataIndex="id" style={{width:80}} />
+              <Column headerText="First Name" dataIndex="firstName" style={{width:150}} />
+              <Column headerText="Last Name" dataIndex="lastName" style={{width:150}} />
+              <Column headerText="Title" dataIndex="title" style={{width:300}} />
+              <Column headerText="Address" dataIndex="address" style={{width:300}} />
+              <Column headerText="Company" dataIndex="company" style={{width:300}} />
+            </Grid>
+          </div>
         </div>
         <div className="card-footer">
           <Paging store={UserStore} />
@@ -214,12 +216,12 @@ function Users() {
   return <div className="card">
     <div className="card-body p-0">
       <Grid store={UserStore} className="border-0">
-        <Column headerText="ID" dataIndex="id" />
-        <Column headerText="First Name" dataIndex="firstName" />
-        <Column headerText="Last Name" dataIndex="lastName" />
-        <Column headerText="Title" dataIndex="title" />
-        <Column headerText="Address" dataIndex="address" />
-        <Column headerText="Company" dataIndex="company" />
+        <Column headerText="ID" dataIndex="id" style={{width:80}} />
+        <Column headerText="First Name" dataIndex="firstName" style={{width:150}} />
+        <Column headerText="Last Name" dataIndex="lastName" style={{width:150}} />
+        <Column headerText="Title" dataIndex="title" style={{width:300}} />
+        <Column headerText="Address" dataIndex="address" style={{width:300}} />
+        <Column headerText="Company" dataIndex="company" style={{width:300}} />
       </Grid>
     </div>
     <div className="card-footer">

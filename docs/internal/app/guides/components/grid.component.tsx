@@ -30,10 +30,10 @@ export function GridComponent() {
         <p>Grids are composed of two main pieces - a <code>DataStore</code> full of data and a set of columns to render.</p>
         <div className="card mb-3">
           <div className="card-body">
-            <Grid store={UserStore}>
-              <Column headerText="Name" dataIndex="name" />
-              <Column headerText="Email" dataIndex="email" />
-              <Column headerText="Phone" dataIndex="phone" />
+            <Grid store={UserStore} fit>
+              <Column headerText="Name" dataIndex="name" className="col-4" />
+              <Column headerText="Email" dataIndex="email" className="col-4" />
+              <Column headerText="Phone" dataIndex="phone" className="col-4" />
             </Grid>
           </div>
           <div className="card-footer">
@@ -58,10 +58,10 @@ const UserStore = new DataStore<User>({
 });
 
 function Users() {
-  return <Grid store={UserStore}>
-    <Column headerText="Name" dataIndex="name" />
-    <Column headerText="Email" dataIndex="email" />
-    <Column headerText="Phone" dataIndex="phone" />
+  return <Grid store={UserStore} fit>
+    <Column headerText="Name" dataIndex="name" className="col-4" />
+    <Column headerText="Email" dataIndex="email" className="col-4" />
+    <Column headerText="Phone" dataIndex="phone" className="col-4" />
   </Grid>
 }
             `}</Highlight>
