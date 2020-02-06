@@ -1,3 +1,4 @@
+import { PlainObject } from '../types';
 import { Ajax, HttpParams } from '../ajax';
 import { ReaderConfig } from './reader';
 import { WriterConfig } from './writer';
@@ -7,11 +8,13 @@ export interface ProxyConfig {
   method?: string,
   reader?: ReaderConfig,
   writer?: WriterConfig,
+  headers?: PlainObject,
 }
 
-export async function query<T>(proxy: ProxyConfig, params?: HttpParams) {
-  const { url, method = 'get', reader = {} as ReaderConfig } = proxy,
-        response = await Ajax.request<any>({ url, method, params })
+export async function query<T>(proxy: ProxyConfig, params?: HttpParams, resolver?: (data: any, params?: HttpParams) => T) {
+  const { url, method = 'get', reader = {} as ReaderConfig } = proxy;
+  params.headers = Object.assign({}, proxy.headers || {}, params.headers || {});
+  const response = await Ajax.request<any>({ url, method, params });
 
   if (!response) return null;
 
@@ -24,7 +27,7 @@ export async function query<T>(proxy: ProxyConfig, params?: HttpParams) {
   }
 
   const result: T = reader && reader.rootProperty ? response[reader.rootProperty] : response;
-  return result;
+  return resolver ? resolver(result, params) : result;
 }
 
 export function mutate(data: any, proxy: ProxyConfig, params: HttpParams = {}) {
