@@ -6,6 +6,10 @@
 * [#38] Supports to add a `resolver` function to `EntityConfig`
 * [#41] Supports to export `HttpParams` type
 
+### Roxie UI
+
+* [#39] Supports theme coreui v2
+
 ### Roxie Components
 
 * Remove `AgGrid` component

@@ -94,6 +94,8 @@ export function AppHeader() {
 const ThemeList = [
   { name: 'Light', value: 'roxie-theme-light' },
   { name: 'Dark', value: 'roxie-theme-dark' },
+  { name: 'CoreUI', value: 'roxie-theme-coreui' },
+  { name: 'CoreUI Dark', value: 'roxie-theme-coreui-dark' },
   { name: 'Gray', value: 'roxie-theme-gray' },
   { name: 'Blue', value: 'roxie-theme-blue' },
   { name: 'Blueprint', value: 'roxie-theme-blueprint' },

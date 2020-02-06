@@ -1,13 +1,13 @@
 .cursor-pointer { cursor: pointer; }
-.no-scroll { overflow: hidden; }
-.auto-scroll { overflow: auto; }
-.scroll { overflow: scroll; }
-.auto-scroll-x { overflow-x: auto; }
-.auto-scroll-y { overflow-y: auto; }
-.no-scroll-x { overflow-x: hidden; }
-.no-scroll-y { overflow-y: hidden; }
-.scroll-x { overflow-x: scroll; }
-.scroll-y { overflow-y: scroll; }
+.no-scroll { overflow: hidden !important; }
+.auto-scroll { overflow: auto !important; }
+.scroll { overflow: scroll !important; }
+.auto-scroll-x { overflow-x: auto !important; }
+.auto-scroll-y { overflow-y: auto !important; }
+.no-scroll-x { overflow-x: hidden !important; }
+.no-scroll-y { overflow-y: hidden !important; }
+.scroll-x { overflow-x: scroll !important; }
+.scroll-y { overflow-y: scroll !important; }
 .fullscreen { @include fit(); }
 
 @each $side in (top, right, bottom, left) {
