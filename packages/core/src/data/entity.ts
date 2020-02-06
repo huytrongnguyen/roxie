@@ -6,6 +6,9 @@ import { ProxyConfig, query, mutate } from './proxy';
 export interface EntityConfig<T> {
   proxy?: ProxyConfig,
   data?: T,
+  resolver?: (data: any, params?: HttpParams) => T,
+  onError?: (reason: any) => void,
+  onComplete?: () => void,
 }
 
 export abstract class Entity<T> extends Subject<T> {
@@ -27,8 +30,8 @@ export abstract class Entity<T> extends Subject<T> {
   load(params?: HttpParams) {
     this.fetch(params)
         .then(value => this.loadData(value))
-        .catch(reason => this.error(reason))
-        .finally(() => this.complete());
+        .catch(reason => { this.config.onError && this.config.onError(reason); this.error(reason); })
+        .finally(() => { this.config.onComplete && this.config.onComplete(); this.complete(); });
   }
 
   protected async fetch(params?: HttpParams) {
