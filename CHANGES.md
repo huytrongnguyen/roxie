@@ -1,3 +1,16 @@
+## [Unreleased]
+
+### Roxie Core
+
+* [#37] Supports to add `headers` param to `ProxyConfig`
+* [#38] Supports to add a `resolver` function to `EntityConfig`
+* [#41] Supports to export `HttpParams` type
+
+### Roxie Components
+
+* Remove `AgGrid` component
+* [#40] Grid enhancement
+
 ## [1.10.0]
 > Jan 13, 2020
 

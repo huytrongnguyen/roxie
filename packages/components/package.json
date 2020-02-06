@@ -13,8 +13,6 @@
   "dependencies": {
     "@roxie/core": "^1.10.0",
     "@roxie/ui": "^1.10.0",
-    "ag-grid-community": "22.1.1",
-    "ag-grid-react": "22.1.1",
     "c3": "0.7.10",
     "jquery": "3.4.1"
   },

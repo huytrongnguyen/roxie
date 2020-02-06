@@ -12,6 +12,8 @@ import { Subject } from './observable';
 import { Uuid } from './generator';
 import { StoreConfig, DataStore } from './data';
 
+const DEFAULT_PATTERN = 'yyyy-MM-dd HH:mm:ss';
+
 export const Roxie = {
   query: (selector: any) => $(selector),
   isEmpty: (value: any) => value === undefined || value == null || value === '' || (Roxie.isArray(value) && value.length === 0) || Roxie.Object.isEmpty(value),
@@ -64,9 +66,9 @@ export const Roxie = {
   },
   Date: {
     DAYS_IN_WEEK: 7,
-    DEFAULT_PATTERN: "yyyy-MM-dd'T'HH:mm:ss",
+    DEFAULT_PATTERN,
     ...dateFns,
-    format: (date?: number | Date, pattern: string = 'yyyy-MM-dd HH:mm:ss') => dateFns.format(date || new Date(), pattern),
+    format: (date?: number | Date, pattern: string = DEFAULT_PATTERN) => dateFns.format(date || new Date(), pattern),
     now: () => new Date(),
     utc() {
       var now = new Date();

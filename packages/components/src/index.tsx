@@ -8,7 +8,6 @@ export * from './datepicker.component';
 export * from './tabpanel.component';
 export * from './list.component';
 export * from './grid.component';
-export * from './ag-grid.component';
 export * from './paging.component';
 export * from './chart.component';
 export * from './file-field.component';

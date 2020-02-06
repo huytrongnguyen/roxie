@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-
 import { Roxie } from '@roxie/core';
+import $ from 'jquery';
 
 export function Dialog(props: { id?: string, className?: string, title?: string, children: ReactNode }) {
   const { id = 'dialog', className = '', title = 'Dialog', children } = props;
@@ -20,4 +20,15 @@ export function Dialog(props: { id?: string, className?: string, title?: string,
       </div>
     </div>
   </section>
+}
+
+export function showDialog(selector: string, onShow?: () => void, onHide?: () => void) {
+  $(selector).modal('show');
+  onShow && $(selector).on('shown.bs.modal', onShow);
+  onHide && $(selector).on('hide.bs.modal', onHide);
+}
+
+export function hideDialog(selector: string, onHide?: () => void) {
+  $(selector).modal('hide');
+  onHide && $(selector).on('hide.bs.modal', onHide);
 }
