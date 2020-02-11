@@ -1,6 +1,6 @@
 {
   "name": "@roxie/components",
-  "version": "1.10.0",
+  "version": "2.0.0",
   "description": "Built-in React components of Roxie",
   "author": "Lionel Nguyen <huynguyen8505@gmail.com> (https://github.com/huytrongnguyen)",
   "license": "MIT",
@@ -11,9 +11,9 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "@roxie/core": "^1.10.0",
-    "@roxie/ui": "^1.10.0",
-    "c3": "0.7.10",
+    "@roxie/core": "^2.0.0",
+    "@roxie/ui": "^2.0.0",
+    "c3": "0.7.13",
     "jquery": "3.4.1"
   },
   "peerDependencies": {

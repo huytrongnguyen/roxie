@@ -1,8 +1,8 @@
-.roxie-theme-light, .roxie-theme-gray, .roxie-theme-blue, .roxie-theme-blueprint, .roxie-theme-triton, .roxie-theme-macos {
+.roxie-theme-light, .roxie-theme-gray, .roxie-theme-blue, .roxie-theme-blueprint, .roxie-theme-triton, .roxie-theme-macos, .roxie-theme-coreui {
   @import '../../node_modules/highlight.js/scss/vs.scss';
 }
 
-.roxie-theme-dark, .roxie-theme-ios {
+.roxie-theme-dark, .roxie-theme-ios, .roxie-theme-coreui-dark {
   @import '../../node_modules/highlight.js/scss/vs2015.scss';
 }
 

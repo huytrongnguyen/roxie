@@ -1,4 +1,4 @@
-import React, { useState, useEffect, PropsWithChildren, Children } from 'react';
+import React, { useState, useEffect, PropsWithChildren, Children, ReactElement } from 'react';
 import { Roxie } from '@roxie/core';
 
 interface TabProps extends PropsWithChildren<any> {
@@ -18,7 +18,7 @@ export function TabPanel(props: TabPanelProps) {
         [activeTab, setActiveTab] = useState({} as TabProps);
 
   useEffect(() => {
-    const tabs = Children.toArray(props.children).map(child => child.props);
+    const tabs = Children.toArray(props.children).map((child: ReactElement) => child.props);
     setTabs(tabs);
     setActiveTab(tabs[0]);
   }, [])

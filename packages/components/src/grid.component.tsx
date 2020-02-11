@@ -29,7 +29,7 @@ export function Grid(props: GridProps) {
 
   useEffect(() => {
     const subscription = props.store.subscribe(value => setData(value || []));
-    setColumns(Children.toArray(props.children).map(child => child.props));
+    setColumns(Children.toArray(props.children).map((child: ReactElement) => child.props));
     const header = $(`#${gridId} .table-header-container`),
           body = $(`#${gridId} .table-body-container`);
     body.on('scroll', function () { header.scrollLeft(body.scrollLeft()) });

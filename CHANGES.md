@@ -5,10 +5,12 @@
 * [#37] Supports to add `headers` param to `ProxyConfig`
 * [#38] Supports to add a `resolver` function to `EntityConfig`
 * [#41] Supports to export `HttpParams` type
+* [#43] v2
 
 ### Roxie UI
 
 * [#39] Supports theme coreui v2
+* [#43] v2
 
 ### Roxie Components
 

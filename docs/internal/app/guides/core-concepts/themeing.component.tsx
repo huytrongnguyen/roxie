@@ -49,6 +49,14 @@ export function ThemingConcept() {
               <td>roxie-theme-macos</td>
               <td>macOS classic theme</td>
             </tr>
+            <tr>
+              <td>roxie-theme-coreui</td>
+              <td>CoreUI theme</td>
+            </tr>
+            <tr>
+              <td>roxie-theme-coreui-dark</td>
+              <td>CoreUI dark theme</td>
+            </tr>
           </tbody>
         </table>
       </div>
