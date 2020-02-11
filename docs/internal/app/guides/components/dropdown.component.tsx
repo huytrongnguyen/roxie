@@ -30,8 +30,10 @@ export function DropdownComponent() {
         </p>
         <div className="card mb-3">
           <div className="card-body">
-            <Dropdown store={StateStore} valueField="abbrev" displayField="name" multiple
-                      value={selectedValues} valueChange={setSelectedValues} />
+            <div className="col-3">
+              <Dropdown store={StateStore} valueField="abbrev" displayField="name" multiple
+                        value={selectedValues} valueChange={setSelectedValues} />
+            </div>
           </div>
           <div className="card-footer">
             <Highlight language="tsx">{`

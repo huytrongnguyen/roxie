@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Roxie, DataStore } from '@roxie/core';
 
-Roxie.query(document).on('click', '.dropdown.dropdown-multi-select .dropdown-menu', e => e.stopPropagation());
-
 type DropdownProps = {
-  store: DataStore<any>,
-  options: any[],
+  store?: DataStore<any>,
+  options?: any[],
   displayField?: string,
   valueField?: string,
   multiple?: boolean,
@@ -73,18 +71,34 @@ export function Dropdown(props: DropdownProps) {
     <div className="input-group-append">
       <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" />
       <div className="dropdown-menu p-0">
-        {searchBox && <div className="p-1 border-bottom">
+        {multiple && <form>
+          {searchBox && <div className="p-1 border-bottom">
           <input type="text" className={Roxie.classNames('form-control', searchBoxClass)} name="searchFilter" placeholder="Search..."
               value={searchFilter} onChange={event => setSearchFilter(event.target.value)} />
-        </div>}
-        <div className="dropdown-item-list">
-          {options.map(opt => {
-            if (searchFilter && !opt[displayField].toLowerCase().startsWith(searchFilter.toLowerCase())) return null;
-            return <span className={Roxie.classNames('dropdown-item', { active: isSelected(opt) })} key={opt[valueField]} onClick={() => select(opt)}>
-              {opt[displayField]}
-            </span>
-          })}
-        </div>
+          </div>}
+          <div className="dropdown-item-list">
+            {options.map(opt => {
+              if (searchFilter && !opt[displayField].toLowerCase().startsWith(searchFilter.toLowerCase())) return null;
+              return <span className={Roxie.classNames('dropdown-item', { active: isSelected(opt) })} key={opt[valueField]} onClick={() => select(opt)}>
+                {opt[displayField]}
+              </span>
+            })}
+          </div>
+        </form>}
+        {!multiple && <>
+          {searchBox && <div className="p-1 border-bottom">
+          <input type="text" className={Roxie.classNames('form-control', searchBoxClass)} name="searchFilter" placeholder="Search..."
+              value={searchFilter} onChange={event => setSearchFilter(event.target.value)} />
+          </div>}
+          <div className="dropdown-item-list">
+            {options.map(opt => {
+              if (searchFilter && !opt[displayField].toLowerCase().startsWith(searchFilter.toLowerCase())) return null;
+              return <span className={Roxie.classNames('dropdown-item', { active: isSelected(opt) })} key={opt[valueField]} onClick={() => select(opt)}>
+                {opt[displayField]}
+              </span>
+            })}
+          </div>
+        </>}
       </div>
     </div>
   </div>
