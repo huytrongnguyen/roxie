@@ -1,21 +1,24 @@
-## [Unreleased]
+## [1.11.0]
+> Feb 12, 2020
 
 ### Roxie Core
 
 * [#37] Supports to add `headers` param to `ProxyConfig`
 * [#38] Supports to add a `resolver` function to `EntityConfig`
 * [#41] Supports to export `HttpParams` type
-* [#43] v2
+* [#43] Update dependencies
 
 ### Roxie UI
 
 * [#39] Supports theme coreui v2
-* [#43] v2
+* [#43] Update dependencies
 
 ### Roxie Components
 
 * Remove `AgGrid` component
 * [#40] Grid enhancement
+* [#42] Should keep dropdown menu in case multiple selection
+* [#43] Update dependencies
 
 ## [1.10.0]
 > Jan 13, 2020

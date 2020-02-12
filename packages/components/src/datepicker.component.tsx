@@ -147,7 +147,7 @@ export function DatePicker(props: DatePickerProps) {
   return <div className="roxie-datepicker dropdown">
     <input type="text" className="form-control text-center dropdown-toggle" data-toggle="dropdown" value={dateStr} onChange={e => setDateStr(e.target.value)} onBlur={update} />
     <div className="dropdown-menu border-0 p-0">
-      <DatePickerPortal value={value} onChange={select} />
+      <form><DatePickerPortal value={value} onChange={select} /></form>
     </div>
   </div>
 }
