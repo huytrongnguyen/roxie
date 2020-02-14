@@ -18,6 +18,10 @@ export function ThemingConcept() {
           </thead>
           <tbody>
             <tr>
+              <td>roxie-theme-bootstrap</td>
+              <td>Bootstrap theme</td>
+            </tr>
+            <tr>
               <td>roxie-theme-light</td>
               <td>Light theme</td>
             </tr>
@@ -30,32 +34,8 @@ export function ThemingConcept() {
               <td>Gray theme</td>
             </tr>
             <tr>
-              <td>roxie-theme-blue</td>
-              <td>Blue theme</td>
-            </tr>
-            <tr>
-              <td>roxie-theme-blueprint</td>
-              <td>Blueprint theme</td>
-            </tr>
-            <tr>
               <td>roxie-theme-triton</td>
               <td>Triton theme</td>
-            </tr>
-            <tr>
-              <td>roxie-theme-ios</td>
-              <td>iOS classic theme</td>
-            </tr>
-            <tr>
-              <td>roxie-theme-macos</td>
-              <td>macOS classic theme</td>
-            </tr>
-            <tr>
-              <td>roxie-theme-coreui</td>
-              <td>CoreUI theme</td>
-            </tr>
-            <tr>
-              <td>roxie-theme-coreui-dark</td>
-              <td>CoreUI dark theme</td>
             </tr>
           </tbody>
         </table>

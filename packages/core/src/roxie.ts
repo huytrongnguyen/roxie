@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import * as dateFns from 'date-fns';
 
 import './lang/number';
@@ -11,11 +10,12 @@ import { LocalCache } from './cache';
 import { Subject } from './observable';
 import { Uuid } from './generator';
 import { StoreConfig, DataStore } from './data';
+import { Dom } from './dom';
 
 const DEFAULT_PATTERN = 'yyyy-MM-dd HH:mm:ss';
 
 export const Roxie = {
-  query: (selector: any) => $(selector),
+  query: (selector: string) => Dom.query(selector),
   isEmpty: (value: any) => value === undefined || value == null || value === '' || (Roxie.isArray(value) && value.length === 0) || Roxie.Object.isEmpty(value),
   isNotEmpty: (value: any) => !Roxie.isEmpty(value),
   isString: (value: any) => typeof value === 'string',

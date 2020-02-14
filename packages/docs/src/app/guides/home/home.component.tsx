@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export function Home() {
-  return <Fragment>
+  return <>
     <div className="pt-3">
       <div className="container-fluid">
         <div className="row">
@@ -75,5 +75,5 @@ export function Home() {
         </div>
       </div>
     </div>
-  </Fragment>
+  </>
 }

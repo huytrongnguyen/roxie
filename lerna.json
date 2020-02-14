@@ -1,6 +1,6 @@
 {
   "version": "independent",
-  "packages": [ "packages/*" ],
+  "packages": [ "packages/core", "packages/ui", "packages/components", "packages/server" ],
   "npmClient": "yarn",
   "npmClientArgs": [
     "--no-lockfile"

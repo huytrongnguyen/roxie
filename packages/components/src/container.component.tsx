@@ -33,7 +33,7 @@ export function Container(props: ContainerProps) {
     </section>
   }
 
-  return <section className={Roxie.classNames(layoutClass[layout], props.className)} {...others}>
-    {props.children}
+  return <section className={Roxie.classNames(layoutClass[layout], className)} {...others}>
+    {children}
   </section>
 }

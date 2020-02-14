@@ -1,32 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Link, NavLink as RNavLink, Switch, Route as RRoute } from 'react-router-dom';
+import { HashRouter as Router, Link, Switch, Route as RouteDom, NavLink as NavLinkDom } from 'react-router-dom';
 import { Roxie } from '@roxie/core';
 import { Container } from '@roxie/components';
 
-import pkg from '../../../package.json';
+import pkg from '../../../../package.json';
 
-import {
-  Home, GettingStarted,
-  PackageConcept, ClassConcept, LayoutConcept, ComponentConcept, ThemingConcept, DataConcept,
-  DialogComponent, DropdownComponent, TabPanelComponent, ListComponent, GridComponent, ChartComponent,
-  ApplicationArchitecture, ViewController,
-} from './guides';
-import { NumberApi, StringApi, DateApi, AjaxApi, ModelApi, StoreApi } from './api';
-import {
-  ComponentExample, ButtonExample, FormExample, PanelExample, DialogExample, LayoutExample, TabExample, TooltipExample, ToolbarExample,
-  FormFieldExample, DatePickerExample, DropdownExample, FileUploadExample, FormFieldTypeExample,
-  GridExample, GridViewExample, ListViewExample,
-  ChartExample, ColumnChartExample, BarChartExample, LineChartExample, AreaChartExample, PieChartExample,
-  KitchenSink,
-} from './examples/kitchen-sink';
-import { AdminDashboard } from './examples/admin-dashboard';
+import { Home, GettingStarted } from './guides/home';
+import { PackageConcept, ClassConcept, LayoutConcept, ComponentConcept, ThemingConcept, DataConcept } from './guides/core-concepts';
+// import {
+//
+//   DialogComponent, DropdownComponent, TabPanelComponent, ListComponent, GridComponent, ChartComponent,
+//   ApplicationArchitecture, ViewController,
+// } from './guides';
+// import { NumberApi, StringApi, DateApi, AjaxApi, ModelApi, StoreApi } from './api';
+// import {
+//   ComponentExample, ButtonExample, FormExample, PanelExample, DialogExample, LayoutExample, TabExample, TooltipExample, ToolbarExample,
+//   FormFieldExample, DatePickerExample, DropdownExample, FileUploadExample, FormFieldTypeExample,
+//   GridExample, GridViewExample, ListViewExample,
+//   ChartExample, ColumnChartExample, BarChartExample, LineChartExample, AreaChartExample, PieChartExample,
+//   KitchenSink,
+// } from './examples/kitchen-sink';
+// import { AdminDashboard } from './examples/admin-dashboard';
 
 export function App() {
   return <Router>
-    <Container layout="border"
-      north={<AppHeader />}
-      west={<AppSidebar />}
-      center={<main className="auto-scroll-y">
+    <Container layout="border" north={<AppHeader />} west={<AppSidebar />}>
+      <main className="auto-scroll-y">
         <Switch>
           <Route exact path="/introduction/getting-started" component={GettingStarted} title="Getting Started" />
           <Route exact path="/core-concepts/packages" component={PackageConcept} title="Roxie Packages" />
@@ -35,7 +34,7 @@ export function App() {
           <Route exact path="/core-concepts/theming" component={ThemingConcept} title="Theming System" />
           <Route exact path="/core-concepts/layouts" component={LayoutConcept} title="Layouts and Containers" />
           <Route exact path="/core-concepts/data" component={DataConcept} title="Data Package" />
-          <Route exact path="/architecture/application-architecture" component={ApplicationArchitecture} title="Intro to App Architecture" />
+          {/* <Route exact path="/architecture/application-architecture" component={ApplicationArchitecture} title="Intro to App Architecture" />
           <Route exact path="/architecture/view-controller" component={ViewController} title="ViewController" />
           <Route exact path="/components/dialog" component={DialogComponent} title="Dialog" />
           <Route exact path="/components/dropdown" component={DropdownComponent} title="Dropdown" />
@@ -73,11 +72,11 @@ export function App() {
           <Route exact path="/examples/kitchen-sink/charts/line" component={LineChartExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/charts/area" component={AreaChartExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/charts/pie" component={PieChartExample} title="Examples" />
-          <Route exact path="/examples/admin-dashboard" component={AdminDashboard} title="Examples" />
+          <Route exact path="/examples/admin-dashboard" component={AdminDashboard} title="Examples" /> */}
           <Route component={Home} title="Docs" />
         </Switch>
-      </main>}
-    />
+      </main>
+    </Container>
   </Router>
 }
 
@@ -92,16 +91,11 @@ export function AppHeader() {
 }
 
 const ThemeList = [
+  { name: 'Bootstrap', value: 'roxie-theme-bootstrap' },
   { name: 'Light', value: 'roxie-theme-light' },
   { name: 'Dark', value: 'roxie-theme-dark' },
-  { name: 'CoreUI', value: 'roxie-theme-coreui' },
-  { name: 'CoreUI Dark', value: 'roxie-theme-coreui-dark' },
   { name: 'Gray', value: 'roxie-theme-gray' },
-  { name: 'Blue', value: 'roxie-theme-blue' },
-  { name: 'Blueprint', value: 'roxie-theme-blueprint' },
   { name: 'Triton', value: 'roxie-theme-triton' },
-  { name: 'iOS Classic', value: 'roxie-theme-ios' },
-  { name: 'macOS Classic', value: 'roxie-theme-macos' },
 ]
 
 export function ThemeSelection() {
@@ -110,14 +104,14 @@ export function ThemeSelection() {
   useEffect(() => {
     const themeCode = Roxie.Cache.get('roxie-theme') || ThemeList[0].value,
           theme = ThemeList.filter(theme => theme.value === themeCode)[0];
-    updateTheme(theme);
+    updateTheme(theme || ThemeList[0]);
   }, [])
 
   function updateTheme(nextTheme: { name: string, value: string }) {
     const prevTheme = currentTheme.value;
     setCurrentTheme(nextTheme);
     Roxie.Cache.set('roxie-theme', nextTheme.value);
-    Roxie.query('html').removeClass(prevTheme).addClass(nextTheme.value);
+    // Roxie.query('html').removeClass(prevTheme).addClass(nextTheme.value);
   }
 
   return <ul className="navbar-nav">
@@ -169,11 +163,11 @@ export function AppSidebar() {
 }
 
 export function NavLink(props: { to: string, text: string }) {
-  return <RNavLink to={props.to} className="nav-link" activeClassName="active">{props.text}</RNavLink>
+  return <NavLinkDom to={props.to} className="nav-link" activeClassName="active">{props.text}</NavLinkDom>
 }
 
 export function Route({ component: Component, title = '', ...others }) {
   document.title = `${title ? `${title} | ` : ''}Roxie ${pkg.version}`
 
-  return <RRoute {...others} render={props => <Component {...props} />} />
+  return <RouteDom {...others} render={props => <Component {...props} />} />
 }

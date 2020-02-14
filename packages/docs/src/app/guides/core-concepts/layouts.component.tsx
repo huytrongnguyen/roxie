@@ -87,7 +87,7 @@ function Layout() {
           <div className="card-footer">
             <Highlight language="tsx">{`
 import React from 'react';
-import { Panel } from '@roxie/components';
+import { Container } from '@roxie/components';
 
 function Layout() {
   return <div className="card" style={{width:400,height:200}}>
