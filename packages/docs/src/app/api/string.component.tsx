@@ -16,9 +16,9 @@ export function StringApi() {
         </div>
         <div className="card mb-3">
           <div className="card-header"><pre className="d-inline"><code>parseDate(pattern?: string, backupDate?: Date)</code></pre></div>
-          <div className="card-body">{'2006-01-15 03:20:01'.parseDate().format('dd/MM/yyyy HH:mm:ss')}</div>
+          <div className="card-body">{'2006-01-15 03:20:01'.parseDate('yyyy-MM-dd HH:mm:ss').format('dd/MM/yyyy HH:mm:ss')}</div>
           <div className="card-footer">
-            <Highlight language="ts">{`'2006-01-15 03:20:01'.parseDate().format('dd/MM/yyyy HH:mm:ss')`}</Highlight>
+            <Highlight language="ts">{`'2006-01-15 03:20:01'.parseDate('yyyy-MM-dd HH:mm:ss').format('dd/MM/yyyy HH:mm:ss')`}</Highlight>
           </div>
         </div>
       </div>

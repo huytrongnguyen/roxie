@@ -5,22 +5,27 @@ import { Container } from '@roxie/components';
 
 import pkg from '../../../../package.json';
 
-import { Home, GettingStarted } from './guides/home';
-import { PackageConcept, ClassConcept, LayoutConcept, ComponentConcept, ThemingConcept, DataConcept } from './guides/core-concepts';
-// import {
-//
-//   DialogComponent, DropdownComponent, TabPanelComponent, ListComponent, GridComponent, ChartComponent,
-//   ApplicationArchitecture, ViewController,
-// } from './guides';
-// import { NumberApi, StringApi, DateApi, AjaxApi, ModelApi, StoreApi } from './api';
-// import {
-//   ComponentExample, ButtonExample, FormExample, PanelExample, DialogExample, LayoutExample, TabExample, TooltipExample, ToolbarExample,
-//   FormFieldExample, DatePickerExample, DropdownExample, FileUploadExample, FormFieldTypeExample,
-//   GridExample, GridViewExample, ListViewExample,
-//   ChartExample, ColumnChartExample, BarChartExample, LineChartExample, AreaChartExample, PieChartExample,
-//   KitchenSink,
-// } from './examples/kitchen-sink';
-// import { AdminDashboard } from './examples/admin-dashboard';
+import { Home, GettingStarted } from './home';
+import { PackageConcept, ClassConcept, LayoutConcept, ComponentConcept, ThemingConcept, DataConcept } from './core-concepts';
+import { ApplicationArchitecture, ViewController } from './architecture';
+import { NumberApi, StringApi, DateApi, AjaxApi, ModelApi, StoreApi } from './api';
+import { DialogComponent, DropdownComponent, TabPanelComponent, ListComponent, GridComponent, ChartComponent } from './components';
+import { KitchenSink } from './examples/kitchen-sink';
+import {
+  ComponentExample,
+  ButtonExample,
+  FormFieldExample, DatePickerExample, DropdownExample, FileUploadExample, FormFieldTypeExample,
+  FormExample,
+  LayoutExample,
+  PanelExample,
+  TabExample,
+  DialogExample,
+  TooltipExample,
+  ToolbarExample,
+} from './examples/kitchen-sink/components';
+import { GridExample, GridViewExample, ListViewExample } from './examples/kitchen-sink/grids';
+import { ChartExample, ColumnChartExample, BarChartExample, LineChartExample, AreaChartExample, PieChartExample } from './examples/kitchen-sink/charts';
+import { AdminDashboard } from './examples/admin-dashboard';
 
 export function App() {
   return <Router>
@@ -34,7 +39,7 @@ export function App() {
           <Route exact path="/core-concepts/theming" component={ThemingConcept} title="Theming System" />
           <Route exact path="/core-concepts/layouts" component={LayoutConcept} title="Layouts and Containers" />
           <Route exact path="/core-concepts/data" component={DataConcept} title="Data Package" />
-          {/* <Route exact path="/architecture/application-architecture" component={ApplicationArchitecture} title="Intro to App Architecture" />
+          <Route exact path="/architecture/application-architecture" component={ApplicationArchitecture} title="Intro to App Architecture" />
           <Route exact path="/architecture/view-controller" component={ViewController} title="ViewController" />
           <Route exact path="/components/dialog" component={DialogComponent} title="Dialog" />
           <Route exact path="/components/dropdown" component={DropdownComponent} title="Dropdown" />
@@ -72,7 +77,7 @@ export function App() {
           <Route exact path="/examples/kitchen-sink/charts/line" component={LineChartExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/charts/area" component={AreaChartExample} title="Examples" />
           <Route exact path="/examples/kitchen-sink/charts/pie" component={PieChartExample} title="Examples" />
-          <Route exact path="/examples/admin-dashboard" component={AdminDashboard} title="Examples" /> */}
+          <Route exact path="/examples/admin-dashboard" component={AdminDashboard} title="Examples" />
           <Route component={Home} title="Docs" />
         </Switch>
       </main>
