@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Link, Switch, Route as RouteDom, NavLink as NavLinkDom } from 'react-router-dom';
 import { Roxie } from '@roxie/core';
 import { Container } from '@roxie/components';
+import { domQuery } from '@roxie/ui';
 
 import pkg from '../../../../package.json';
 
@@ -116,7 +117,7 @@ export function ThemeSelection() {
     const prevTheme = currentTheme.value;
     setCurrentTheme(nextTheme);
     Roxie.Cache.set('roxie-theme', nextTheme.value);
-    // Roxie.query('html').removeClass(prevTheme).addClass(nextTheme.value);
+    domQuery('html').removeClass(prevTheme).addClass(nextTheme.value);
   }
 
   return <ul className="navbar-nav">

@@ -1,6 +1,6 @@
-import { Roxie } from './roxie';
+import { Roxie } from '@roxie/core';
 
-export class Dom {
+export class SelectorEngine {
   private elements: HTMLElement[];
 
   constructor(elements: HTMLElement[]) {
@@ -34,11 +34,11 @@ export class Dom {
   on(eventType: string, selector: string, handler: (event: Event) => void): void;
   on(eventType: string, ...args: any[]) {
     document.addEventListener(eventType, e => {
-      let selector: Dom,
+      let selector: SelectorEngine,
         handler: (event: Event) => void;
 
       if (args.length < 2) { selector = this; handler = args[0] }
-      else { selector = Dom.query(args[0]); handler = args[1]; }
+      else { selector = SelectorEngine.query(args[0]); handler = args[1]; }
 
       const el = e.target as HTMLElement;
       selector.match(el) && handler(e);
@@ -47,20 +47,20 @@ export class Dom {
   }
 
   static get(elementId: string) {
-    return new Dom([document.getElementById(elementId)]);
+    return new SelectorEngine([document.getElementById(elementId)]);
   }
 
-  static query(selector: string): Dom;
-  static query(selector: HTMLElement): Dom;
+  static query(selector: string): SelectorEngine;
+  static query(selector: HTMLElement): SelectorEngine;
   static query(selector: any) {
     if (Roxie.isString(selector)) {
       const nodeList = document.querySelectorAll(selector);
-      if (!nodeList.length) return new Dom([]);
+      if (!nodeList.length) return new SelectorEngine([]);
       const elements: HTMLElement[] = [];
       nodeList.forEach(item => elements.push(item as HTMLElement));
-      return new Dom(elements);
+      return new SelectorEngine(elements);
     } else {
-      return new Dom([selector]);
+      return new SelectorEngine([selector]);
     }
   }
 }

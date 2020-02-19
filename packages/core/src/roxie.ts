@@ -24,6 +24,7 @@ export const Roxie = {
   isObject: (value: any) => toString.call(value) === '[object Object]',
   isArray: (value: any) => toString.call(value) === '[object Array]',
   isDate: (value: any) => toString.call(value) === '[object Date]',
+  isFunction: (value: any) => toString.call(value) === '[object Function]',
   clone: (value: any) => Roxie.JSON.encode(value).decode(),
   guid: (prefix: string = '', suffix: string = '') => `${prefix}${(Math.random() * (1<<30)).toString(16).replace('.', '')}${suffix}`,
   uuid: Uuid.generate,
