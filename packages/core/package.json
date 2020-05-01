@@ -13,7 +13,7 @@
   "dependencies": {
     "axios": "0.19.2",
     "date-fns": "2.9.0",
-    "jquery": "3.4.1"
+    "jquery": "3.5.0"
   },
   "publishConfig": {
     "access": "public"
