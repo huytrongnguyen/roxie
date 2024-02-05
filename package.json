@@ -30,7 +30,7 @@
     "sass": "1.23.0",
     "ts-jest": "25.2.0",
     "typescript": "3.7.5",
-    "yarn": "1.22.0"
+    "yarn": "1.22.13"
   },
   "alias": {
     "@roxie/core": "./packages/core/dist",
